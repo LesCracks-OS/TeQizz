@@ -1,0 +1,670 @@
+{
+    "categoryName": "Securite",
+    "questions": [
+        {
+            "content": "Qu'est-ce que le XSS (Cross-Site Scripting) ?",
+            "explanation": "XSS est une vulnérabilité qui permet d'injecter des scripts malveillants dans des pages web consultées par d'autres utilisateurs.",
+            "hint": "XSS peut être prévenu en échappant les entrées utilisateur.",
+            "difficulty": "EASY",
+            "tags": [
+                "XSS",
+                "OWASP"
+            ],
+            "answers": [
+                {
+                    "content": "Un type de virus",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une vulnérabilité d'injection de scripts",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un protocole de sécurité",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un firewall",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que HTTPS ?",
+            "explanation": "HTTPS est la version sécurisée de HTTP, utilisant TLS/SSL pour chiffrer les communications.",
+            "hint": "HTTPS assure la confidentialité et l'intégrité des données.",
+            "difficulty": "EASY",
+            "tags": [
+                "HTTPS/TLS"
+            ],
+            "answers": [
+                {
+                    "content": "Un langage de programmation",
+                    "isCorrect": false
+                },
+                {
+                    "content": "HTTP avec chiffrement TLS/SSL",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un protocole de base de données",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un framework web",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que l'authentification à deux facteurs (2FA) ?",
+            "explanation": "2FA est une méthode de sécurité qui requiert deux formes d'identification pour accéder à un compte.",
+            "hint": "2FA combine généralement quelque chose que vous savez et quelque chose que vous possédez.",
+            "difficulty": "EASY",
+            "tags": [
+                "Authentification"
+            ],
+            "answers": [
+                {
+                    "content": "Deux mots de passe",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une méthode utilisant deux formes d'identification",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Deux comptes utilisateur",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une double connexion",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce qu'une injection SQL ?",
+            "explanation": "L'injection SQL est une technique d'attaque où du code SQL malveillant est inséré dans des requêtes.",
+            "hint": "Les requêtes préparées préviennent les injections SQL.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "SQL Injection",
+                "OWASP"
+            ],
+            "answers": [
+                {
+                    "content": "Un type de base de données",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une attaque par injection de code SQL",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un langage de requête",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un outil de sécurité",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que JWT ?",
+            "explanation": "JWT (JSON Web Token) est un standard pour transmettre des informations de manière sécurisée entre parties.",
+            "hint": "JWT est souvent utilisé pour l'authentification.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "JWT",
+                "Authentification"
+            ],
+            "answers": [
+                {
+                    "content": "Un langage de programmation",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un standard de token pour l'authentification",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un protocole réseau",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une base de données",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que le RGPD ?",
+            "explanation": "Le RGPD est le Règlement Général sur la Protection des Données de l'Union Européenne.",
+            "hint": "Le RGPD encadre le traitement des données personnelles.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "RGPD"
+            ],
+            "answers": [
+                {
+                    "content": "Un protocole réseau",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Le Règlement Général sur la Protection des Données",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un langage de programmation",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un framework de sécurité",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que le hachage cryptographique ?",
+            "explanation": "Le hachage cryptographique transforme des données en une empreinte de taille fixe, irréversible.",
+            "hint": "SHA-256 est un algorithme de hachage couramment utilisé.",
+            "difficulty": "HARD",
+            "tags": [
+                "Cryptographie"
+            ],
+            "answers": [
+                {
+                    "content": "Un type de chiffrement",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une transformation irréversible en empreinte",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un protocole réseau",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une méthode de compression",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce qu'une attaque CSRF ?",
+            "explanation": "CSRF (Cross-Site Request Forgery) force un utilisateur authentifié à exécuter des actions non intentionnelles.",
+            "hint": "Les tokens CSRF protègent contre ces attaques.",
+            "difficulty": "HARD",
+            "tags": [
+                "OWASP"
+            ],
+            "answers": [
+                {
+                    "content": "Une attaque par déni de service",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une attaque qui force des actions non intentionnelles",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un type de virus",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une attaque par force brute",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que le principe de moindre privilège ?",
+            "explanation": "Le principe de moindre privilège consiste à n'accorder que les permissions minimales nécessaires.",
+            "hint": "Ce principe limite l'impact potentiel des failles de sécurité.",
+            "difficulty": "EXPERT",
+            "tags": [
+                "OWASP"
+            ],
+            "answers": [
+                {
+                    "content": "Donner tous les privilèges",
+                    "isCorrect": false
+                },
+                {
+                    "content": "N'accorder que les permissions minimales nécessaires",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Supprimer tous les privilèges",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Ignorer les permissions",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce qu'une attaque par canal auxiliaire ?",
+            "explanation": "Une attaque par canal auxiliaire exploite des informations physiques (temps, consommation) plutôt que des failles logiques.",
+            "hint": "Les attaques timing sont un exemple d'attaque par canal auxiliaire.",
+            "difficulty": "EXPERT",
+            "tags": [
+                "Cryptographie"
+            ],
+            "answers": [
+                {
+                    "content": "Une attaque réseau",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une attaque exploitant des informations physiques",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Une attaque par injection",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une attaque par déni de service",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que le Content Security Policy (CSP) ?",
+            "explanation": "CSP est un en-tête HTTP qui aide à prévenir les attaques XSS et les injections de code en spécifiant les sources autorisées pour les scripts, styles, images, etc.",
+            "hint": "C'est un en-tête de sécurité très puissant contre le XSS.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSP",
+                "OWASP",
+                "Headers"
+            ],
+            "answers": [
+                {
+                    "content": "Un algorithme de chiffrement",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un en-tête qui restreint les sources de contenu autorisées",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un type de token d'authentification",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une méthode de validation de formulaire",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle est la différence entre Stored XSS et Reflected XSS ?",
+            "explanation": "Stored XSS est stocké sur le serveur (ex: commentaire), Reflected XSS est reflété immédiatement via une URL ou un paramètre.",
+            "hint": "Un est persistant, l'autre non.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "XSS",
+                "OWASP"
+            ],
+            "answers": [
+                {
+                    "content": "Stored est temporaire, Reflected est permanent",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Stored est stocké sur le serveur, Reflected via requête",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Aucune différence significative",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Stored touche le backend, Reflected le frontend uniquement",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quel en-tête HTTP empêche le navigateur de deviner le type MIME d'un fichier ?",
+            "explanation": "X-Content-Type-Options: nosniff empêche le sniffing de type MIME, réduisant les risques d'exécution de scripts déguisés.",
+            "hint": "Il dit 'ne devine pas le type'.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "Headers",
+                "Sécurité"
+            ],
+            "answers": [
+                {
+                    "content": "X-Frame-Options",
+                    "isCorrect": false
+                },
+                {
+                    "content": "X-Content-Type-Options: nosniff",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Strict-Transport-Security",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Referrer-Policy",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que Clickjacking ?",
+            "explanation": "Clickjacking est une attaque où un attaquant superpose une page transparente (iframe) pour tromper l'utilisateur et le faire cliquer sur des actions malveillantes.",
+            "hint": "Utilise des iframes invisibles.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "Clickjacking",
+                "OWASP"
+            ],
+            "answers": [
+                {
+                    "content": "Une attaque par force brute",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une attaque par superposition d'iframe pour tromper les clics",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un type d'injection SQL",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une faille de chiffrement",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quel en-tête HTTP protège contre le Clickjacking ?",
+            "explanation": "X-Frame-Options (ou CSP frame-ancestors) empêche le site d'être chargé dans un iframe.",
+            "hint": "Il contrôle l'embarquement dans des frames.",
+            "difficulty": "EASY",
+            "tags": [
+                "Headers",
+                "Clickjacking"
+            ],
+            "answers": [
+                {
+                    "content": "Content-Security-Policy",
+                    "isCorrect": false
+                },
+                {
+                    "content": "X-Frame-Options",
+                    "isCorrect": true
+                },
+                {
+                    "content": "X-XSS-Protection",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Permissions-Policy",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Pourquoi ne faut-il jamais stocker de JWT dans localStorage ou sessionStorage ?",
+            "explanation": "Ces stockages sont accessibles via JavaScript → vulnérables au XSS. HttpOnly cookies sont plus sécurisés pour les tokens.",
+            "hint": "Risque XSS élevé.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "JWT",
+                "Stockage"
+            ],
+            "answers": [
+                {
+                    "content": "Ils sont trop lents",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Ils sont accessibles via JS et vulnérables au XSS",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Ils ne supportent pas les tokens",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Ils expirent trop vite",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que l'en-tête Strict-Transport-Security (HSTS) ?",
+            "explanation": "HSTS force le navigateur à n'utiliser que HTTPS pour un domaine, même si l'utilisateur tape HTTP.",
+            "hint": "Protège contre les downgrade attacks.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "HTTPS",
+                "Headers"
+            ],
+            "answers": [
+                {
+                    "content": "Un en-tête qui active le HTTP/2",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un en-tête qui force l'usage exclusif de HTTPS",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un en-tête anti-CSRF",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un en-tête pour les cookies",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle est la meilleure pratique pour sanitizer les entrées utilisateur en frontend React ?",
+            "explanation": "Utiliser des bibliothèques comme DOMPurify pour sanitizer le HTML, et éviter dangerouslySetInnerHTML sauf nécessité absolue.",
+            "hint": "Ne jamais faire confiance au contenu utilisateur.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "React",
+                "XSS"
+            ],
+            "answers": [
+                {
+                    "content": "Utiliser dangerouslySetInnerHTML directement",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Utiliser DOMPurify ou sanitizer avant affichage",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Ignorer car React échappe automatiquement tout",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Utiliser innerText uniquement",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que le SameSite cookie attribute et pourquoi est-il important ?",
+            "explanation": "SameSite=Lax ou Strict protège contre CSRF en limitant l'envoi de cookies dans les requêtes cross-site.",
+            "hint": "Valeurs : Strict, Lax, None.",
+            "difficulty": "HARD",
+            "tags": [
+                "Cookies",
+                "CSRF"
+            ],
+            "answers": [
+                {
+                    "content": "Il accélère le chargement des cookies",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Il limite l'envoi de cookies cross-site pour prévenir CSRF",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Il chiffre les cookies automatiquement",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Il expire les cookies plus vite",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quel est le rôle de l'en-tête Permissions-Policy (anciennement Feature-Policy) ?",
+            "explanation": "Il restreint l'utilisation de fonctionnalités du navigateur (géolocalisation, caméra, microphone, etc.) pour réduire la surface d'attaque.",
+            "hint": "Contrôle les APIs sensibles du navigateur.",
+            "difficulty": "HARD",
+            "tags": [
+                "Headers",
+                "Permissions"
+            ],
+            "answers": [
+                {
+                    "content": "Il gère les permissions des cookies",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Il restreint les fonctionnalités du navigateur (caméra, geo, etc.)",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Il active le dark mode",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Il bloque les popups",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce qu'une attaque DOM-based XSS ?",
+            "explanation": "DOM-based XSS modifie le DOM via JavaScript côté client, sans passer par le serveur (ex: via location.hash malveillant).",
+            "hint": "Tout se passe dans le navigateur.",
+            "difficulty": "HARD",
+            "tags": [
+                "XSS",
+                "DOM"
+            ],
+            "answers": [
+                {
+                    "content": "Une attaque qui cible uniquement le serveur",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une XSS exécutée via JavaScript dans le DOM client",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Une variante de CSRF",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une injection dans les bases de données",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Pourquoi utilise-t-on HttpOnly + Secure + SameSite sur les cookies de session ?",
+            "explanation": "HttpOnly empêche l'accès JS (anti-XSS), Secure force HTTPS, SameSite protège contre CSRF.",
+            "hint": "Combinaison des trois pour une sécurité maximale.",
+            "difficulty": "HARD",
+            "tags": [
+                "Cookies",
+                "Sécurité"
+            ],
+            "answers": [
+                {
+                    "content": "Pour accélérer les requêtes",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Pour protéger contre XSS, MITM et CSRF",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Pour stocker plus de données",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Pour rendre les cookies visibles",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Qu'est-ce que l'OWASP Top 10 en 2025 ?",
+            "explanation": "C'est la liste des 10 risques de sécurité web les plus critiques (ex: Broken Access Control, Cryptographic Failures, Injection, etc.).",
+            "hint": "Référence mondiale pour la sécurité applicative.",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "OWASP"
+            ],
+            "answers": [
+                {
+                    "content": "Un framework de développement",
+                    "isCorrect": false
+                },
+                {
+                    "content": "La liste des 10 risques web les plus critiques",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Un outil de scan automatique",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Un protocole de chiffrement",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle est une bonne pratique pour éviter les attaques par supply chain dans le frontend ?",
+            "explanation": "Utiliser des lockfiles (package-lock.json, yarn.lock), scanner les dépendances (npm audit, Snyk), et préférer des sources officielles.",
+            "hint": "Dépendances tierces = risque majeur en 2025.",
+            "difficulty": "HARD",
+            "tags": [
+                "Supply Chain",
+                "OWASP"
+            ],
+            "answers": [
+                {
+                    "content": "Télécharger les packages manuellement",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Utiliser lockfiles + scanner les vulnérabilités des dépendances",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Ignorer les mises à jour",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Utiliser uniquement du code inline",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

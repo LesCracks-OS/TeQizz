@@ -1,0 +1,169 @@
+─────────────────────────────────────────────────────────────────────────────
+  TEKIZZ — Script YouTube
+  Format : Présentation / Reveal
+  Durée cible : ~4 min
+─────────────────────────────────────────────────────────────────────────────
+
+
+══════════════════════════════════════════════════
+  HOOK  (0s – 20s)
+══════════════════════════════════════════════════
+
+Comment rentabiliser nos heure libres hors de nos seances de travail, plus precisement celle ou on se distrait. Pour une majorite il scrolle (Oui ne nie pas sur tiktok, insta ou autre), d'autre joue a des jeux video et d'autre fonc certaine une activite, mais moi la question que je me suis psoer c'est comment rentabiliser c'est momenent cet a dire se reposer ou jouer dans mes heure libre de facon a ce que ca contribue toujours a l'amelioration de mon niveau.   
+
+Et franchement, c'est un problème que j'ai du mal à accepter
+quand je bosse avec des étudiants et des autodidactes qui veulent vraiment
+progresser dans la tech.
+
+Alors j'ai construit quelque chose.
+
+
+══════════════════════════════════════════════════
+  CONTEXTE  (20s – 55s)
+══════════════════════════════════════════════════
+
+Je m'appelle Brandon Kamga AI & Fullsatck Developeur. Je dirige LesCracks — une agence EdTech où
+j'accompagne des juniors à monter en compétences et à décrocher de vraies
+opportunités dans la tech.
+
+En parallèle, j'ai lancé LesCracks OS — une structure open source où, avec
+mes étudiants, on développe des solutions concrètes à des problèmes réels.
+ et majoritairement ceux qui resout nos propres maux/
+
+ Elle s'appelle, Tekizz, c'est notre première solution et elle est en production.
+Le lien est en description.
+
+
+══════════════════════════════════════════════════
+  LE PRODUIT  (55s – 1m 45s)
+══════════════════════════════════════════════════
+
+Tekizz, c'est une arène d'apprentissage gamifiée.
+
+L'idée : transformer le temps "perdu" entre deux sessions en quelque chose
+d'utile et d'engageant. Pas des cours. Pas des vidéos. Des défis — rapides,
+intenses, classés.
+
+Pour l'instant il y a deux jeux dans l'arène :
+
+  — Le QCM. Pleinement fonctionnel. C'est là que ça se passe.
+  — Le Smatch. Speed matching, réflexes purs. En cours de déploiement.
+
+Concentrons-nous sur le QCM, parce que le concept est solide.
+
+Tu choisis ta catégorie — Frontend, Backend, DevOps, Sécurité, Data
+Science… Tu peux affiner par tags pour cibler exactement ce que tu
+travailles.
+
+Ensuite tu choisis ton mode :
+
+  • BLITZ — 2 minutes. Sprint maximal. +15 points par bonne réponse.
+    Pour ceux qui aiment avoir la pression.
+
+  • RUSH — 5 minutes. Rythme soutenu. +10 points par question.
+    L'équilibre vitesse / précision.
+
+  • CLASSIC — 10 minutes. Session longue. +8 points.
+    Pour atteindre les niveaux EXPERT.
+
+Et c'est là que ça devient intéressant : le jeu est adaptatif.
+
+Tu réponds bien → la difficulté monte. EASY, MEDIUM, HARD, EXPERT.
+Tu te plantes → tu perds une vie. Plus de vies → la partie s'arrête.
+
+Ce n'est pas juste du QCM. C'est de la pression contrôlée, calibrée
+pour que tu progresses à chaque session.
+
+À la fin, t'as un bilan complet : score, précision, efficacité, les
+questions que t'as ratées avec les explications. Et tout ça alimente
+ton profil et le leaderboard global.
+
+
+══════════════════════════════════════════════════
+  LEADERBOARD & PERFORMANCE  (1m 45s – 2m 20s)
+══════════════════════════════════════════════════
+
+Le leaderboard, c'est l'élément central de la motivation.
+
+Classement global, classement par mode — Blitz, Rush, Classic. Tu vois
+ta position, ton score moyen, ton taux de précision. Et tu vois les
+autres progresser. Ça crée une vraie dynamique.
+
+Côté Performance, t'as un tableau de bord complet : évolution de tes
+scores sur tes dernières parties, précision par catégorie, stats par
+mode de jeu, ta série actuelle, ton meilleur niveau atteint.
+
+C'est pas fait pour te noyer dans les chiffres. C'est fait pour que tu
+voies concrètement où t'en es — et ce que tu dois travailler.
+
+
+══════════════════════════════════════════════════
+  CONTRIBUTION  (2m 20s – 3m 00s)
+══════════════════════════════════════════════════
+
+Tekizz grandit avec ceux qui s'impliquent. Il y a trois façons de
+contribuer — et elles sont toutes importantes.
+
+La première : le contenu. Depuis la plateforme, tu peux soumettre des
+questions, proposer des jeux. Chaque soumission est relue par l'équipe
+avant d'être mise en ligne. C'est comme ça qu'on construit une banque
+de questions de qualité.
+
+La deuxième : le code. Le projet est open source sur GitHub, sous
+LesCracks-OS. Tu veux contribuer techniquement ? Fork le repo, crée
+une branche, ouvre une PR. Toutes les contributions sont les bienvenues.
+
+La troisième : le soutien financier. Je vais être direct — derrière il
+y a du vrai travail : du développement, des serveurs, du temps. Si
+Tekizz t'apporte de la valeur, un Ko-fi ou un GitHub Sponsor, ça
+compte vraiment. Ça permet de tenir et d'aller plus loin.
+
+
+══════════════════════════════════════════════════
+  REMERCIEMENT  (3m 00s – 3m 20s)
+══════════════════════════════════════════════════
+
+Je veux prendre un moment pour remercier Annou — la première dev à
+m'avoir contacté pour contribuer à la plateforme, spontanément. C'est
+exactement l'esprit qu'on veut construire ici. Merci à toi.
+
+Et à tous ceux qui suivent LesCracks depuis le début : vous êtes la
+raison pour laquelle ce projet existe.
+
+
+══════════════════════════════════════════════════
+  CALL TO ACTION  (3m 20s – 3m 45s)
+══════════════════════════════════════════════════
+
+Tekizz est en ligne. Maintenant.
+
+Va créer ton compte. Lance une partie en mode Blitz. Regarde où tu te
+retrouves dans le leaderboard.
+
+Et si tu veux faire partie de l'aventure — que ce soit pour contribuer
+du contenu, du code, ou juste pour jouer et donner ton avis — on
+t'attend.
+
+Le lien est en description. Retiens-toi pas.
+
+
+─────────────────────────────────────────────────────────────────────────────
+  NOTES DE RÉALISATION
+─────────────────────────────────────────────────────────────────────────────
+
+VISUELS SUGGÉRÉS (B-ROLL / SCREEN CAPTURE) :
+
+  0s–20s     → Écran de téléphone avec scroll infini, coupe vers l'arène
+  55s–1m45s  → Screen capture : sélection catégorie → mode Blitz → partie
+               en cours (timer, vies, difficulté qui monte, bonne réponse)
+  1m45s–2m20s→ Screen capture : leaderboard, profil, graphique performance
+  2m20s–3m00s→ Screen capture : page Contribuer, repo GitHub LesCracks-OS
+  3m20s–3m45s→ Landing page Tekizz plein écran + URL visible
+
+LIENS À METTRE EN DESCRIPTION :
+  • Tekizz (plateforme)      → https://tekizz.lescracks.com
+  • LesCracks OS (GitHub)    → https://github.com/LesCracks-OS
+  • Ko-fi / Sponsor          → [à compléter]
+
+DURÉE ESTIMÉE : 3m 40s – 4m 00s
+─────────────────────────────────────────────────────────────────────────────

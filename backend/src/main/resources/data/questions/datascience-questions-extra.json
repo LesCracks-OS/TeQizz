@@ -1,0 +1,2035 @@
+{
+  "categoryName": "Data Science",
+  "questions": [
+    {
+      "content": "Quelle bibliothèque Python est utilisée pour la manipulation de données tabulaires ?",
+      "explanation": "Pandas est la bibliothèque Python de référence pour manipuler des données tabulaires via des DataFrames et Series.",
+      "hint": "DataFrames et Series",
+      "difficulty": "EASY",
+      "tags": [
+        "Pandas",
+        "Python"
+      ],
+      "answers": [
+        {
+          "content": "NumPy",
+          "isCorrect": false
+        },
+        {
+          "content": "Pandas",
+          "isCorrect": true
+        },
+        {
+          "content": "Matplotlib",
+          "isCorrect": false
+        },
+        {
+          "content": "SciPy",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un DataFrame Pandas ?",
+      "explanation": "Un DataFrame est une structure de données 2D de Pandas avec des lignes et des colonnes étiquetées, similaire à une table SQL ou une feuille Excel.",
+      "hint": "Table 2D avec lignes et colonnes étiquetées",
+      "difficulty": "EASY",
+      "tags": [
+        "Pandas"
+      ],
+      "answers": [
+        {
+          "content": "Un tableau NumPy à 2 dimensions",
+          "isCorrect": false
+        },
+        {
+          "content": "Une structure 2D tabulaire avec lignes et colonnes étiquetées",
+          "isCorrect": true
+        },
+        {
+          "content": "Un fichier CSV chargé en mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Une liste de listes Python",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle méthode Pandas affiche les premières lignes d'un DataFrame ?",
+      "explanation": "df.head(n) affiche les n premières lignes (5 par défaut). df.tail(n) affiche les n dernières.",
+      "hint": "head()",
+      "difficulty": "EASY",
+      "tags": [
+        "Pandas"
+      ],
+      "answers": [
+        {
+          "content": "df.first()",
+          "isCorrect": false
+        },
+        {
+          "content": "df.head()",
+          "isCorrect": true
+        },
+        {
+          "content": "df.show()",
+          "isCorrect": false
+        },
+        {
+          "content": "df.top()",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait df.describe() dans Pandas ?",
+      "explanation": "df.describe() retourne les statistiques descriptives des colonnes numériques: count, mean, std, min, quartiles, max.",
+      "hint": "Statistiques descriptives: count, mean, std...",
+      "difficulty": "EASY",
+      "tags": [
+        "Pandas",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Affiche la description des colonnes",
+          "isCorrect": false
+        },
+        {
+          "content": "Retourne les statistiques descriptives des colonnes numériques",
+          "isCorrect": true
+        },
+        {
+          "content": "Décrit le type de chaque colonne",
+          "isCorrect": false
+        },
+        {
+          "content": "Affiche la documentation du DataFrame",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment lire un fichier CSV avec Pandas ?",
+      "explanation": "pd.read_csv('fichier.csv') charge un fichier CSV en DataFrame. Paramètres optionnels: sep, encoding, header, names, etc.",
+      "hint": "pd.read_csv()",
+      "difficulty": "EASY",
+      "tags": [
+        "Pandas"
+      ],
+      "answers": [
+        {
+          "content": "pd.load_csv()",
+          "isCorrect": false
+        },
+        {
+          "content": "pd.read_csv()",
+          "isCorrect": true
+        },
+        {
+          "content": "pd.import_csv()",
+          "isCorrect": false
+        },
+        {
+          "content": "pd.open_csv()",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait df.dropna() dans Pandas ?",
+      "explanation": "dropna() supprime les lignes (ou colonnes) contenant des valeurs manquantes (NaN/None). axis=0 pour lignes, axis=1 pour colonnes.",
+      "hint": "Supprime les valeurs manquantes",
+      "difficulty": "EASY",
+      "tags": [
+        "Pandas"
+      ],
+      "answers": [
+        {
+          "content": "Supprime les doublons",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprime les lignes ou colonnes avec valeurs manquantes",
+          "isCorrect": true
+        },
+        {
+          "content": "Remplace les NaN par zéro",
+          "isCorrect": false
+        },
+        {
+          "content": "Affiche les valeurs manquantes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment filtrer un DataFrame selon une condition dans Pandas ?",
+      "explanation": "df[df['colonne'] > 10] filtre les lignes où la colonne est > 10. On peut utiliser &, | pour combiner les conditions.",
+      "hint": "df[condition_booléenne]",
+      "difficulty": "EASY",
+      "tags": [
+        "Pandas"
+      ],
+      "answers": [
+        {
+          "content": "df.filter(colonne > 10)",
+          "isCorrect": false
+        },
+        {
+          "content": "df[df['colonne'] > 10]",
+          "isCorrect": true
+        },
+        {
+          "content": "df.where(colonne > 10)",
+          "isCorrect": false
+        },
+        {
+          "content": "df.select(colonne > 10)",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que NumPy ?",
+      "explanation": "NumPy est la bibliothèque Python de calcul numérique: tableaux multidimensionnels (ndarray), opérations vectorisées, algèbre linéaire, fonctions mathématiques.",
+      "hint": "Calcul numérique avec tableaux N-dimensionnels",
+      "difficulty": "EASY",
+      "tags": [
+        "NumPy"
+      ],
+      "answers": [
+        {
+          "content": "Un framework de machine learning",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de calcul numérique avec tableaux N-D et opérations vectorisées",
+          "isCorrect": true
+        },
+        {
+          "content": "Une bibliothèque de visualisation",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de traitement de données textuelles",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre une liste Python et un ndarray NumPy ?",
+      "explanation": "Les arrays NumPy sont typés (un seul type), stockés en mémoire contiguë et supportent les opérations vectorisées (sans boucle Python). Beaucoup plus rapides pour le calcul numérique.",
+      "hint": "Typés, mémoire contiguë, opérations vectorisées",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "NumPy",
+        "Python"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "Arrays NumPy = types homogènes, mémoire contiguë, opérations vectorisées sans boucle",
+          "isCorrect": true
+        },
+        {
+          "content": "Les listes Python sont plus rapides",
+          "isCorrect": false
+        },
+        {
+          "content": "NumPy ne supporte que les nombres entiers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le broadcasting en NumPy ?",
+      "explanation": "Le broadcasting permet des opérations entre arrays de formes différentes en étendant automatiquement les dimensions selon des règles précises.",
+      "hint": "Opérations entre arrays de formes différentes",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "NumPy"
+      ],
+      "answers": [
+        {
+          "content": "La transmission de données entre processus",
+          "isCorrect": false
+        },
+        {
+          "content": "Des opérations entre arrays de formes différentes via extension automatique",
+          "isCorrect": true
+        },
+        {
+          "content": "La diffusion d'un modèle sur plusieurs GPUs",
+          "isCorrect": false
+        },
+        {
+          "content": "Le broadcast de messages dans un réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment créer un array NumPy de zéros ?",
+      "explanation": "np.zeros(shape) crée un array rempli de zéros. np.ones(shape) pour des uns. np.full(shape, value) pour une valeur spécifique.",
+      "hint": "np.zeros()",
+      "difficulty": "EASY",
+      "tags": [
+        "NumPy"
+      ],
+      "answers": [
+        {
+          "content": "np.empty((3,3))",
+          "isCorrect": false
+        },
+        {
+          "content": "np.zeros((3,3))",
+          "isCorrect": true
+        },
+        {
+          "content": "np.null((3,3))",
+          "isCorrect": false
+        },
+        {
+          "content": "np.create_zeros((3,3))",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait np.reshape() ?",
+      "explanation": "np.reshape(array, nouvelle_forme) réorganise les données d'un array selon une nouvelle forme sans copier les données (si possible). Le nombre total d'éléments doit rester le même.",
+      "hint": "Réorganise la forme d'un array",
+      "difficulty": "EASY",
+      "tags": [
+        "NumPy"
+      ],
+      "answers": [
+        {
+          "content": "Redimensionne l'image dans un array",
+          "isCorrect": false
+        },
+        {
+          "content": "Réorganise les données d'un array selon une nouvelle forme",
+          "isCorrect": true
+        },
+        {
+          "content": "Remplace les valeurs d'un array",
+          "isCorrect": false
+        },
+        {
+          "content": "Copie un array dans une nouvelle variable",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle bibliothèque Python est couramment utilisée pour la visualisation de données ?",
+      "explanation": "Matplotlib est la bibliothèque de visualisation de base en Python. Seaborn est construite sur Matplotlib pour des graphiques statistiques plus élaborés.",
+      "hint": "Matplotlib et Seaborn",
+      "difficulty": "EASY",
+      "tags": [
+        "Data Visualization",
+        "Python"
+      ],
+      "answers": [
+        {
+          "content": "Plotify",
+          "isCorrect": false
+        },
+        {
+          "content": "Matplotlib / Seaborn",
+          "isCorrect": true
+        },
+        {
+          "content": "ChartJS",
+          "isCorrect": false
+        },
+        {
+          "content": "D3.py",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle commande Matplotlib crée un graphique de dispersion (scatter plot) ?",
+      "explanation": "plt.scatter(x, y) crée un scatter plot. Utilisé pour visualiser la relation entre deux variables continues.",
+      "hint": "plt.scatter()",
+      "difficulty": "EASY",
+      "tags": [
+        "Data Visualization"
+      ],
+      "answers": [
+        {
+          "content": "plt.plot()",
+          "isCorrect": false
+        },
+        {
+          "content": "plt.scatter()",
+          "isCorrect": true
+        },
+        {
+          "content": "plt.points()",
+          "isCorrect": false
+        },
+        {
+          "content": "plt.dots()",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre l'apprentissage supervisé et non supervisé ?",
+      "explanation": "Supervisé: on entraîne sur des données étiquetées (features + label). Non supervisé: on entraîne sur des données non étiquetées, cherchant des structures cachées (clustering).",
+      "hint": "Avec ou sans labels",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Supervisé est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Supervisé utilise des données étiquetées, non supervisé cherche des structures sans labels",
+          "isCorrect": true
+        },
+        {
+          "content": "Non supervisé est plus précis",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils utilisent les mêmes algorithmes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la régression dans le machine learning ?",
+      "explanation": "La régression prédit une valeur numérique continue en fonction des features. Ex: prédire le prix d'une maison selon sa superficie.",
+      "hint": "Prédire une valeur numérique continue",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Classifier des données en catégories",
+          "isCorrect": false
+        },
+        {
+          "content": "Prédire une valeur numérique continue à partir des features",
+          "isCorrect": true
+        },
+        {
+          "content": "Grouper des données similaires",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire le nombre de features",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la classification dans le machine learning ?",
+      "explanation": "La classification prédit une catégorie (classe) discrète. Ex: spam/non-spam, chiffre 0-9, espèce d'une fleur.",
+      "hint": "Prédire une catégorie discrète",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Prédire une valeur continue",
+          "isCorrect": false
+        },
+        {
+          "content": "Prédire une catégorie ou classe discrète",
+          "isCorrect": true
+        },
+        {
+          "content": "Trouver des groupes similaires",
+          "isCorrect": false
+        },
+        {
+          "content": "Sélectionner les meilleures features",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le clustering ?",
+      "explanation": "Le clustering est une méthode d'apprentissage non supervisé qui groupe des données similaires sans labels. Algorithmes: K-Means, DBSCAN, agglomératif.",
+      "hint": "Grouper des données similaires sans labels",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Classer des données étiquetées",
+          "isCorrect": false
+        },
+        {
+          "content": "Grouper des données similaires sans labels (non supervisé)",
+          "isCorrect": true
+        },
+        {
+          "content": "Prédire des séries temporelles",
+          "isCorrect": false
+        },
+        {
+          "content": "Détecter des anomalies",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment diviser un dataset en train/test avec Scikit-learn ?",
+      "explanation": "train_test_split(X, y, test_size=0.2, random_state=42) divise les données en 80% train et 20% test de façon reproductible.",
+      "hint": "train_test_split()",
+      "difficulty": "EASY",
+      "tags": [
+        "Scikit-learn",
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "sklearn.split(X, y)",
+          "isCorrect": false
+        },
+        {
+          "content": "train_test_split(X, y, test_size=0.2)",
+          "isCorrect": true
+        },
+        {
+          "content": "X.split(0.8, 0.2)",
+          "isCorrect": false
+        },
+        {
+          "content": "dataset.divide(train=0.8)",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est le but du paramètre random_state dans Scikit-learn ?",
+      "explanation": "random_state fixe le générateur de nombres aléatoires pour la reproductibilité des résultats. Avec le même random_state, on obtient toujours la même division train/test.",
+      "hint": "Reproductibilité des résultats",
+      "difficulty": "EASY",
+      "tags": [
+        "Scikit-learn"
+      ],
+      "answers": [
+        {
+          "content": "Ajouter de l'aléatoire aux données",
+          "isCorrect": false
+        },
+        {
+          "content": "Fixer le générateur aléatoire pour la reproductibilité des résultats",
+          "isCorrect": true
+        },
+        {
+          "content": "Définir l'état initial du modèle",
+          "isCorrect": false
+        },
+        {
+          "content": "Limiter la randomisation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la normalisation (MinMaxScaler) ?",
+      "explanation": "MinMaxScaler normalise les features entre 0 et 1: x_scaled = (x - x_min) / (x_max - x_min). Permet aux features à différentes échelles d'avoir une importance équivalente.",
+      "hint": "Transformer les features entre 0 et 1",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Scikit-learn",
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Mettre toutes les valeurs à la même valeur",
+          "isCorrect": false
+        },
+        {
+          "content": "Transformer les features entre 0 et 1 selon min et max",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer les valeurs aberrantes",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer des features supplémentaires",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la standardisation (StandardScaler) ?",
+      "explanation": "StandardScaler centre les données (moyenne=0) et les met à l'échelle (écart-type=1): z = (x - μ) / σ. Utile pour les algorithmes sensibles à l'échelle (SVM, régression).",
+      "hint": "Moyenne=0, écart-type=1",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Scikit-learn",
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Normaliser entre 0 et 1",
+          "isCorrect": false
+        },
+        {
+          "content": "Centrer-réduire: moyenne=0, écart-type=1",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer les colonnes non utiles",
+          "isCorrect": false
+        },
+        {
+          "content": "Convertir en format standard",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la validation croisée (cross-validation) ?",
+      "explanation": "La cross-validation évalue les performances d'un modèle en divisant les données en k plis, entraînant k fois sur k-1 plis et testant sur le pli restant.",
+      "hint": "k-fold: entraîner et tester k fois sur des sous-ensembles différents",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Scikit-learn",
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Valider les données avant l'entraînement",
+          "isCorrect": false
+        },
+        {
+          "content": "Évaluer un modèle sur k sous-ensembles pour une estimation robuste des performances",
+          "isCorrect": true
+        },
+        {
+          "content": "Croiser deux modèles différents",
+          "isCorrect": false
+        },
+        {
+          "content": "Valider les prédictions croisées",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le surapprentissage (overfitting) ?",
+      "explanation": "L'overfitting se produit quand un modèle apprend trop spécifiquement les données d'entraînement (y compris le bruit), performant bien en train mais mal sur de nouvelles données.",
+      "hint": "Trop adapté aux données d'entraînement",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un modèle trop simple",
+          "isCorrect": false
+        },
+        {
+          "content": "Le modèle apprend trop les données d'entraînement et généralise mal",
+          "isCorrect": true
+        },
+        {
+          "content": "Un modèle trop rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Un problème de données insuffisantes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le sous-apprentissage (underfitting) ?",
+      "explanation": "L'underfitting se produit quand un modèle est trop simple pour capturer les patterns dans les données: il performe mal sur le train ET sur le test.",
+      "hint": "Modèle trop simple, mal en train et en test",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Le modèle apprend trop vite",
+          "isCorrect": false
+        },
+        {
+          "content": "Le modèle est trop simple pour capturer les patterns, mal en train et test",
+          "isCorrect": true
+        },
+        {
+          "content": "Le modèle n'a pas assez de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Le modèle surcharge la mémoire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre biais et variance dans ML ?",
+      "explanation": "Biais: erreur due aux hypothèses simplificatrices du modèle (underfitting). Variance: sensibilité aux fluctuations des données d'entraînement (overfitting). Trade-off biais-variance.",
+      "hint": "Biais = underfitting, Variance = overfitting",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Ils mesurent la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "Biais = erreur due à la simplification (underfitting), Variance = sensibilité aux données (overfitting)",
+          "isCorrect": true
+        },
+        {
+          "content": "Biais est pour la classification, Variance pour la régression",
+          "isCorrect": false
+        },
+        {
+          "content": "La variance est toujours meilleure",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment fonctionne l'algorithme K-Nearest Neighbors (KNN) ?",
+      "explanation": "KNN classe un point en regardant ses k voisins les plus proches et assigne la classe majoritaire. Simple, pas d'entraînement, mais lent en prédiction sur grands datasets.",
+      "hint": "k voisins les plus proches, vote majoritaire",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Scikit-learn"
+      ],
+      "answers": [
+        {
+          "content": "Il crée k clusters de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Il assigne la classe majoritaire parmi les k voisins les plus proches",
+          "isCorrect": true
+        },
+        {
+          "content": "Il utilise k décisions d'arbres",
+          "isCorrect": false
+        },
+        {
+          "content": "Il calcule k fonctions noyau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un arbre de décision ?",
+      "explanation": "Un arbre de décision divise les données récursivement selon le feature le plus discriminant (entropie/Gini), formant une structure arborescente de règles de décision.",
+      "hint": "Division récursive selon le feature le plus discriminant",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Scikit-learn"
+      ],
+      "answers": [
+        {
+          "content": "Un arbre binaire de recherche adapté au ML",
+          "isCorrect": false
+        },
+        {
+          "content": "Un modèle divisant récursivement les données selon les features les plus discriminants",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme de clustering hiérarchique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau neuronal arborescent",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Random Forest ?",
+      "explanation": "Random Forest est un ensemble d'arbres de décision entraînés sur des sous-ensembles aléatoires des données et features (bagging). Les prédictions sont agrégées par vote ou moyenne.",
+      "hint": "Ensemble d'arbres de décision avec bagging",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Scikit-learn"
+      ],
+      "answers": [
+        {
+          "content": "Un seul arbre de décision optimisé",
+          "isCorrect": false
+        },
+        {
+          "content": "Un ensemble d'arbres de décision avec bagging, agrégeant les prédictions",
+          "isCorrect": true
+        },
+        {
+          "content": "Un réseau de neurones forestiers",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme de clustering",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le gradient boosting ?",
+      "explanation": "Le gradient boosting entraîne des modèles faibles séquentiellement, chaque modèle corrigeant les erreurs du précédent. XGBoost, LightGBM, CatBoost en sont des implémentations.",
+      "hint": "Modèles faibles séquentiels corrigeant les erreurs",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un optimiseur de descente de gradient",
+          "isCorrect": false
+        },
+        {
+          "content": "Des modèles faibles séquentiels, chacun corrigeant les erreurs du précédent",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type de réseau neuronal",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme de clustering boosted",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que SVM (Support Vector Machine) ?",
+      "explanation": "SVM cherche l'hyperplan qui maximise la marge entre les classes. Les 'vecteurs de support' sont les points les plus proches de l'hyperplan.",
+      "hint": "Hyperplan maximisant la marge entre classes",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Scikit-learn"
+      ],
+      "answers": [
+        {
+          "content": "Un réseau neuronal à une couche",
+          "isCorrect": false
+        },
+        {
+          "content": "Un classificateur cherchant l'hyperplan de marge maximale entre classes",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme de clustering",
+          "isCorrect": false
+        },
+        {
+          "content": "Une méthode d'ensemble",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la régression linéaire ?",
+      "explanation": "La régression linéaire modélise la relation entre les features et la cible par une fonction linéaire y = Xβ + ε. Elle minimise la somme des carrés des résidus (MSE).",
+      "hint": "y = Xβ + ε, minimise les résidus",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de classification",
+          "isCorrect": false
+        },
+        {
+          "content": "Un modèle linéaire y = Xβ + ε minimisant les résidus au carré",
+          "isCorrect": true
+        },
+        {
+          "content": "Un réseau neuronal linéaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Une normalisation des données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la régression logistique ?",
+      "explanation": "La régression logistique est un classificateur linéaire utilisant la fonction sigmoïde pour prédire des probabilités de classe (0 ou 1). Malgré son nom, c'est de la classification.",
+      "hint": "Classificateur utilisant la sigmoïde",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Scikit-learn"
+      ],
+      "answers": [
+        {
+          "content": "Une régression pour prédire des valeurs continues",
+          "isCorrect": false
+        },
+        {
+          "content": "Un classificateur linéaire utilisant la sigmoïde pour prédire des probabilités",
+          "isCorrect": true
+        },
+        {
+          "content": "Une régression non-linéaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de réseau neuronal",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'accuracy dans la classification ?",
+      "explanation": "L'accuracy = (prédictions correctes) / (total prédictions). Simple mais trompeuse sur des datasets déséquilibrés (ex: 95% accuracy si 95% d'une classe).",
+      "hint": "Taux de bonnes prédictions",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "La précision d'un modèle de régression",
+          "isCorrect": false
+        },
+        {
+          "content": "Le taux de prédictions correctes sur le total",
+          "isCorrect": true
+        },
+        {
+          "content": "La précision sur les vrais positifs",
+          "isCorrect": false
+        },
+        {
+          "content": "La perte du modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre précision et rappel (precision/recall) ?",
+      "explanation": "Précision = VP / (VP + FP): parmi les prédictions positives, combien sont vrais. Rappel = VP / (VP + FN): parmi les vrais positifs, combien ont été détectés.",
+      "hint": "Précision = VP/(VP+FP), Rappel = VP/(VP+FN)",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Ils mesurent la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "Précision = VP/(VP+FP), Rappel = VP/(VP+FN)",
+          "isCorrect": true
+        },
+        {
+          "content": "Précision est pour le train, Rappel pour le test",
+          "isCorrect": false
+        },
+        {
+          "content": "Rappel est toujours supérieur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le F1-score ?",
+      "explanation": "Le F1-score est la moyenne harmonique de la précision et du rappel: F1 = 2 * (P * R) / (P + R). Utile pour les classes déséquilibrées.",
+      "hint": "Moyenne harmonique de précision et rappel",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "La moyenne de l'accuracy et du rappel",
+          "isCorrect": false
+        },
+        {
+          "content": "La moyenne harmonique de la précision et du rappel",
+          "isCorrect": true
+        },
+        {
+          "content": "Le score de F pour les tests statistiques",
+          "isCorrect": false
+        },
+        {
+          "content": "La F1 est utilisée uniquement pour la régression",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le RMSE ?",
+      "explanation": "RMSE (Root Mean Square Error) = sqrt(MSE) est une métrique d'évaluation pour la régression. Elle est dans les mêmes unités que la variable cible et pénalise les grosses erreurs.",
+      "hint": "Racine carrée de la moyenne des erreurs au carré",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Root Mean Standard Error",
+          "isCorrect": false
+        },
+        {
+          "content": "Racine carrée de la moyenne des erreurs au carré, métrique de régression",
+          "isCorrect": true
+        },
+        {
+          "content": "La somme des erreurs absolues",
+          "isCorrect": false
+        },
+        {
+          "content": "La régularisation L2",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une matrice de confusion ?",
+      "explanation": "Une matrice de confusion présente les VP, VN, FP, FN pour visualiser les performances d'un classificateur. Permet de calculer precision, recall, F1.",
+      "hint": "Tableau VP, VN, FP, FN",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Une matrice de corrélation des features",
+          "isCorrect": false
+        },
+        {
+          "content": "Un tableau montrant VP, VN, FP, FN des prédictions d'un classificateur",
+          "isCorrect": true
+        },
+        {
+          "content": "Une matrice de confusion entre datasets",
+          "isCorrect": false
+        },
+        {
+          "content": "Une matrice de covariance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la courbe ROC et l'AUC ?",
+      "explanation": "La courbe ROC plot le TPR vs FPR à différents seuils. L'AUC (Area Under Curve) mesure la qualité globale du classificateur. AUC=1 = parfait, AUC=0.5 = aléatoire.",
+      "hint": "TPR vs FPR, AUC mesure la qualité globale",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Une courbe d'erreur de régression",
+          "isCorrect": false
+        },
+        {
+          "content": "Courbe TPR vs FPR à différents seuils, AUC = qualité globale du classificateur",
+          "isCorrect": true
+        },
+        {
+          "content": "Un graphique de convergence d'entraînement",
+          "isCorrect": false
+        },
+        {
+          "content": "La courbe d'apprentissage du modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un réseau neuronal artificiel ?",
+      "explanation": "Un réseau neuronal artificiel est composé de couches de neurones connectés (entrée, cachées, sortie). Chaque connexion a un poids. L'apprentissage ajuste les poids via backpropagation.",
+      "hint": "Couches de neurones avec poids ajustés par backpropagation",
+      "difficulty": "EASY",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un programme imitant le cerveau exactement",
+          "isCorrect": false
+        },
+        {
+          "content": "Des couches de neurones connectés dont les poids sont ajustés par backpropagation",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme génétique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de clustering",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la backpropagation ?",
+      "explanation": "La backpropagation calcule le gradient de la fonction de perte par rapport aux poids via la règle de dérivation en chaîne, permettant la mise à jour des poids par descente de gradient.",
+      "hint": "Calcul du gradient par dérivation en chaîne",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "La propagation des données en avant dans le réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Le calcul des gradients par dérivation en chaîne pour mettre à jour les poids",
+          "isCorrect": true
+        },
+        {
+          "content": "La rétropropagation des erreurs de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Une technique de régularisation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la descente de gradient (gradient descent) ?",
+      "explanation": "La descente de gradient est un algorithme d'optimisation qui minimise la fonction de perte en mettant à jour les poids dans la direction opposée au gradient.",
+      "hint": "Minimiser la perte en suivant le gradient opposé",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning",
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de classification",
+          "isCorrect": false
+        },
+        {
+          "content": "Un optimiseur qui ajuste les poids dans la direction opposée au gradient de la perte",
+          "isCorrect": true
+        },
+        {
+          "content": "Une technique de descente dans un réseau hiérarchique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme de tri",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une fonction d'activation ?",
+      "explanation": "La fonction d'activation introduit la non-linéarité dans le réseau: ReLU (max(0,x)), Sigmoid (0 à 1), Tanh (-1 à 1), Softmax (probabilités). Sans activation, le réseau serait linéaire.",
+      "hint": "Introduit la non-linéarité: ReLU, Sigmoid, Tanh",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "La fonction qui initialise les poids",
+          "isCorrect": false
+        },
+        {
+          "content": "Une fonction introduisant la non-linéarité dans chaque neurone (ReLU, Sigmoid, etc.)",
+          "isCorrect": true
+        },
+        {
+          "content": "La fonction qui calcule l'accuracy",
+          "isCorrect": false
+        },
+        {
+          "content": "La fonction de perte du réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que ReLU ?",
+      "explanation": "ReLU (Rectified Linear Unit) = max(0, x). C'est la fonction d'activation la plus utilisée dans les réseaux profonds car elle évite le vanishing gradient problem et est rapide à calculer.",
+      "hint": "max(0, x) - activation très utilisée",
+      "difficulty": "EASY",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Random Error Learning Unit",
+          "isCorrect": false
+        },
+        {
+          "content": "Rectified Linear Unit: max(0, x), activation évitant le vanishing gradient",
+          "isCorrect": true
+        },
+        {
+          "content": "Reinforcement Learning Unit",
+          "isCorrect": false
+        },
+        {
+          "content": "Regularized Linear Utility",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que TensorFlow ?",
+      "explanation": "TensorFlow est le framework open-source de Google pour le deep learning, supportant le calcul sur CPU/GPU/TPU avec un graphe de calcul. Keras est son API haut niveau.",
+      "hint": "Framework Google pour le deep learning",
+      "difficulty": "EASY",
+      "tags": [
+        "TensorFlow",
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de traitement de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Le framework Google pour le deep learning avec calcul sur CPU/GPU/TPU",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de visualisation",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de statistiques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que PyTorch ?",
+      "explanation": "PyTorch est le framework deep learning de Facebook (Meta), populaire en recherche pour son approche dynamic computation graph (eager execution), plus intuitive à déboguer.",
+      "hint": "Framework Meta pour le deep learning, eager execution",
+      "difficulty": "EASY",
+      "tags": [
+        "PyTorch",
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de déploiement de modèles",
+          "isCorrect": false
+        },
+        {
+          "content": "Le framework Meta pour le deep learning avec dynamic computation graph",
+          "isCorrect": true
+        },
+        {
+          "content": "Un framework de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de preprocessing",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un réseau de neurones convolutif (CNN) ?",
+      "explanation": "Un CNN utilise des couches de convolution pour extraire automatiquement des features spatiales des images. Composé de: Conv, Pooling, Activation, Fully Connected layers.",
+      "hint": "Convolutions pour les features spatiales des images",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un réseau pour le texte",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau utilisant des convolutions pour extraire des features spatiales (images)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un réseau récurrent",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau de classification générique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un réseau de neurones récurrent (RNN) ?",
+      "explanation": "Un RNN traite des séquences en maintenant un état caché (mémoire) qui dépend des entrées précédentes. Utilisé pour les séries temporelles, le texte.",
+      "hint": "Mémoire d'état pour les séquences",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un réseau qui se répète lors de l'entraînement",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau avec état caché pour traiter les séquences (texte, séries temporelles)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un réseau pour les images récurrentes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau avec couches récursives",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que LSTM ?",
+      "explanation": "LSTM (Long Short-Term Memory) est un type de RNN avec des portes (input, forget, output) pour gérer les dépendances à long terme, résolvant le vanishing gradient des RNNs simples.",
+      "hint": "RNN avec portes pour les dépendances longues",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un type de layer de pooling",
+          "isCorrect": false
+        },
+        {
+          "content": "Un RNN avec portes pour gérer les dépendances à long terme",
+          "isCorrect": true
+        },
+        {
+          "content": "Un réseau très profond",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme d'optimisation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le NLP (Natural Language Processing) ?",
+      "explanation": "Le NLP est un domaine de l'IA traitant du langage naturel: classification de texte, sentiment analysis, traduction automatique, question answering, génération de texte.",
+      "hint": "Traitement automatique du langage naturel",
+      "difficulty": "EASY",
+      "tags": [
+        "NLP"
+      ],
+      "answers": [
+        {
+          "content": "Un protocole réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Traitement automatique du langage naturel (classification, traduction, génération)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de parsing",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de logging",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la tokenisation en NLP ?",
+      "explanation": "La tokenisation divise le texte en unités (tokens): mots, sous-mots ou caractères. C'est la première étape du traitement du texte.",
+      "hint": "Découper le texte en unités",
+      "difficulty": "EASY",
+      "tags": [
+        "NLP"
+      ],
+      "answers": [
+        {
+          "content": "La connexion à un service externe",
+          "isCorrect": false
+        },
+        {
+          "content": "Diviser le texte en unités (tokens): mots, sous-mots ou caractères",
+          "isCorrect": true
+        },
+        {
+          "content": "La génération de clés cryptographiques",
+          "isCorrect": false
+        },
+        {
+          "content": "L'authentification dans les modèles NLP",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le word embedding (Word2Vec, GloVe) ?",
+      "explanation": "Les word embeddings représentent les mots comme des vecteurs denses dans un espace vectoriel, où les mots sémantiquement proches ont des vecteurs proches.",
+      "hint": "Représentation vectorielle des mots",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "NLP",
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "L'intégration de mots dans un algorithme",
+          "isCorrect": false
+        },
+        {
+          "content": "Une représentation vectorielle dense des mots capturant la sémantique",
+          "isCorrect": true
+        },
+        {
+          "content": "La mise en cache des mots fréquents",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de tokenisation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'architecture Transformer ?",
+      "explanation": "Le Transformer utilise le mécanisme d'attention (self-attention) pour capturer les relations entre tous les tokens simultanément, sans récurrence. Base de BERT, GPT et des LLMs modernes.",
+      "hint": "Self-attention, base de BERT et GPT",
+      "difficulty": "HARD",
+      "tags": [
+        "NLP",
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un type de CNN pour le texte",
+          "isCorrect": false
+        },
+        {
+          "content": "Une architecture utilisant l'attention pour capturer les relations entre tokens (base des LLMs)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un réseau récurrent amélioré",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework de transformation de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que BERT ?",
+      "explanation": "BERT (Bidirectional Encoder Representations from Transformers) est un modèle de langage pré-entraîné bidirectionnel de Google. Il capture le contexte des deux côtés d'un token.",
+      "hint": "Transformeur bidirectionnel pré-entraîné de Google",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "NLP",
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de clustering",
+          "isCorrect": false
+        },
+        {
+          "content": "Un modèle Transformer bidirectionnel pré-entraîné pour le NLP",
+          "isCorrect": true
+        },
+        {
+          "content": "Une base de données de texte",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de tokenisation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la moyenne (mean) vs médiane ?",
+      "explanation": "La moyenne est la somme divisée par le nombre d'éléments (sensible aux outliers). La médiane est la valeur centrale (robuste aux outliers).",
+      "hint": "Moyenne sensible aux outliers, médiane robuste",
+      "difficulty": "EASY",
+      "tags": [
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Elles sont toujours identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Moyenne = somme/n (sensible aux outliers), médiane = valeur centrale (robuste)",
+          "isCorrect": true
+        },
+        {
+          "content": "La médiane est toujours plus grande",
+          "isCorrect": false
+        },
+        {
+          "content": "La moyenne est pour les catégories",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'écart-type (standard deviation) ?",
+      "explanation": "L'écart-type mesure la dispersion des données autour de la moyenne. Un grand écart-type indique des données très dispersées, un petit écart-type des données concentrées.",
+      "hint": "Mesure la dispersion autour de la moyenne",
+      "difficulty": "EASY",
+      "tags": [
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "La valeur centrale des données",
+          "isCorrect": false
+        },
+        {
+          "content": "La mesure de la dispersion des données autour de la moyenne",
+          "isCorrect": true
+        },
+        {
+          "content": "L'étendue entre min et max",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de valeurs standard",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un test statistique (p-value) ?",
+      "explanation": "La p-value est la probabilité d'observer des résultats aussi extrêmes si l'hypothèse nulle est vraie. Si p < 0.05 (conventionnel), on rejette H0.",
+      "hint": "P(résultat aussi extrême | H0 vraie)",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "La probabilité que le modèle soit correct",
+          "isCorrect": false
+        },
+        {
+          "content": "La probabilité d'observer les résultats si l'hypothèse nulle est vraie",
+          "isCorrect": true
+        },
+        {
+          "content": "La p-value est le score du modèle",
+          "isCorrect": false
+        },
+        {
+          "content": "La performance du modèle en pourcentage",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la corrélation de Pearson ?",
+      "explanation": "La corrélation de Pearson mesure la relation linéaire entre deux variables (-1 à 1). 1 = parfaitement corrélées positivement, -1 = négativement, 0 = pas de relation linéaire.",
+      "hint": "Mesure la relation linéaire entre -1 et 1",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Un test de signification statistique",
+          "isCorrect": false
+        },
+        {
+          "content": "La mesure de la relation linéaire entre deux variables (entre -1 et 1)",
+          "isCorrect": true
+        },
+        {
+          "content": "La corrélation en rang",
+          "isCorrect": false
+        },
+        {
+          "content": "La covariance normalisée des données temporelles",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une distribution normale ?",
+      "explanation": "La distribution normale (gaussienne) est en forme de cloche, symétrique autour de la moyenne. Caractérisée par μ (moyenne) et σ (écart-type). La règle 68-95-99.7 donne les proportions par σ.",
+      "hint": "Courbe en cloche, μ et σ",
+      "difficulty": "EASY",
+      "tags": [
+        "Statistics"
+      ],
+      "answers": [
+        {
+          "content": "Une distribution équitable",
+          "isCorrect": false
+        },
+        {
+          "content": "Une distribution en forme de cloche symétrique caractérisée par μ et σ",
+          "isCorrect": true
+        },
+        {
+          "content": "Une distribution de données normalisées",
+          "isCorrect": false
+        },
+        {
+          "content": "La distribution des erreurs aléatoires",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le feature engineering ?",
+      "explanation": "Le feature engineering est le processus de transformer et créer des features à partir des données brutes pour améliorer les performances du modèle.",
+      "hint": "Transformation et création de features",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Le choix de l'architecture du modèle",
+          "isCorrect": false
+        },
+        {
+          "content": "Transformer et créer des features à partir des données brutes pour améliorer le modèle",
+          "isCorrect": true
+        },
+        {
+          "content": "L'ingénierie du matériel informatique",
+          "isCorrect": false
+        },
+        {
+          "content": "La sélection de l'algorithme de ML",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'encodage One-Hot ?",
+      "explanation": "L'encodage One-Hot transforme une variable catégorielle en plusieurs colonnes binaires (0/1), une par catégorie. Évite d'introduire une ordinalité artificielle.",
+      "hint": "Variable catégorielle → colonnes binaires",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning",
+        "Pandas"
+      ],
+      "answers": [
+        {
+          "content": "Un encodage à sens unique",
+          "isCorrect": false
+        },
+        {
+          "content": "Transformer une catégorie en colonnes binaires 0/1, une par catégorie",
+          "isCorrect": true
+        },
+        {
+          "content": "Un encodage par ordinalité",
+          "isCorrect": false
+        },
+        {
+          "content": "Une technique de compression de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la réduction de dimension (PCA) ?",
+      "explanation": "PCA (Principal Component Analysis) réduit la dimensionnalité des données en trouvant les directions de variance maximale (composantes principales).",
+      "hint": "Trouver les directions de variance maximale",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning",
+        "Scikit-learn"
+      ],
+      "answers": [
+        {
+          "content": "Supprimer des colonnes aléatoirement",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire la dimension en trouvant les composantes de variance maximale",
+          "isCorrect": true
+        },
+        {
+          "content": "Compresser les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Normaliser les features",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la régularisation L1 (Lasso) ?",
+      "explanation": "La régularisation L1 ajoute la somme des valeurs absolues des poids à la perte, favorisant la sparsité (certains poids deviennent exactement 0 → sélection de features).",
+      "hint": "Somme des valeurs absolues, favorise la sparsité",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "La normalisation L1 des données",
+          "isCorrect": false
+        },
+        {
+          "content": "Pénalité sur la somme des valeurs absolues des poids, favorisant la sparsité",
+          "isCorrect": true
+        },
+        {
+          "content": "La régularisation par dropout",
+          "isCorrect": false
+        },
+        {
+          "content": "La normalisation des gradients",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la régularisation L2 (Ridge) ?",
+      "explanation": "La régularisation L2 ajoute la somme des carrés des poids à la perte, pénalisant les grands poids et empêchant l'overfitting. Tous les poids deviennent petits mais non nuls.",
+      "hint": "Somme des carrés des poids, poids petits mais non nuls",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "La normalisation L2 des données",
+          "isCorrect": false
+        },
+        {
+          "content": "Pénalité sur la somme des carrés des poids, les réduit sans les mettre à zéro",
+          "isCorrect": true
+        },
+        {
+          "content": "La régularisation par batch normalization",
+          "isCorrect": false
+        },
+        {
+          "content": "La deuxième couche de régularisation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le dropout dans les réseaux de neurones ?",
+      "explanation": "Le dropout désactive aléatoirement une proportion de neurones pendant l'entraînement, forçant le réseau à apprendre des représentations redondantes et réduisant l'overfitting.",
+      "hint": "Désactive aléatoirement des neurones à l'entraînement",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un type de pooling",
+          "isCorrect": false
+        },
+        {
+          "content": "Désactiver aléatoirement des neurones à l'entraînement pour réduire l'overfitting",
+          "isCorrect": true
+        },
+        {
+          "content": "La suppression de layers inutiles",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme d'attention",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'Apache Spark ?",
+      "explanation": "Apache Spark est un moteur de traitement de données distribué et en mémoire, 100x plus rapide que MapReduce pour certaines tâches. Supporte SQL, ML, streaming.",
+      "hint": "Traitement distribué en mémoire, plus rapide que MapReduce",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Big Data"
+      ],
+      "answers": [
+        {
+          "content": "Une base de données NoSQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Un moteur de traitement distribué en mémoire, plus rapide que MapReduce",
+          "isCorrect": true
+        },
+        {
+          "content": "Un framework web Python",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de visualisation de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Hadoop ?",
+      "explanation": "Hadoop est un framework open-source pour le stockage (HDFS) et traitement (MapReduce) distribués de grands volumes de données sur des clusters de machines.",
+      "hint": "HDFS + MapReduce pour les big data",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Big Data"
+      ],
+      "answers": [
+        {
+          "content": "Une base de données relationnelle distribuée",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework de stockage (HDFS) et traitement (MapReduce) distribués",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de machine learning distribué",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de files de messages",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que les 3 V du Big Data ?",
+      "explanation": "Les 3 V du Big Data: Volume (grande quantité), Velocity (données en temps réel), Variety (formats divers: structuré, semi-structuré, non-structuré).",
+      "hint": "Volume, Velocity, Variety",
+      "difficulty": "EASY",
+      "tags": [
+        "Big Data"
+      ],
+      "answers": [
+        {
+          "content": "Validation, Vérification, Valeur",
+          "isCorrect": false
+        },
+        {
+          "content": "Volume, Velocity, Variety",
+          "isCorrect": true
+        },
+        {
+          "content": "Virtual, Visible, Variable",
+          "isCorrect": false
+        },
+        {
+          "content": "Volume, Veracity, Value",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le transfer learning ?",
+      "explanation": "Le transfer learning utilise un modèle pré-entraîné sur une grande tâche (ex: ImageNet) et le fine-tune pour une tâche spécifique, réduisant le besoin de données et de calcul.",
+      "hint": "Modèle pré-entraîné fine-tuné pour une nouvelle tâche",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning",
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Transférer un modèle d'un serveur à un autre",
+          "isCorrect": false
+        },
+        {
+          "content": "Fine-tuner un modèle pré-entraîné pour une nouvelle tâche",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type d'apprentissage par renforcement",
+          "isCorrect": false
+        },
+        {
+          "content": "Le transfert de données entre modèles",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'apprentissage par renforcement (Reinforcement Learning) ?",
+      "explanation": "En RL, un agent apprend par essais-erreurs à maximiser une récompense cumulative dans un environnement. Algorithmes: Q-Learning, DQN, PPO.",
+      "hint": "Agent + environnement + récompense",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un apprentissage avec des récompenses financières",
+          "isCorrect": false
+        },
+        {
+          "content": "Un agent apprend par essais-erreurs à maximiser une récompense dans un environnement",
+          "isCorrect": true
+        },
+        {
+          "content": "Un entraînement renforcé par plus de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un apprentissage supervisé avec feedback",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le vanishing gradient problem ?",
+      "explanation": "Le vanishing gradient se produit dans les réseaux profonds: le gradient diminue exponentiellement en remontant les couches, rendant l'entraînement des premières couches très lent. Solutions: ReLU, LSTM, ResNet, batch normalization.",
+      "hint": "Gradient trop petit dans les premières couches",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un gradient qui disparaît de la mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Le gradient diminue exponentiellement dans les couches profondes, stoppant l'apprentissage",
+          "isCorrect": true
+        },
+        {
+          "content": "La perte du gradient lors du calcul",
+          "isCorrect": false
+        },
+        {
+          "content": "Un problème de mise à zéro des gradients",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la batch normalization ?",
+      "explanation": "Batch normalization normalise les activations de chaque layer par batch, accélérant l'entraînement, permettant des learning rates plus élevés et agissant comme régularisateur.",
+      "hint": "Normalisation des activations par batch",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "La normalisation des données d'entrée",
+          "isCorrect": false
+        },
+        {
+          "content": "Normalisation des activations par batch pour accélérer l'entraînement",
+          "isCorrect": true
+        },
+        {
+          "content": "La normalisation des données par lots de 32",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de régularisation L2",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le mécanisme d'attention dans les Transformers ?",
+      "explanation": "L'attention (self-attention) permet à chaque token de pondérer l'importance de tous les autres tokens pour calculer sa représentation. Multi-head attention calcule plusieurs attentions en parallèle.",
+      "hint": "Chaque token pondère tous les autres",
+      "difficulty": "EXPERT",
+      "tags": [
+        "NLP",
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un mécanisme de sélection de features",
+          "isCorrect": false
+        },
+        {
+          "content": "Chaque token pondère l'importance de tous les autres pour sa représentation",
+          "isCorrect": true
+        },
+        {
+          "content": "Un système d'attention aux anomalies",
+          "isCorrect": false
+        },
+        {
+          "content": "L'attention portée aux données d'entraînement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que XGBoost ?",
+      "explanation": "XGBoost (eXtreme Gradient Boosting) est une implémentation optimisée du gradient boosting, très rapide et performante. Domine les compétitions Kaggle pour les données tabulaires.",
+      "hint": "Gradient boosting optimisé, roi de Kaggle pour données tabulaires",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un framework de deep learning",
+          "isCorrect": false
+        },
+        {
+          "content": "Une implémentation optimisée et rapide du gradient boosting",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme de clustering",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de visualisation",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

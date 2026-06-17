@@ -1,0 +1,187 @@
+{
+  "categoryName": "Data Science",
+  "questions": [
+    {
+      "content": "Qu'est-ce que le Machine Learning ?",
+      "explanation": "Le Machine Learning est une branche de l'IA qui permet aux machines d'apprendre à partir de données.",
+      "hint": "Le ML permet de créer des modèles prédictifs.",
+      "difficulty": "EASY",
+      "tags": ["Machine Learning", "Python"],
+      "answers": [
+        {"content": "Un type de base de données", "isCorrect": false},
+        {"content": "Une branche de l'IA pour l'apprentissage automatique", "isCorrect": true},
+        {"content": "Un langage de programmation", "isCorrect": false},
+        {"content": "Un protocole réseau", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Quel langage est le plus utilisé en Data Science ?",
+      "explanation": "Python est le langage le plus populaire pour la data science grâce à ses bibliothèques riches.",
+      "hint": "Python offre pandas, numpy, scikit-learn, etc.",
+      "difficulty": "EASY",
+      "tags": ["Python"],
+      "answers": [
+        {"content": "Java", "isCorrect": false},
+        {"content": "Python", "isCorrect": true},
+        {"content": "C++", "isCorrect": false},
+        {"content": "Ruby", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Pandas en Python ?",
+      "explanation": "Pandas est une bibliothèque Python pour la manipulation et l'analyse de données.",
+      "hint": "Pandas introduit les DataFrames pour structurer les données.",
+      "difficulty": "EASY",
+      "tags": ["Python", "Pandas"],
+      "answers": [
+        {"content": "Un type de base de données", "isCorrect": false},
+        {"content": "Une bibliothèque pour la manipulation de données", "isCorrect": true},
+        {"content": "Un framework web", "isCorrect": false},
+        {"content": "Un outil de test", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre apprentissage supervisé et non supervisé ?",
+      "explanation": "L'apprentissage supervisé utilise des données étiquetées, le non supervisé utilise des données non étiquetées.",
+      "hint": "La classification est supervisée, le clustering est non supervisé.",
+      "difficulty": "MEDIUM",
+      "tags": ["Machine Learning"],
+      "answers": [
+        {"content": "Aucune différence", "isCorrect": false},
+        {"content": "Supervisé utilise des données étiquetées, non supervisé non", "isCorrect": true},
+        {"content": "Supervisé est plus rapide", "isCorrect": false},
+        {"content": "Non supervisé nécessite plus de données", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Deep Learning ?",
+      "explanation": "Le Deep Learning utilise des réseaux de neurones profonds pour apprendre des représentations complexes.",
+      "hint": "TensorFlow et PyTorch sont des frameworks de deep learning.",
+      "difficulty": "MEDIUM",
+      "tags": ["Deep Learning", "TensorFlow", "PyTorch"],
+      "answers": [
+        {"content": "Un type de base de données", "isCorrect": false},
+        {"content": "L'apprentissage avec des réseaux de neurones profonds", "isCorrect": true},
+        {"content": "Une méthode de visualisation", "isCorrect": false},
+        {"content": "Un algorithme de tri", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que TensorFlow ?",
+      "explanation": "TensorFlow est un framework open source de Google pour le machine learning et deep learning.",
+      "hint": "TensorFlow est très utilisé pour les réseaux de neurones.",
+      "difficulty": "MEDIUM",
+      "tags": ["TensorFlow"],
+      "answers": [
+        {"content": "Un langage de programmation", "isCorrect": false},
+        {"content": "Un framework de machine learning par Google", "isCorrect": true},
+        {"content": "Une base de données", "isCorrect": false},
+        {"content": "Un outil de visualisation", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le surapprentissage (overfitting) ?",
+      "explanation": "L'overfitting se produit quand un modèle apprend trop bien les données d'entraînement et généralise mal.",
+      "hint": "La régularisation et le dropout aident à prévenir l'overfitting.",
+      "difficulty": "HARD",
+      "tags": ["Machine Learning", "Deep Learning"],
+      "answers": [
+        {"content": "Un modèle qui généralise parfaitement", "isCorrect": false},
+        {"content": "Un modèle qui apprend trop les données d'entraînement", "isCorrect": true},
+        {"content": "Un modèle sous-entraîné", "isCorrect": false},
+        {"content": "Un type d'algorithme", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le NLP (Natural Language Processing) ?",
+      "explanation": "Le NLP est le domaine de l'IA qui permet aux machines de comprendre et traiter le langage humain.",
+      "hint": "ChatGPT et les traducteurs automatiques utilisent le NLP.",
+      "difficulty": "HARD",
+      "tags": ["NLP", "Machine Learning"],
+      "answers": [
+        {"content": "Un protocole réseau", "isCorrect": false},
+        {"content": "Le traitement automatique du langage naturel", "isCorrect": true},
+        {"content": "Une base de données", "isCorrect": false},
+        {"content": "Un langage de programmation", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un réseau de neurones convolutif (CNN) ?",
+      "explanation": "Un CNN est un type de réseau de neurones spécialisé dans le traitement d'images avec des couches de convolution.",
+      "hint": "Les CNN sont très efficaces pour la reconnaissance d'images.",
+      "difficulty": "EXPERT",
+      "tags": ["Deep Learning", "TensorFlow", "PyTorch"],
+      "answers": [
+        {"content": "Un réseau pour le texte uniquement", "isCorrect": false},
+        {"content": "Un réseau spécialisé dans le traitement d'images", "isCorrect": true},
+        {"content": "Un algorithme de tri", "isCorrect": false},
+        {"content": "Une base de données", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le gradient descent ?",
+      "explanation": "Le gradient descent est un algorithme d'optimisation qui ajuste les paramètres pour minimiser une fonction de coût.",
+      "hint": "Le learning rate contrôle la taille des pas dans le gradient descent.",
+      "difficulty": "EXPERT",
+      "tags": ["Machine Learning", "Deep Learning"],
+      "answers": [
+        {"content": "Un algorithme de tri", "isCorrect": false},
+        {"content": "Un algorithme d'optimisation pour minimiser une fonction", "isCorrect": true},
+        {"content": "Un type de réseau de neurones", "isCorrect": false},
+        {"content": "Une méthode de visualisation", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'attention mechanism dans les Transformers ?",
+      "explanation": "L'attention permet au modèle de pondérer l'importance de différentes parties de l'entrée pour chaque élément de la sortie.",
+      "hint": "BERT et GPT utilisent l'attention.",
+      "difficulty": "EXPERT",
+      "tags": ["Deep Learning", "NLP"],
+      "answers": [
+        {"content": "Une technique de régularisation", "isCorrect": false},
+        {"content": "Un mécanisme pour pondérer l'importance des entrées", "isCorrect": true},
+        {"content": "Un type de couche de convolution", "isCorrect": false},
+        {"content": "Une fonction d'activation", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Comment fonctionne le transfer learning en Deep Learning ?",
+      "explanation": "Le transfer learning réutilise un modèle pré-entraîné sur une nouvelle tâche, accélérant l'entraînement et améliorant les performances.",
+      "hint": "Fine-tuning est une technique de transfer learning.",
+      "difficulty": "EXPERT",
+      "tags": ["Deep Learning", "TensorFlow", "PyTorch"],
+      "answers": [
+        {"content": "Entraîner un modèle from scratch", "isCorrect": false},
+        {"content": "Réutiliser un modèle pré-entraîné pour une nouvelle tâche", "isCorrect": true},
+        {"content": "Copier les données d'entraînement", "isCorrect": false},
+        {"content": "Ignorer les poids pré-entraînés", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le GAN (Generative Adversarial Network) ?",
+      "explanation": "Un GAN est composé d'un générateur et d'un discriminateur qui s'affrontent pour créer des données réalistes.",
+      "hint": "Les GANs peuvent générer des images réalistes.",
+      "difficulty": "EXPERT",
+      "tags": ["Deep Learning", "Generative AI"],
+      "answers": [
+        {"content": "Un type de réseau de neurones pour la classification", "isCorrect": false},
+        {"content": "Un réseau avec générateur et discriminateur en compétition", "isCorrect": true},
+        {"content": "Un algorithme de clustering", "isCorrect": false},
+        {"content": "Une technique de régularisation", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que BERT et comment fonctionne-t-il ?",
+      "explanation": "BERT est un modèle de langage pré-entraîné qui utilise l'attention bidirectionnelle pour comprendre le contexte.",
+      "hint": "BERT signifie Bidirectional Encoder Representations from Transformers.",
+      "difficulty": "EXPERT",
+      "tags": ["NLP", "Deep Learning"],
+      "answers": [
+        {"content": "Un modèle de classification d'images", "isCorrect": false},
+        {"content": "Un modèle de langage avec attention bidirectionnelle", "isCorrect": true},
+        {"content": "Un algorithme de recommandation", "isCorrect": false},
+        {"content": "Un framework de deep learning", "isCorrect": false}
+      ]
+    }
+  ]
+}

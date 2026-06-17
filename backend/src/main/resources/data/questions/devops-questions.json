@@ -1,0 +1,161 @@
+{
+  "categoryName": "Devops",
+  "questions": [
+    {
+      "content": "Qu'est-ce que Docker ?",
+      "explanation": "Docker est une plateforme de conteneurisation qui permet d'empaqueter des applications avec leurs dépendances.",
+      "hint": "Docker assure la cohérence entre les environnements.",
+      "difficulty": "EASY",
+      "tags": ["Docker"],
+      "answers": [
+        {"content": "Un langage de programmation", "isCorrect": false},
+        {"content": "Une plateforme de conteneurisation", "isCorrect": true},
+        {"content": "Un système d'exploitation", "isCorrect": false},
+        {"content": "Une base de données", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Que signifie CI/CD ?",
+      "explanation": "CI/CD signifie Continuous Integration / Continuous Deployment (Intégration Continue / Déploiement Continu).",
+      "hint": "CI/CD automatise le processus de livraison logicielle.",
+      "difficulty": "EASY",
+      "tags": ["CI/CD"],
+      "answers": [
+        {"content": "Computer Interface / Computer Design", "isCorrect": false},
+        {"content": "Continuous Integration / Continuous Deployment", "isCorrect": true},
+        {"content": "Central Infrastructure / Central Database", "isCorrect": false},
+        {"content": "Code Integration / Code Development", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Kubernetes ?",
+      "explanation": "Kubernetes est un système d'orchestration de conteneurs qui automatise le déploiement et la gestion des applications conteneurisées.",
+      "hint": "Kubernetes est souvent abrégé K8s.",
+      "difficulty": "EASY",
+      "tags": ["Kubernetes"],
+      "answers": [
+        {"content": "Un langage de programmation", "isCorrect": false},
+        {"content": "Un système d'orchestration de conteneurs", "isCorrect": true},
+        {"content": "Un type de conteneur", "isCorrect": false},
+        {"content": "Un serveur web", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'Infrastructure as Code (IaC) ?",
+      "explanation": "IaC est la pratique de gérer l'infrastructure via des fichiers de configuration plutôt que manuellement.",
+      "hint": "Terraform est un outil IaC populaire.",
+      "difficulty": "MEDIUM",
+      "tags": ["Terraform"],
+      "answers": [
+        {"content": "Coder l'infrastructure manuellement", "isCorrect": false},
+        {"content": "Gérer l'infrastructure via du code", "isCorrect": true},
+        {"content": "Ignorer l'infrastructure", "isCorrect": false},
+        {"content": "Utiliser uniquement des interfaces graphiques", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre un conteneur et une machine virtuelle ?",
+      "explanation": "Un conteneur partage le noyau de l'OS hôte, une VM a son propre OS complet.",
+      "hint": "Les conteneurs sont plus légers que les VMs.",
+      "difficulty": "MEDIUM",
+      "tags": ["Docker"],
+      "answers": [
+        {"content": "Aucune différence", "isCorrect": false},
+        {"content": "Les conteneurs sont plus lourds", "isCorrect": false},
+        {"content": "Un conteneur partage le noyau OS, une VM a son propre OS", "isCorrect": true},
+        {"content": "Les VMs sont plus rapides", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Pod dans Kubernetes ?",
+      "explanation": "Un Pod est la plus petite unité déployable dans Kubernetes, contenant un ou plusieurs conteneurs.",
+      "hint": "Les conteneurs d'un même Pod partagent la même adresse IP.",
+      "difficulty": "HARD",
+      "tags": ["Kubernetes"],
+      "answers": [
+        {"content": "Un type de conteneur", "isCorrect": false},
+        {"content": "La plus petite unité déployable dans Kubernetes", "isCorrect": true},
+        {"content": "Un nœud du cluster", "isCorrect": false},
+        {"content": "Un service réseau", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Terraform ?",
+      "explanation": "Terraform est un outil open-source d'Infrastructure as Code pour gérer les ressources cloud.",
+      "hint": "Terraform utilise le langage HCL.",
+      "difficulty": "HARD",
+      "tags": ["Terraform"],
+      "answers": [
+        {"content": "Un langage de programmation", "isCorrect": false},
+        {"content": "Un outil d'Infrastructure as Code", "isCorrect": true},
+        {"content": "Un système d'exploitation", "isCorrect": false},
+        {"content": "Un orchestrateur de conteneurs", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Service Mesh ?",
+      "explanation": "Un Service Mesh est une infrastructure dédiée pour gérer la communication entre les microservices.",
+      "hint": "Istio est un exemple de Service Mesh.",
+      "difficulty": "EXPERT",
+      "tags": ["Kubernetes"],
+      "answers": [
+        {"content": "Un type de réseau", "isCorrect": false},
+        {"content": "Une infrastructure pour gérer la communication entre microservices", "isCorrect": true},
+        {"content": "Un protocole de communication", "isCorrect": false},
+        {"content": "Un outil de monitoring", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Comment fonctionne un Horizontal Pod Autoscaler (HPA) dans Kubernetes ?",
+      "explanation": "Le HPA met à l'échelle automatiquement le nombre de Pods en fonction de l'utilisation CPU, mémoire ou métriques personnalisées.",
+      "hint": "HPA surveille les métriques et ajuste le replica count.",
+      "difficulty": "EXPERT",
+      "tags": ["Kubernetes"],
+      "answers": [
+        {"content": "Il augmente uniquement la mémoire des Pods", "isCorrect": false},
+        {"content": "Il ajuste automatiquement le nombre de Pods selon les métriques", "isCorrect": true},
+        {"content": "Il crée de nouveaux nœuds", "isCorrect": false},
+        {"content": "Il redémarre les Pods en cas de panne", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que GitOps et comment diffère-t-il des approches CI/CD traditionnelles ?",
+      "explanation": "GitOps utilise Git comme source unique de vérité pour l'infrastructure, avec des déploiements déclenchés par des commits/pull requests.",
+      "hint": "ArgoCD et Flux sont des outils GitOps.",
+      "difficulty": "EXPERT",
+      "tags": ["CI/CD", "Kubernetes"],
+      "answers": [
+        {"content": "GitOps remplace complètement CI/CD", "isCorrect": false},
+        {"content": "GitOps utilise Git comme source de vérité pour l'infrastructure", "isCorrect": true},
+        {"content": "GitOps ne fonctionne qu'avec GitHub", "isCorrect": false},
+        {"content": "GitOps est uniquement pour le code applicatif", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Operator dans Kubernetes ?",
+      "explanation": "Un Operator est un contrôleur personnalisé qui étend Kubernetes pour gérer des applications complexes avec des CRD (Custom Resource Definitions).",
+      "hint": "Les Operators encapsulent le knowledge opérationnel humain.",
+      "difficulty": "EXPERT",
+      "tags": ["Kubernetes"],
+      "answers": [
+        {"content": "Un utilisateur avec des privilèges admin", "isCorrect": false},
+        {"content": "Un contrôleur personnalisé pour gérer des applications complexes", "isCorrect": true},
+        {"content": "Un outil de ligne de commande", "isCorrect": false},
+        {"content": "Un type de Pod spécial", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Comment implémenter une stratégie de déploiement Canary avec Kubernetes ?",
+      "explanation": "Le déploiement Canary route progressivement le trafic vers la nouvelle version, permettant de valider avant un déploiement complet.",
+      "hint": "Utilise des Services et Ingress pour le traffic splitting.",
+      "difficulty": "EXPERT",
+      "tags": ["Kubernetes", "CI/CD"],
+      "answers": [
+        {"content": "Déployer toutes les instances simultanément", "isCorrect": false},
+        {"content": "Router progressivement le trafic vers la nouvelle version", "isCorrect": true},
+        {"content": "Utiliser uniquement des blue/green deployments", "isCorrect": false},
+        {"content": "Ignorer les tests en production", "isCorrect": false}
+      ]
+    }
+  ]
+}

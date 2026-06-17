@@ -1,0 +1,200 @@
+{
+  "categoryName": "Backend",
+  "questions": [
+    {
+      "content": "Qu'est-ce qu'une API REST ?",
+      "explanation": "REST (Representational State Transfer) est une architecture pour construire des services web utilisant les méthodes HTTP standard.",
+      "hint": "REST utilise les méthodes HTTP comme GET, POST, PUT, DELETE.",
+      "difficulty": "EASY",
+      "tags": ["REST API"],
+      "answers": [
+        {"content": "Un protocole de transfert de fichiers", "isCorrect": false},
+        {"content": "Une architecture pour les services web utilisant HTTP", "isCorrect": true},
+        {"content": "Un langage de programmation", "isCorrect": false},
+        {"content": "Une base de données", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Spring Boot ?",
+      "explanation": "Spring Boot est un framework Java qui simplifie la création d'applications Spring autonomes avec une configuration automatique.",
+      "hint": "C'est un framework Java populaire.",
+      "difficulty": "EASY",
+      "tags": ["Spring Boot"],
+      "answers": [
+        {"content": "Un langage de programmation", "isCorrect": false},
+        {"content": "Un framework Java pour applications backend", "isCorrect": true},
+        {"content": "Une base de données", "isCorrect": false},
+        {"content": "Un serveur web", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre GET et POST ?",
+      "explanation": "GET récupère des données et les paramètres sont dans l'URL. POST envoie des données dans le corps de la requête pour créer/modifier des ressources.",
+      "hint": "GET pour lire, POST pour créer.",
+      "difficulty": "EASY",
+      "tags": ["REST API"],
+      "answers": [
+        {"content": "GET est plus rapide que POST", "isCorrect": false},
+        {"content": "GET récupère des données, POST envoie des données", "isCorrect": true},
+        {"content": "GET est sécurisé, POST ne l'est pas", "isCorrect": false},
+        {"content": "Aucune différence", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'injection de dépendances ?",
+      "explanation": "L'injection de dépendances est un pattern où les dépendances sont fournies à un objet de l'extérieur plutôt que créées par lui.",
+      "hint": "Spring utilise largement ce pattern.",
+      "difficulty": "MEDIUM",
+      "tags": ["Spring Boot"],
+      "answers": [
+        {"content": "Un pattern de création d'objets", "isCorrect": false},
+        {"content": "Un pattern où les dépendances sont fournies de l'extérieur", "isCorrect": true},
+        {"content": "Un type de base de données", "isCorrect": false},
+        {"content": "Une méthode de sérialisation", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre SQL et NoSQL ?",
+      "explanation": "SQL utilise des tables relationnelles avec un schéma fixe. NoSQL utilise des modèles flexibles comme documents ou clé-valeur.",
+      "hint": "MongoDB est NoSQL, PostgreSQL est SQL.",
+      "difficulty": "MEDIUM",
+      "tags": ["PostgreSQL", "MongoDB"],
+      "answers": [
+        {"content": "SQL est plus rapide", "isCorrect": false},
+        {"content": "NoSQL ne supporte pas les transactions", "isCorrect": false},
+        {"content": "SQL est relationnel, NoSQL est non-relationnel", "isCorrect": true},
+        {"content": "Aucune différence", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Node.js ?",
+      "explanation": "Node.js est un environnement d'exécution JavaScript côté serveur, basé sur le moteur V8 de Chrome.",
+      "hint": "JavaScript côté serveur.",
+      "difficulty": "EASY",
+      "tags": ["Node.js"],
+      "answers": [
+        {"content": "Un navigateur web", "isCorrect": false},
+        {"content": "Un environnement d'exécution JavaScript côté serveur", "isCorrect": true},
+        {"content": "Un framework frontend", "isCorrect": false},
+        {"content": "Une base de données", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern CQRS ?",
+      "explanation": "CQRS (Command Query Responsibility Segregation) sépare les opérations de lecture et d'écriture pour optimiser les performances.",
+      "hint": "Séparation lecture/écriture.",
+      "difficulty": "HARD",
+      "tags": ["REST API"],
+      "answers": [
+        {"content": "Un pattern de sécurité", "isCorrect": false},
+        {"content": "La séparation des responsabilités lecture/écriture", "isCorrect": true},
+        {"content": "Un type de base de données", "isCorrect": false},
+        {"content": "Un protocole réseau", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que GraphQL ?",
+      "explanation": "GraphQL est un langage de requête pour APIs qui permet aux clients de demander exactement les données dont ils ont besoin.",
+      "hint": "Développé par Facebook.",
+      "difficulty": "HARD",
+      "tags": ["GraphQL"],
+      "answers": [
+        {"content": "Un langage de programmation", "isCorrect": false},
+        {"content": "Un langage de requête pour APIs", "isCorrect": true},
+        {"content": "Une base de données", "isCorrect": false},
+        {"content": "Un framework frontend", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un microservice ?",
+      "explanation": "Un microservice est une architecture où l'application est divisée en petits services indépendants, chacun avec sa propre logique et base de données.",
+      "hint": "Architecture distribuée.",
+      "difficulty": "HARD",
+      "tags": ["Spring Boot", "Node.js"],
+      "answers": [
+        {"content": "Un petit service web", "isCorrect": false},
+        {"content": "Un service indépendant dans une architecture distribuée", "isCorrect": true},
+        {"content": "Un type de base de données", "isCorrect": false},
+        {"content": "Un protocole de communication", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'Event Sourcing ?",
+      "explanation": "L'Event Sourcing stocke l'état d'une entité comme une séquence d'événements plutôt que son état actuel.",
+      "hint": "Stockage par événements.",
+      "difficulty": "EXPERT",
+      "tags": ["Spring Boot"],
+      "answers": [
+        {"content": "Une méthode de logging", "isCorrect": false},
+        {"content": "Stockage de l'état comme séquence d'événements", "isCorrect": true},
+        {"content": "Un type de base de données", "isCorrect": false},
+        {"content": "Un protocole de messagerie", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Comment implémenter le pattern Saga distribuée ?",
+      "explanation": "Le pattern Saga gère les transactions distribuées en décomposant une transaction en séquence de transactions locales, chacune avec une action compensatoire en cas d'échec.",
+      "hint": "Transactions distribuées avec compensation.",
+      "difficulty": "EXPERT",
+      "tags": ["Spring Boot", "Microservices"],
+      "answers": [
+        {"content": "Avec des transactions ACID globales", "isCorrect": false},
+        {"content": "Par séquence de transactions locales avec compensation", "isCorrect": true},
+        {"content": "En utilisant uniquement des locks distribués", "isCorrect": false},
+        {"content": "En évitant les transactions distribuées", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Reactive Programming et Project Reactor ?",
+      "explanation": "Le Reactive Programming est un paradigme asynchrone orienté flux de données. Project Reactor implémente Reactive Streams pour Java avec Mono et Flux.",
+      "hint": "Asynchrone non-bloquant avec backpressure.",
+      "difficulty": "EXPERT",
+      "tags": ["Spring Boot", "Reactive"],
+      "answers": [
+        {"content": "Un framework de test", "isCorrect": false},
+        {"content": "Un paradigme asynchrone avec Mono et Flux", "isCorrect": true},
+        {"content": "Un ORM pour bases de données", "isCorrect": false},
+        {"content": "Un outil de build", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Comment optimiser les performances d'une API REST avec caching ?",
+      "explanation": "Le caching HTTP utilise les headers Cache-Control, ETag, et Last-Modified pour réduire les requêtes serveur et améliorer les temps de réponse.",
+      "hint": "Headers HTTP pour la gestion du cache.",
+      "difficulty": "EXPERT",
+      "tags": ["REST API", "Performance"],
+      "answers": [
+        {"content": "Désactiver complètement le cache client", "isCorrect": false},
+        {"content": "Utiliser Cache-Control, ETag et Last-Modified", "isCorrect": true},
+        {"content": "Stocker tout en session", "isCorrect": false},
+        {"content": "Ignorer les headers de cache", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Circuit Breaker Pattern ?",
+      "explanation": "Le Circuit Breaker empêche les appels répétés à un service défaillant, permettant au système de se rétablir et évitant la cascade de pannes.",
+      "hint": "Resilience4j implémente ce pattern.",
+      "difficulty": "EXPERT",
+      "tags": ["Spring Boot", "Microservices"],
+      "answers": [
+        {"content": "Un pattern de sécurité", "isCorrect": false},
+        {"content": "Un pattern pour gérer les défaillances de service", "isCorrect": true},
+        {"content": "Un pattern de logging", "isCorrect": false},
+        {"content": "Un pattern de caching", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Comment gérer la concurrence optimiste avec JPA ?",
+      "explanation": "La concurrence optimiste utilise @Version pour détecter les conflits. Si la version a changé, une OptimisticLockException est lancée.",
+      "hint": "Annotation @Version sur une colonne.",
+      "difficulty": "EXPERT",
+      "tags": ["Spring Boot", "PostgreSQL"],
+      "answers": [
+        {"content": "Avec des locks pessimistes uniquement", "isCorrect": false},
+        {"content": "Avec l'annotation @Version pour détecter les conflits", "isCorrect": true},
+        {"content": "En désactivant les transactions", "isCorrect": false},
+        {"content": "Avec synchronized", "isCorrect": false}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Environment files — NEVER commit real secrets
+.env
+.env.local
+.env.*.local
+.env.dev
+.env.prod
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Setup scripts with embedded secrets
+setup-github-secrets.sh

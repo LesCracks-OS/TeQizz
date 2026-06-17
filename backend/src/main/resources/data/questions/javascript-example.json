@@ -1,0 +1,135 @@
+{
+  "categoryName": "Frontend",
+  "questions": [
+    {
+      "content": "Qu'est-ce que 'const' en JavaScript?",
+      "hint": "Pensez à l'immutabilité",
+      "explanation": "const déclare une constante qui ne peut pas être réassignée après son initialisation.",
+      "difficulty": "EASY",
+      "tags": ["javascript", "variables", "es6"],
+      "answers": [
+        {"content": "Une variable qui peut changer de valeur", "isCorrect": false},
+        {"content": "Une constante qui ne peut pas être réassignée", "isCorrect": true},
+        {"content": "Un type de fonction", "isCorrect": false},
+        {"content": "Un opérateur de comparaison", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Quelle méthode permet de filtrer les éléments d'un tableau?",
+      "hint": "Le nom de la méthode décrit son action",
+      "explanation": "filter() crée un nouveau tableau contenant uniquement les éléments qui passent le test implémenté par la fonction fournie.",
+      "difficulty": "MEDIUM",
+      "tags": ["javascript", "arrays", "methods"],
+      "answers": [
+        {"content": "map()", "isCorrect": false},
+        {"content": "filter()", "isCorrect": true},
+        {"content": "reduce()", "isCorrect": false},
+        {"content": "find()", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une Promise en JavaScript?",
+      "hint": "C'est un objet qui représente une valeur future",
+      "explanation": "Une Promise est un objet qui représente la complétion ou l'échec éventuel d'une opération asynchrone et sa valeur résultante.",
+      "difficulty": "MEDIUM",
+      "tags": ["javascript", "async", "promises"],
+      "answers": [
+        {"content": "Une fonction synchrone", "isCorrect": false},
+        {"content": "Un objet représentant une valeur future", "isCorrect": true},
+        {"content": "Un type de boucle", "isCorrect": false},
+        {"content": "Une méthode de tableau", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre '==' et '==='?",
+      "hint": "L'un vérifie le type, l'autre non",
+      "explanation": "=== compare à la fois la valeur et le type (comparaison stricte), tandis que == compare uniquement la valeur après conversion de type si nécessaire.",
+      "difficulty": "EASY",
+      "tags": ["javascript", "operators", "comparison"],
+      "answers": [
+        {"content": "Aucune différence", "isCorrect": false},
+        {"content": "=== compare valeur et type, == compare seulement la valeur", "isCorrect": true},
+        {"content": "== est plus rapide que ===", "isCorrect": false},
+        {"content": "=== est déprécié", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la destructuration en JavaScript?",
+      "hint": "C'est une façon d'extraire des valeurs",
+      "explanation": "La destructuration permet d'extraire des valeurs de tableaux ou de propriétés d'objets dans des variables distinctes en une seule instruction.",
+      "difficulty": "MEDIUM",
+      "tags": ["javascript", "es6", "destructuring"],
+      "answers": [
+        {"content": "Une méthode pour supprimer des propriétés", "isCorrect": false},
+        {"content": "Une syntaxe pour extraire des valeurs d'objets ou tableaux", "isCorrect": true},
+        {"content": "Un type de boucle", "isCorrect": false},
+        {"content": "Une façon de créer des classes", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que 'this' représente dans une fonction fléchée?",
+      "hint": "Les fonctions fléchées ont un comportement particulier avec 'this'",
+      "explanation": "Dans une fonction fléchée, 'this' conserve la valeur du contexte lexical environnant, c'est-à-dire qu'elle n'a pas son propre 'this'.",
+      "difficulty": "HARD",
+      "tags": ["javascript", "es6", "this", "arrow-functions"],
+      "answers": [
+        {"content": "L'objet global window", "isCorrect": false},
+        {"content": "Le contexte lexical environnant", "isCorrect": true},
+        {"content": "undefined", "isCorrect": false},
+        {"content": "L'objet qui appelle la fonction", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un closure en JavaScript?",
+      "hint": "C'est lié à la portée des variables",
+      "explanation": "Un closure est une fonction qui se souvient de l'environnement dans lequel elle a été créée, même après que cette fonction soit exécutée en dehors de sa portée originale.",
+      "difficulty": "HARD",
+      "tags": ["javascript", "closures", "scope"],
+      "answers": [
+        {"content": "Une façon de fermer une fonction", "isCorrect": false},
+        {"content": "Une fonction qui mémorise son environnement lexical", "isCorrect": true},
+        {"content": "Un type de boucle", "isCorrect": false},
+        {"content": "Une méthode pour supprimer des variables", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Quelle méthode transforme un tableau en une seule valeur?",
+      "hint": "Cette méthode 'réduit' le tableau",
+      "explanation": "reduce() applique une fonction qui est un accumulateur et qui traite chaque valeur d'un tableau pour le réduire à une seule valeur.",
+      "difficulty": "HARD",
+      "tags": ["javascript", "arrays", "reduce"],
+      "answers": [
+        {"content": "map()", "isCorrect": false},
+        {"content": "filter()", "isCorrect": false},
+        {"content": "reduce()", "isCorrect": true},
+        {"content": "forEach()", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le hoisting en JavaScript?",
+      "hint": "C'est lié à la déclaration des variables",
+      "explanation": "Le hoisting est un comportement JavaScript où les déclarations de variables et de fonctions sont déplacées vers le haut de leur portée avant l'exécution du code.",
+      "difficulty": "EXPERT",
+      "tags": ["javascript", "hoisting", "scope"],
+      "answers": [
+        {"content": "Une méthode pour trier les tableaux", "isCorrect": false},
+        {"content": "Le déplacement des déclarations vers le haut de la portée", "isCorrect": true},
+        {"content": "Une façon de créer des objets", "isCorrect": false},
+        {"content": "Un type d'opérateur", "isCorrect": false}
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'Event Loop en JavaScript?",
+      "hint": "C'est le mécanisme qui gère l'asynchrone",
+      "explanation": "L'Event Loop est un mécanisme qui permet à JavaScript d'exécuter des opérations asynchrones en surveillant la call stack et la callback queue.",
+      "difficulty": "EXPERT",
+      "tags": ["javascript", "event-loop", "async", "concurrency"],
+      "answers": [
+        {"content": "Une boucle for optimisée", "isCorrect": false},
+        {"content": "Le mécanisme qui gère l'exécution asynchrone", "isCorrect": true},
+        {"content": "Un type de fonction", "isCorrect": false},
+        {"content": "Une méthode de tableau", "isCorrect": false}
+      ]
+    }
+  ]
+}

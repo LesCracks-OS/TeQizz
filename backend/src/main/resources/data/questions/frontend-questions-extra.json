@@ -1,0 +1,2819 @@
+{
+  "categoryName": "Frontend",
+  "questions": [
+    {
+      "content": "Quelle balise HTML5 est utilisée pour définir la navigation principale d'un site ?",
+      "explanation": "<nav> est une balise sémantique HTML5 qui indique la navigation principale du site.",
+      "hint": "C'est une balise sémantique de navigation",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "<menu>",
+          "isCorrect": false
+        },
+        {
+          "content": "<nav>",
+          "isCorrect": true
+        },
+        {
+          "content": "<navigation>",
+          "isCorrect": false
+        },
+        {
+          "content": "<links>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle balise HTML5 représente le contenu principal unique d'un document ?",
+      "explanation": "<main> contient le contenu principal du document, unique par page.",
+      "hint": "Elle entoure le contenu principal, pas l'en-tête ni le pied de page",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "<body>",
+          "isCorrect": false
+        },
+        {
+          "content": "<content>",
+          "isCorrect": false
+        },
+        {
+          "content": "<main>",
+          "isCorrect": true
+        },
+        {
+          "content": "<section>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel attribut HTML permet de rendre un champ de formulaire obligatoire ?",
+      "explanation": "L'attribut 'required' empêche la soumission du formulaire si le champ est vide.",
+      "hint": "Il suffit d'ajouter cet attribut booléen",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "mandatory",
+          "isCorrect": false
+        },
+        {
+          "content": "required",
+          "isCorrect": true
+        },
+        {
+          "content": "validate",
+          "isCorrect": false
+        },
+        {
+          "content": "must-fill",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle balise HTML est utilisée pour intégrer du contenu d'une source externe (iframe) ?",
+      "explanation": "<iframe> permet d'intégrer une page ou un contenu externe dans la page courante.",
+      "hint": "Inline frame",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "<embed>",
+          "isCorrect": false
+        },
+        {
+          "content": "<frame>",
+          "isCorrect": false
+        },
+        {
+          "content": "<iframe>",
+          "isCorrect": true
+        },
+        {
+          "content": "<include>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle valeur CSS met en place un modèle de mise en page en grille ?",
+      "explanation": "display: grid active le modèle CSS Grid Layout.",
+      "hint": "C'est la valeur pour activer CSS Grid",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "display: flex",
+          "isCorrect": false
+        },
+        {
+          "content": "display: grid",
+          "isCorrect": true
+        },
+        {
+          "content": "display: block",
+          "isCorrect": false
+        },
+        {
+          "content": "display: table",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle propriété CSS contrôle l'opacité d'un élément ?",
+      "explanation": "La propriété opacity accepte des valeurs entre 0 (transparent) et 1 (opaque).",
+      "hint": "Valeur entre 0 et 1",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "visibility",
+          "isCorrect": false
+        },
+        {
+          "content": "transparency",
+          "isCorrect": false
+        },
+        {
+          "content": "opacity",
+          "isCorrect": true
+        },
+        {
+          "content": "alpha",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle propriété CSS contrôle l'arrière-plan d'un élément ?",
+      "explanation": "background-color définit la couleur de fond d'un élément.",
+      "hint": "background + color",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "color",
+          "isCorrect": false
+        },
+        {
+          "content": "background-color",
+          "isCorrect": true
+        },
+        {
+          "content": "fill-color",
+          "isCorrect": false
+        },
+        {
+          "content": "bg",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment ajouter un commentaire en CSS ?",
+      "explanation": "Les commentaires CSS s'écrivent entre /* et */.",
+      "hint": "Similaire aux commentaires en C",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "// commentaire",
+          "isCorrect": false
+        },
+        {
+          "content": "<!-- commentaire -->",
+          "isCorrect": false
+        },
+        {
+          "content": "/* commentaire */",
+          "isCorrect": true
+        },
+        {
+          "content": "# commentaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle propriété CSS est utilisée pour changer la taille de la police ?",
+      "explanation": "font-size contrôle la taille du texte et accepte px, em, rem, %, etc.",
+      "hint": "font + size",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "text-size",
+          "isCorrect": false
+        },
+        {
+          "content": "font-size",
+          "isCorrect": true
+        },
+        {
+          "content": "letter-size",
+          "isCorrect": false
+        },
+        {
+          "content": "character-size",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle propriété CSS contrôle la graisse du texte ?",
+      "explanation": "font-weight accepte des valeurs numériques (100-900) ou des mots-clés (bold, normal).",
+      "hint": "font + weight",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "text-weight",
+          "isCorrect": false
+        },
+        {
+          "content": "font-bold",
+          "isCorrect": false
+        },
+        {
+          "content": "font-weight",
+          "isCorrect": true
+        },
+        {
+          "content": "bold",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'attribut HTML 'defer' sur une balise <script> ?",
+      "explanation": "defer retarde l'exécution du script jusqu'après le parsing du HTML, sans bloquer le rendu.",
+      "hint": "Le script s'exécute après le chargement du DOM",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS",
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Désactive le script",
+          "isCorrect": false
+        },
+        {
+          "content": "Exécute le script immédiatement",
+          "isCorrect": false
+        },
+        {
+          "content": "Reporte l'exécution du script après le parsing HTML",
+          "isCorrect": true
+        },
+        {
+          "content": "Charge le script en parallèle et l'exécute immédiatement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre 'async' et 'defer' pour les scripts HTML ?",
+      "explanation": "async exécute le script dès qu'il est chargé (interruption possible), defer attend la fin du parsing HTML puis exécute dans l'ordre.",
+      "hint": "L'un respecte l'ordre, l'autre non",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS",
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "async est plus rapide, defer est plus sûr",
+          "isCorrect": false
+        },
+        {
+          "content": "async exécute dès chargement (sans garantie d'ordre), defer exécute après parsing HTML en ordre",
+          "isCorrect": true
+        },
+        {
+          "content": "Pas de différence, les deux reportent l'exécution",
+          "isCorrect": false
+        },
+        {
+          "content": "async est pour les modules, defer pour les scripts classiques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle unité CSS 'rem' représente-t-elle ?",
+      "explanation": "rem (root em) est relatif à la taille de police de l'élément racine (<html>), contrairement à em qui est relatif à l'élément parent.",
+      "hint": "Root + em",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "La taille de police de l'élément parent",
+          "isCorrect": false
+        },
+        {
+          "content": "La taille de police de l'élément <html>",
+          "isCorrect": true
+        },
+        {
+          "content": "La résolution de l'écran",
+          "isCorrect": false
+        },
+        {
+          "content": "1% de la largeur du viewport",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre 'position: absolute' et 'position: fixed' en CSS ?",
+      "explanation": "absolute est positionné par rapport au parent positionné le plus proche, fixed est positionné par rapport au viewport et reste lors du scroll.",
+      "hint": "L'un reste visible lors du scroll, l'autre non",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "absolute est relatif au parent positionné, fixed est relatif au viewport",
+          "isCorrect": true
+        },
+        {
+          "content": "fixed est relatif au parent, absolute au viewport",
+          "isCorrect": false
+        },
+        {
+          "content": "absolute utilise des coordonnées, fixed utilise des pourcentages",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment créer une variable CSS personnalisée ?",
+      "explanation": "Les variables CSS custom sont définies avec la syntaxe --nom-variable: valeur; et utilisées avec var(--nom-variable).",
+      "hint": "Double tiret au début",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "$var: valeur;",
+          "isCorrect": false
+        },
+        {
+          "content": "@variable: valeur;",
+          "isCorrect": false
+        },
+        {
+          "content": "--nom-variable: valeur;",
+          "isCorrect": true
+        },
+        {
+          "content": "let variable = valeur;",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle propriété CSS Flexbox aligne les éléments sur l'axe principal ?",
+      "explanation": "justify-content aligne les enfants le long de l'axe principal (horizontal par défaut).",
+      "hint": "Pas align-items ni align-content",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "align-items",
+          "isCorrect": false
+        },
+        {
+          "content": "align-content",
+          "isCorrect": false
+        },
+        {
+          "content": "justify-content",
+          "isCorrect": true
+        },
+        {
+          "content": "flex-align",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie CSS BEM ?",
+      "explanation": "BEM (Block Element Modifier) est une méthodologie de nommage CSS : block__element--modifier.",
+      "hint": "Block, Element, Modifier",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Browser Enhanced Markup",
+          "isCorrect": false
+        },
+        {
+          "content": "Block Element Modifier",
+          "isCorrect": true
+        },
+        {
+          "content": "Basic Element Method",
+          "isCorrect": false
+        },
+        {
+          "content": "Bootstrap Extended Module",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle pseudo-classe CSS cible le premier enfant d'un parent ?",
+      "explanation": ":first-child cible l'élément s'il est le premier enfant de son parent.",
+      "hint": "Commence par first",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": ":first-of-type",
+          "isCorrect": false
+        },
+        {
+          "content": ":first-child",
+          "isCorrect": true
+        },
+        {
+          "content": ":nth-child(0)",
+          "isCorrect": false
+        },
+        {
+          "content": ":first",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle propriété CSS crée une transition animée entre deux états ?",
+      "explanation": "transition permet de définir la durée, la propriété et la fonction de timing d'une animation CSS.",
+      "hint": "C'est la propriété de base pour les animations CSS",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "animation",
+          "isCorrect": false
+        },
+        {
+          "content": "keyframes",
+          "isCorrect": false
+        },
+        {
+          "content": "transition",
+          "isCorrect": true
+        },
+        {
+          "content": "transform",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment rendre une image responsive en CSS ?",
+      "explanation": "max-width: 100% empêche l'image de dépasser son conteneur tout en permettant de réduire sa taille.",
+      "hint": "Utiliser max-width sur l'élément img",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "width: 100px",
+          "isCorrect": false
+        },
+        {
+          "content": "max-width: 100%",
+          "isCorrect": true
+        },
+        {
+          "content": "display: responsive",
+          "isCorrect": false
+        },
+        {
+          "content": "resize: auto",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle propriété CSS Grid définit le nombre et la taille des colonnes ?",
+      "explanation": "grid-template-columns définit les colonnes d'une grille CSS, ex: grid-template-columns: 1fr 2fr;",
+      "hint": "grid-template-columns",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "grid-columns",
+          "isCorrect": false
+        },
+        {
+          "content": "grid-template-columns",
+          "isCorrect": true
+        },
+        {
+          "content": "column-template",
+          "isCorrect": false
+        },
+        {
+          "content": "cols",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'flex-wrap: wrap' dans un conteneur Flexbox ?",
+      "explanation": "flex-wrap: wrap permet aux éléments de passer à la ligne suivante quand il n'y a plus d'espace.",
+      "hint": "Les éléments débordent sur la ligne suivante",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Empêche les éléments de sortir du conteneur",
+          "isCorrect": false
+        },
+        {
+          "content": "Permet aux éléments de passer sur plusieurs lignes",
+          "isCorrect": true
+        },
+        {
+          "content": "Crée un scroll horizontal",
+          "isCorrect": false
+        },
+        {
+          "content": "Centre les éléments verticalement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle valeur fr représente-t-elle dans CSS Grid ?",
+      "explanation": "fr (fraction) représente une fraction de l'espace disponible dans le conteneur grid.",
+      "hint": "Fraction de l'espace disponible",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Font-relative",
+          "isCorrect": false
+        },
+        {
+          "content": "Fixed ratio",
+          "isCorrect": false
+        },
+        {
+          "content": "Fraction de l'espace disponible",
+          "isCorrect": true
+        },
+        {
+          "content": "Frame",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment centrer un élément horizontalement ET verticalement avec Flexbox ?",
+      "explanation": "En combinant justify-content: center et align-items: center sur le conteneur, on centre l'élément sur les deux axes.",
+      "hint": "Deux propriétés: justify-content et align-items",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "margin: auto",
+          "isCorrect": false
+        },
+        {
+          "content": "justify-content: center + align-items: center",
+          "isCorrect": true
+        },
+        {
+          "content": "display: centered",
+          "isCorrect": false
+        },
+        {
+          "content": "position: center",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre == et === en JavaScript ?",
+      "explanation": "== compare avec coercition de type, === compare sans coercition (type et valeur doivent correspondre).",
+      "hint": "L'un vérifie aussi le type",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "=== vérifie aussi le type de données",
+          "isCorrect": true
+        },
+        {
+          "content": "== est plus strict",
+          "isCorrect": false
+        },
+        {
+          "content": "=== est pour les objets uniquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une closure en JavaScript ?",
+      "explanation": "Une closure est une fonction qui capture les variables de son environnement lexical, même après que la fonction parent a terminé son exécution.",
+      "hint": "La fonction garde accès aux variables de son contexte de création",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Une fonction qui s'auto-appelle",
+          "isCorrect": false
+        },
+        {
+          "content": "Une fonction avec accès aux variables de son scope lexical",
+          "isCorrect": true
+        },
+        {
+          "content": "Une fonction anonyme",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet qui contient des méthodes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que retourne typeof null en JavaScript ?",
+      "explanation": "C'est un bug historique de JavaScript: typeof null retourne 'object' alors que null n'est pas un objet.",
+      "hint": "C'est une anomalie historique connue",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "'null'",
+          "isCorrect": false
+        },
+        {
+          "content": "'undefined'",
+          "isCorrect": false
+        },
+        {
+          "content": "'object'",
+          "isCorrect": true
+        },
+        {
+          "content": "null",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment vérifier si une variable est un tableau en JavaScript ?",
+      "explanation": "Array.isArray() est la méthode fiable pour vérifier si une valeur est un tableau.",
+      "hint": "Il existe une méthode statique sur la classe Array",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "typeof arr === 'array'",
+          "isCorrect": false
+        },
+        {
+          "content": "arr instanceof Object",
+          "isCorrect": false
+        },
+        {
+          "content": "Array.isArray(arr)",
+          "isCorrect": true
+        },
+        {
+          "content": "arr.isArray()",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la méthode Array.prototype.reduce() ?",
+      "explanation": "reduce() applique une fonction accumulatrice sur chaque élément du tableau pour produire une valeur unique.",
+      "hint": "Elle accumule les valeurs en une seule",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Filtre les éléments selon une condition",
+          "isCorrect": false
+        },
+        {
+          "content": "Transforme chaque élément",
+          "isCorrect": false
+        },
+        {
+          "content": "Accumule les valeurs en une seule valeur",
+          "isCorrect": true
+        },
+        {
+          "content": "Trie le tableau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment créer une copie superficielle d'un objet en JavaScript (ES2018+) ?",
+      "explanation": "Le spread operator {...obj} crée une copie superficielle de l'objet. Object.assign({}, obj) fait de même.",
+      "hint": "Utiliser le spread operator",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Object.clone(obj)",
+          "isCorrect": false
+        },
+        {
+          "content": "const copy = {...obj}",
+          "isCorrect": true
+        },
+        {
+          "content": "obj.copy()",
+          "isCorrect": false
+        },
+        {
+          "content": "new Object(obj)",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre let et var en JavaScript ?",
+      "explanation": "var a une portée de fonction et est hoistée, let a une portée de bloc et n'est pas accessible avant sa déclaration (temporal dead zone).",
+      "hint": "Portée de bloc vs portée de fonction",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "let est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "var a une portée de bloc, let une portée de fonction",
+          "isCorrect": false
+        },
+        {
+          "content": "let a une portée de bloc, var une portée de fonction",
+          "isCorrect": true
+        },
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le hoisting en JavaScript ?",
+      "explanation": "Le hoisting est le comportement JS qui déplace les déclarations de variables (var) et fonctions en haut de leur scope lors de la compilation.",
+      "hint": "Les déclarations sont remontées",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un mécanisme de mise en cache",
+          "isCorrect": false
+        },
+        {
+          "content": "L'élévation des déclarations en haut du scope",
+          "isCorrect": true
+        },
+        {
+          "content": "Une technique d'optimisation",
+          "isCorrect": false
+        },
+        {
+          "content": "Une méthode pour attacher des événements",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que retourne Promise.all([p1, p2, p3]) ?",
+      "explanation": "Promise.all() retourne une promesse qui se résout quand toutes les promesses sont résolues, ou rejette dès qu'une promesse est rejetée.",
+      "hint": "Toutes doivent réussir",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "La première promesse résolue",
+          "isCorrect": false
+        },
+        {
+          "content": "Un tableau des résultats quand toutes sont résolues",
+          "isCorrect": true
+        },
+        {
+          "content": "La promesse la plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet avec les résultats nommés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le chaînage optionnel (?.) en JavaScript ?",
+      "explanation": "Le chaînage optionnel (?.) permet d'accéder à des propriétés imbriquées sans throw si une valeur intermédiaire est null ou undefined.",
+      "hint": "Évite les erreurs sur des valeurs null/undefined",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un opérateur ternaire conditionnel",
+          "isCorrect": false
+        },
+        {
+          "content": "Accès sécurisé à des propriétés pouvant être null/undefined",
+          "isCorrect": true
+        },
+        {
+          "content": "Une méthode de chaînage de fonctions",
+          "isCorrect": false
+        },
+        {
+          "content": "L'opérateur de fusion null",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'event loop en JavaScript ?",
+      "explanation": "L'event loop est le mécanisme qui gère l'exécution du code asynchrone: elle surveille la call stack et la task queue, et déplace les callbacks vers la stack quand elle est vide.",
+      "hint": "Gère le code asynchrone dans un environnement single-thread",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un gestionnaire d'événements DOM",
+          "isCorrect": false
+        },
+        {
+          "content": "Le mécanisme de gestion de l'exécution asynchrone basé sur call stack et task queue",
+          "isCorrect": true
+        },
+        {
+          "content": "Une boucle for pour les événements",
+          "isCorrect": false
+        },
+        {
+          "content": "L'API pour écouter des événements",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre microtasks et macrotasks en JavaScript ?",
+      "explanation": "Les microtasks (Promises, queueMicrotask) s'exécutent avant les macrotasks (setTimeout, setInterval). La microtask queue est vidée entièrement avant la prochaine macrotask.",
+      "hint": "Les uns ont la priorité sur les autres",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "Les microtasks s'exécutent avant les macrotasks, après chaque macrotask",
+          "isCorrect": true
+        },
+        {
+          "content": "Les macrotasks ont la priorité",
+          "isCorrect": false
+        },
+        {
+          "content": "Ce sont des termes synonymes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait Object.freeze() en JavaScript ?",
+      "explanation": "Object.freeze() rend un objet immuable: impossible d'ajouter, supprimer ou modifier ses propriétés. La congélation est peu profonde (shallow).",
+      "hint": "L'objet ne peut plus être modifié",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Crée une copie profonde de l'objet",
+          "isCorrect": false
+        },
+        {
+          "content": "Rend l'objet immuable (shallow)",
+          "isCorrect": true
+        },
+        {
+          "content": "Convertit l'objet en JSON",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprime les méthodes de l'objet",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Proxy en JavaScript ?",
+      "explanation": "Un Proxy permet d'intercepter et redéfinir des opérations fondamentales sur un objet (lecture, écriture, suppression) via des 'traps'.",
+      "hint": "Il intercepte les opérations sur un objet",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un serveur intermédiaire en JavaScript",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet qui intercepte et redéfinit des opérations sur un autre objet",
+          "isCorrect": true
+        },
+        {
+          "content": "Un pattern de conception",
+          "isCorrect": false
+        },
+        {
+          "content": "Une méthode de clonage d'objets",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment fonctionne le prototype chain en JavaScript ?",
+      "explanation": "Quand on accède à une propriété d'un objet, JS remonte la chaîne de prototypes jusqu'à trouver la propriété ou atteindre null (Object.prototype).",
+      "hint": "C'est le mécanisme d'héritage de JavaScript",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Les objets copient les méthodes de leur prototype",
+          "isCorrect": false
+        },
+        {
+          "content": "JS remonte la chaîne de prototypes jusqu'à trouver la propriété ou null",
+          "isCorrect": true
+        },
+        {
+          "content": "C'est uniquement pour les classes ES6",
+          "isCorrect": false
+        },
+        {
+          "content": "Chaque objet a sa propre copie des méthodes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel hook React gère un état local dans un composant fonctionnel ?",
+      "explanation": "useState retourne une paire [state, setState] pour gérer un état local dans un composant fonctionnel.",
+      "hint": "use + State",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "useEffect",
+          "isCorrect": false
+        },
+        {
+          "content": "useState",
+          "isCorrect": true
+        },
+        {
+          "content": "useReducer",
+          "isCorrect": false
+        },
+        {
+          "content": "useContext",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel hook React est utilisé pour exécuter des effets de bord ?",
+      "explanation": "useEffect permet d'exécuter du code après le rendu, comme des appels API, des abonnements ou des mutations du DOM.",
+      "hint": "use + Effect",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "useState",
+          "isCorrect": false
+        },
+        {
+          "content": "useEffect",
+          "isCorrect": true
+        },
+        {
+          "content": "useSideEffect",
+          "isCorrect": false
+        },
+        {
+          "content": "useCallback",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre useCallback et useMemo en React ?",
+      "explanation": "useCallback mémoïse une fonction, useMemo mémoïse le résultat d'un calcul. Les deux évitent des recalculs coûteux lors des re-renders.",
+      "hint": "L'un pour les fonctions, l'autre pour les valeurs",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "useCallback mémoïse une valeur, useMemo mémoïse une fonction",
+          "isCorrect": false
+        },
+        {
+          "content": "useCallback mémoïse une fonction, useMemo mémoïse une valeur calculée",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils font la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "useCallback est pour les composants, useMemo pour les hooks",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Context API en React ?",
+      "explanation": "Le Context API permet de partager des données entre composants sans passer par les props à chaque niveau (prop drilling).",
+      "hint": "Alternative au prop drilling",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Une API pour appeler des services externes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de partage de données entre composants sans prop drilling",
+          "isCorrect": true
+        },
+        {
+          "content": "Un gestionnaire d'état global comme Redux",
+          "isCorrect": false
+        },
+        {
+          "content": "Une API pour gérer le contexte d'exécution",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le hook useRef en React ?",
+      "explanation": "useRef retourne un objet {current} mutable qui persiste entre les rendus. Souvent utilisé pour accéder à des éléments DOM ou stocker des valeurs sans déclencher de re-render.",
+      "hint": "Il ne déclenche pas de re-render quand sa valeur change",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Crée un état local qui déclenche un re-render",
+          "isCorrect": false
+        },
+        {
+          "content": "Retourne un objet mutable persistant sans déclencher de re-render",
+          "isCorrect": true
+        },
+        {
+          "content": "Fait référence à des composants parents",
+          "isCorrect": false
+        },
+        {
+          "content": "Gère les refs du router",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que React.memo() ?",
+      "explanation": "React.memo() est un HOC qui mémoïse un composant: il évite les re-renders si les props n'ont pas changé (comparaison shallow).",
+      "hint": "HOC pour éviter les re-renders inutiles",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Un hook pour mémoriser des valeurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un HOC qui évite les re-renders si les props n'ont pas changé",
+          "isCorrect": true
+        },
+        {
+          "content": "Une méthode pour stocker des données localement",
+          "isCorrect": false
+        },
+        {
+          "content": "Une façon de créer des composants mémorisés avec useRef",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la règle fondamentale des hooks React ?",
+      "explanation": "Les hooks doivent toujours être appelés au niveau supérieur d'un composant React (pas dans des conditions, boucles ou fonctions imbriquées).",
+      "hint": "Pas dans des conditions ou des boucles",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Ils doivent commencer par 'use'",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils doivent être appelés au niveau supérieur, pas dans des conditions ou boucles",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils ne peuvent pas être imbriqués",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils doivent être déclarés en dehors des composants",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment passer des données d'un composant enfant au composant parent en React ?",
+      "explanation": "En React, les données remontent via des callbacks (fonctions) passées en props par le parent à l'enfant, que l'enfant appelle avec les données.",
+      "hint": "Via des callbacks passés en props",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Directement via l'état du parent",
+          "isCorrect": false
+        },
+        {
+          "content": "Via des callbacks (fonctions) passés en props au composant enfant",
+          "isCorrect": true
+        },
+        {
+          "content": "En utilisant le contexte globalement",
+          "isCorrect": false
+        },
+        {
+          "content": "Ce n'est pas possible en React",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le JSX en React ?",
+      "explanation": "JSX est une extension de syntaxe JavaScript qui permet d'écrire du code ressemblant à du HTML directement dans JavaScript. Transpilé en appels React.createElement().",
+      "hint": "Syntaxe qui ressemble à du HTML dans JavaScript",
+      "difficulty": "EASY",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Un nouveau langage de programmation",
+          "isCorrect": false
+        },
+        {
+          "content": "Une syntaxe JavaScript qui ressemble à du HTML, transpilée en React.createElement()",
+          "isCorrect": true
+        },
+        {
+          "content": "Un système de templates HTML",
+          "isCorrect": false
+        },
+        {
+          "content": "JavaScript XML — un fichier de configuration",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Virtual DOM dans React ?",
+      "explanation": "Le Virtual DOM est une représentation légère en mémoire du DOM réel. React le compare avec l'état précédent (diffing) pour mettre à jour efficacement le DOM réel.",
+      "hint": "Représentation en mémoire du DOM, utilisée pour optimiser les mises à jour",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Un DOM stocké en base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Une copie du DOM réel en mémoire permettant une mise à jour efficace",
+          "isCorrect": true
+        },
+        {
+          "content": "Un DOM virtuel créé pour les tests",
+          "isCorrect": false
+        },
+        {
+          "content": "Un DOM sans JavaScript",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la reconciliation en React ?",
+      "explanation": "La reconciliation est l'algorithme de React qui compare le Virtual DOM précédent et actuel (diffing) pour déterminer les changements minimaux à appliquer au DOM réel.",
+      "hint": "Algorithme de comparaison du Virtual DOM",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "La synchronisation entre composants et état",
+          "isCorrect": false
+        },
+        {
+          "content": "L'algorithme de comparaison du Virtual DOM pour des mises à jour minimales du DOM réel",
+          "isCorrect": true
+        },
+        {
+          "content": "La résolution des conflits de state",
+          "isCorrect": false
+        },
+        {
+          "content": "La mise à jour des contextes React",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est le but de la prop 'key' dans les listes React ?",
+      "explanation": "La prop key aide React à identifier quels éléments d'une liste ont changé, été ajoutés ou supprimés, pour une reconciliation efficace.",
+      "hint": "Aide l'algorithme de reconciliation",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Identifier chaque composant par son ordre",
+          "isCorrect": false
+        },
+        {
+          "content": "Aider React à identifier les changements dans une liste pour la reconciliation",
+          "isCorrect": true
+        },
+        {
+          "content": "Attribuer un identifiant unique pour les styles",
+          "isCorrect": false
+        },
+        {
+          "content": "C'est requis pour les formulaires",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un custom hook en React ?",
+      "explanation": "Un custom hook est une fonction JavaScript dont le nom commence par 'use' qui peut appeler d'autres hooks. Il permet de réutiliser la logique stateful entre composants.",
+      "hint": "Commence par 'use', réutilise la logique",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Un hook natif de React non documenté",
+          "isCorrect": false
+        },
+        {
+          "content": "Une fonction commençant par 'use' qui encapsule et réutilise la logique stateful",
+          "isCorrect": true
+        },
+        {
+          "content": "Un hook pour les composants de classe",
+          "isCorrect": false
+        },
+        {
+          "content": "Un hook tiers installé via npm",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment optimiser les performances d'une liste très longue en React ?",
+      "explanation": "La virtualisation (react-virtual, react-window) n'affiche que les éléments visibles du viewport, réduisant le nombre de nœuds DOM et les re-renders.",
+      "hint": "N'afficher que les éléments visibles",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Utiliser useEffect pour charger les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Virtualiser la liste (react-window) pour ne rendre que les éléments visibles",
+          "isCorrect": true
+        },
+        {
+          "content": "Utiliser React.memo sur chaque élément",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser useCallback pour les handlers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre 'interface' et 'type' en TypeScript ?",
+      "explanation": "Les interfaces sont extensibles (déclaration merging) et meilleures pour définir des contrats d'objets. Les types sont plus flexibles (unions, tuples, mapped types) mais non mergeable.",
+      "hint": "Les interfaces supportent la fusion de déclarations",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TypeScript"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "interface supporte la déclaration merging, type supporte les unions et types complexes",
+          "isCorrect": true
+        },
+        {
+          "content": "type est plus performant",
+          "isCorrect": false
+        },
+        {
+          "content": "interface est pour les classes, type pour les fonctions",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un generic en TypeScript ?",
+      "explanation": "Les generics permettent de créer des composants réutilisables qui fonctionnent avec plusieurs types, tout en maintenant la sécurité de type.",
+      "hint": "Type paramétré, comme les templates en C++",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TypeScript"
+      ],
+      "answers": [
+        {
+          "content": "Un type sans contrainte",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type paramétré permettant la réutilisation avec différents types",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type hérité d'une interface",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type global accessible partout",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'opérateur 'as' en TypeScript ?",
+      "explanation": "L'opérateur 'as' effectue un type assertion: il indique au compilateur TS de traiter une valeur comme un type spécifique sans vérification runtime.",
+      "hint": "Force le type vu par le compilateur",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TypeScript"
+      ],
+      "answers": [
+        {
+          "content": "Convertit réellement le type à l'exécution",
+          "isCorrect": false
+        },
+        {
+          "content": "Indique au compilateur de traiter la valeur comme un type spécifique",
+          "isCorrect": true
+        },
+        {
+          "content": "Crée un alias de type",
+          "isCorrect": false
+        },
+        {
+          "content": "Étend un type existant",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le type 'unknown' en TypeScript et comment diffère-t-il de 'any' ?",
+      "explanation": "unknown est le type-safe équivalent de any: on ne peut pas opérer sur une valeur unknown sans la vérifier d'abord (type narrowing). any désactive complètement la vérification.",
+      "hint": "unknown force la vérification de type avant utilisation",
+      "difficulty": "HARD",
+      "tags": [
+        "TypeScript"
+      ],
+      "answers": [
+        {
+          "content": "Ce sont des synonymes",
+          "isCorrect": false
+        },
+        {
+          "content": "unknown force la vérification du type avant utilisation, any désactive la vérification",
+          "isCorrect": true
+        },
+        {
+          "content": "unknown est pour les objets, any pour les primitives",
+          "isCorrect": false
+        },
+        {
+          "content": "any est plus strict que unknown",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que sont les Utility Types en TypeScript ?",
+      "explanation": "Les Utility Types sont des types génériques prédéfinis: Partial<T>, Required<T>, Readonly<T>, Pick<T,K>, Omit<T,K>, Record<K,V>, etc.",
+      "hint": "Partial, Required, Readonly, Pick, Omit...",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "TypeScript"
+      ],
+      "answers": [
+        {
+          "content": "Des types pour les fonctions utilitaires",
+          "isCorrect": false
+        },
+        {
+          "content": "Des types génériques prédéfinis pour transformer d'autres types",
+          "isCorrect": true
+        },
+        {
+          "content": "Des types importés de bibliothèques tiers",
+          "isCorrect": false
+        },
+        {
+          "content": "Des types pour les utilitaires du navigateur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre SSR et SSG dans Next.js ?",
+      "explanation": "SSR (Server Side Rendering) génère la page à chaque requête, SSG (Static Site Generation) génère la page au build time. SSG est plus rapide mais les données peuvent être obsolètes.",
+      "hint": "L'un génère au build, l'autre à chaque requête",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Next.js"
+      ],
+      "answers": [
+        {
+          "content": "SSR est plus rapide que SSG",
+          "isCorrect": false
+        },
+        {
+          "content": "SSR génère à chaque requête, SSG génère au build time",
+          "isCorrect": true
+        },
+        {
+          "content": "SSG est dynamique, SSR est statique",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils font la même chose",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle fonction Next.js est utilisée pour le Server Side Rendering ?",
+      "explanation": "getServerSideProps est exécutée côté serveur à chaque requête pour fetcher les données avant le rendu.",
+      "hint": "getServer...",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Next.js"
+      ],
+      "answers": [
+        {
+          "content": "getStaticProps",
+          "isCorrect": false
+        },
+        {
+          "content": "getServerSideProps",
+          "isCorrect": true
+        },
+        {
+          "content": "getInitialProps",
+          "isCorrect": false
+        },
+        {
+          "content": "fetchServerData",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'Incremental Static Regeneration (ISR) dans Next.js ?",
+      "explanation": "ISR permet de mettre à jour des pages statiques après le déploiement, en régénérant les pages en arrière-plan selon un intervalle de temps défini avec revalidate.",
+      "hint": "Régénération de pages statiques après déploiement",
+      "difficulty": "HARD",
+      "tags": [
+        "Next.js"
+      ],
+      "answers": [
+        {
+          "content": "Un moyen de recharger les pages côté client",
+          "isCorrect": false
+        },
+        {
+          "content": "La régénération de pages statiques en arrière-plan selon un intervalle",
+          "isCorrect": true
+        },
+        {
+          "content": "L'incrémentation de versions de l'application",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de mise en cache Redis",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Lazy Loading en JavaScript ?",
+      "explanation": "Le Lazy Loading reporte le chargement de ressources (images, modules) jusqu'à ce qu'elles soient nécessaires, améliorant les performances initiales.",
+      "hint": "Chargement différé à la demande",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un chargement rapide de toutes les ressources",
+          "isCorrect": false
+        },
+        {
+          "content": "Le chargement différé des ressources jusqu'à ce qu'elles soient nécessaires",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type de boucle en JavaScript",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le code splitting dans les applications Web ?",
+      "explanation": "Le code splitting divise le bundle JavaScript en plusieurs morceaux chargés à la demande, réduisant la taille du bundle initial.",
+      "hint": "Diviser le bundle en plusieurs fichiers",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Diviser le code en plusieurs fichiers de développement",
+          "isCorrect": false
+        },
+        {
+          "content": "Diviser le bundle JS en morceaux chargés à la demande",
+          "isCorrect": true
+        },
+        {
+          "content": "Séparer HTML, CSS et JavaScript",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser des modules ES6",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le debouncing en JavaScript ?",
+      "explanation": "Le debouncing reporte l'exécution d'une fonction jusqu'à ce qu'un délai s'écoule sans appel. Utile pour les champs de recherche, resize, etc.",
+      "hint": "Évite d'appeler une fonction trop souvent",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Une technique pour accélérer les animations",
+          "isCorrect": false
+        },
+        {
+          "content": "Reporter l'exécution d'une fonction jusqu'à ce qu'un délai sans appel s'écoule",
+          "isCorrect": true
+        },
+        {
+          "content": "Une méthode de tri optimisée",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de gestion des erreurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre debounce et throttle ?",
+      "explanation": "Debounce exécute la fonction après un délai d'inactivité. Throttle exécute la fonction au maximum une fois par intervalle de temps.",
+      "hint": "L'un limite la fréquence, l'autre attend l'inactivité",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Ils font la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "Debounce attend l'inactivité, throttle limite la fréquence d'exécution",
+          "isCorrect": true
+        },
+        {
+          "content": "Throttle est plus performant",
+          "isCorrect": false
+        },
+        {
+          "content": "Debounce est pour les events, throttle pour les timers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Core Web Vitals ?",
+      "explanation": "Les Core Web Vitals sont des métriques Google mesurant l'expérience utilisateur: LCP (chargement), FID/INP (interactivité), CLS (stabilité visuelle).",
+      "hint": "LCP, FID/INP, CLS",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript",
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Des métriques de performance réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Des métriques Google mesurant l'expérience utilisateur (LCP, FID, CLS)",
+          "isCorrect": true
+        },
+        {
+          "content": "Des tests unitaires pour le frontend",
+          "isCorrect": false
+        },
+        {
+          "content": "Des APIs du navigateur pour la performance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie ARIA dans le contexte du web ?",
+      "explanation": "ARIA (Accessible Rich Internet Applications) est un ensemble d'attributs HTML qui rendent les contenus et applications web accessibles aux personnes handicapées.",
+      "hint": "Accessible Rich Internet Applications",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Asynchronous React Interface API",
+          "isCorrect": false
+        },
+        {
+          "content": "Accessible Rich Internet Applications",
+          "isCorrect": true
+        },
+        {
+          "content": "Advanced React Interactive Attributes",
+          "isCorrect": false
+        },
+        {
+          "content": "Automated Routing Interface Adapter",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel attribut HTML améliore l'accessibilité des images ?",
+      "explanation": "L'attribut alt fournit une description textuelle de l'image pour les lecteurs d'écran et s'affiche si l'image ne se charge pas.",
+      "hint": "Texte alternatif",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "title",
+          "isCorrect": false
+        },
+        {
+          "content": "alt",
+          "isCorrect": true
+        },
+        {
+          "content": "description",
+          "isCorrect": false
+        },
+        {
+          "content": "caption",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence principale entre Vite et Webpack ?",
+      "explanation": "Vite utilise les ES modules natifs en dev (très rapide au démarrage), Webpack bundle tout. En production, Vite utilise Rollup pour le bundle. Webpack est plus mature et configurable.",
+      "hint": "L'un est plus rapide en développement grâce aux ES modules natifs",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Vite est uniquement pour React, Webpack pour Vue",
+          "isCorrect": false
+        },
+        {
+          "content": "Vite utilise les ES modules natifs (plus rapide en dev), Webpack bundle tout",
+          "isCorrect": true
+        },
+        {
+          "content": "Webpack est plus rapide que Vite",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils font exactement la même chose",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un tree-shaking dans les bundlers modernes ?",
+      "explanation": "Le tree-shaking élimine le code JavaScript mort (non utilisé) lors du build, réduisant la taille du bundle final.",
+      "hint": "Élimination du code non utilisé",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de tri d'arbre DOM",
+          "isCorrect": false
+        },
+        {
+          "content": "L'élimination du code mort (non utilisé) lors du bundle",
+          "isCorrect": true
+        },
+        {
+          "content": "Un mode de debug pour les composants arborescents",
+          "isCorrect": false
+        },
+        {
+          "content": "L'optimisation du CSS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle API JavaScript permet de stocker des données côté client de façon persistante ?",
+      "explanation": "localStorage permet de stocker des données clé-valeur dans le navigateur sans expiration. sessionStorage expire à la fermeture de l'onglet.",
+      "hint": "localStorage ou sessionStorage",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "cookies uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "localStorage / sessionStorage",
+          "isCorrect": true
+        },
+        {
+          "content": "IndexedDB uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "WebStorage API (deprecated)",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'API Fetch en JavaScript ?",
+      "explanation": "L'API Fetch est une interface moderne pour effectuer des requêtes HTTP depuis le navigateur, retournant des Promises. Elle remplace XMLHttpRequest.",
+      "hint": "Remplace XMLHttpRequest",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Une bibliothèque externe pour les requêtes HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Une API native du navigateur pour les requêtes HTTP basée sur Promises",
+          "isCorrect": true
+        },
+        {
+          "content": "Une méthode jQuery",
+          "isCorrect": false
+        },
+        {
+          "content": "L'API pour accéder au DOM",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que les Web Workers en JavaScript ?",
+      "explanation": "Les Web Workers permettent d'exécuter du code JavaScript dans un thread séparé, évitant de bloquer le thread principal (UI thread).",
+      "hint": "Thread de fond en JavaScript",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Des fonctions qui s'exécutent en arrière-plan avec setTimeout",
+          "isCorrect": false
+        },
+        {
+          "content": "Des scripts qui s'exécutent dans un thread séparé pour ne pas bloquer l'UI",
+          "isCorrect": true
+        },
+        {
+          "content": "Des Service Workers pour la mise en cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Des workers Node.js pour le backend",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Service Worker ?",
+      "explanation": "Un Service Worker est un script qui s'exécute en arrière-plan, séparé du thread principal, permettant le mode offline, la mise en cache et les push notifications.",
+      "hint": "Permet le mode hors ligne",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript",
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Un processus serveur côté backend",
+          "isCorrect": false
+        },
+        {
+          "content": "Un script en arrière-plan permettant offline, cache et push notifications",
+          "isCorrect": true
+        },
+        {
+          "content": "Un Web Worker spécial pour les formulaires",
+          "isCorrect": false
+        },
+        {
+          "content": "Un script de service client automatisé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la Composition API dans Vue 3 ?",
+      "explanation": "La Composition API est une façon d'organiser la logique d'un composant Vue par fonctionnalité (via setup()), par opposition à l'Options API (data, methods, computed).",
+      "hint": "Alternative à l'Options API, organisation par fonctionnalité",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Vue.js"
+      ],
+      "answers": [
+        {
+          "content": "Une API pour la gestion des composants parents",
+          "isCorrect": false
+        },
+        {
+          "content": "Une façon d'organiser la logique du composant par fonctionnalité via setup()",
+          "isCorrect": true
+        },
+        {
+          "content": "Une API pour les compositions CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de composition de pages web",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle directive Vue.js affiche conditionnellement un élément ?",
+      "explanation": "v-if affiche ou masque complètement un élément du DOM selon une condition (l'élément est détruit/recréé). v-show garde l'élément dans le DOM mais change sa visibilité CSS.",
+      "hint": "v-if ou v-show",
+      "difficulty": "EASY",
+      "tags": [
+        "Vue.js"
+      ],
+      "answers": [
+        {
+          "content": "v-display",
+          "isCorrect": false
+        },
+        {
+          "content": "v-if",
+          "isCorrect": true
+        },
+        {
+          "content": "v-condition",
+          "isCorrect": false
+        },
+        {
+          "content": "v-visible",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle directive Vue.js est utilisée pour boucler sur une liste ?",
+      "explanation": "v-for permet d'itérer sur un tableau ou un objet pour rendre des éléments répétés. Syntaxe: v-for='item in items' :key='item.id'",
+      "hint": "v-for",
+      "difficulty": "EASY",
+      "tags": [
+        "Vue.js"
+      ],
+      "answers": [
+        {
+          "content": "v-each",
+          "isCorrect": false
+        },
+        {
+          "content": "v-for",
+          "isCorrect": true
+        },
+        {
+          "content": "v-loop",
+          "isCorrect": false
+        },
+        {
+          "content": "v-repeat",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Vuex dans l'écosystème Vue.js ?",
+      "explanation": "Vuex est une bibliothèque de gestion d'état centralisée pour Vue.js, basée sur le pattern Flux (state, mutations, actions, getters).",
+      "hint": "Gestion d'état centralisée pour Vue",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Vue.js"
+      ],
+      "answers": [
+        {
+          "content": "Un framework de test pour Vue",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de gestion d'état centralisée (pattern Flux)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un routeur pour Vue.js",
+          "isCorrect": false
+        },
+        {
+          "content": "Un gestionnaire de formulaires",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un module Angular ?",
+      "explanation": "Un NgModule est un conteneur regroupant des composants, directives, pipes et services liés, organisant l'application en blocs fonctionnels.",
+      "hint": "Conteneur regroupant composants et services liés",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Angular"
+      ],
+      "answers": [
+        {
+          "content": "Un fichier TypeScript unique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un conteneur regroupant composants, directives, pipes et services liés",
+          "isCorrect": true
+        },
+        {
+          "content": "Un composant Angular spécial",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service partagé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'injection de dépendances dans Angular ?",
+      "explanation": "L'injection de dépendances (DI) est un pattern où Angular fournit automatiquement les dépendances (services) aux composants qui les déclarent dans leur constructeur.",
+      "hint": "Angular fournit les services automatiquement",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Angular"
+      ],
+      "answers": [
+        {
+          "content": "Une technique d'import de modules",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pattern où Angular fournit automatiquement les dépendances via le constructeur",
+          "isCorrect": true
+        },
+        {
+          "content": "L'injection de code HTML dans les templates",
+          "isCorrect": false
+        },
+        {
+          "content": "Une méthode pour injecter du CSS dynamiquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un test unitaire dans le contexte frontend ?",
+      "explanation": "Un test unitaire teste une unité isolée de code (fonction, composant) en mockant ses dépendances externes, vérifiait que l'unité produit le bon output pour un input donné.",
+      "hint": "Teste une unité isolée",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un test de l'interface utilisateur complète",
+          "isCorrect": false
+        },
+        {
+          "content": "Un test d'une unité isolée de code avec ses dépendances mockées",
+          "isCorrect": true
+        },
+        {
+          "content": "Un test des appels API",
+          "isCorrect": false
+        },
+        {
+          "content": "Un test de performance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle bibliothèque est couramment utilisée pour tester des composants React ?",
+      "explanation": "React Testing Library est la bibliothèque recommandée pour tester les composants React. Elle teste le comportement visible plutôt que les détails d'implémentation.",
+      "hint": "React Testing Library",
+      "difficulty": "EASY",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Enzyme",
+          "isCorrect": false
+        },
+        {
+          "content": "React Testing Library",
+          "isCorrect": true
+        },
+        {
+          "content": "Jasmine",
+          "isCorrect": false
+        },
+        {
+          "content": "Mocha",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre les tests E2E et les tests unitaires ?",
+      "explanation": "Les tests E2E testent l'application entière de bout en bout comme un utilisateur réel (navigateur). Les tests unitaires testent des unités isolées de code.",
+      "hint": "End-to-end vs isolation",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "E2E est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "E2E teste l'application complète en simulant un utilisateur, unitaires testent des unités isolées",
+          "isCorrect": true
+        },
+        {
+          "content": "E2E teste le backend, unitaires le frontend",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils font la même chose",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la particularité de Svelte par rapport à React et Vue ?",
+      "explanation": "Svelte est un compilateur: il n'inclut pas de runtime dans le bundle final. Le code Svelte est compilé en JavaScript vanilla optimisé au build time.",
+      "hint": "Pas de runtime dans le bundle",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Svelte"
+      ],
+      "answers": [
+        {
+          "content": "Svelte utilise TypeScript nativement",
+          "isCorrect": false
+        },
+        {
+          "content": "Svelte est un compilateur qui génère du JavaScript vanilla sans runtime",
+          "isCorrect": true
+        },
+        {
+          "content": "Svelte est basé sur WebAssembly",
+          "isCorrect": false
+        },
+        {
+          "content": "Svelte est une surcouche de React",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Tailwind CSS ?",
+      "explanation": "Tailwind CSS est un framework CSS utility-first: on compose les styles directement dans le HTML avec des classes utilitaires prédéfinies au lieu d'écrire du CSS personnalisé.",
+      "hint": "Utility-first CSS framework",
+      "difficulty": "EASY",
+      "tags": [
+        "Tailwind CSS"
+      ],
+      "answers": [
+        {
+          "content": "Un framework CSS basé sur des composants prêts à l'emploi",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework CSS utility-first où les styles sont des classes utilitaires",
+          "isCorrect": true
+        },
+        {
+          "content": "Un compilateur CSS vers JavaScript",
+          "isCorrect": false
+        },
+        {
+          "content": "Un preprocesseur CSS comme SASS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la directive @apply dans Tailwind CSS ?",
+      "explanation": "@apply permet d'extraire des classes utilitaires Tailwind dans du CSS personnalisé, évitant la répétition de classes dans le HTML.",
+      "hint": "Extrait des classes utilitaires en CSS",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Tailwind CSS"
+      ],
+      "answers": [
+        {
+          "content": "Importe des styles d'une autre feuille CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Extrait des classes utilitaires Tailwind dans du CSS personnalisé",
+          "isCorrect": true
+        },
+        {
+          "content": "Applique les styles conditionnellement",
+          "isCorrect": false
+        },
+        {
+          "content": "Active le mode JIT",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une Media Query en CSS ?",
+      "explanation": "Les media queries permettent d'appliquer des styles CSS selon les caractéristiques de l'appareil (largeur d'écran, orientation, etc.).",
+      "hint": "@media",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Une requête vers une API média",
+          "isCorrect": false
+        },
+        {
+          "content": "Une règle CSS conditionnelle selon les caractéristiques de l'appareil",
+          "isCorrect": true
+        },
+        {
+          "content": "Une méthode pour importer des fichiers CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un sélecteur CSS pour les éléments média",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'approche Mobile First en responsive design ?",
+      "explanation": "Mobile First signifie concevoir d'abord pour les petits écrans puis ajouter des styles pour les grands écrans avec des media queries min-width.",
+      "hint": "Commencer par les petits écrans",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Concevoir pour desktop puis adapter pour mobile",
+          "isCorrect": false
+        },
+        {
+          "content": "Concevoir d'abord pour mobile puis étendre pour les grands écrans",
+          "isCorrect": true
+        },
+        {
+          "content": "N'afficher que sur mobile",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser uniquement des pixels pour le responsive",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle unité CSS est relative au viewport ?",
+      "explanation": "vw (viewport width) et vh (viewport height) sont relatives aux dimensions du viewport: 1vw = 1% de la largeur du viewport.",
+      "hint": "vw et vh",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "em",
+          "isCorrect": false
+        },
+        {
+          "content": "px",
+          "isCorrect": false
+        },
+        {
+          "content": "vw / vh",
+          "isCorrect": true
+        },
+        {
+          "content": "rem",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le concept de Concurrent Mode dans React 18 ?",
+      "explanation": "Concurrent React permet à React de travailler sur plusieurs tâches simultanément, en interrompant et reprenant le rendu pour maintenir la réactivité de l'UI.",
+      "hint": "Rendu interruptible pour maintenir la réactivité",
+      "difficulty": "EXPERT",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Une façon d'utiliser plusieurs instances React",
+          "isCorrect": false
+        },
+        {
+          "content": "Un modèle de rendu interruptible permettant la priorité des mises à jour UI",
+          "isCorrect": true
+        },
+        {
+          "content": "Le support multi-thread de React",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de routage concurrent",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern Compound Components en React ?",
+      "explanation": "Le pattern Compound Components crée des composants qui partagent un état implicite via Context, offrant une API flexible (ex: Select > Option, Tab > TabPanel).",
+      "hint": "Composants qui partagent un état via Context implicitement",
+      "difficulty": "EXPERT",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Des composants qui héritent les uns des autres",
+          "isCorrect": false
+        },
+        {
+          "content": "Des composants qui partagent un état implicite, offrant une API flexible",
+          "isCorrect": true
+        },
+        {
+          "content": "Des composants composés de plusieurs fichiers",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pattern de composition CSS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment fonctionne le Suspense dans React ?",
+      "explanation": "React Suspense permet de 'suspendre' le rendu d'un composant en attendant des données asynchrones, affichant un fallback entre-temps. Utilisé avec lazy(), use(), ou React Server Components.",
+      "hint": "Affiche un fallback en attendant des données asynchrones",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Un mécanisme de gestion d'erreurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un composant qui affiche un fallback pendant qu'un enfant attend des données asynchrones",
+          "isCorrect": true
+        },
+        {
+          "content": "Une API pour les animations de chargement",
+          "isCorrect": false
+        },
+        {
+          "content": "Un hook pour les requêtes API",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le module bundling avec ESM (ES Modules) ?",
+      "explanation": "ESM utilise import/export natifs. Les bundlers modernes (Vite, Rollup) exploitent le static analysis pour le tree-shaking et le code splitting automatique.",
+      "hint": "import/export natif avec analyse statique",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un système de bundling spécifique à Node.js",
+          "isCorrect": false
+        },
+        {
+          "content": "Le bundling basé sur import/export natifs permettant tree-shaking et analyse statique",
+          "isCorrect": true
+        },
+        {
+          "content": "Un ancien format de module remplacé par CommonJS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un format de bundle compressé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern Render Props en React ?",
+      "explanation": "Le Render Props pattern consiste à passer une fonction comme prop, que le composant appelle pour déléguer ce qu'il doit afficher. Remplacé en grande partie par les custom hooks.",
+      "hint": "Une prop qui est une fonction retournant du JSX",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Des props qui contiennent du HTML statique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pattern où une prop est une fonction qui détermine ce que le composant affiche",
+          "isCorrect": true
+        },
+        {
+          "content": "Des props calculées au rendu",
+          "isCorrect": false
+        },
+        {
+          "content": "Un moyen de modifier le DOM directement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Redux et à quoi sert-il ?",
+      "explanation": "Redux est une bibliothèque de gestion d'état prévisible basée sur un store global unique, des actions et des reducers purs. Utile pour les applications complexes avec beaucoup d'état partagé.",
+      "hint": "Store global unique, actions, reducers",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Un framework de routage pour React",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de gestion d'état basée sur store unique, actions et reducers",
+          "isCorrect": true
+        },
+        {
+          "content": "Un gestionnaire de formulaires React",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de test React",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Zustand dans l'écosystème React ?",
+      "explanation": "Zustand est une bibliothèque légère de gestion d'état pour React, alternative à Redux, avec une API simple basée sur des stores et des actions directement dans un hook.",
+      "hint": "Alternative légère à Redux",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Un ORM pour React",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque légère de gestion d'état alternative à Redux",
+          "isCorrect": true
+        },
+        {
+          "content": "Un gestionnaire de routes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework de test E2E",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'Apollo Client dans le contexte React/GraphQL ?",
+      "explanation": "Apollo Client est une bibliothèque de gestion d'état pour GraphQL, gérant les requêtes, le cache, les mutations et les abonnements côté client.",
+      "hint": "Bibliothèque client pour GraphQL",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un serveur GraphQL léger",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque client GraphQL gérant requêtes, cache et mutations",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de documentation GraphQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Un préprocesseur GraphQL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Nuxt.js ?",
+      "explanation": "Nuxt.js est un framework basé sur Vue.js qui ajoute SSR, SSG, routage automatique, gestion d'état et optimisations de performance out-of-the-box.",
+      "hint": "Framework Vue.js avec SSR",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Nuxt.js"
+      ],
+      "answers": [
+        {
+          "content": "Un framework CSS pour Vue",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework Vue.js avec SSR, SSG, routage automatique et optimisations",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de build pour Vue",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque d'UI pour Vue",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un preprocesseur CSS comme SASS/SCSS ?",
+      "explanation": "SASS/SCSS est un preprocesseur CSS qui ajoute variables, imbrication, mixins, fonctions et imports, compilé en CSS standard.",
+      "hint": "Variables, mixins, imbrication",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Un framework CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un langage qui étend CSS avec variables, mixins, imbrication, compilé en CSS",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de minification CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de modules CSS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la propriété CSS 'clip-path' ?",
+      "explanation": "clip-path définit une région de découpe qui masque les parties d'un élément en dehors de la forme définie (cercle, polygone, etc.).",
+      "hint": "Masque des parties d'un élément selon une forme",
+      "difficulty": "HARD",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Coupe le contenu qui dépasse",
+          "isCorrect": false
+        },
+        {
+          "content": "Définit une région de découpe selon une forme géométrique",
+          "isCorrect": true
+        },
+        {
+          "content": "Copie l'élément dans le presse-papier",
+          "isCorrect": false
+        },
+        {
+          "content": "Gère le chemin de navigation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que CSS Houdini ?",
+      "explanation": "CSS Houdini est un ensemble d'APIs bas niveau qui permettent aux développeurs d'étendre le moteur CSS du navigateur via JavaScript, créant des propriétés CSS personnalisées performantes.",
+      "hint": "APIs pour étendre le moteur CSS du navigateur",
+      "difficulty": "EXPERT",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Un framework CSS magique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un ensemble d'APIs pour étendre le moteur CSS via JavaScript",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de génération de CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un plugin PostCSS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une Progressive Web App (PWA) ?",
+      "explanation": "Une PWA est une application web qui utilise des technologies modernes (Service Workers, Web App Manifest) pour offrir une expérience proche des apps natives: offline, installable, notifications.",
+      "hint": "App web installable avec fonctionnalités natives",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript",
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Une application web qui progresse lentement",
+          "isCorrect": false
+        },
+        {
+          "content": "Une app web utilisant Service Workers et Manifest pour une expérience native",
+          "isCorrect": true
+        },
+        {
+          "content": "Une application React déployée sur serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "Une app web avec animations progressives",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre HTTP et WebSocket ?",
+      "explanation": "HTTP est unidirectionnel (client demande, serveur répond). WebSocket établit une connexion bidirectionnelle persistante pour la communication temps-réel.",
+      "hint": "Bidirectionnel vs unidirectionnel",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "HTTP est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "WebSocket établit une connexion persistante bidirectionnelle, HTTP est unidirectionnel",
+          "isCorrect": true
+        },
+        {
+          "content": "WebSocket remplace complètement HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils utilisent le même protocole",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que CORS et pourquoi existe-t-il ?",
+      "explanation": "CORS (Cross-Origin Resource Sharing) est un mécanisme de sécurité qui contrôle les requêtes HTTP entre origines différentes. Il implémente la Same-Origin Policy du navigateur.",
+      "hint": "Sécurité pour les requêtes cross-origin",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript",
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Un protocole de compression",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de sécurité contrôlant les requêtes entre origines différentes",
+          "isCorrect": true
+        },
+        {
+          "content": "Un système de cache HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de routing",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1978 @@
+{
+  "categoryName": "Securite",
+  "questions": [
+    {
+      "content": "Qu'est-ce que l'OWASP Top 10 ?",
+      "explanation": "L'OWASP Top 10 est une liste des 10 risques de sécurité web les plus critiques, mise à jour périodiquement par la communauté OWASP pour guider les développeurs.",
+      "hint": "Liste des 10 risques de sécurité web les plus critiques",
+      "difficulty": "EASY",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un framework de développement web sécurisé",
+          "isCorrect": false
+        },
+        {
+          "content": "La liste des 10 risques de sécurité web les plus critiques",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de scan de vulnérabilités",
+          "isCorrect": false
+        },
+        {
+          "content": "Un standard de certification sécurité",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la première vulnérabilité de l'OWASP Top 10 2021 ?",
+      "explanation": "Broken Access Control est #1 dans l'OWASP Top 10 2021: les restrictions sur les actions des utilisateurs authentifiés ne sont pas correctement appliquées.",
+      "hint": "Broken Access Control",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Injection",
+          "isCorrect": false
+        },
+        {
+          "content": "Broken Access Control",
+          "isCorrect": true
+        },
+        {
+          "content": "XSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Cryptographic Failures",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la vulnérabilité IDOR ?",
+      "explanation": "IDOR (Insecure Direct Object Reference) permet à un utilisateur d'accéder à des ressources d'autres utilisateurs en manipulant des identifiants dans les requêtes (ex: /api/users/123 → /api/users/456).",
+      "hint": "Manipulation d'identifiants pour accéder aux données d'autres",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Une injection SQL indirecte",
+          "isCorrect": false
+        },
+        {
+          "content": "Accès à des ressources d'autres utilisateurs en manipulant des identifiants",
+          "isCorrect": true
+        },
+        {
+          "content": "Une attaque par redirection",
+          "isCorrect": false
+        },
+        {
+          "content": "Un déni de service indirect",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une Security Misconfiguration ?",
+      "explanation": "Security Misconfiguration (OWASP A05) inclut: permissions trop larges, services inutiles actifs, mots de passe par défaut, stack traces exposées, headers de sécurité manquants.",
+      "hint": "Configurations par défaut, permissions trop larges, services inutiles",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un bug de configuration dans le code",
+          "isCorrect": false
+        },
+        {
+          "content": "Des configurations insuffisantes: permissions larges, services inutiles, configs par défaut",
+          "isCorrect": true
+        },
+        {
+          "content": "Un mauvais choix de framework",
+          "isCorrect": false
+        },
+        {
+          "content": "Une configuration réseau incorrecte",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Cryptographic Failures dans l'OWASP 2021 ?",
+      "explanation": "Cryptographic Failures (OWASP A02) couvre les données sensibles transmises en clair, algorithmes cryptographiques obsolètes, clés faibles, absence de chiffrement.",
+      "hint": "Données sensibles en clair, algos obsolètes",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP",
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Des échecs de compilation du code cryptographique",
+          "isCorrect": false
+        },
+        {
+          "content": "Données sensibles en clair, algorithmes obsolètes, clés faibles",
+          "isCorrect": true
+        },
+        {
+          "content": "Des erreurs dans les bibliothèques crypto",
+          "isCorrect": false
+        },
+        {
+          "content": "Des certificats SSL expirés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quels sont les 3 types de XSS ?",
+      "explanation": "Les 3 types de XSS sont: Stored (script stocké en BD), Reflected (script dans la réponse d'une requête), DOM-based (manipulation du DOM côté client).",
+      "hint": "Stored, Reflected, DOM-based",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "XSS",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Active, Passive, Hybrid",
+          "isCorrect": false
+        },
+        {
+          "content": "Stored, Reflected, DOM-based",
+          "isCorrect": true
+        },
+        {
+          "content": "SQL, HTML, JavaScript",
+          "isCorrect": false
+        },
+        {
+          "content": "Persistent, Transient, Reflected",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment prévenir les attaques XSS ?",
+      "explanation": "Prévention XSS: échapper l'output HTML (htmlspecialchars), Content Security Policy (CSP), utiliser des frameworks qui échappent automatiquement, validation des entrées.",
+      "hint": "Échapper l'output, CSP, validation",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "XSS",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Échapper l'output HTML, Content Security Policy, et frameworks avec auto-escape",
+          "isCorrect": true
+        },
+        {
+          "content": "Utiliser HTTPS",
+          "isCorrect": false
+        },
+        {
+          "content": "Valider uniquement côté client",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un XSS Stored ?",
+      "explanation": "Le XSS Stored (persistant) stocke le script malveillant dans la base de données (commentaire, profil). Il s'exécute pour tous les utilisateurs qui visitent la page.",
+      "hint": "Script stocké en BD, exécuté pour tous les visiteurs",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "XSS"
+      ],
+      "answers": [
+        {
+          "content": "Un XSS qui stocke des cookies",
+          "isCorrect": false
+        },
+        {
+          "content": "Un script malveillant stocké en BD et exécuté pour tous les visiteurs de la page",
+          "isCorrect": true
+        },
+        {
+          "content": "Un XSS qui modifie le stockage local",
+          "isCorrect": false
+        },
+        {
+          "content": "Un XSS persistant dans les headers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est un exemple classique d'injection SQL ?",
+      "explanation": "' OR '1'='1 dans un champ de connexion tourne la requête en: WHERE username='' OR '1'='1' AND password=... ce qui est toujours vrai, permettant une connexion sans mot de passe.",
+      "hint": "' OR '1'='1",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SQL Injection",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "SELECT * FROM users",
+          "isCorrect": false
+        },
+        {
+          "content": "' OR '1'='1' injecté dans un champ de formulaire",
+          "isCorrect": true
+        },
+        {
+          "content": "DROP TABLE users;",
+          "isCorrect": false
+        },
+        {
+          "content": "<script>alert(1)</script>",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une injection SQL aveugle (Blind SQL Injection) ?",
+      "explanation": "Blind SQL Injection: le résultat de l'injection n'est pas directement visible. On infère des informations via des réponses booléennes (true/false) ou des délais temporels.",
+      "hint": "Résultat non visible, inférence via comportement",
+      "difficulty": "HARD",
+      "tags": [
+        "SQL Injection",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Une injection SQL sans mot de passe",
+          "isCorrect": false
+        },
+        {
+          "content": "Une injection où le résultat n'est pas visible, inférée via comportement ou timing",
+          "isCorrect": true
+        },
+        {
+          "content": "Une injection dans un champ caché",
+          "isCorrect": false
+        },
+        {
+          "content": "Une injection dans les paramètres URL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre chiffrement symétrique et asymétrique ?",
+      "explanation": "Symétrique: même clé pour chiffrer et déchiffrer (AES, rapide). Asymétrique: paire clé publique/privée (RSA, plus lent). L'asymétrique est souvent utilisé pour échanger la clé symétrique.",
+      "hint": "Une clé vs paire publique/privée",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Symétrique est plus sécurisé",
+          "isCorrect": false
+        },
+        {
+          "content": "Symétrique = même clé, asymétrique = paire clé publique/privée",
+          "isCorrect": true
+        },
+        {
+          "content": "Asymétrique est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Symétrique utilise deux clés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que AES ?",
+      "explanation": "AES (Advanced Encryption Standard) est un algorithme de chiffrement symétrique par blocs, standardisé par NIST. Il utilise des clés de 128, 192 ou 256 bits.",
+      "hint": "Standard de chiffrement symétrique par blocs",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de hachage",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme de chiffrement symétrique par blocs (128/192/256 bits)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme de signature numérique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole de communication sécurisé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que RSA ?",
+      "explanation": "RSA est un algorithme de cryptographie asymétrique (clé publique/privée) utilisé pour le chiffrement et les signatures numériques. Basé sur la difficulté de factoriser de grands nombres.",
+      "hint": "Cryptographie asymétrique basée sur la factorisation",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de chiffrement symétrique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme asymétrique (clé publique/privée) basé sur la factorisation",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme de hachage",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole SSL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un algorithme de hachage ?",
+      "explanation": "Un algorithme de hachage transforme des données de taille variable en une empreinte de taille fixe (hash). C'est unidirectionnel: impossible de retrouver les données originales depuis le hash.",
+      "hint": "Transformation unidirectionnelle en empreinte fixe",
+      "difficulty": "EASY",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Un chiffrement réversible",
+          "isCorrect": false
+        },
+        {
+          "content": "Une transformation unidirectionnelle produisant une empreinte de taille fixe",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme de compression",
+          "isCorrect": false
+        },
+        {
+          "content": "Un générateur de clés symétriques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi utiliser bcrypt pour stocker les mots de passe ?",
+      "explanation": "bcrypt est un algorithme de hachage adaptatif: il est intentionnellement lent (coût configurable), inclut un sel aléatoire contre les rainbow tables, et résiste aux attaques par force brute.",
+      "hint": "Lent intentionnellement, sel intégré, adaptatif",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie",
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Car il chiffre les mots de passe",
+          "isCorrect": false
+        },
+        {
+          "content": "Car il est lent (résiste à la force brute), inclut un sel, et est adaptatif",
+          "isCorrect": true
+        },
+        {
+          "content": "Car il est le plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Car il utilise AES-256",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un sel (salt) en cryptographie ?",
+      "explanation": "Un sel est une valeur aléatoire ajoutée au mot de passe avant le hachage, garantissant que deux mots de passe identiques produisent des hashs différents, rendant les rainbow tables inutiles.",
+      "hint": "Valeur aléatoire pour éviter les rainbow tables",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Un chiffrement supplémentaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Une valeur aléatoire ajoutée avant hachage pour rendre les rainbow tables inutiles",
+          "isCorrect": true
+        },
+        {
+          "content": "Une clé secrète supplémentaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme de salage",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une rainbow table ?",
+      "explanation": "Une rainbow table est une table précalculée de hashs de mots de passe courants. Elle permet de retrouver le mot de passe original depuis le hash en O(1). Les sels les rendent inutiles.",
+      "hint": "Table précalculée pour inverser les hashs",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie",
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de génération de mots de passe",
+          "isCorrect": false
+        },
+        {
+          "content": "Une table précalculée de hashs permettant de retrouver les mots de passe en O(1)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de visualisation de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Une attaque par dictionnaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que SHA-256 ?",
+      "explanation": "SHA-256 est un algorithme de hachage cryptographique produisant un hash de 256 bits. Utilisé pour les signatures numériques, les certificats, mais pas recommandé pour les mots de passe.",
+      "hint": "Algorithme de hachage 256 bits",
+      "difficulty": "EASY",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de chiffrement symétrique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme de hachage produisant une empreinte de 256 bits",
+          "isCorrect": true
+        },
+        {
+          "content": "Un protocole de communication sécurisé",
+          "isCorrect": false
+        },
+        {
+          "content": "Un standard SSL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'authentification à deux facteurs (2FA) ?",
+      "explanation": "Le 2FA exige deux formes de preuve d'identité: quelque chose que vous connaissez (mot de passe) ET quelque chose que vous possédez (téléphone/TOTP) ou que vous êtes (biométrie).",
+      "hint": "Deux facteurs: connaissance + possession/biométrie",
+      "difficulty": "EASY",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Deux mots de passe différents",
+          "isCorrect": false
+        },
+        {
+          "content": "Deux formes de preuve: mot de passe + possession ou biométrie",
+          "isCorrect": true
+        },
+        {
+          "content": "Un double chiffrement des données",
+          "isCorrect": false
+        },
+        {
+          "content": "Deux administrateurs pour valider",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que TOTP ?",
+      "explanation": "TOTP (Time-based One-Time Password) génère un code à 6 chiffres basé sur l'heure et un secret partagé. Valable ~30 secondes. Utilisé dans Google Authenticator.",
+      "hint": "Code temporel à usage unique",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Un token de session permanent",
+          "isCorrect": false
+        },
+        {
+          "content": "Un code à 6 chiffres basé sur l'heure et un secret, valable ~30s",
+          "isCorrect": true
+        },
+        {
+          "content": "Un protocole d'authentification centralisé",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de JWT",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que SSO (Single Sign-On) ?",
+      "explanation": "SSO permet aux utilisateurs de s'authentifier une fois et d'accéder à plusieurs applications sans se reconnecter. Implémenté via SAML, OIDC, Kerberos.",
+      "hint": "Une authentification pour plusieurs applications",
+      "difficulty": "EASY",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Un seul mot de passe pour tous les comptes",
+          "isCorrect": false
+        },
+        {
+          "content": "Authentification unique donnant accès à plusieurs applications sans reconnexion",
+          "isCorrect": true
+        },
+        {
+          "content": "Un service d'authentification central",
+          "isCorrect": false
+        },
+        {
+          "content": "Un token permanent",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre OAuth2 et OpenID Connect ?",
+      "explanation": "OAuth2 est un protocole d'autorisation (accès aux ressources). OpenID Connect (OIDC) est une couche d'identité sur OAuth2 pour l'authentification (qui est l'utilisateur).",
+      "hint": "OAuth2 = autorisation, OIDC = identité sur OAuth2",
+      "difficulty": "HARD",
+      "tags": [
+        "Authentification",
+        "OAuth2"
+      ],
+      "answers": [
+        {
+          "content": "Ce sont des synonymes",
+          "isCorrect": false
+        },
+        {
+          "content": "OAuth2 = autorisation, OIDC = authentification (couche identité sur OAuth2)",
+          "isCorrect": true
+        },
+        {
+          "content": "OIDC est obsolète",
+          "isCorrect": false
+        },
+        {
+          "content": "OAuth2 est pour mobile, OIDC pour web",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quels sont les 4 flux OAuth2 principaux ?",
+      "explanation": "Les 4 flux OAuth2: Authorization Code (web), Implicit (SPA, déprécié), Client Credentials (machine à machine), Resource Owner Password (déconseillé).",
+      "hint": "Authorization Code, Implicit, Client Credentials, ROPC",
+      "difficulty": "HARD",
+      "tags": [
+        "OAuth2"
+      ],
+      "answers": [
+        {
+          "content": "Login, Logout, Refresh, Register",
+          "isCorrect": false
+        },
+        {
+          "content": "Authorization Code, Client Credentials, Implicit, Resource Owner Password",
+          "isCorrect": true
+        },
+        {
+          "content": "Bearer, JWT, SAML, OAuth",
+          "isCorrect": false
+        },
+        {
+          "content": "GET, POST, PUT, DELETE",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que PKCE dans OAuth2 ?",
+      "explanation": "PKCE (Proof Key for Code Exchange) protège le flux Authorization Code contre l'interception du code d'autorisation, notamment pour les SPAs et apps mobiles.",
+      "hint": "Protection du code d'autorisation pour SPA/mobile",
+      "difficulty": "HARD",
+      "tags": [
+        "OAuth2",
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de chiffrement OAuth",
+          "isCorrect": false
+        },
+        {
+          "content": "Une extension OAuth2 protégeant le code d'autorisation contre l'interception",
+          "isCorrect": true
+        },
+        {
+          "content": "Une méthode de génération de tokens",
+          "isCorrect": false
+        },
+        {
+          "content": "Un standard de signature JWT",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi ne pas stocker les JWT dans localStorage ?",
+      "explanation": "localStorage est accessible via JavaScript (vulnérable au XSS). Les JWT sensibles devraient être dans des cookies httpOnly (inaccessibles en JS) pour éviter le vol en cas de XSS.",
+      "hint": "Accessible par JS, vulnérable au XSS",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JWT",
+        "XSS"
+      ],
+      "answers": [
+        {
+          "content": "localStorage est trop lent",
+          "isCorrect": false
+        },
+        {
+          "content": "localStorage est accessible en JS, vulnérable au XSS; préférer cookies httpOnly",
+          "isCorrect": true
+        },
+        {
+          "content": "localStorage ne supporte pas les JWT",
+          "isCorrect": false
+        },
+        {
+          "content": "Les JWT sont trop grands pour localStorage",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la vulnérabilité de l'algorithme 'none' dans les JWT ?",
+      "explanation": "Certaines bibliothèques acceptaient alg:'none' (pas de signature), permettant à un attaquant de forger des tokens sans connaître la clé secrète. Toujours vérifier l'algorithme.",
+      "hint": "Tokens non signés acceptés par des bibliothèques vulnérables",
+      "difficulty": "HARD",
+      "tags": [
+        "JWT"
+      ],
+      "answers": [
+        {
+          "content": "Un JWT sans expiration",
+          "isCorrect": false
+        },
+        {
+          "content": "Accepter des tokens non signés (alg:none), permettant la forge de tokens",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme de chiffrement faible",
+          "isCorrect": false
+        },
+        {
+          "content": "Un problème de performance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que TLS ?",
+      "explanation": "TLS (Transport Layer Security) est le protocole de chiffrement sécurisant les communications réseau. Il succède à SSL et est utilisé dans HTTPS, SMTP, etc.",
+      "hint": "Successeur de SSL pour les communications sécurisées",
+      "difficulty": "EASY",
+      "tags": [
+        "HTTPS/TLS"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme de chiffrement",
+          "isCorrect": false
+        },
+        {
+          "content": "Le protocole de sécurisation des communications réseau, successeur de SSL",
+          "isCorrect": true
+        },
+        {
+          "content": "Un certificat numérique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole d'authentification",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un certificat SSL/TLS ?",
+      "explanation": "Un certificat SSL/TLS est un document numérique liant une clé publique à l'identité d'un serveur, signé par une autorité de certification (CA) de confiance.",
+      "hint": "Document liant clé publique à l'identité, signé par CA",
+      "difficulty": "EASY",
+      "tags": [
+        "HTTPS/TLS"
+      ],
+      "answers": [
+        {
+          "content": "Un mot de passe chiffré",
+          "isCorrect": false
+        },
+        {
+          "content": "Un document numérique liant une clé publique à l'identité d'un serveur",
+          "isCorrect": true
+        },
+        {
+          "content": "Un token d'authentification",
+          "isCorrect": false
+        },
+        {
+          "content": "Une clé de chiffrement symétrique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque Man-in-the-Middle (MITM) ?",
+      "explanation": "MITM: un attaquant s'interpose entre client et serveur, interceptant et pouvant modifier les communications. Prévention: HTTPS avec certificate pinning, HSTS.",
+      "hint": "Interception des communications entre client et serveur",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTTPS/TLS",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Une attaque par force brute",
+          "isCorrect": false
+        },
+        {
+          "content": "L'interception et modification des communications entre client et serveur",
+          "isCorrect": true
+        },
+        {
+          "content": "Une attaque par injection",
+          "isCorrect": false
+        },
+        {
+          "content": "Un déni de service",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que HSTS ?",
+      "explanation": "HSTS (HTTP Strict Transport Security) est un header HTTP qui force le navigateur à utiliser HTTPS pour les futures connexions, protégeant contre le downgrade HTTP.",
+      "hint": "Force HTTPS pour les connexions futures",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTTPS/TLS"
+      ],
+      "answers": [
+        {
+          "content": "Un protocole de chiffrement",
+          "isCorrect": false
+        },
+        {
+          "content": "Un header HTTP forçant le navigateur à utiliser HTTPS pour les connexions futures",
+          "isCorrect": true
+        },
+        {
+          "content": "Un système de gestion des certificats",
+          "isCorrect": false
+        },
+        {
+          "content": "Un standard de certificats wildcard",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le certificate pinning ?",
+      "explanation": "Le certificate pinning associe un certificat (ou clé publique) spécifique à un hôte dans l'application, rejetant tout autre certificat même valide. Protection contre les CA compromises.",
+      "hint": "Associer un certificat spécifique à un hôte",
+      "difficulty": "HARD",
+      "tags": [
+        "HTTPS/TLS"
+      ],
+      "answers": [
+        {
+          "content": "L'épinglage d'un certificat dans le navigateur",
+          "isCorrect": false
+        },
+        {
+          "content": "Associer un certificat spécifique à un hôte, rejetant d'autres même valides",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type de certificat wildcard",
+          "isCorrect": false
+        },
+        {
+          "content": "La rotation automatique des certificats",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un test d'intrusion (pentest) ?",
+      "explanation": "Un pentest simule une attaque contre un système pour identifier les vulnérabilités avant qu'un vrai attaquant ne les exploite, avec l'autorisation du propriétaire.",
+      "hint": "Simulation d'attaque autorisée",
+      "difficulty": "EASY",
+      "tags": [
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de protection réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Une simulation d'attaque autorisée pour identifier les vulnérabilités",
+          "isCorrect": true
+        },
+        {
+          "content": "Un audit de code",
+          "isCorrect": false
+        },
+        {
+          "content": "Un test de performance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre Black Box, White Box et Grey Box testing ?",
+      "explanation": "Black Box: testeur sans connaissance interne. White Box: accès complet au code source. Grey Box: accès partiel (credentials normaux). Correspond à différents niveaux de connaissance de l'attaquant.",
+      "hint": "Niveau de connaissance interne du testeur",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Différentes méthodes de chiffrement",
+          "isCorrect": false
+        },
+        {
+          "content": "Niveaux de connaissance: Black = aucune, White = complète, Grey = partielle",
+          "isCorrect": true
+        },
+        {
+          "content": "Différents outils de pentest",
+          "isCorrect": false
+        },
+        {
+          "content": "Types d'environnements de test",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un CVE ?",
+      "explanation": "CVE (Common Vulnerabilities and Exposures) est un identifiant unique pour les vulnérabilités connues publiquement. Format: CVE-ANNÉE-NUMÉRO. Géré par MITRE.",
+      "hint": "Identifiant unique pour les vulnérabilités connues",
+      "difficulty": "EASY",
+      "tags": [
+        "Pentest",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de pentest",
+          "isCorrect": false
+        },
+        {
+          "content": "Un identifiant unique pour les vulnérabilités connues (CVE-2024-XXXXX)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un standard de certification",
+          "isCorrect": false
+        },
+        {
+          "content": "Un rapport de sécurité",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un scan de ports avec nmap ?",
+      "explanation": "nmap est un outil de découverte réseau et de scan de ports. Il identifie les hôtes actifs, les ports ouverts, les services et versions, et parfois l'OS.",
+      "hint": "Découverte réseau et identification de ports/services",
+      "difficulty": "EASY",
+      "tags": [
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de déni de service",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de découverte réseau identifiant ports ouverts, services et OS",
+          "isCorrect": true
+        },
+        {
+          "content": "Un scanner de malware",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de cracking de mots de passe",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque par force brute ?",
+      "explanation": "Une attaque par force brute essaie systématiquement toutes les combinaisons possibles (mots de passe, clés) jusqu'à trouver la bonne. Mitigation: rate limiting, CAPTCHA, blocage IP.",
+      "hint": "Essayer toutes les combinaisons possibles",
+      "difficulty": "EASY",
+      "tags": [
+        "Pentest",
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Une attaque physique sur un serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "Essai systématique de toutes les combinaisons possibles jusqu'au succès",
+          "isCorrect": true
+        },
+        {
+          "content": "Une attaque réseau volumétrique",
+          "isCorrect": false
+        },
+        {
+          "content": "Une injection de shellcode",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque par dictionnaire ?",
+      "explanation": "L'attaque par dictionnaire utilise une liste de mots de passe courants plutôt que toutes les combinaisons. Plus efficace que la force brute pure car la plupart des utilisateurs utilisent des mots courants.",
+      "hint": "Liste de mots de passe courants plutôt que brute force",
+      "difficulty": "EASY",
+      "tags": [
+        "Pentest",
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Une attaque sur une base de données dictionnaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Utilisation d'une liste de mots de passe courants plutôt que toutes les combinaisons",
+          "isCorrect": true
+        },
+        {
+          "content": "Un exploit de vulnérabilité documentée",
+          "isCorrect": false
+        },
+        {
+          "content": "Une attaque sur le système de fichiers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Content Security Policy (CSP) ?",
+      "explanation": "CSP est un header HTTP qui déclare les sources de contenu autorisées (scripts, styles, images), réduisant drastiquement les risques XSS en bloquant les scripts injectés.",
+      "hint": "Header HTTP déclarant les sources autorisées",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "XSS",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de politique de sécurité",
+          "isCorrect": false
+        },
+        {
+          "content": "Un header HTTP déclarant les sources de contenu autorisées pour réduire les XSS",
+          "isCorrect": true
+        },
+        {
+          "content": "Un protocole d'authentification",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de chiffrement de contenu",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'header X-Frame-Options ?",
+      "explanation": "X-Frame-Options protège contre le Clickjacking en empêchant la page d'être chargée dans un iframe. Valeurs: DENY, SAMEORIGIN.",
+      "hint": "Protection contre le Clickjacking",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Contrôle l'affichage des cadres CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Protège contre le Clickjacking en contrôlant le chargement dans les iframes",
+          "isCorrect": true
+        },
+        {
+          "content": "Définit la version du protocole",
+          "isCorrect": false
+        },
+        {
+          "content": "Configure la mise en cache des ressources",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque par Clickjacking ?",
+      "explanation": "Le Clickjacking superpose un iframe transparent sur une page légitime, trompant l'utilisateur qui croit cliquer sur la page visible mais clique en réalité sur l'iframe malveillant.",
+      "hint": "iframe transparent superposé sur une page légitime",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un script qui clique automatiquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Superposer un iframe transparent pour tromper l'utilisateur sur ce sur quoi il clique",
+          "isCorrect": true
+        },
+        {
+          "content": "Une attaque par injection JavaScript",
+          "isCorrect": false
+        },
+        {
+          "content": "Un hijacking de session",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment prévenir les attaques CSRF ?",
+      "explanation": "Prévention CSRF: tokens CSRF (synchronizer token pattern), SameSite cookies, vérification de l'Origin/Referer header, double submit cookie.",
+      "hint": "CSRF tokens, SameSite cookies",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Utiliser HTTPS",
+          "isCorrect": false
+        },
+        {
+          "content": "CSRF tokens, SameSite cookies, vérification Origin/Referer",
+          "isCorrect": true
+        },
+        {
+          "content": "Valider les entrées utilisateur",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser des requêtes chiffrées",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que SameSite cookie attribute ?",
+      "explanation": "SameSite contrôle si les cookies sont envoyés avec les requêtes cross-site. Strict: jamais cross-site. Lax: autorisé pour les navigations GET. None: toujours (nécessite Secure).",
+      "hint": "Contrôle l'envoi de cookies cross-site",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un attribut pour les cookies des mêmes sites",
+          "isCorrect": false
+        },
+        {
+          "content": "Un attribut contrôlant l'envoi des cookies lors de requêtes cross-site",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type de cookie chiffré",
+          "isCorrect": false
+        },
+        {
+          "content": "Un standard de cookie sécurisé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le RGPD ?",
+      "explanation": "Le RGPD (Règlement Général sur la Protection des Données) est la réglementation européenne sur la protection des données personnelles, applicable depuis mai 2018.",
+      "hint": "Réglementation européenne sur les données personnelles",
+      "difficulty": "EASY",
+      "tags": [
+        "RGPD"
+      ],
+      "answers": [
+        {
+          "content": "Un protocole de sécurité réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "La réglementation européenne sur la protection des données personnelles (depuis 2018)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un standard de chiffrement",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de gestion des droits",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quels sont les droits des personnes concernées selon le RGPD ?",
+      "explanation": "RGPD garantit: droit d'accès, rectification, effacement (oubli), limitation, portabilité, opposition et de ne pas faire l'objet d'une décision automatisée.",
+      "hint": "Accès, rectification, effacement, portabilité...",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RGPD"
+      ],
+      "answers": [
+        {
+          "content": "Uniquement le droit d'accès et de suppression",
+          "isCorrect": false
+        },
+        {
+          "content": "Accès, rectification, effacement, limitation, portabilité, opposition",
+          "isCorrect": true
+        },
+        {
+          "content": "Seulement les droits numériques",
+          "isCorrect": false
+        },
+        {
+          "content": "Droit de consentement uniquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le droit à l'oubli dans le RGPD ?",
+      "explanation": "Le droit à l'effacement (droit à l'oubli) permet aux personnes de demander la suppression de leurs données personnelles dans certaines conditions.",
+      "hint": "Droit de demander la suppression de ses données",
+      "difficulty": "EASY",
+      "tags": [
+        "RGPD"
+      ],
+      "answers": [
+        {
+          "content": "Le droit de ne pas être publié sur Internet",
+          "isCorrect": false
+        },
+        {
+          "content": "Le droit de demander la suppression de ses données personnelles",
+          "isCorrect": true
+        },
+        {
+          "content": "L'obligation de supprimer les anciens logs",
+          "isCorrect": false
+        },
+        {
+          "content": "Le droit d'anonymat total",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la pénalité maximale du RGPD ?",
+      "explanation": "Le RGPD prévoit des amendes allant jusqu'à 20 millions d'euros ou 4% du chiffre d'affaires annuel mondial, selon le montant le plus élevé.",
+      "hint": "20M€ ou 4% du CA mondial",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "RGPD"
+      ],
+      "answers": [
+        {
+          "content": "1 million d'euros",
+          "isCorrect": false
+        },
+        {
+          "content": "20 millions d'euros ou 4% du CA mondial (le plus élevé)",
+          "isCorrect": true
+        },
+        {
+          "content": "500 000 euros",
+          "isCorrect": false
+        },
+        {
+          "content": "1 milliard d'euros",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un cookie HttpOnly ?",
+      "explanation": "L'attribut HttpOnly empêche JavaScript d'accéder au cookie, protégeant les cookies de session contre le vol via XSS.",
+      "hint": "Cookie inaccessible à JavaScript",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification",
+        "XSS"
+      ],
+      "answers": [
+        {
+          "content": "Un cookie qui expire immédiatement",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cookie inaccessible à JavaScript, protégé contre le vol via XSS",
+          "isCorrect": true
+        },
+        {
+          "content": "Un cookie uniquement pour les requêtes HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cookie chiffré en HTTPS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le session fixation ?",
+      "explanation": "La session fixation force un utilisateur à utiliser un ID de session connu de l'attaquant. Après authentification, l'attaquant peut prendre le contrôle de la session.",
+      "hint": "Forcer l'utilisateur à utiliser un session ID connu",
+      "difficulty": "HARD",
+      "tags": [
+        "Authentification",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "La durée fixe d'une session",
+          "isCorrect": false
+        },
+        {
+          "content": "Forcer un utilisateur à utiliser un session ID connu, puis hijacker la session",
+          "isCorrect": true
+        },
+        {
+          "content": "Une session qui ne peut être changée",
+          "isCorrect": false
+        },
+        {
+          "content": "La fixation des permissions de session",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment prévenir le session hijacking ?",
+      "explanation": "Prévention: HTTPS, cookies Secure+HttpOnly+SameSite, régénérer le session ID après login, timeout de session, vérifier User-Agent/IP.",
+      "hint": "HTTPS, cookies sécurisés, régénération du session ID",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Utiliser des sessions longues",
+          "isCorrect": false
+        },
+        {
+          "content": "HTTPS, cookies Secure+HttpOnly+SameSite, régénérer le session ID après login",
+          "isCorrect": true
+        },
+        {
+          "content": "Utiliser uniquement des JWT",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le session ID",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que RBAC (Role-Based Access Control) ?",
+      "explanation": "RBAC attribue les permissions aux rôles plutôt qu'aux utilisateurs. Les utilisateurs reçoivent des rôles (ADMIN, USER, etc.) qui déterminent leurs permissions.",
+      "hint": "Permissions basées sur les rôles",
+      "difficulty": "EASY",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Un système d'accès basé sur les ressources",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système où les permissions sont attribuées aux rôles, et les rôles aux utilisateurs",
+          "isCorrect": true
+        },
+        {
+          "content": "Un protocole d'authentification",
+          "isCorrect": false
+        },
+        {
+          "content": "Un contrôle basé sur les attributs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre RBAC et ABAC ?",
+      "explanation": "RBAC base les décisions sur les rôles. ABAC (Attribute-Based Access Control) base les décisions sur des attributs de l'utilisateur, de la ressource et de l'environnement (plus flexible et fin).",
+      "hint": "Rôles vs Attributs multiples",
+      "difficulty": "HARD",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Ils font la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "RBAC utilise les rôles, ABAC utilise des attributs multiples (user, ressource, environnement)",
+          "isCorrect": true
+        },
+        {
+          "content": "ABAC est obsolète",
+          "isCorrect": false
+        },
+        {
+          "content": "RBAC est pour les applications web, ABAC pour les APIs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le principe du moindre privilège ?",
+      "explanation": "Le principe du moindre privilège stipule qu'un compte/processus/service ne doit avoir que les permissions minimales nécessaires à sa fonction, réduisant la surface d'attaque.",
+      "hint": "Permissions minimales nécessaires",
+      "difficulty": "EASY",
+      "tags": [
+        "OWASP",
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Toujours utiliser root pour les tâches administratives",
+          "isCorrect": false
+        },
+        {
+          "content": "Accorder uniquement les permissions minimales nécessaires à chaque entité",
+          "isCorrect": true
+        },
+        {
+          "content": "Limiter le nombre d'administrateurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser des mots de passe complexes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la défense en profondeur ?",
+      "explanation": "La défense en profondeur est un principe de sécurité multipliant les couches de protection: même si une couche est compromise, d'autres résistent. Ex: firewall + WAF + auth + chiffrement.",
+      "hint": "Plusieurs couches de protection",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Utiliser un firewall très puissant",
+          "isCorrect": false
+        },
+        {
+          "content": "Multiplier les couches de sécurité indépendantes pour limiter l'impact d'une compromission",
+          "isCorrect": true
+        },
+        {
+          "content": "Défendre profondément dans le code",
+          "isCorrect": false
+        },
+        {
+          "content": "Un audit de sécurité approfondi",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un WAF (Web Application Firewall) ?",
+      "explanation": "Un WAF filtre et monitore le trafic HTTP entre Internet et une application web, bloquant les attaques connues (SQLi, XSS, etc.) selon des règles.",
+      "hint": "Filtre le trafic HTTP, bloque les attaques web",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP",
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Un pare-feu réseau traditionnel",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil filtrant le trafic HTTP et bloquant les attaques web (SQLi, XSS)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de test d'applications web",
+          "isCorrect": false
+        },
+        {
+          "content": "Un antivirus web",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une analyse SAST ?",
+      "explanation": "SAST (Static Application Security Testing) analyse le code source sans l'exécuter pour identifier les vulnérabilités. Intégré dans le CI/CD pour détecter les failles tôt.",
+      "hint": "Analyse statique du code source",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Pentest",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un test de sécurité dynamique",
+          "isCorrect": false
+        },
+        {
+          "content": "Analyse statique du code source pour identifier les vulnérabilités sans exécution",
+          "isCorrect": true
+        },
+        {
+          "content": "Un audit de sécurité manuel",
+          "isCorrect": false
+        },
+        {
+          "content": "Un test de pénétration",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une analyse DAST ?",
+      "explanation": "DAST (Dynamic Application Security Testing) teste l'application en cours d'exécution en simulant des attaques. Outils: OWASP ZAP, Burp Suite.",
+      "hint": "Test dynamique de l'application en cours d'exécution",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Pentest",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un test statique du code",
+          "isCorrect": false
+        },
+        {
+          "content": "Test de l'application en cours d'exécution en simulant des attaques",
+          "isCorrect": true
+        },
+        {
+          "content": "Une analyse des dépendances",
+          "isCorrect": false
+        },
+        {
+          "content": "Un test de performance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque de type Path Traversal ?",
+      "explanation": "Path Traversal exploite une validation insuffisante des noms de fichiers: ../../../etc/passwd permet de sortir du répertoire autorisé et d'accéder à des fichiers système.",
+      "hint": "../../../etc/passwd",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP",
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Un parcours malveillant du réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser ../ pour accéder à des fichiers hors du répertoire autorisé",
+          "isCorrect": true
+        },
+        {
+          "content": "Une traversée de réseau non autorisée",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type d'injection SQL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque SSRF ?",
+      "explanation": "SSRF (Server-Side Request Forgery) force le serveur à faire des requêtes vers des ressources internes/externes, permettant d'accéder aux métadonnées cloud, services internes, etc.",
+      "hint": "Le serveur fait des requêtes forcées vers l'interne",
+      "difficulty": "HARD",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Une attaque côté client",
+          "isCorrect": false
+        },
+        {
+          "content": "Forcer le serveur à faire des requêtes vers des ressources internes inaccessibles",
+          "isCorrect": true
+        },
+        {
+          "content": "Une injection de serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "Un déni de service côté serveur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un deserialization attack ?",
+      "explanation": "Une attaque de désérialisation exploite la désérialisation de données non fiables pour exécuter du code arbitraire. OWASP A08:2021.",
+      "hint": "Désérialisation de données non fiables → RCE",
+      "difficulty": "HARD",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Une attaque sur les bases de données sérialisées",
+          "isCorrect": false
+        },
+        {
+          "content": "Exploitation de la désérialisation de données non fiables pour exécuter du code",
+          "isCorrect": true
+        },
+        {
+          "content": "Une désérialization des certificats",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type d'injection de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une Zero-Day vulnerability ?",
+      "explanation": "Une vulnérabilité Zero-Day est une faille inconnue du vendeur ou sans correctif disponible. Le 'zero day' signifie que le vendeur a eu zéro jour pour corriger.",
+      "hint": "Faille inconnue/sans correctif",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Pentest",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Une vulnérabilité découverte il y a zéro jour",
+          "isCorrect": false
+        },
+        {
+          "content": "Une faille inconnue du vendeur ou pour laquelle aucun correctif n'est disponible",
+          "isCorrect": true
+        },
+        {
+          "content": "Une vulnérabilité de niveau critique",
+          "isCorrect": false
+        },
+        {
+          "content": "Une faille dans les systèmes zéro-trust",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le principe de Zero Trust ?",
+      "explanation": "Zero Trust: ne jamais faire confiance, toujours vérifier. Aucun utilisateur ou réseau n'est considéré comme fiable par défaut. Vérification continue de l'identité, accès minimal.",
+      "hint": "Ne jamais faire confiance, toujours vérifier",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Ne donner confiance à aucun utilisateur",
+          "isCorrect": false
+        },
+        {
+          "content": "Aucune confiance implicite, vérification continue, accès minimal",
+          "isCorrect": true
+        },
+        {
+          "content": "Zéro accès par défaut",
+          "isCorrect": false
+        },
+        {
+          "content": "Un modèle de sécurité zero knowledge",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une signature numérique ?",
+      "explanation": "Une signature numérique garantit l'authenticité et l'intégrité d'un message: le signataire hache le message et chiffre le hash avec sa clé privée. Le destinataire vérifie avec la clé publique.",
+      "hint": "Hash chiffré avec clé privée, vérifié avec clé publique",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Un certificat SSL",
+          "isCorrect": false
+        },
+        {
+          "content": "Hash chiffré avec clé privée garantissant authenticité et intégrité",
+          "isCorrect": true
+        },
+        {
+          "content": "Une signature manuscrite numérisée",
+          "isCorrect": false
+        },
+        {
+          "content": "Un token d'authentification",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le chiffrement de bout en bout (E2E) ?",
+      "explanation": "E2E: les données sont chiffrées chez l'émetteur et déchiffrées seulement chez le destinataire. Le serveur intermédiaire ne peut pas lire les données (Signal, WhatsApp, PGP email).",
+      "hint": "Seuls émetteur et destinataire peuvent lire",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Le chiffrement du réseau de bout en bout",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrement de l'émetteur au destinataire uniquement: le serveur ne peut pas lire",
+          "isCorrect": true
+        },
+        {
+          "content": "Un chiffrement qui couvre toute la communication",
+          "isCorrect": false
+        },
+        {
+          "content": "Le protocole TLS de la source à la destination",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Perfect Forward Secrecy (PFS) ?",
+      "explanation": "PFS génère des clés de session éphémères pour chaque connexion. Si la clé principale est compromise, les sessions passées restent protégées car les clés éphémères ne sont pas conservées.",
+      "hint": "Clés de session éphémères protégeant le passé",
+      "difficulty": "HARD",
+      "tags": [
+        "Cryptographie",
+        "HTTPS/TLS"
+      ],
+      "answers": [
+        {
+          "content": "Un chiffrement parfaitement sécurisé",
+          "isCorrect": false
+        },
+        {
+          "content": "Des clés de session éphémères protégeant les sessions passées même en cas de compromission",
+          "isCorrect": true
+        },
+        {
+          "content": "La transmission sécurisée en avant",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole de partage de secrets",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le phishing ?",
+      "explanation": "Le phishing est une technique d'ingénierie sociale utilisant de faux emails/sites pour tromper les utilisateurs et leur soutirer des credentials ou informations sensibles.",
+      "hint": "Faux emails/sites pour voler des credentials",
+      "difficulty": "EASY",
+      "tags": [
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Une attaque réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Tromper les utilisateurs via faux emails/sites pour voler des credentials",
+          "isCorrect": true
+        },
+        {
+          "content": "Une injection SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Un scan de ports",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le spear phishing ?",
+      "explanation": "Le spear phishing est un phishing ciblé sur une personne ou organisation spécifique, personnalisé avec des informations réelles pour être plus crédible.",
+      "hint": "Phishing ciblé et personnalisé",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Un phishing par SMS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un phishing ciblé sur une personne spécifique, personnalisé pour être crédible",
+          "isCorrect": true
+        },
+        {
+          "content": "Un phishing via réseaux sociaux",
+          "isCorrect": false
+        },
+        {
+          "content": "Une variante avancée du phishing",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un IDS/IPS ?",
+      "explanation": "IDS (Intrusion Detection System) détecte les activités suspectes et alerte. IPS (Intrusion Prevention System) détecte ET bloque automatiquement les menaces.",
+      "hint": "IDS détecte, IPS détecte et bloque",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Des outils de chiffrement",
+          "isCorrect": false
+        },
+        {
+          "content": "IDS détecte et alerte les activités suspectes, IPS les bloque automatiquement",
+          "isCorrect": true
+        },
+        {
+          "content": "Des systèmes d'inventaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Des protocoles réseau sécurisés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que CORS et comment le sécuriser ?",
+      "explanation": "CORS contrôle les requêtes cross-origin. Sécurisation: définir explicitement les origins autorisées (pas *), méthodes et headers, éviter Access-Control-Allow-Origin: *.",
+      "hint": "Définir les origins autorisées explicitement",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP",
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Utiliser HTTPS uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Définir explicitement les origins autorisées au lieu de *, limiter méthodes et headers",
+          "isCorrect": true
+        },
+        {
+          "content": "Désactiver CORS en production",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser des tokens CORS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un scan de vulnérabilités de dépendances ?",
+      "explanation": "Un scan de dépendances analyse les bibliothèques tierces utilisées pour détecter des versions avec CVEs connus. Outils: npm audit, Snyk, OWASP Dependency-Check.",
+      "hint": "npm audit, Snyk, CVEs dans les dépendances",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Un scan du réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Analyser les bibliothèques tierces pour détecter des CVEs connus",
+          "isCorrect": true
+        },
+        {
+          "content": "Un test des endpoints de l'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Un audit de configuration",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque de type Race Condition ?",
+      "explanation": "Une race condition se produit quand deux processus accèdent à une ressource partagée simultanément, produisant des résultats imprévisibles. Ex: double spend en crypto, TOCTOU attacks.",
+      "hint": "Accès concurrent à une ressource partagée",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Pentest",
+        "OWASP"
+      ],
+      "answers": [
+        {
+          "content": "Une course entre attaquants",
+          "isCorrect": false
+        },
+        {
+          "content": "Accès concurrent à une ressource partagée produisant des résultats imprévisibles",
+          "isCorrect": true
+        },
+        {
+          "content": "Une attaque par timing de réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de déni de service",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un heap spray attack ?",
+      "explanation": "Un heap spray alloue massivement de la mémoire avec du shellcode pour augmenter la probabilité que l'exploitation d'une vulnérabilité (use-after-free, buffer overflow) pointe vers le code malveillant.",
+      "hint": "Remplir le tas avec du shellcode",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Un type d'injection SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Allouer massivement de la mémoire avec du shellcode pour faciliter l'exploitation",
+          "isCorrect": true
+        },
+        {
+          "content": "Une attaque de spraying de credentials",
+          "isCorrect": false
+        },
+        {
+          "content": "Un débordement de pile",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le padding oracle attack ?",
+      "explanation": "Un padding oracle attack exploite les messages d'erreur sur le padding de chiffrement par blocs pour déchiffrer les données sans connaître la clé (ex: attaque POODLE sur CBC).",
+      "hint": "Exploite les erreurs de padding pour déchiffrer",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Cryptographie",
+        "Pentest"
+      ],
+      "answers": [
+        {
+          "content": "Une attaque sur les mots de passe paddés",
+          "isCorrect": false
+        },
+        {
+          "content": "Exploiter les messages d'erreur de padding pour déchiffrer sans la clé",
+          "isCorrect": true
+        },
+        {
+          "content": "Une attaque brute force sur le padding",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type d'injection cryptographique",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

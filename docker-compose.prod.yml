@@ -1,0 +1,162 @@
+# =============================================================================
+# TeQizz — Production Stack
+# =============================================================================
+#
+# Services: PostgreSQL · Backend (Spring Boot) · Frontend (Nginx/SPA)
+#
+# Prerequisites on the server:
+#   - Docker + Docker Compose plugin installed
+#   - Traefik running on network "traefik-public" (see /root/traefik/)
+#   - .env file at /root/teqizz/.env  (copy from .env.example, fill secrets)
+#
+# First-time setup:
+#   mkdir -p /root/teqizz && cd /root/teqizz
+#   cp .env.example .env && nano .env
+#   docker compose -f docker-compose.prod.yml up -d
+#
+# Daily operations:
+#   docker compose -f docker-compose.prod.yml ps
+#   docker compose -f docker-compose.prod.yml logs -f backend
+#   docker compose -f docker-compose.prod.yml restart backend
+# =============================================================================
+
+services:
+
+  # ---------------------------------------------------------------------------
+  # PostgreSQL
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    container_name: teqizz-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:     ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB:       ${DB_NAME}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:         ["CMD-SHELL", "pg_isready -U ${DB_USERNAME} -d ${DB_NAME}"]
+      interval:     10s
+      timeout:      5s
+      retries:      5
+      start_period: 15s
+    networks:
+      - teqizz-internal
+
+  # ---------------------------------------------------------------------------
+  # MinIO — Object storage (avatars)
+  # S3 API: https://storage.teqizz.lescracks.com
+  # ---------------------------------------------------------------------------
+  minio:
+    image: minio/minio:latest
+    container_name: teqizz-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER:     ${MINIO_ACCESS_KEY}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY}
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test:         ["CMD", "mc", "ready", "local"]
+      interval:     15s
+      timeout:      5s
+      retries:      5
+      start_period: 15s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.teqizz-storage.rule=Host(`storage.teqizz.lescracks.com`)"
+      - "traefik.http.routers.teqizz-storage.entrypoints=websecure"
+      - "traefik.http.routers.teqizz-storage.tls.certresolver=le"
+      - "traefik.http.services.teqizz-storage.loadbalancer.server.port=9000"
+      - "traefik.http.routers.teqizz-storage-http.rule=Host(`storage.teqizz.lescracks.com`)"
+      - "traefik.http.routers.teqizz-storage-http.entrypoints=web"
+      - "traefik.http.routers.teqizz-storage-http.middlewares=teqizz-https-redirect"
+    networks:
+      - teqizz-internal
+      - traefik-public
+
+  # ---------------------------------------------------------------------------
+  # Backend API — Spring Boot (port 8080)
+  # API: https://api.teqizz.lescracks.com
+  # ---------------------------------------------------------------------------
+  backend:
+    image: brandoniscoding/backend-teqizz:latest
+    container_name: teqizz-backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SPRING_JPA_HIBERNATE_DDL_AUTO: ${SPRING_DDL_AUTO:-update}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    healthcheck:
+      test:         ["CMD", "wget", "-qO-", "http://localhost:8080/actuator/health"]
+      interval:     30s
+      timeout:      10s
+      retries:      5
+      start_period: 60s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.teqizz-api.rule=Host(`api.teqizz.lescracks.com`)"
+      - "traefik.http.routers.teqizz-api.entrypoints=websecure"
+      - "traefik.http.routers.teqizz-api.tls.certresolver=le"
+      - "traefik.http.services.teqizz-api.loadbalancer.server.port=8080"
+      - "traefik.http.routers.teqizz-api-http.rule=Host(`api.teqizz.lescracks.com`)"
+      - "traefik.http.routers.teqizz-api-http.entrypoints=web"
+      - "traefik.http.routers.teqizz-api-http.middlewares=teqizz-https-redirect"
+    networks:
+      - teqizz-internal
+      - traefik-public
+
+  # ---------------------------------------------------------------------------
+  # Frontend — React SPA servie par Nginx
+  # Site: https://teqizz.lescracks.com
+  # ---------------------------------------------------------------------------
+  frontend:
+    image: brandoniscoding/frontend-teqizz:latest
+    container_name: teqizz-frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.teqizz.rule=Host(`teqizz.lescracks.com`)"
+      - "traefik.http.routers.teqizz.entrypoints=websecure"
+      - "traefik.http.routers.teqizz.tls.certresolver=le"
+      - "traefik.http.services.teqizz.loadbalancer.server.port=80"
+      - "traefik.http.routers.teqizz-http.rule=Host(`teqizz.lescracks.com`)"
+      - "traefik.http.routers.teqizz-http.entrypoints=web"
+      - "traefik.http.middlewares.teqizz-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.teqizz-https-redirect.redirectscheme.permanent=true"
+      - "traefik.http.routers.teqizz-http.middlewares=teqizz-https-redirect"
+    networks:
+      - teqizz-internal
+      - traefik-public
+
+# =============================================================================
+# Volumes
+# =============================================================================
+volumes:
+  postgres_data:
+    name: tekizz_postgres_data
+    external: true
+  minio_data:
+    name: tekizz_minio_data
+    external: true
+
+# =============================================================================
+# Networks
+# =============================================================================
+networks:
+  teqizz-internal:
+    name: teqizz-internal
+    driver: bridge
+
+  traefik-public:
+    name: traefik-public
+    external: true

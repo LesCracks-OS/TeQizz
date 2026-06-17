@@ -1,0 +1,2263 @@
+{
+  "categoryName": "Devops",
+  "questions": [
+    {
+      "content": "Quelle commande Docker télécharge une image depuis Docker Hub ?",
+      "explanation": "docker pull <image> télécharge une image depuis le registry (Docker Hub par défaut).",
+      "hint": "pull = tirer/télécharger",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "docker download",
+          "isCorrect": false
+        },
+        {
+          "content": "docker pull",
+          "isCorrect": true
+        },
+        {
+          "content": "docker get",
+          "isCorrect": false
+        },
+        {
+          "content": "docker fetch",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle commande Docker liste les conteneurs en cours d'exécution ?",
+      "explanation": "docker ps liste les conteneurs actifs. docker ps -a liste tous les conteneurs (actifs et arrêtés).",
+      "hint": "ps = process status",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "docker list",
+          "isCorrect": false
+        },
+        {
+          "content": "docker show",
+          "isCorrect": false
+        },
+        {
+          "content": "docker ps",
+          "isCorrect": true
+        },
+        {
+          "content": "docker containers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle commande Docker exécute un conteneur ?",
+      "explanation": "docker run crée et démarre un conteneur depuis une image. -d pour le fond, -p pour mapper les ports, --name pour nommer.",
+      "hint": "run = exécuter",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "docker start",
+          "isCorrect": false
+        },
+        {
+          "content": "docker run",
+          "isCorrect": true
+        },
+        {
+          "content": "docker exec",
+          "isCorrect": false
+        },
+        {
+          "content": "docker create",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle commande Docker construit une image depuis un Dockerfile ?",
+      "explanation": "docker build -t nom:tag . construit une image depuis le Dockerfile dans le répertoire courant.",
+      "hint": "build = construire",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "docker create",
+          "isCorrect": false
+        },
+        {
+          "content": "docker make",
+          "isCorrect": false
+        },
+        {
+          "content": "docker build",
+          "isCorrect": true
+        },
+        {
+          "content": "docker compile",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Dockerfile ?",
+      "explanation": "Un Dockerfile est un fichier texte contenant les instructions pour construire une image Docker: FROM, COPY, RUN, CMD, EXPOSE, etc.",
+      "hint": "Recette pour construire une image Docker",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Un script shell pour déployer des conteneurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un fichier d'instructions pour construire une image Docker",
+          "isCorrect": true
+        },
+        {
+          "content": "Un fichier de configuration Docker Compose",
+          "isCorrect": false
+        },
+        {
+          "content": "Un fichier de logs Docker",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'instruction FROM dans un Dockerfile ?",
+      "explanation": "FROM définit l'image de base depuis laquelle construire. C'est la première instruction d'un Dockerfile (ex: FROM node:18-alpine).",
+      "hint": "Image de base/parentale",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Importe des fichiers externes",
+          "isCorrect": false
+        },
+        {
+          "content": "Définit l'image de base du Dockerfile",
+          "isCorrect": true
+        },
+        {
+          "content": "Configure les variables d'environnement",
+          "isCorrect": false
+        },
+        {
+          "content": "Définit le point d'entrée",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre CMD et ENTRYPOINT dans un Dockerfile ?",
+      "explanation": "ENTRYPOINT définit le processus principal (non surchargeable facilement). CMD fournit des arguments par défaut à ENTRYPOINT ou la commande par défaut si pas d'ENTRYPOINT.",
+      "hint": "ENTRYPOINT est le processus principal, CMD les arguments par défaut",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Ils font exactement la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "ENTRYPOINT est le processus principal, CMD les arguments par défaut (surchargeable)",
+          "isCorrect": true
+        },
+        {
+          "content": "CMD est plus sécurisé",
+          "isCorrect": false
+        },
+        {
+          "content": "ENTRYPOINT est obsolète",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un volume Docker ?",
+      "explanation": "Un volume Docker persiste les données en dehors du cycle de vie du conteneur, permettant le partage de données entre conteneurs et la persistance après suppression.",
+      "hint": "Persistance des données hors du conteneur",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "La quantité de RAM allouée au conteneur",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de persistance des données en dehors du cycle de vie du conteneur",
+          "isCorrect": true
+        },
+        {
+          "content": "L'espace disque total disponible",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau virtuel Docker",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que docker-compose ?",
+      "explanation": "Docker Compose est un outil pour définir et gérer des applications multi-conteneurs via un fichier YAML (docker-compose.yml), avec docker-compose up/down.",
+      "hint": "Gestion multi-conteneurs via fichier YAML",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Une version premium de Docker",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil pour gérer des applications multi-conteneurs via un fichier YAML",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de monitoring Docker",
+          "isCorrect": false
+        },
+        {
+          "content": "Un registry privé Docker",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle instruction Dockerfile copie des fichiers dans l'image ?",
+      "explanation": "COPY copie des fichiers/dossiers locaux dans l'image. ADD fait de même mais supporte aussi les URLs et les archives tar (moins préféré).",
+      "hint": "COPY ou ADD",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "RUN cp",
+          "isCorrect": false
+        },
+        {
+          "content": "COPY",
+          "isCorrect": true
+        },
+        {
+          "content": "IMPORT",
+          "isCorrect": false
+        },
+        {
+          "content": "TRANSFER",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un multi-stage build dans Docker ?",
+      "explanation": "Le multi-stage build utilise plusieurs FROM dans un seul Dockerfile pour créer des images optimisées: une stage pour builder, une stage finale légère sans les outils de build.",
+      "hint": "Plusieurs FROM pour une image finale optimisée",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Un build avec plusieurs threads",
+          "isCorrect": false
+        },
+        {
+          "content": "Plusieurs étapes FROM pour une image finale sans les outils de build",
+          "isCorrect": true
+        },
+        {
+          "content": "Un build pour plusieurs architectures",
+          "isCorrect": false
+        },
+        {
+          "content": "Un Dockerfile avec plusieurs images de base",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la couche cache dans Docker ?",
+      "explanation": "Docker cache chaque instruction Dockerfile comme une couche. Si une couche n'a pas changé, Docker réutilise le cache, accélérant les builds. L'ordre des instructions est important.",
+      "hint": "Chaque instruction est une couche cacheable",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Un cache Redis dans Docker",
+          "isCorrect": false
+        },
+        {
+          "content": "Chaque instruction Dockerfile crée une couche cachée, réutilisée si inchangée",
+          "isCorrect": true
+        },
+        {
+          "content": "La mise en cache des images Docker Hub",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de cache réseau Docker",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment réduire la taille d'une image Docker ?",
+      "explanation": "Utiliser des images de base légères (alpine), combiner les RUN en une seule commande, multi-stage builds, .dockerignore pour exclure les fichiers inutiles.",
+      "hint": "Alpine, combiner RUN, multi-stage, .dockerignore",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Utiliser plus de couches",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser Alpine, combiner RUN, multi-stage builds et .dockerignore",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer les métadonnées",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser CMD au lieu de ENTRYPOINT",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un réseau Docker bridge ?",
+      "explanation": "Le réseau bridge est le réseau Docker par défaut: les conteneurs peuvent communiquer entre eux par nom de service (sur docker-compose) ou IP, isolés du réseau hôte.",
+      "hint": "Réseau isolé par défaut pour les conteneurs",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Une connexion entre Docker et le cloud",
+          "isCorrect": false
+        },
+        {
+          "content": "Le réseau Docker par défaut isolant les conteneurs tout en permettant leur communication",
+          "isCorrect": true
+        },
+        {
+          "content": "Un réseau haute performance",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau partagé avec l'hôte",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Pod dans Kubernetes ?",
+      "explanation": "Un Pod est l'unité de déploiement de base dans Kubernetes: il contient un ou plusieurs conteneurs partageant le même réseau et stockage.",
+      "hint": "Unité de base de déploiement K8s",
+      "difficulty": "EASY",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un nœud de cluster Kubernetes",
+          "isCorrect": false
+        },
+        {
+          "content": "L'unité de déploiement de base contenant un ou plusieurs conteneurs",
+          "isCorrect": true
+        },
+        {
+          "content": "Un service Kubernetes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un namespace Kubernetes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Deployment dans Kubernetes ?",
+      "explanation": "Un Deployment gère la création et mise à jour de Pods ReplicaSets, assurant le nombre souhaité de replicas, les rolling updates et les rollbacks.",
+      "hint": "Gère les replicas et les mises à jour",
+      "difficulty": "EASY",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un script de déploiement Shell",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet K8s gérant les replicas de Pods et les rolling updates",
+          "isCorrect": true
+        },
+        {
+          "content": "Un serveur dans le cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Un espace de noms isolé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Service dans Kubernetes ?",
+      "explanation": "Un Service Kubernetes expose une application (ensemble de Pods) sur le réseau, fournissant une IP stable et du load balancing même si les Pods changent.",
+      "hint": "Expose les Pods avec IP stable et load balancing",
+      "difficulty": "EASY",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un microservice applicatif",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet K8s exposant des Pods avec IP stable et load balancing",
+          "isCorrect": true
+        },
+        {
+          "content": "Un daemon système",
+          "isCorrect": false
+        },
+        {
+          "content": "Un volume de stockage partagé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle commande kubectl affiche les Pods d'un namespace ?",
+      "explanation": "kubectl get pods liste les Pods du namespace courant. -n <namespace> pour un namespace spécifique, --all-namespaces pour tous.",
+      "hint": "kubectl get pods",
+      "difficulty": "EASY",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "kubectl list pods",
+          "isCorrect": false
+        },
+        {
+          "content": "kubectl get pods",
+          "isCorrect": true
+        },
+        {
+          "content": "kubectl show pods",
+          "isCorrect": false
+        },
+        {
+          "content": "kubectl describe pods",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un namespace Kubernetes ?",
+      "explanation": "Un namespace est un mécanisme d'isolation logique dans un cluster K8s, permettant de partitionner les ressources entre équipes ou environnements (dev, staging, prod).",
+      "hint": "Isolation logique dans le cluster",
+      "difficulty": "EASY",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "L'espace disque du cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme d'isolation logique pour partitionner les ressources du cluster",
+          "isCorrect": true
+        },
+        {
+          "content": "Le nom du cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau virtuel K8s",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un ConfigMap dans Kubernetes ?",
+      "explanation": "Un ConfigMap stocke des données de configuration non-sensibles (clé-valeur) séparément du code, injectées dans les Pods comme variables d'environnement ou fichiers.",
+      "hint": "Configuration non-sensible séparée du code",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un fichier de configuration de kubectl",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet K8s stockant des configs non-sensibles injectables dans les Pods",
+          "isCorrect": true
+        },
+        {
+          "content": "La configuration du cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Un map de services",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Secret dans Kubernetes ?",
+      "explanation": "Un Secret stocke des données sensibles (mots de passe, tokens, certificats) encodées en Base64. Similaire à ConfigMap mais pour les données confidentielles.",
+      "hint": "Données sensibles en Base64",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un mot de passe Kubernetes admin",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet K8s stockant des données sensibles (tokens, mots de passe) encodées",
+          "isCorrect": true
+        },
+        {
+          "content": "Un certificat SSL du cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Une clé de chiffrement du cluster",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Ingress dans Kubernetes ?",
+      "explanation": "Un Ingress gère l'accès externe au cluster (HTTP/HTTPS), permettant le routage basé sur l'hôte ou le chemin, le TLS termination et le load balancing.",
+      "hint": "Routage HTTP/HTTPS externe vers les Services",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "L'entrée principale du cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet K8s gérant le routage HTTP/HTTPS externe avec TLS et load balancing",
+          "isCorrect": true
+        },
+        {
+          "content": "Un tunnel VPN vers le cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "La porte pare-feu du cluster",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un HorizontalPodAutoscaler (HPA) ?",
+      "explanation": "HPA ajuste automatiquement le nombre de replicas d'un Deployment selon les métriques (CPU, mémoire, custom metrics), scalant horizontalement selon la charge.",
+      "hint": "Autoscaling basé sur les métriques",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un outil pour déplacer des Pods horizontalement",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet K8s ajustant automatiquement le nombre de replicas selon les métriques",
+          "isCorrect": true
+        },
+        {
+          "content": "Une configuration de Pod multi-container",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de load balancing",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un StatefulSet dans Kubernetes ?",
+      "explanation": "StatefulSet gère des Pods nécessitant un état persistant et une identité stable: nom ordonné, stockage persistant individuel. Utilisé pour BD (MySQL, Kafka, etc.).",
+      "hint": "Pour les applications avec état persistant (bases de données)",
+      "difficulty": "HARD",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un Deployment avec état",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet K8s pour les apps avec état persistant et identité stable (BD, Kafka)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un ensemble de configurations statiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de volume persistant",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre NodePort et LoadBalancer Service ?",
+      "explanation": "NodePort expose le service sur un port de chaque nœud. LoadBalancer crée un load balancer cloud externe (AWS ELB, GCP LB) pointant vers les Pods.",
+      "hint": "NodePort = port sur les nœuds, LoadBalancer = LB cloud externe",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Ils font la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "NodePort expose sur un port nœud, LoadBalancer crée un load balancer cloud externe",
+          "isCorrect": true
+        },
+        {
+          "content": "LoadBalancer est moins sécurisé",
+          "isCorrect": false
+        },
+        {
+          "content": "NodePort est pour les clouds publics uniquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'intégration continue (CI) ?",
+      "explanation": "La CI (Continuous Integration) automatise la vérification du code à chaque commit: compilation, tests, analyse statique, garantissant que le code reste intégrable.",
+      "hint": "Vérification automatique à chaque commit",
+      "difficulty": "EASY",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Intégrer du code manuellement",
+          "isCorrect": false
+        },
+        {
+          "content": "Automatiser la vérification (build, tests) du code à chaque commit",
+          "isCorrect": true
+        },
+        {
+          "content": "Un processus de livraison continue",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de versionnement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le déploiement continu (CD) ?",
+      "explanation": "CD peut être Continuous Delivery (déploiement prêt manuellement validé) ou Continuous Deployment (déploiement automatique en production après CI réussie).",
+      "hint": "Delivery = prêt manuellement, Deployment = auto en prod",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de versionnement de code",
+          "isCorrect": false
+        },
+        {
+          "content": "Continuous Delivery (prêt pour déploiement) ou Deployment (auto en prod)",
+          "isCorrect": true
+        },
+        {
+          "content": "La vérification automatique du code",
+          "isCorrect": false
+        },
+        {
+          "content": "La gestion des branches Git",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un pipeline CI/CD ?",
+      "explanation": "Un pipeline CI/CD est une séquence d'étapes automatisées: checkout → build → tests → analyse → packaging → déploiement, déclenchée par un commit.",
+      "hint": "Séquence automatisée de build → test → deploy",
+      "difficulty": "EASY",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un tuyau réseau pour les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Une séquence automatisée d'étapes: build, test, analyse, déploiement",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de monitoring",
+          "isCorrect": false
+        },
+        {
+          "content": "Un format de fichier de configuration",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un workflow GitHub Actions ?",
+      "explanation": "Un workflow est un processus automatisé configuré dans .github/workflows/*.yml, déclenché par des événements GitHub (push, PR, schedule, etc.).",
+      "hint": "Fichier YAML dans .github/workflows/",
+      "difficulty": "EASY",
+      "tags": [
+        "GitHub Actions"
+      ],
+      "answers": [
+        {
+          "content": "Un branch de travail GitHub",
+          "isCorrect": false
+        },
+        {
+          "content": "Un processus automatisé YAML déclenché par des événements GitHub",
+          "isCorrect": true
+        },
+        {
+          "content": "Un template de repository",
+          "isCorrect": false
+        },
+        {
+          "content": "Un script de déploiement GitHub",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un job dans GitHub Actions ?",
+      "explanation": "Un job est un ensemble d'étapes (steps) s'exécutant sur le même runner. Les jobs d'un workflow peuvent s'exécuter en parallèle ou en séquence (needs).",
+      "hint": "Ensemble de steps sur un même runner",
+      "difficulty": "EASY",
+      "tags": [
+        "GitHub Actions"
+      ],
+      "answers": [
+        {
+          "content": "Un script shell unique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un ensemble de steps s'exécutant sur un même runner",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type d'événement déclencheur",
+          "isCorrect": false
+        },
+        {
+          "content": "Une branche de travail",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment utiliser un secret dans GitHub Actions ?",
+      "explanation": "Les secrets sont définis dans les Settings du repo et référencés dans le workflow avec ${{ secrets.MON_SECRET }}. Ils sont masqués dans les logs.",
+      "hint": "${{ secrets.NOM_SECRET }}",
+      "difficulty": "EASY",
+      "tags": [
+        "GitHub Actions"
+      ],
+      "answers": [
+        {
+          "content": "En les écrivant directement dans le YAML",
+          "isCorrect": false
+        },
+        {
+          "content": "Via ${{ secrets.NOM_SECRET }} en les définissant dans les Settings du repo",
+          "isCorrect": true
+        },
+        {
+          "content": "En les important depuis un fichier .env",
+          "isCorrect": false
+        },
+        {
+          "content": "En utilisant des variables d'environnement normales",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un matrix strategy dans GitHub Actions ?",
+      "explanation": "La stratégie matrix permet d'exécuter un même job avec plusieurs combinaisons de paramètres (ex: Node 16, 18, 20 sur Ubuntu, macOS, Windows).",
+      "hint": "Tester sur plusieurs versions/OS simultanément",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "GitHub Actions"
+      ],
+      "answers": [
+        {
+          "content": "Une table de configuration",
+          "isCorrect": false
+        },
+        {
+          "content": "Exécuter un job avec plusieurs combinaisons de paramètres en parallèle",
+          "isCorrect": true
+        },
+        {
+          "content": "Une matrice de tests de sécurité",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de mesure de couverture",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que .gitlab-ci.yml ?",
+      "explanation": "Le fichier .gitlab-ci.yml à la racine du repo définit le pipeline CI/CD GitLab: les stages, les jobs et leurs configurations.",
+      "hint": "Fichier de configuration du pipeline GitLab",
+      "difficulty": "EASY",
+      "tags": [
+        "GitLab CI"
+      ],
+      "answers": [
+        {
+          "content": "La configuration du repository GitLab",
+          "isCorrect": false
+        },
+        {
+          "content": "Le fichier de définition du pipeline CI/CD GitLab",
+          "isCorrect": true
+        },
+        {
+          "content": "Un fichier de merge request",
+          "isCorrect": false
+        },
+        {
+          "content": "La configuration des runners",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un GitLab Runner ?",
+      "explanation": "Un GitLab Runner est un agent qui exécute les jobs du pipeline CI/CD. Il peut être partagé (hébergé par GitLab) ou spécifique (auto-hébergé).",
+      "hint": "Agent qui exécute les jobs CI/CD",
+      "difficulty": "EASY",
+      "tags": [
+        "GitLab CI"
+      ],
+      "answers": [
+        {
+          "content": "Un script CI/CD",
+          "isCorrect": false
+        },
+        {
+          "content": "Un agent hébergé ou auto-hébergé qui exécute les jobs du pipeline",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de déploiement GitLab",
+          "isCorrect": false
+        },
+        {
+          "content": "Un utilisateur automatique GitLab",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'Amazon EC2 ?",
+      "explanation": "EC2 (Elastic Compute Cloud) est le service de machines virtuelles AWS, offrant des instances de calcul à la demande avec différentes configurations CPU/RAM/GPU.",
+      "hint": "Machines virtuelles à la demande",
+      "difficulty": "EASY",
+      "tags": [
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Un service de stockage AWS",
+          "isCorrect": false
+        },
+        {
+          "content": "Le service de machines virtuelles à la demande d'AWS",
+          "isCorrect": true
+        },
+        {
+          "content": "Un service de base de données AWS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service de mise en réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'Amazon S3 ?",
+      "explanation": "S3 (Simple Storage Service) est le service de stockage objet AWS: stockage illimité de fichiers avec haute durabilité, accessible via API.",
+      "hint": "Stockage objet scalable",
+      "difficulty": "EASY",
+      "tags": [
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Un service de base de données AWS",
+          "isCorrect": false
+        },
+        {
+          "content": "Le service de stockage objet AWS pour fichiers et données",
+          "isCorrect": true
+        },
+        {
+          "content": "Un serveur SQL managé",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service de calcul sans serveur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'AWS Lambda ?",
+      "explanation": "AWS Lambda est un service FaaS (Function as a Service) qui exécute du code sans gérer de serveur. Facturation à l'utilisation (par invocation et durée).",
+      "hint": "FaaS: code sans serveur à gérer",
+      "difficulty": "EASY",
+      "tags": [
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Un service de machine learning AWS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service FaaS exécutant du code sans gérer de serveur",
+          "isCorrect": true
+        },
+        {
+          "content": "Un proxy réseau AWS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service de messaging AWS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un VPC dans AWS ?",
+      "explanation": "Un VPC (Virtual Private Cloud) est un réseau virtuel isolé dans AWS où vous déployez vos ressources, avec contrôle total sur les sous-réseaux, tables de routage et passerelles.",
+      "hint": "Réseau virtuel privé et isolé dans AWS",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Un serveur privé virtuel",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau virtuel isolé dans AWS avec contrôle total du networking",
+          "isCorrect": true
+        },
+        {
+          "content": "Un service de CDN",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de monitoring AWS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre RDS et DynamoDB dans AWS ?",
+      "explanation": "RDS est une base de données relationnelle managée (MySQL, PostgreSQL, etc.). DynamoDB est une base NoSQL clé-valeur serverless hautement scalable.",
+      "hint": "Relationnel managé vs NoSQL serverless",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "RDS = BD relationnelle managée, DynamoDB = NoSQL clé-valeur serverless scalable",
+          "isCorrect": true
+        },
+        {
+          "content": "DynamoDB est plus ancien",
+          "isCorrect": false
+        },
+        {
+          "content": "RDS est pour le stockage d'objets",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que CloudFront dans AWS ?",
+      "explanation": "CloudFront est le CDN (Content Delivery Network) d'AWS: distribue le contenu depuis des edge locations proches des utilisateurs pour réduire la latence.",
+      "hint": "CDN mondial pour réduire la latence",
+      "difficulty": "EASY",
+      "tags": [
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Un service de cloud computing",
+          "isCorrect": false
+        },
+        {
+          "content": "Le CDN AWS distribuant le contenu depuis des edge locations mondiales",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de monitoring",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service de stockage en cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que IAM dans AWS ?",
+      "explanation": "IAM (Identity and Access Management) gère les identités et accès dans AWS: utilisateurs, groupes, rôles et policies définissant les permissions.",
+      "hint": "Gestion des identités et permissions AWS",
+      "difficulty": "EASY",
+      "tags": [
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Un service d'authentification externe",
+          "isCorrect": false
+        },
+        {
+          "content": "Le service AWS gérant les identités, rôles et permissions",
+          "isCorrect": true
+        },
+        {
+          "content": "Un API de gestion des ressources",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de surveillance des accès",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Terraform ?",
+      "explanation": "Terraform est un outil d'Infrastructure as Code (IaC) de HashiCorp: décrit l'infrastructure dans des fichiers HCL, gère la création, modification et destruction des ressources.",
+      "hint": "Infrastructure as Code multi-cloud de HashiCorp",
+      "difficulty": "EASY",
+      "tags": [
+        "Terraform"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de containerisation",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil IaC décrivant l'infrastructure en HCL pour multi-cloud",
+          "isCorrect": true
+        },
+        {
+          "content": "Un système de configuration serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "Un gestionnaire de secrets",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que terraform plan ?",
+      "explanation": "terraform plan affiche les changements que terraform va apporter sans les appliquer. C'est une étape de validation avant terraform apply.",
+      "hint": "Aperçu des changements avant application",
+      "difficulty": "EASY",
+      "tags": [
+        "Terraform"
+      ],
+      "answers": [
+        {
+          "content": "Crée l'infrastructure",
+          "isCorrect": false
+        },
+        {
+          "content": "Affiche les changements prévus sans les appliquer",
+          "isCorrect": true
+        },
+        {
+          "content": "Sauvegarde l'état de l'infrastructure",
+          "isCorrect": false
+        },
+        {
+          "content": "Valide la syntaxe HCL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le state dans Terraform ?",
+      "explanation": "Le state Terraform (terraform.tfstate) enregistre la correspondance entre les ressources décrites et les ressources réelles créées, permettant le suivi et la mise à jour.",
+      "hint": "Fichier de suivi des ressources créées",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Terraform"
+      ],
+      "answers": [
+        {
+          "content": "Le statut des serveurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un fichier enregistrant la correspondance entre code IaC et ressources réelles",
+          "isCorrect": true
+        },
+        {
+          "content": "Les logs d'exécution Terraform",
+          "isCorrect": false
+        },
+        {
+          "content": "La configuration des providers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un provider Terraform ?",
+      "explanation": "Un provider Terraform est un plugin qui interagit avec une API cloud ou service (AWS, GCP, Azure, Kubernetes, GitHub, etc.) pour créer et gérer les ressources.",
+      "hint": "Plugin d'interaction avec une API cloud/service",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Terraform"
+      ],
+      "answers": [
+        {
+          "content": "Un fournisseur de services cloud",
+          "isCorrect": false
+        },
+        {
+          "content": "Un plugin Terraform interagissant avec une API (AWS, GCP, etc.) pour gérer les ressources",
+          "isCorrect": true
+        },
+        {
+          "content": "Un template de ressources Terraform",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil d'authentification",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'Ansible ?",
+      "explanation": "Ansible est un outil d'automatisation IT agentless: configuration, déploiement, orchestration via des playbooks YAML, utilisant SSH pour se connecter aux machines.",
+      "hint": "Automatisation IT agentless via SSH",
+      "difficulty": "EASY",
+      "tags": [
+        "Ansible"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de containerisation",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil d'automatisation agentless via SSH et playbooks YAML",
+          "isCorrect": true
+        },
+        {
+          "content": "Un orchestrateur de conteneurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de monitoring",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un playbook Ansible ?",
+      "explanation": "Un playbook Ansible est un fichier YAML décrivant les tâches d'automatisation: sur quels hôtes exécuter quelles tâches dans quel ordre.",
+      "hint": "Fichier YAML de tâches d'automatisation",
+      "difficulty": "EASY",
+      "tags": [
+        "Ansible"
+      ],
+      "answers": [
+        {
+          "content": "Un script shell Ansible",
+          "isCorrect": false
+        },
+        {
+          "content": "Un fichier YAML décrivant les hôtes cibles et les tâches à exécuter",
+          "isCorrect": true
+        },
+        {
+          "content": "Un inventaire des serveurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un template de configuration",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un inventaire Ansible ?",
+      "explanation": "Un inventaire Ansible liste les hôtes et groupes d'hôtes sur lesquels exécuter les playbooks, avec leurs variables de connexion.",
+      "hint": "Liste des hôtes cibles",
+      "difficulty": "EASY",
+      "tags": [
+        "Ansible"
+      ],
+      "answers": [
+        {
+          "content": "Un stock de modules Ansible",
+          "isCorrect": false
+        },
+        {
+          "content": "La liste des hôtes et groupes d'hôtes cibles pour les playbooks",
+          "isCorrect": true
+        },
+        {
+          "content": "Un journal des tâches exécutées",
+          "isCorrect": false
+        },
+        {
+          "content": "Un catalogue de rôles Ansible",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle commande Linux affiche les processus en cours ?",
+      "explanation": "ps aux affiche tous les processus. top et htop affichent les processus en temps réel avec utilisation CPU/mémoire.",
+      "hint": "ps, top, htop",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "ls -la",
+          "isCorrect": false
+        },
+        {
+          "content": "ps aux",
+          "isCorrect": true
+        },
+        {
+          "content": "show processes",
+          "isCorrect": false
+        },
+        {
+          "content": "task list",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle commande Linux change les permissions d'un fichier ?",
+      "explanation": "chmod modifie les permissions d'un fichier/dossier. chmod 755 file donne rwxr-xr-x. chmod +x file ajoute le droit d'exécution.",
+      "hint": "chmod",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "chown",
+          "isCorrect": false
+        },
+        {
+          "content": "chmod",
+          "isCorrect": true
+        },
+        {
+          "content": "chperm",
+          "isCorrect": false
+        },
+        {
+          "content": "permission",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle commande Linux change le propriétaire d'un fichier ?",
+      "explanation": "chown user:group file change le propriétaire et le groupe d'un fichier.",
+      "hint": "chown",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "chmod",
+          "isCorrect": false
+        },
+        {
+          "content": "chown",
+          "isCorrect": true
+        },
+        {
+          "content": "chuser",
+          "isCorrect": false
+        },
+        {
+          "content": "setowner",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la commande grep ?",
+      "explanation": "grep recherche un pattern (texte ou regex) dans des fichiers ou l'entrée standard et affiche les lignes correspondantes.",
+      "hint": "Recherche de texte/pattern dans des fichiers",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "Affiche les fichiers d'un dossier",
+          "isCorrect": false
+        },
+        {
+          "content": "Recherche un pattern dans des fichiers ou l'entrée standard",
+          "isCorrect": true
+        },
+        {
+          "content": "Copie des fichiers",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresse des fichiers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la commande sed ?",
+      "explanation": "sed (stream editor) est un éditeur de flux non-interactif. Utilisé pour remplacer du texte: sed 's/ancien/nouveau/g' fichier.",
+      "hint": "Stream editor, remplacement de texte",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "Affiche le début d'un fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Un éditeur de flux pour transformer du texte (ex: sed 's/old/new/g')",
+          "isCorrect": true
+        },
+        {
+          "content": "Sécurise les données d'un fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Trie des fichiers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la commande awk ?",
+      "explanation": "awk est un langage de traitement de texte colonne par colonne. Utilisé pour extraire et manipuler des champs: awk '{print $1}' file.",
+      "hint": "Traitement de texte colonne par colonne",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "Crée des archives",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de traitement de texte orienté colonnes/champs",
+          "isCorrect": true
+        },
+        {
+          "content": "Affiche les permissions avancées",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de recherche de fichiers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la commande find dans Linux ?",
+      "explanation": "find recherche des fichiers selon des critères (nom, taille, date, permissions, type) dans une arborescence de répertoires.",
+      "hint": "Recherche de fichiers dans l'arborescence",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "Recherche du texte dans des fichiers",
+          "isCorrect": false
+        },
+        {
+          "content": "Recherche des fichiers dans l'arborescence selon des critères",
+          "isCorrect": true
+        },
+        {
+          "content": "Affiche la taille des fichiers",
+          "isCorrect": false
+        },
+        {
+          "content": "Localise des packages installés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un cron job dans Linux ?",
+      "explanation": "Un cron job est une tâche planifiée exécutée automatiquement à des intervalles définis par une expression cron (minute, heure, jour, mois, jour de semaine).",
+      "hint": "Tâche planifiée avec expression cron",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "Un processus d'arrière-plan permanent",
+          "isCorrect": false
+        },
+        {
+          "content": "Une tâche automatisée exécutée selon un planning défini par expression cron",
+          "isCorrect": true
+        },
+        {
+          "content": "Un démon Linux",
+          "isCorrect": false
+        },
+        {
+          "content": "Un script d'initialisation système",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la commande curl ?",
+      "explanation": "curl est un outil en ligne de commande pour transférer des données via URLs (HTTP, HTTPS, FTP, etc.), utilisé pour tester des APIs et télécharger des fichiers.",
+      "hint": "Transfert de données via URL en ligne de commande",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "Affiche le chemin d'une commande",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de transfert de données via URL (HTTP, FTP, etc.)",
+          "isCorrect": true
+        },
+        {
+          "content": "Compresse des fichiers",
+          "isCorrect": false
+        },
+        {
+          "content": "Configure le réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre /etc/passwd et /etc/shadow ?",
+      "explanation": "/etc/passwd contient les informations des comptes utilisateurs (lisible par tous). /etc/shadow contient les mots de passe hashés (lisible uniquement par root).",
+      "hint": "Infos utilisateurs vs mots de passe hashés",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "Ce sont des fichiers identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "/etc/passwd = infos utilisateurs, /etc/shadow = mots de passe hashés (root only)",
+          "isCorrect": true
+        },
+        {
+          "content": "/etc/shadow est obsolète",
+          "isCorrect": false
+        },
+        {
+          "content": "/etc/passwd contient les mots de passe",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un proxy inverse (reverse proxy) ?",
+      "explanation": "Un reverse proxy est un serveur intermédiaire entre Internet et les serveurs d'application: il reçoit les requêtes clients et les redirige vers le backend approprié (Nginx, HAProxy, Traefik).",
+      "hint": "Serveur intermédiaire entre Internet et le backend",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Linux",
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Un proxy pour anonymiser les clients",
+          "isCorrect": false
+        },
+        {
+          "content": "Un serveur intermédiaire qui reçoit les requêtes et les redirige vers le backend",
+          "isCorrect": true
+        },
+        {
+          "content": "Un pare-feu réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Un serveur DNS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le load balancing ?",
+      "explanation": "Le load balancing distribue le trafic entrant sur plusieurs serveurs pour optimiser l'utilisation des ressources, maximiser le débit et éviter la surcharge.",
+      "hint": "Distribution du trafic sur plusieurs serveurs",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux",
+        "Kubernetes",
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "La mise en réseau de serveurs",
+          "isCorrect": false
+        },
+        {
+          "content": "La distribution du trafic sur plusieurs serveurs pour optimiser les ressources",
+          "isCorrect": true
+        },
+        {
+          "content": "L'équilibrage de la charge processeur",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de redondance de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que DNS ?",
+      "explanation": "DNS (Domain Name System) traduit les noms de domaine (google.com) en adresses IP. C'est l'annuaire d'Internet.",
+      "hint": "Annuaire Internet traduisant noms en IPs",
+      "difficulty": "EASY",
+      "tags": [
+        "Linux",
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Un protocole de chiffrement réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Le système qui traduit les noms de domaine en adresses IP",
+          "isCorrect": true
+        },
+        {
+          "content": "Un protocole de transfert de fichiers",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole de messagerie",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre TCP et UDP ?",
+      "explanation": "TCP est orienté connexion (fiable, ordonnancement garanti, contrôle de flux). UDP est sans connexion (plus rapide, pas de garantie de livraison, pour streaming/gaming).",
+      "hint": "Fiable vs rapide",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "TCP est sans fil, UDP est câblé",
+          "isCorrect": false
+        },
+        {
+          "content": "TCP est fiable et orienté connexion, UDP est rapide sans garantie",
+          "isCorrect": true
+        },
+        {
+          "content": "UDP est plus sécurisé",
+          "isCorrect": false
+        },
+        {
+          "content": "TCP est pour le web, UDP pour les BD",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Grafana ?",
+      "explanation": "Grafana est une plateforme open-source de visualisation et d'alerting pour les métriques. Elle se connecte à Prometheus, InfluxDB, Elasticsearch, etc. pour créer des dashboards.",
+      "hint": "Dashboards de visualisation de métriques",
+      "difficulty": "EASY",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de déploiement",
+          "isCorrect": false
+        },
+        {
+          "content": "Une plateforme de visualisation et dashboards pour les métriques",
+          "isCorrect": true
+        },
+        {
+          "content": "Un système d'alerting email",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de log management",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'ELK Stack ?",
+      "explanation": "ELK Stack = Elasticsearch (stockage et recherche) + Logstash (collecte et transformation) + Kibana (visualisation). Utilisé pour la centralisation et l'analyse des logs.",
+      "hint": "Elasticsearch + Logstash + Kibana",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Linux",
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un framework backend",
+          "isCorrect": false
+        },
+        {
+          "content": "Elasticsearch + Logstash + Kibana pour la gestion centralisée des logs",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de déploiement",
+          "isCorrect": false
+        },
+        {
+          "content": "Un stack de monitoring réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un alert dans le monitoring ?",
+      "explanation": "Une alerte est une notification déclenchée quand une métrique franchit un seuil défini (CPU > 90%, latence > 500ms) pour notifier l'équipe ops d'un problème potentiel.",
+      "hint": "Notification sur dépassement de seuil",
+      "difficulty": "EASY",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un message de log d'erreur",
+          "isCorrect": false
+        },
+        {
+          "content": "Une notification déclenchée quand une métrique franchit un seuil défini",
+          "isCorrect": true
+        },
+        {
+          "content": "Un rapport quotidien de performance",
+          "isCorrect": false
+        },
+        {
+          "content": "Un fichier de configuration de monitoring",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un déploiement Blue-Green ?",
+      "explanation": "Blue-Green maintient deux environnements identiques (blue=actif, green=nouveau). On déploie sur green, teste, puis bascule le trafic de blue vers green. Rollback instantané en rebasculant.",
+      "hint": "Deux environnements identiques, basculement du trafic",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD",
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un déploiement avec deux équipes",
+          "isCorrect": false
+        },
+        {
+          "content": "Deux environnements identiques avec basculement de trafic et rollback instantané",
+          "isCorrect": true
+        },
+        {
+          "content": "Un déploiement graduel en pourcentage",
+          "isCorrect": false
+        },
+        {
+          "content": "Un déploiement multi-région",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Rolling Update dans Kubernetes ?",
+      "explanation": "Un Rolling Update remplace progressivement les anciennes instances de Pod par les nouvelles, maintenant la disponibilité pendant la mise à jour. Configurable avec maxUnavailable et maxSurge.",
+      "hint": "Remplacement progressif des Pods",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes",
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un redémarrage simultané de tous les Pods",
+          "isCorrect": false
+        },
+        {
+          "content": "Remplacement progressif des Pods maintenant la disponibilité",
+          "isCorrect": true
+        },
+        {
+          "content": "Une mise à jour en mode maintenance",
+          "isCorrect": false
+        },
+        {
+          "content": "Une mise à jour sans temps d'arrêt uniquement sur AWS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un déploiement Canary ?",
+      "explanation": "Un déploiement Canary envoie une petite fraction du trafic (ex: 5%) vers la nouvelle version pour valider en conditions réelles avant un rollout complet.",
+      "hint": "Petite fraction du trafic vers la nouvelle version",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD",
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un déploiement nommé d'après un oiseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Envoyer une petite fraction du trafic vers la nouvelle version pour valider",
+          "isCorrect": true
+        },
+        {
+          "content": "Un déploiement dans un environnement canary (sandbox)",
+          "isCorrect": false
+        },
+        {
+          "content": "Un déploiement rapide sans tests",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que HashiCorp Vault ?",
+      "explanation": "Vault est un outil de gestion des secrets: stocke, distribue et contrôle l'accès aux tokens, mots de passe, certificats, clés API de façon sécurisée et auditée.",
+      "hint": "Gestion sécurisée des secrets",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Terraform",
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de sauvegarde de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un gestionnaire de secrets centralisant et contrôlant l'accès aux credentials",
+          "isCorrect": true
+        },
+        {
+          "content": "Un coffre-fort physique virtuel",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de chiffrement de disque",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre Terraform et Ansible ?",
+      "explanation": "Terraform gère l'infrastructure (crée des ressources cloud: VMs, réseaux). Ansible configure les serveurs existants (installe des packages, configure des services). Complémentaires.",
+      "hint": "Provisionnement vs configuration",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Terraform",
+        "Ansible"
+      ],
+      "answers": [
+        {
+          "content": "Ansible remplace Terraform",
+          "isCorrect": false
+        },
+        {
+          "content": "Terraform provisionne l'infrastructure, Ansible configure les serveurs",
+          "isCorrect": true
+        },
+        {
+          "content": "Terraform est agentless, Ansible pas",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils font exactement la même chose",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Jenkinsfile ?",
+      "explanation": "Un Jenkinsfile est un fichier de configuration (Groovy) stocké dans le code source, définissant le pipeline Jenkins en tant que code (Pipeline as Code).",
+      "hint": "Pipeline Jenkins défini dans le code",
+      "difficulty": "EASY",
+      "tags": [
+        "Jenkins",
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un fichier de configuration Jenkins",
+          "isCorrect": false
+        },
+        {
+          "content": "Un fichier Groovy définissant le pipeline Jenkins (Pipeline as Code)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un script de déploiement Jenkins",
+          "isCorrect": false
+        },
+        {
+          "content": "Un log de build Jenkins",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que les 3 pilliers de l'observabilité ?",
+      "explanation": "Les 3 pilliers de l'observabilité sont: Logs (événements textuels), Metrics (données numériques time-series), Traces (suivi distribué des requêtes).",
+      "hint": "Logs, Metrics, Traces",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD",
+        "Linux"
+      ],
+      "answers": [
+        {
+          "content": "CPU, RAM, réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Logs, Metrics, Traces",
+          "isCorrect": true
+        },
+        {
+          "content": "Docker, Kubernetes, Prometheus",
+          "isCorrect": false
+        },
+        {
+          "content": "APM, monitoring, alerting",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le tracing distribué ?",
+      "explanation": "Le tracing distribué suit une requête à travers tous les microservices qu'elle traverse, visualisant le chemin complet et identifiant les goulots d'étranglement. Outils: Jaeger, Zipkin, OpenTelemetry.",
+      "hint": "Suivi d'une requête à travers les microservices",
+      "difficulty": "HARD",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un monitoring réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Le suivi d'une requête à travers tous les microservices pour identifier les bottlenecks",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de debug de code distribué",
+          "isCorrect": false
+        },
+        {
+          "content": "La gestion des transactions distribuées",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que DevSecOps ?",
+      "explanation": "DevSecOps intègre la sécurité dans chaque étape du pipeline DevOps: scan de code statique, analyse des dépendances, scan d'images Docker, tests de pénétration automatisés.",
+      "hint": "Sécurité intégrée dans le pipeline DevOps",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un département sécurité séparé des DevOps",
+          "isCorrect": false
+        },
+        {
+          "content": "L'intégration de la sécurité à chaque étape du pipeline DevOps",
+          "isCorrect": true
+        },
+        {
+          "content": "Des outils de sécurité pour développeurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework de tests de sécurité",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que SBOM (Software Bill of Materials) ?",
+      "explanation": "Un SBOM est un inventaire des composants logiciels (bibliothèques, dépendances, licences) d'une application, permettant de tracker les vulnérabilités connues.",
+      "hint": "Inventaire des composants et dépendances",
+      "difficulty": "HARD",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Une liste de bugs à corriger",
+          "isCorrect": false
+        },
+        {
+          "content": "Un inventaire des composants logiciels pour tracker les vulnérabilités",
+          "isCorrect": true
+        },
+        {
+          "content": "Un bill de facturation cloud",
+          "isCorrect": false
+        },
+        {
+          "content": "Un manifeste de déploiement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un PersistentVolume (PV) dans Kubernetes ?",
+      "explanation": "Un PV est une ressource de stockage dans le cluster K8s, provisionnée par l'admin ou dynamiquement. Découplé du cycle de vie des Pods.",
+      "hint": "Stockage persistant découplé des Pods",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "La mémoire RAM d'un Pod",
+          "isCorrect": false
+        },
+        {
+          "content": "Une ressource de stockage persistant découplée du cycle de vie des Pods",
+          "isCorrect": true
+        },
+        {
+          "content": "Un volume Docker",
+          "isCorrect": false
+        },
+        {
+          "content": "L'espace disque du nœud",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que GKE (Google Kubernetes Engine) ?",
+      "explanation": "GKE est le service Kubernetes managé de Google Cloud Platform: Google gère le control plane, les mises à jour et la sécurité du cluster K8s.",
+      "hint": "Kubernetes managé par Google",
+      "difficulty": "EASY",
+      "tags": [
+        "GCP",
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un moteur de recherche Google",
+          "isCorrect": false
+        },
+        {
+          "content": "Le service Kubernetes managé de GCP",
+          "isCorrect": true
+        },
+        {
+          "content": "Un service de stockage Google",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service de calcul sans serveur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'Azure DevOps ?",
+      "explanation": "Azure DevOps est la suite Microsoft pour le DevOps: Azure Repos (Git), Azure Pipelines (CI/CD), Azure Boards (tickets), Azure Artifacts (packages).",
+      "hint": "Suite Microsoft pour Git, CI/CD, tickets",
+      "difficulty": "EASY",
+      "tags": [
+        "Azure",
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de virtualisation Microsoft",
+          "isCorrect": false
+        },
+        {
+          "content": "La suite Microsoft DevOps: Repos, Pipelines, Boards, Artifacts",
+          "isCorrect": true
+        },
+        {
+          "content": "Un service cloud Azure uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Un IDE pour Azure",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'architecture Serverless ?",
+      "explanation": "Serverless délègue la gestion des serveurs au cloud provider. Le code s'exécute en fonctions stateless (FaaS) scalées automatiquement, facturées à l'invocation.",
+      "hint": "Fonctions sans gestion de serveurs, scalées automatiquement",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AWS",
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Une architecture sans aucun serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "Déléguer la gestion serveur au cloud; code en fonctions stateless scalées automatiquement",
+          "isCorrect": true
+        },
+        {
+          "content": "Un serveur qui s'éteint quand inactif",
+          "isCorrect": false
+        },
+        {
+          "content": "Une architecture sans base de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le cold start dans le contexte Serverless ?",
+      "explanation": "Le cold start est le délai de démarrage d'une fonction serverless quand elle n'a pas été invoquée récemment: le runtime doit initialiser l'environnement.",
+      "hint": "Délai au premier démarrage d'une fonction",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "AWS"
+      ],
+      "answers": [
+        {
+          "content": "Le démarrage d'un serveur depuis l'arrêt complet",
+          "isCorrect": false
+        },
+        {
+          "content": "Le délai d'initialisation d'une fonction serverless après inactivité",
+          "isCorrect": true
+        },
+        {
+          "content": "Un test de démarrage à froid",
+          "isCorrect": false
+        },
+        {
+          "content": "La latence réseau au démarrage",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que GitOps ?",
+      "explanation": "GitOps utilise Git comme source de vérité unique pour l'infrastructure et les déploiements. Les changements d'infra se font via PR/commit Git, automatiquement appliqués (ArgoCD, Flux).",
+      "hint": "Git comme source de vérité pour l'infra",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD",
+        "GitHub Actions"
+      ],
+      "answers": [
+        {
+          "content": "Utiliser Git pour le développement uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Git comme source de vérité unique pour l'infra, déploiements via commits",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de gestion de branches",
+          "isCorrect": false
+        },
+        {
+          "content": "Un workflow Git standard",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'ArgoCD ?",
+      "explanation": "ArgoCD est un outil GitOps de CD pour Kubernetes: synchronise automatiquement l'état du cluster avec le dépôt Git, détectant et corrigeant les drifts.",
+      "hint": "CD GitOps pour Kubernetes",
+      "difficulty": "HARD",
+      "tags": [
+        "Kubernetes",
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Un CD framework général",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil GitOps synchronisant automatiquement Kubernetes avec Git",
+          "isCorrect": true
+        },
+        {
+          "content": "Un gestionnaire de packages Helm",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de monitoring K8s",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Helm dans Kubernetes ?",
+      "explanation": "Helm est le gestionnaire de packages pour Kubernetes: les charts Helm regroupent des manifests K8s en packages réutilisables et configurables.",
+      "hint": "Gestionnaire de packages pour Kubernetes",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de monitoring Kubernetes",
+          "isCorrect": false
+        },
+        {
+          "content": "Le gestionnaire de packages K8s utilisant des charts (manifests regroupés)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de débogage K8s",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de log K8s",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

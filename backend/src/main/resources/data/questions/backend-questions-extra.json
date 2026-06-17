@@ -1,0 +1,2797 @@
+{
+  "categoryName": "Backend",
+  "questions": [
+    {
+      "content": "Quel code HTTP indique une création réussie d'une ressource ?",
+      "explanation": "201 Created est renvoyé quand une ressource a été créée avec succès, typiquement après un POST.",
+      "hint": "2xx success, mais pas 200",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "200 OK",
+          "isCorrect": false
+        },
+        {
+          "content": "201 Created",
+          "isCorrect": true
+        },
+        {
+          "content": "204 No Content",
+          "isCorrect": false
+        },
+        {
+          "content": "202 Accepted",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel code HTTP indique une ressource non trouvée ?",
+      "explanation": "404 Not Found signifie que la ressource demandée n'existe pas sur le serveur.",
+      "hint": "La plus connue des erreurs HTTP",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "403 Forbidden",
+          "isCorrect": false
+        },
+        {
+          "content": "400 Bad Request",
+          "isCorrect": false
+        },
+        {
+          "content": "404 Not Found",
+          "isCorrect": true
+        },
+        {
+          "content": "500 Internal Server Error",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel verbe HTTP est utilisé pour mettre à jour partiellement une ressource ?",
+      "explanation": "PATCH met à jour partiellement une ressource, alors que PUT la remplace entièrement.",
+      "hint": "Pas PUT, c'est une mise à jour partielle",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "PUT",
+          "isCorrect": false
+        },
+        {
+          "content": "POST",
+          "isCorrect": false
+        },
+        {
+          "content": "PATCH",
+          "isCorrect": true
+        },
+        {
+          "content": "UPDATE",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel verbe HTTP est utilisé pour récupérer des données ?",
+      "explanation": "GET est utilisé pour lire/récupérer une ressource sans effets de bord. Il est idempotent et safe.",
+      "hint": "Le plus basique des verbes HTTP",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "POST",
+          "isCorrect": false
+        },
+        {
+          "content": "GET",
+          "isCorrect": true
+        },
+        {
+          "content": "FETCH",
+          "isCorrect": false
+        },
+        {
+          "content": "READ",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie une API RESTful ?",
+      "explanation": "REST (Representational State Transfer) est un style architectural pour les APIs web: sans état, basé sur HTTP, ressources identifiées par URLs, communication via représentations.",
+      "hint": "Representational State Transfer",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Une API avec authentification",
+          "isCorrect": false
+        },
+        {
+          "content": "Une API suivant les principes REST: sans état, basée sur HTTP et des ressources",
+          "isCorrect": true
+        },
+        {
+          "content": "Une API rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Une API documentée",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel code HTTP indique une requête non autorisée (non authentifié) ?",
+      "explanation": "401 Unauthorized signifie que l'authentification est requise et a échoué ou n'a pas été fournie.",
+      "hint": "Pas 403, c'est pour l'authentification",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "403 Forbidden",
+          "isCorrect": false
+        },
+        {
+          "content": "401 Unauthorized",
+          "isCorrect": true
+        },
+        {
+          "content": "400 Bad Request",
+          "isCorrect": false
+        },
+        {
+          "content": "402 Payment Required",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre 401 et 403 ?",
+      "explanation": "401 = non authentifié (tu n'es pas connecté), 403 = interdit (tu es connecté mais pas autorisé à accéder à cette ressource).",
+      "hint": "Authentification vs Autorisation",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "401 = non authentifié, 403 = authentifié mais non autorisé",
+          "isCorrect": true
+        },
+        {
+          "content": "401 = serveur error, 403 = client error",
+          "isCorrect": false
+        },
+        {
+          "content": "401 = timeout, 403 = forbidden",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie l'idempotence dans le contexte HTTP ?",
+      "explanation": "Une opération est idempotente si l'appeler plusieurs fois produit le même résultat qu'une seule fois. GET, PUT, DELETE sont idempotents. POST ne l'est pas.",
+      "hint": "Même résultat quel que soit le nombre d'appels",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "La requête ne peut être appelée qu'une fois",
+          "isCorrect": false
+        },
+        {
+          "content": "L'appel multiple produit le même résultat qu'un seul appel",
+          "isCorrect": true
+        },
+        {
+          "content": "La requête est sans état",
+          "isCorrect": false
+        },
+        {
+          "content": "La réponse est toujours identique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "De quoi est composé un JWT ?",
+      "explanation": "Un JWT est composé de 3 parties encodées en Base64: Header (algo), Payload (claims), Signature, séparées par des points.",
+      "hint": "3 parties séparées par des points",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "2 parties: header et payload",
+          "isCorrect": false
+        },
+        {
+          "content": "3 parties: header, payload, signature",
+          "isCorrect": true
+        },
+        {
+          "content": "4 parties: header, payload, signature, expiration",
+          "isCorrect": false
+        },
+        {
+          "content": "1 partie encodée en Base64",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi les JWT sont-ils stateless ?",
+      "explanation": "Les JWT sont auto-suffisants: le serveur peut vérifier la validité du token sans consulter une base de données, car la signature prouve l'authenticité et le payload contient les informations.",
+      "hint": "Le serveur n'a pas besoin de stocker les sessions",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Car ils n'ont pas d'état d'expiration",
+          "isCorrect": false
+        },
+        {
+          "content": "Car le serveur vérifie le token sans stocker de session en base",
+          "isCorrect": true
+        },
+        {
+          "content": "Car ils sont stockés côté client seulement",
+          "isCorrect": false
+        },
+        {
+          "content": "Car ils sont chiffrés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'annotation @RestController dans Spring Boot ?",
+      "explanation": "@RestController combine @Controller et @ResponseBody: les méthodes retournent directement des données (JSON/XML) plutôt que des noms de vues.",
+      "hint": "Combinaison de @Controller et @ResponseBody",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Définit un service Spring",
+          "isCorrect": false
+        },
+        {
+          "content": "Combine @Controller et @ResponseBody pour renvoyer des données directement",
+          "isCorrect": true
+        },
+        {
+          "content": "Configure le serveur REST",
+          "isCorrect": false
+        },
+        {
+          "content": "Crée automatiquement les endpoints CRUD",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle annotation Spring Boot définit un composant de couche service ?",
+      "explanation": "@Service marque une classe comme composant de la couche service (logique métier). C'est une spécialisation de @Component.",
+      "hint": "@Service",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "@Component",
+          "isCorrect": false
+        },
+        {
+          "content": "@Repository",
+          "isCorrect": false
+        },
+        {
+          "content": "@Service",
+          "isCorrect": true
+        },
+        {
+          "content": "@Bean",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'annotation @Transactional en Spring ?",
+      "explanation": "@Transactional gère automatiquement les transactions de base de données: commit si succès, rollback en cas d'exception.",
+      "hint": "Gestion automatique des transactions",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Active les transactions dans la classe",
+          "isCorrect": false
+        },
+        {
+          "content": "Gère automatiquement commit/rollback des transactions de BD",
+          "isCorrect": true
+        },
+        {
+          "content": "Empêche les accès concurrents",
+          "isCorrect": false
+        },
+        {
+          "content": "Configure le pool de connexions",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle annotation Spring Boot injecte automatiquement une dépendance ?",
+      "explanation": "@Autowired effectue l'injection de dépendances automatique par type. Depuis Spring 4.3, l'injection par constructeur ne nécessite plus @Autowired.",
+      "hint": "@Autowired",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "@Inject",
+          "isCorrect": false
+        },
+        {
+          "content": "@Autowired",
+          "isCorrect": true
+        },
+        {
+          "content": "@DependencyInjection",
+          "isCorrect": false
+        },
+        {
+          "content": "@Bean",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait @RequestBody dans Spring Boot ?",
+      "explanation": "@RequestBody désérialise automatiquement le corps de la requête HTTP (JSON/XML) en objet Java.",
+      "hint": "Convertit le corps JSON en objet Java",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Envoie un objet Java en réponse",
+          "isCorrect": false
+        },
+        {
+          "content": "Désérialise automatiquement le corps JSON de la requête en objet Java",
+          "isCorrect": true
+        },
+        {
+          "content": "Valide les paramètres de la requête",
+          "isCorrect": false
+        },
+        {
+          "content": "Lit les headers de la requête",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle annotation Spring Boot mappe une URL à une méthode ?",
+      "explanation": "@GetMapping, @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping mappent des URLs aux méthodes selon le verbe HTTP.",
+      "hint": "@GetMapping, @PostMapping, etc.",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "@Endpoint",
+          "isCorrect": false
+        },
+        {
+          "content": "@GetMapping / @PostMapping / etc.",
+          "isCorrect": true
+        },
+        {
+          "content": "@Route",
+          "isCorrect": false
+        },
+        {
+          "content": "@API",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Spring Security ?",
+      "explanation": "Spring Security est un framework d'authentification et d'autorisation pour applications Java/Spring, supportant OAuth2, JWT, LDAP, etc.",
+      "hint": "Framework d'authentification et d'autorisation",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de chiffrement de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework d'authentification et d'autorisation pour Spring",
+          "isCorrect": true
+        },
+        {
+          "content": "Un scanner de vulnérabilités",
+          "isCorrect": false
+        },
+        {
+          "content": "Un gestionnaire de certificats SSL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle annotation Spring définit un composant de couche accès aux données ?",
+      "explanation": "@Repository marque une classe comme composant de la couche persistance (DAO). Elle active aussi la traduction des exceptions de persistance.",
+      "hint": "@Repository",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "@DAO",
+          "isCorrect": false
+        },
+        {
+          "content": "@DataAccess",
+          "isCorrect": false
+        },
+        {
+          "content": "@Repository",
+          "isCorrect": true
+        },
+        {
+          "content": "@Persistence",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Spring Data JPA ?",
+      "explanation": "Spring Data JPA simplifie l'accès aux données: en déclarant des interfaces Repository, Spring génère automatiquement les implémentations CRUD et les requêtes.",
+      "hint": "Génère automatiquement les implémentations CRUD",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une base de données embarquée pour Spring",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework qui génère automatiquement les implémentations CRUD via interfaces",
+          "isCorrect": true
+        },
+        {
+          "content": "Un ORM remplaçant Hibernate",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de migration de base de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'annotation @Entity dans Spring Boot / JPA ?",
+      "explanation": "@Entity marque une classe Java comme entité JPA, mappée à une table de base de données relationnelle.",
+      "hint": "Indique que la classe est mappée à une table BD",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Crée automatiquement une API CRUD",
+          "isCorrect": false
+        },
+        {
+          "content": "Marque une classe comme mappée à une table de base de données",
+          "isCorrect": true
+        },
+        {
+          "content": "Définit un bean Spring",
+          "isCorrect": false
+        },
+        {
+          "content": "Configure une source de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle annotation JPA définit la clé primaire d'une entité ?",
+      "explanation": "@Id marque un champ comme clé primaire de l'entité. Souvent combiné avec @GeneratedValue pour l'auto-génération.",
+      "hint": "@Id",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "@PrimaryKey",
+          "isCorrect": false
+        },
+        {
+          "content": "@Id",
+          "isCorrect": true
+        },
+        {
+          "content": "@Key",
+          "isCorrect": false
+        },
+        {
+          "content": "@Identifier",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre FetchType.LAZY et FetchType.EAGER en JPA ?",
+      "explanation": "EAGER charge immédiatement les données associées lors du chargement de l'entité. LAZY ne les charge que quand elles sont explicitement accédées.",
+      "hint": "EAGER = immédiatement, LAZY = à la demande",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "LAZY est plus performant mais plus complexe",
+          "isCorrect": false
+        },
+        {
+          "content": "EAGER charge immédiatement les associations, LAZY les charge à l'accès",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils font la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "EAGER est obsolète depuis JPA 2",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le problème N+1 en JPA/Hibernate ?",
+      "explanation": "Le problème N+1 se produit quand on charge N entités puis fait N requêtes supplémentaires pour charger leurs associations. Solution: JOIN FETCH ou @EntityGraph.",
+      "hint": "N requêtes pour N entités + 1 requête initiale",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une erreur de mapping JPA",
+          "isCorrect": false
+        },
+        {
+          "content": "N requêtes supplémentaires pour charger les associations de N entités chargées",
+          "isCorrect": true
+        },
+        {
+          "content": "Un problème de connexion à la base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un problème de génération d'identifiants",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le mapping @OneToMany en JPA ?",
+      "explanation": "@OneToMany définit une relation un-à-plusieurs entre deux entités. L'entité courante est le 'un', la collection est le 'plusieurs'.",
+      "hint": "Une entité a plusieurs autres entités associées",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une entité a exactement une autre entité associée",
+          "isCorrect": false
+        },
+        {
+          "content": "Une entité peut avoir plusieurs entités associées du même type",
+          "isCorrect": true
+        },
+        {
+          "content": "Plusieurs entités partagent une même entité",
+          "isCorrect": false
+        },
+        {
+          "content": "Relation de table à table sans objet intermédiaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre SQL et NoSQL ?",
+      "explanation": "SQL (relationnel) utilise des tables avec schéma fixe, clés primaires/étrangères, transactions ACID. NoSQL (non-relationnel) sacrifie certaines propriétés ACID pour la scalabilité horizontale et flexibilité du schéma.",
+      "hint": "Schéma fixe vs flexible, scalabilité",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL",
+        "MongoDB"
+      ],
+      "answers": [
+        {
+          "content": "NoSQL est plus rapide que SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "SQL utilise des tables avec schéma fixe et ACID, NoSQL est flexible et horizontalement scalable",
+          "isCorrect": true
+        },
+        {
+          "content": "SQL est plus moderne",
+          "isCorrect": false
+        },
+        {
+          "content": "NoSQL ne supporte pas les requêtes complexes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un index dans une base de données ?",
+      "explanation": "Un index est une structure de données qui améliore la vitesse des requêtes sur une colonne au coût d'espace disque supplémentaire et de ralentissement des writes.",
+      "hint": "Améliore les lectures au coût de stockage et writes",
+      "difficulty": "EASY",
+      "tags": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "answers": [
+        {
+          "content": "Une liste de toutes les données de la table",
+          "isCorrect": false
+        },
+        {
+          "content": "Une structure qui accélère les requêtes au coût d'espace et de performance en écriture",
+          "isCorrect": true
+        },
+        {
+          "content": "Un numéro d'identification unique",
+          "isCorrect": false
+        },
+        {
+          "content": "Une contrainte d'unicité",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une transaction ACID ?",
+      "explanation": "ACID: Atomicité (tout ou rien), Cohérence (état valide avant/après), Isolation (transactions parallèles ne s'interfèrent pas), Durabilité (données persistées après commit).",
+      "hint": "Atomicité, Cohérence, Isolation, Durabilité",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "answers": [
+        {
+          "content": "Un système de chiffrement de base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Propriétés garantissant la fiabilité des transactions: Atomicité, Cohérence, Isolation, Durabilité",
+          "isCorrect": true
+        },
+        {
+          "content": "Un protocole de connexion à la base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Une méthode de sauvegarde",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle clause SQL filtre les groupes créés par GROUP BY ?",
+      "explanation": "HAVING filtre les résultats après groupement (comme WHERE mais pour les groupes). WHERE filtre les lignes avant le groupement.",
+      "hint": "Comme WHERE mais pour les groupes",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "answers": [
+        {
+          "content": "WHERE",
+          "isCorrect": false
+        },
+        {
+          "content": "HAVING",
+          "isCorrect": true
+        },
+        {
+          "content": "FILTER",
+          "isCorrect": false
+        },
+        {
+          "content": "GROUP FILTER",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une foreign key (clé étrangère) ?",
+      "explanation": "Une clé étrangère est une colonne qui référence la clé primaire d'une autre table, assurant l'intégrité référentielle.",
+      "hint": "Référence la clé primaire d'une autre table",
+      "difficulty": "EASY",
+      "tags": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "answers": [
+        {
+          "content": "Une clé unique dans une table externe",
+          "isCorrect": false
+        },
+        {
+          "content": "Une colonne référençant la clé primaire d'une autre table",
+          "isCorrect": true
+        },
+        {
+          "content": "Une clé de chiffrement externe",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index sur une colonne étrangère",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre INNER JOIN et LEFT JOIN ?",
+      "explanation": "INNER JOIN retourne seulement les lignes avec correspondances dans les deux tables. LEFT JOIN retourne toutes les lignes de la table de gauche, avec NULL pour les colonnes de droite sans correspondance.",
+      "hint": "INNER = intersection, LEFT = toutes les lignes de gauche",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "INNER JOIN retourne les correspondances, LEFT JOIN retourne toutes les lignes de gauche",
+          "isCorrect": true
+        },
+        {
+          "content": "LEFT JOIN est plus performant",
+          "isCorrect": false
+        },
+        {
+          "content": "INNER JOIN joint plus de tables",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la normalisation de base de données ?",
+      "explanation": "La normalisation organise les données pour réduire la redondance et les anomalies de mise à jour, via des formes normales (1NF, 2NF, 3NF, etc.).",
+      "hint": "Réduire la redondance des données",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "answers": [
+        {
+          "content": "L'optimisation des requêtes SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "L'organisation des données pour réduire la redondance via les formes normales",
+          "isCorrect": true
+        },
+        {
+          "content": "La compression des données",
+          "isCorrect": false
+        },
+        {
+          "content": "La synchronisation entre bases de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un ORM ?",
+      "explanation": "Un ORM (Object-Relational Mapper) mappe des classes d'objets à des tables de base de données, permettant d'interagir avec la BD via des objets plutôt que du SQL brut.",
+      "hint": "Object-Relational Mapper",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot",
+        "PostgreSQL"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de monitoring de bases de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework qui mappe des classes Java à des tables BD",
+          "isCorrect": true
+        },
+        {
+          "content": "Un langage de requête alternatif à SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de migration de bases de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une séquence PostgreSQL ?",
+      "explanation": "Une séquence est un générateur de nombres uniques dans PostgreSQL. Utilisée avec SERIAL ou BIGSERIAL pour auto-incrémenter les clés primaires.",
+      "hint": "Génère des nombres uniques auto-incrémentés",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL"
+      ],
+      "answers": [
+        {
+          "content": "Un type de données pour les listes ordonnées",
+          "isCorrect": false
+        },
+        {
+          "content": "Un générateur de nombres uniques pour les auto-incréments",
+          "isCorrect": true
+        },
+        {
+          "content": "Une vue matérialisée",
+          "isCorrect": false
+        },
+        {
+          "content": "Un trigger sur INSERT",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une vue matérialisée en PostgreSQL ?",
+      "explanation": "Une vue matérialisée stocke physiquement le résultat d'une requête sur disque. Contrairement aux vues normales, elle doit être rafraîchie manuellement (REFRESH MATERIALIZED VIEW).",
+      "hint": "Résultat d'une requête stocké physiquement",
+      "difficulty": "HARD",
+      "tags": [
+        "PostgreSQL"
+      ],
+      "answers": [
+        {
+          "content": "Une vue qui s'actualise automatiquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Une vue dont le résultat est stocké physiquement et doit être rafraîchi manuellement",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type spécial de table virtuelle",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index couvrant",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un trigger en SQL ?",
+      "explanation": "Un trigger est une procédure stockée qui s'exécute automatiquement avant ou après un événement (INSERT, UPDATE, DELETE) sur une table.",
+      "hint": "S'exécute automatiquement suite à un événement",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "answers": [
+        {
+          "content": "Un type d'index automatique",
+          "isCorrect": false
+        },
+        {
+          "content": "Une procédure qui s'exécute automatiquement sur un événement de table",
+          "isCorrect": true
+        },
+        {
+          "content": "Une contrainte de vérification",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de cache de requête",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un document dans MongoDB ?",
+      "explanation": "Dans MongoDB, un document est l'unité de données de base, stocké en format BSON (Binary JSON). Équivalent d'une ligne dans SQL.",
+      "hint": "Équivalent d'une ligne en SQL, format BSON",
+      "difficulty": "EASY",
+      "tags": [
+        "MongoDB"
+      ],
+      "answers": [
+        {
+          "content": "Un fichier PDF ou Word stocké dans MongoDB",
+          "isCorrect": false
+        },
+        {
+          "content": "L'unité de données de base en BSON, équivalent d'une ligne SQL",
+          "isCorrect": true
+        },
+        {
+          "content": "Un schéma de collection",
+          "isCorrect": false
+        },
+        {
+          "content": "Un identifiant unique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre une collection et une table ?",
+      "explanation": "Une collection MongoDB est l'équivalent d'une table SQL: elle contient des documents (lignes), mais sans schéma fixe imposé.",
+      "hint": "Collection = table sans schéma fixe",
+      "difficulty": "EASY",
+      "tags": [
+        "MongoDB"
+      ],
+      "answers": [
+        {
+          "content": "Une collection a un schéma obligatoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Une collection est l'équivalent MongoDB d'une table SQL, sans schéma fixe",
+          "isCorrect": true
+        },
+        {
+          "content": "Une table est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Une collection ne peut contenir que 1000 documents",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'agrégation dans MongoDB ?",
+      "explanation": "Le pipeline d'agrégation de MongoDB permet des transformations complexes des données: $match, $group, $sort, $project, $lookup, etc.",
+      "hint": "Pipeline de transformation de données",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MongoDB"
+      ],
+      "answers": [
+        {
+          "content": "La compression des documents",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pipeline de transformation de données avec $match, $group, $sort, etc.",
+          "isCorrect": true
+        },
+        {
+          "content": "La fusion de plusieurs collections",
+          "isCorrect": false
+        },
+        {
+          "content": "L'indexation des documents",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Redis ?",
+      "explanation": "Redis est une base de données en mémoire (in-memory) clé-valeur, utilisée pour le cache, les sessions, les queues de messages, avec des structures de données riches.",
+      "hint": "Base de données en mémoire clé-valeur",
+      "difficulty": "EASY",
+      "tags": [
+        "Redis"
+      ],
+      "answers": [
+        {
+          "content": "Une base de données relationnelle rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Une base de données en mémoire clé-valeur pour cache et sessions",
+          "isCorrect": true
+        },
+        {
+          "content": "Un message broker",
+          "isCorrect": false
+        },
+        {
+          "content": "Un moteur de recherche",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est l'avantage principal de Redis pour le caching ?",
+      "explanation": "Redis stocke les données en RAM, ce qui permet des lectures et écritures extrêmement rapides (microsecondes), bien plus rapides qu'une base de données sur disque.",
+      "hint": "Stockage en mémoire RAM",
+      "difficulty": "EASY",
+      "tags": [
+        "Redis"
+      ],
+      "answers": [
+        {
+          "content": "Il supporte SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Les données en RAM permettent des opérations en microsecondes",
+          "isCorrect": true
+        },
+        {
+          "content": "Il est plus facile à configurer",
+          "isCorrect": false
+        },
+        {
+          "content": "Il stocke plus de données que les autres",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le TTL (Time To Live) dans Redis ?",
+      "explanation": "Le TTL définit la durée de vie d'une clé dans Redis. Après expiration, la clé est automatiquement supprimée.",
+      "hint": "Durée de vie d'une clé",
+      "difficulty": "EASY",
+      "tags": [
+        "Redis"
+      ],
+      "answers": [
+        {
+          "content": "Le temps de traitement d'une requête",
+          "isCorrect": false
+        },
+        {
+          "content": "La durée de vie d'une clé après laquelle elle expire automatiquement",
+          "isCorrect": true
+        },
+        {
+          "content": "Le temps de connexion maximum",
+          "isCorrect": false
+        },
+        {
+          "content": "Le délai de réplication",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'event loop de Node.js ?",
+      "explanation": "L'event loop de Node.js permet l'exécution non-bloquante: I/O opérations, timers et callbacks sont gérés de façon asynchrone sur un seul thread.",
+      "hint": "Exécution non-bloquante single-thread",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Node.js"
+      ],
+      "answers": [
+        {
+          "content": "Un gestionnaire d'événements DOM",
+          "isCorrect": false
+        },
+        {
+          "content": "Le mécanisme d'exécution non-bloquante de Node.js sur un seul thread",
+          "isCorrect": true
+        },
+        {
+          "content": "Un système de boucle for avancé",
+          "isCorrect": false
+        },
+        {
+          "content": "La gestion des erreurs asynchrones",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre require() et import en Node.js ?",
+      "explanation": "require() est CommonJS (synchrone, dynamique). import/export est ESM (statique, supportant tree-shaking). Node.js supporte les deux, ESM est le standard moderne.",
+      "hint": "CommonJS vs ES Modules",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Node.js"
+      ],
+      "answers": [
+        {
+          "content": "Ils font la même chose",
+          "isCorrect": false
+        },
+        {
+          "content": "require() est CommonJS (synchrone), import est ESM (statique, moderne)",
+          "isCorrect": true
+        },
+        {
+          "content": "import est uniquement pour le frontend",
+          "isCorrect": false
+        },
+        {
+          "content": "require() est déprécié",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que npm ?",
+      "explanation": "npm (Node Package Manager) est le gestionnaire de packages officiel de Node.js, permettant d'installer, partager et gérer les dépendances JavaScript.",
+      "hint": "Node Package Manager",
+      "difficulty": "EASY",
+      "tags": [
+        "Node.js"
+      ],
+      "answers": [
+        {
+          "content": "Node Programming Module",
+          "isCorrect": false
+        },
+        {
+          "content": "Node Package Manager - gestionnaire de dépendances JavaScript",
+          "isCorrect": true
+        },
+        {
+          "content": "Node Process Manager",
+          "isCorrect": false
+        },
+        {
+          "content": "New Package Method",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un middleware dans Express.js ?",
+      "explanation": "Un middleware est une fonction qui a accès à req, res et next. Il peut modifier la requête/réponse, terminer la chaîne ou passer au middleware suivant via next().",
+      "hint": "Fonction (req, res, next)",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Express.js",
+        "Node.js"
+      ],
+      "answers": [
+        {
+          "content": "Une bibliothèque intermédiaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Une fonction (req, res, next) qui traite les requêtes dans la chaîne",
+          "isCorrect": true
+        },
+        {
+          "content": "Un plugin Express",
+          "isCorrect": false
+        },
+        {
+          "content": "Une route spéciale",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment gérer les erreurs globalement dans Express.js ?",
+      "explanation": "Un middleware d'erreur Express prend 4 paramètres: (err, req, res, next). Il doit être défini après toutes les routes.",
+      "hint": "Middleware avec 4 paramètres: (err, req, res, next)",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Express.js",
+        "Node.js"
+      ],
+      "answers": [
+        {
+          "content": "try/catch autour de chaque route",
+          "isCorrect": false
+        },
+        {
+          "content": "Un middleware d'erreur avec (err, req, res, next) placé après les routes",
+          "isCorrect": true
+        },
+        {
+          "content": "app.error() handler",
+          "isCorrect": false
+        },
+        {
+          "content": "Un intercepteur global",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre une Query et une Mutation en GraphQL ?",
+      "explanation": "Query lit des données (opération de lecture). Mutation modifie des données (création, mise à jour, suppression). Les mutations peuvent avoir des effets de bord.",
+      "hint": "Lecture vs écriture",
+      "difficulty": "EASY",
+      "tags": [
+        "GraphQL"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "Query pour lire, Mutation pour écrire/modifier des données",
+          "isCorrect": true
+        },
+        {
+          "content": "Mutation est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Query est pour les données complexes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le N+1 problem dans GraphQL ?",
+      "explanation": "Quand un champ de type liste appelle un resolver pour chaque élément, cela génère N+1 requêtes. Solution: DataLoader pour batching et caching.",
+      "hint": "Résolveurs appelés N fois pour N éléments",
+      "difficulty": "HARD",
+      "tags": [
+        "GraphQL"
+      ],
+      "answers": [
+        {
+          "content": "Une limite de N+1 requêtes parallèles",
+          "isCorrect": false
+        },
+        {
+          "content": "Des résolveurs appelés N fois pour N éléments, causant N+1 requêtes BD",
+          "isCorrect": true
+        },
+        {
+          "content": "Un problème de schéma GraphQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Une limitation du nombre de champs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Subscription dans GraphQL ?",
+      "explanation": "Les Subscriptions GraphQL permettent aux clients de recevoir des mises à jour en temps réel quand des données changent, via WebSockets.",
+      "hint": "Temps-réel via WebSockets",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "GraphQL"
+      ],
+      "answers": [
+        {
+          "content": "Un abonnement payant à un service GraphQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Une connexion temps-réel pour recevoir des mises à jour via WebSockets",
+          "isCorrect": true
+        },
+        {
+          "content": "Un type de requête en cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Une mutation planifiée",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une architecture microservices ?",
+      "explanation": "Les microservices décomposent une application en petits services indépendants, chacun responsable d'une fonctionnalité métier, communiquant via API.",
+      "hint": "Services indépendants et autonomes",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une application avec de nombreux endpoints API",
+          "isCorrect": false
+        },
+        {
+          "content": "Une architecture décomposant l'app en services indépendants communicant via API",
+          "isCorrect": true
+        },
+        {
+          "content": "Un framework de développement rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Une application distribuée sur plusieurs serveurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un API Gateway ?",
+      "explanation": "Un API Gateway est le point d'entrée unique pour les microservices: il route les requêtes, gère l'authentification, le rate limiting, le load balancing et l'agrégation.",
+      "hint": "Point d'entrée unique pour les microservices",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Un serveur web traditionnel",
+          "isCorrect": false
+        },
+        {
+          "content": "Un point d'entrée unique gérant routing, auth, rate limiting pour les microservices",
+          "isCorrect": true
+        },
+        {
+          "content": "Une base de données centralisée",
+          "isCorrect": false
+        },
+        {
+          "content": "Un proxy inverse simple",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le circuit breaker pattern ?",
+      "explanation": "Le circuit breaker empêche les appels répétés à un service défaillant. Après X échecs, il 'ouvre' le circuit (fail fast), puis teste périodiquement si le service est revenu.",
+      "hint": "Évite les appels à un service défaillant",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot",
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Un pattern pour couper les connexions lentes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pattern qui fail fast quand un service est défaillant et teste sa récupération",
+          "isCorrect": true
+        },
+        {
+          "content": "Un disjoncteur réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pattern de routage",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une file de messages (message queue) ?",
+      "explanation": "Une message queue stocke les messages entre producteurs et consommateurs de façon asynchrone, découplant les services et absorbant les pics de charge.",
+      "hint": "Communication asynchrone entre services",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une file d'attente HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de stockage de messages pour communication asynchrone entre services",
+          "isCorrect": true
+        },
+        {
+          "content": "Un cache de requêtes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un journal des erreurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre RabbitMQ et Kafka ?",
+      "explanation": "RabbitMQ est un message broker classique (push-based, messages supprimés après consommation). Kafka est un log d'événements distribué (pull-based, haute throughput, messages persistés et rejouables).",
+      "hint": "Broker classique vs log d'événements persisté",
+      "difficulty": "HARD",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "RabbitMQ est un broker classique, Kafka est un log persisté haute performance",
+          "isCorrect": true
+        },
+        {
+          "content": "Kafka est plus simple",
+          "isCorrect": false
+        },
+        {
+          "content": "RabbitMQ est uniquement pour les systèmes Java",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Django ORM ?",
+      "explanation": "Django ORM est le système de mapping objet-relationnel de Django: il permet d'interagir avec la base de données via des classes Python sans écrire de SQL.",
+      "hint": "Abstraction SQL via des classes Python",
+      "difficulty": "EASY",
+      "tags": [
+        "Django"
+      ],
+      "answers": [
+        {
+          "content": "Une bibliothèque externe pour Django",
+          "isCorrect": false
+        },
+        {
+          "content": "Le système intégré Django pour interagir avec la BD via classes Python",
+          "isCorrect": true
+        },
+        {
+          "content": "Un gestionnaire de migrations",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de templates",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la commande Django pour créer les migrations ?",
+      "explanation": "python manage.py makemigrations génère les fichiers de migration après modification des modèles. python manage.py migrate les applique à la base de données.",
+      "hint": "makemigrations puis migrate",
+      "difficulty": "EASY",
+      "tags": [
+        "Django"
+      ],
+      "answers": [
+        {
+          "content": "django create migration",
+          "isCorrect": false
+        },
+        {
+          "content": "python manage.py makemigrations",
+          "isCorrect": true
+        },
+        {
+          "content": "python manage.py createdb",
+          "isCorrect": false
+        },
+        {
+          "content": "django-admin migrate",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que FastAPI et quelle est son utilisation principale ?",
+      "explanation": "FastAPI est un framework Python moderne pour APIs, utilisant les annotations de type Python pour la validation automatique et la génération de documentation OpenAPI.",
+      "hint": "Framework Python rapide avec typing",
+      "difficulty": "EASY",
+      "tags": [
+        "FastAPI"
+      ],
+      "answers": [
+        {
+          "content": "Un framework de test d'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework Python moderne utilisant les types Python pour validation et documentation auto",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de monitoring d'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Un routeur HTTP Python",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Pydantic dans FastAPI ?",
+      "explanation": "Pydantic est une bibliothèque de validation de données Python utilisant les annotations de type. FastAPI l'utilise pour valider les requêtes et sérialiser les réponses.",
+      "hint": "Validation de données via les types Python",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "FastAPI"
+      ],
+      "answers": [
+        {
+          "content": "Un ORM pour FastAPI",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de validation de données via les types Python",
+          "isCorrect": true
+        },
+        {
+          "content": "Un gestionnaire d'authentification",
+          "isCorrect": false
+        },
+        {
+          "content": "Une bibliothèque de test",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que NestJS ?",
+      "explanation": "NestJS est un framework Node.js TypeScript inspiré d'Angular, utilisant des décorateurs, la DI, les modules pour construire des APIs scalables.",
+      "hint": "Framework Node.js TypeScript inspiré d'Angular",
+      "difficulty": "EASY",
+      "tags": [
+        "NestJS",
+        "Node.js"
+      ],
+      "answers": [
+        {
+          "content": "Un framework frontend Node.js",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework Node.js TypeScript inspiré d'Angular pour APIs scalables",
+          "isCorrect": true
+        },
+        {
+          "content": "Une alternative à Express.js sans TypeScript",
+          "isCorrect": false
+        },
+        {
+          "content": "Un ORM pour Node.js",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le rate limiting dans une API ?",
+      "explanation": "Le rate limiting limite le nombre de requêtes qu'un client peut faire dans un intervalle de temps, protégeant contre les abus et les attaques DDoS.",
+      "hint": "Limite le nombre de requêtes par intervalle",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "La limitation de la taille des réponses",
+          "isCorrect": false
+        },
+        {
+          "content": "La limitation du nombre de requêtes par client dans un intervalle de temps",
+          "isCorrect": true
+        },
+        {
+          "content": "La priorisation des requêtes",
+          "isCorrect": false
+        },
+        {
+          "content": "La compression des réponses",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'injection SQL ?",
+      "explanation": "L'injection SQL est une vulnérabilité permettant à un attaquant d'insérer du SQL malveillant dans une requête, accédant ou manipulant la base de données.",
+      "hint": "Insertion de SQL malveillant dans les requêtes",
+      "difficulty": "EASY",
+      "tags": [
+        "PostgreSQL",
+        "MySQL",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un outil d'optimisation SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Une vulnérabilité permettant d'insérer du SQL malveillant dans les requêtes",
+          "isCorrect": true
+        },
+        {
+          "content": "Une méthode d'import de données SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Une technique de migration de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment prévenir les injections SQL ?",
+      "explanation": "Utiliser des requêtes paramétrées (PreparedStatement) ou des ORM qui les gèrent automatiquement. Ne jamais concaténer de données utilisateurs dans du SQL.",
+      "hint": "Requêtes paramétrées",
+      "difficulty": "EASY",
+      "tags": [
+        "PostgreSQL",
+        "MySQL",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Valider les entrées côté client",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser des requêtes paramétrées ou un ORM",
+          "isCorrect": true
+        },
+        {
+          "content": "Crypter la base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser un firewall",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le versioning d'API ?",
+      "explanation": "Le versioning d'API permet de faire évoluer une API sans casser les clients existants. Méthodes: URI (/v1/), header, query param.",
+      "hint": "Évolution sans casser les clients existants",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "La documentation des versions du code",
+          "isCorrect": false
+        },
+        {
+          "content": "Permettre l'évolution de l'API sans casser les clients existants",
+          "isCorrect": true
+        },
+        {
+          "content": "Le suivi des changements Git de l'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Le monitoring des versions des dépendances",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que HATEOAS dans REST ?",
+      "explanation": "HATEOAS (Hypermedia As The Engine Of Application State) enrichit les réponses avec des liens hypermedia permettant au client de découvrir les actions disponibles.",
+      "hint": "Les réponses incluent des liens vers les actions possibles",
+      "difficulty": "HARD",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Un protocole d'authentification",
+          "isCorrect": false
+        },
+        {
+          "content": "Un principe REST où les réponses incluent des liens hypermedia vers les actions disponibles",
+          "isCorrect": true
+        },
+        {
+          "content": "Une méthode de compression HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Un format de réponse API",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'OpenAPI (Swagger) ?",
+      "explanation": "OpenAPI est une spécification standard pour documenter les APIs REST. Swagger UI génère une documentation interactive à partir de la spec OpenAPI.",
+      "hint": "Standard de documentation des APIs REST",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un framework de développement d'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Une spécification standard pour documenter les APIs REST avec UI interactive",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de test d'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole de communication d'API",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la programmation asynchrone dans le contexte serveur ?",
+      "explanation": "La programmation asynchrone permet au serveur de traiter d'autres requêtes pendant qu'une opération I/O (DB, réseau) est en cours, sans bloquer le thread.",
+      "hint": "Traitement concurrent sans bloquer le thread",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Node.js",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "L'exécution simultanée sur plusieurs CPUs",
+          "isCorrect": false
+        },
+        {
+          "content": "Traitement d'autres requêtes pendant les opérations I/O sans bloquer le thread",
+          "isCorrect": true
+        },
+        {
+          "content": "L'exécution de code en parallèle",
+          "isCorrect": false
+        },
+        {
+          "content": "La gestion des timeouts",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le connection pooling ?",
+      "explanation": "Le connection pooling maintient un ensemble de connexions BD réutilisables, évitant le coût de créer/détruire une connexion à chaque requête.",
+      "hint": "Réutilisation de connexions BD pré-établies",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL",
+        "MySQL",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "La synchronisation des connexions",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pool de connexions BD réutilisables pour éviter la création à chaque requête",
+          "isCorrect": true
+        },
+        {
+          "content": "La limite du nombre de connexions",
+          "isCorrect": false
+        },
+        {
+          "content": "Le partage de données entre connexions",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une stratégie Cache-Aside (Lazy Loading) ?",
+      "explanation": "Cache-Aside: l'application vérifie le cache d'abord. En cas de miss, lit la BD, stocke en cache puis retourne. Le cache ne contient que les données lues.",
+      "hint": "Check cache → miss → lire BD → stocker cache",
+      "difficulty": "HARD",
+      "tags": [
+        "Redis",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Le cache est toujours rempli au démarrage",
+          "isCorrect": false
+        },
+        {
+          "content": "L'application vérifie le cache, en cas de miss lit la BD et stocke en cache",
+          "isCorrect": true
+        },
+        {
+          "content": "La BD écrit automatiquement dans le cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Le cache est partagé entre tous les services",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre cache Write-Through et Write-Behind ?",
+      "explanation": "Write-Through écrit simultanément dans le cache ET la BD (synchrone). Write-Behind écrit d'abord dans le cache, puis en BD de façon asynchrone (risque de perte si crash).",
+      "hint": "Synchrone vs asynchrone pour l'écriture en BD",
+      "difficulty": "HARD",
+      "tags": [
+        "Redis"
+      ],
+      "answers": [
+        {
+          "content": "Aucune différence",
+          "isCorrect": false
+        },
+        {
+          "content": "Write-Through = cache+BD simultanément, Write-Behind = cache puis BD asynchrone",
+          "isCorrect": true
+        },
+        {
+          "content": "Write-Through est plus lent",
+          "isCorrect": false
+        },
+        {
+          "content": "Write-Behind est plus fiable",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la corrélation d'IDs dans les logs microservices ?",
+      "explanation": "Un correlation ID est un identifiant unique associé à chaque requête, propagé à travers tous les services, permettant de tracer une requête complète dans les logs distribués.",
+      "hint": "Identifiant unique pour tracer une requête à travers les services",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot",
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Un ID qui corrèle les erreurs entre services",
+          "isCorrect": false
+        },
+        {
+          "content": "Un ID unique propagé entre services pour tracer une requête dans les logs distribués",
+          "isCorrect": true
+        },
+        {
+          "content": "Une technique de corrélation de base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Le numéro de version d'une requête",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que OAuth2 ?",
+      "explanation": "OAuth2 est un protocole d'autorisation qui permet à une application d'accéder aux ressources d'un utilisateur sur un autre service (Google, GitHub) sans partager le mot de passe.",
+      "hint": "Autorisation d'accès sans partager le mot de passe",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un protocole d'authentification",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole d'autorisation pour accès délégué sans partager les credentials",
+          "isCorrect": true
+        },
+        {
+          "content": "Un format de token sécurisé",
+          "isCorrect": false
+        },
+        {
+          "content": "Une méthode de chiffrement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre authentification et autorisation ?",
+      "explanation": "Authentification vérifie qui vous êtes (identité). Autorisation vérifie ce que vous avez le droit de faire (permissions).",
+      "hint": "Identité vs Permissions",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Ce sont des synonymes",
+          "isCorrect": false
+        },
+        {
+          "content": "Authentification = vérifier l'identité, Autorisation = vérifier les permissions",
+          "isCorrect": true
+        },
+        {
+          "content": "Autorisation précède l'authentification",
+          "isCorrect": false
+        },
+        {
+          "content": "L'authentification gère les rôles",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un index composite en SQL ?",
+      "explanation": "Un index composite couvre plusieurs colonnes. Il est efficace quand les colonnes sont utilisées ensemble dans les clauses WHERE, mais l'ordre des colonnes est important.",
+      "hint": "Index sur plusieurs colonnes",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MySQL",
+        "PostgreSQL"
+      ],
+      "answers": [
+        {
+          "content": "Un index sur une seule colonne importante",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index couvrant plusieurs colonnes, efficace pour les conditions composées",
+          "isCorrect": true
+        },
+        {
+          "content": "Un index automatiquement créé",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index de type FULLTEXT",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le sharding dans les bases de données ?",
+      "explanation": "Le sharding partitionne horizontalement les données sur plusieurs serveurs (shards) pour scaler horizontalement une base de données.",
+      "hint": "Partitionnement horizontal sur plusieurs serveurs",
+      "difficulty": "HARD",
+      "tags": [
+        "MongoDB",
+        "PostgreSQL"
+      ],
+      "answers": [
+        {
+          "content": "La réplication des données sur plusieurs serveurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Le partitionnement horizontal des données sur plusieurs serveurs pour la scalabilité",
+          "isCorrect": true
+        },
+        {
+          "content": "La compression des données",
+          "isCorrect": false
+        },
+        {
+          "content": "La sauvegarde automatique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une migration de base de données ?",
+      "explanation": "Une migration est un script versionné qui modifie le schéma de la base de données de façon reproductible et traçable (Flyway, Liquibase, Alembic).",
+      "hint": "Script versionné pour modifier le schéma",
+      "difficulty": "EASY",
+      "tags": [
+        "PostgreSQL",
+        "MySQL",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Le transfert de données d'une BD à une autre",
+          "isCorrect": false
+        },
+        {
+          "content": "Un script versionné et reproductible pour modifier le schéma de la BD",
+          "isCorrect": true
+        },
+        {
+          "content": "La sauvegarde et restauration d'une BD",
+          "isCorrect": false
+        },
+        {
+          "content": "L'import de données en masse",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Spring Boot Actuator ?",
+      "explanation": "Spring Boot Actuator expose des endpoints de monitoring et gestion: /health, /metrics, /info, /env, utiles pour superviser l'application en production.",
+      "hint": "Endpoints de monitoring et gestion",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de débogage de beans",
+          "isCorrect": false
+        },
+        {
+          "content": "Un module exposant des endpoints de monitoring (/health, /metrics) en production",
+          "isCorrect": true
+        },
+        {
+          "content": "Un gestionnaire de transactions",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de génération de documentation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'injection par constructeur dans Spring ?",
+      "explanation": "L'injection par constructeur passe les dépendances via le constructeur de la classe. C'est la méthode recommandée: les dépendances sont obligatoires, testables, immutables.",
+      "hint": "Méthode recommandée d'injection dans Spring",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "L'injection via @Autowired sur un champ",
+          "isCorrect": false
+        },
+        {
+          "content": "Passer les dépendances via le constructeur: obligatoire, testable, immutable",
+          "isCorrect": true
+        },
+        {
+          "content": "L'injection via une méthode setter",
+          "isCorrect": false
+        },
+        {
+          "content": "L'injection automatique sans annotation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le concept de bean scope dans Spring ?",
+      "explanation": "Le bean scope définit le cycle de vie d'un bean: Singleton (une seule instance), Prototype (nouvelle instance à chaque fois), Request, Session (web).",
+      "hint": "Singleton, Prototype, Request, Session",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "La portée des variables dans Spring",
+          "isCorrect": false
+        },
+        {
+          "content": "Le cycle de vie d'un bean: Singleton, Prototype, Request, Session",
+          "isCorrect": true
+        },
+        {
+          "content": "Le namespace des beans",
+          "isCorrect": false
+        },
+        {
+          "content": "La sécurité du bean",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'AOP (Aspect-Oriented Programming) dans Spring ?",
+      "explanation": "L'AOP permet de séparer les préoccupations transversales (logging, sécurité, transactions) du code métier via des aspects, pointcuts et advices.",
+      "hint": "Séparation des préoccupations transversales",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un paradigme de programmation orientée aspect",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme pour séparer les préoccupations transversales du code métier via aspects",
+          "isCorrect": true
+        },
+        {
+          "content": "Une technique de test",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework d'injection",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une architecture event-driven ?",
+      "explanation": "Une architecture event-driven communique entre services via des événements plutôt que des appels directs. Les services publient et consomment des events de façon asynchrone.",
+      "hint": "Communication via événements asynchrones",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une architecture basée sur les évènements utilisateur",
+          "isCorrect": false
+        },
+        {
+          "content": "Des services communicant via des événements asynchrones plutôt qu'appels directs",
+          "isCorrect": true
+        },
+        {
+          "content": "Un système de gestion d'erreurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Une architecture MVC",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern CQRS ?",
+      "explanation": "CQRS (Command Query Responsibility Segregation) sépare les opérations de lecture (Query) et d'écriture (Command), permettant d'optimiser chaque côté indépendamment.",
+      "hint": "Séparation lecture/écriture",
+      "difficulty": "HARD",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un protocole de requête HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Séparation des opérations de lecture (Query) et d'écriture (Command)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un pattern de routage d'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Une méthode de cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un test d'intégration dans le contexte backend ?",
+      "explanation": "Un test d'intégration vérifie l'interaction entre plusieurs composants réels (service + base de données, service + API externe), contrairement aux tests unitaires qui mockent les dépendances.",
+      "hint": "Teste les interactions entre composants réels",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un test qui vérifie le code métier isolément",
+          "isCorrect": false
+        },
+        {
+          "content": "Un test vérifiant les interactions entre composants réels (ex: service + BD)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un test de l'interface graphique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un test de performance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que @SpringBootTest dans les tests Spring ?",
+      "explanation": "@SpringBootTest charge le contexte Spring complet pour les tests d'intégration, démarrant une instance de l'application.",
+      "hint": "Charge le contexte Spring complet pour tester",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un test unitaire Spring simple",
+          "isCorrect": false
+        },
+        {
+          "content": "Charge le contexte Spring complet pour les tests d'intégration",
+          "isCorrect": true
+        },
+        {
+          "content": "Une annotation de configuration de test",
+          "isCorrect": false
+        },
+        {
+          "content": "Lance un serveur de test mock",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Mockito dans les tests Java ?",
+      "explanation": "Mockito est un framework de mocking Java permettant de créer des objets simulés (mocks) avec des comportements définis, pour isoler l'unité testée.",
+      "hint": "Création de mocks en Java",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un framework de tests d'intégration",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework pour créer des mocks Java et définir leurs comportements",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de couverture de code",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de test de performance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Aggregate Root dans le DDD ?",
+      "explanation": "Un Aggregate Root est l'entité principale d'un agrégat DDD: seul point d'entrée pour modifier les entités de l'agrégat, garantissant la cohérence des invariants métier.",
+      "hint": "Point d'entrée unique d'un agrégat",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "La classe principale de l'application",
+          "isCorrect": false
+        },
+        {
+          "content": "L'entité racine d'un agrégat, seul point d'entrée pour les modifications",
+          "isCorrect": true
+        },
+        {
+          "content": "La classe de configuration Spring",
+          "isCorrect": false
+        },
+        {
+          "content": "Le repository principal",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un Domain Event dans le DDD ?",
+      "explanation": "Un Domain Event représente un fait métier passé et immuable. Il notifie les autres parties du système qu'un événement important s'est produit dans le domaine.",
+      "hint": "Fait métier passé et immuable",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un événement d'interface utilisateur",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet immuable représentant un fait métier passé pour la communication inter-domaines",
+          "isCorrect": true
+        },
+        {
+          "content": "Un log d'application",
+          "isCorrect": false
+        },
+        {
+          "content": "Une exception métier",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Stream API en Java 8+ ?",
+      "explanation": "L'API Stream permet de traiter des collections de données de façon déclarative et fonctionnelle: filter, map, reduce, collect, sorted, etc.",
+      "hint": "Traitement fonctionnel des collections",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une API pour la gestion des entrées/sorties",
+          "isCorrect": false
+        },
+        {
+          "content": "Une API de traitement fonctionnel et déclaratif des collections (filter, map, reduce)",
+          "isCorrect": true
+        },
+        {
+          "content": "Une bibliothèque de streaming vidéo",
+          "isCorrect": false
+        },
+        {
+          "content": "L'API pour les WebSockets",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une Optional en Java ?",
+      "explanation": "Optional<T> est un conteneur qui peut contenir ou non une valeur non-null, évitant les NullPointerException en forçant la gestion du cas absent.",
+      "hint": "Conteneur pour valeurs potentiellement absentes",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un type de collection nullable",
+          "isCorrect": false
+        },
+        {
+          "content": "Un conteneur évitant les NullPointerException en forçant la gestion de l'absence",
+          "isCorrect": true
+        },
+        {
+          "content": "Un wrapper pour les valeurs primitives",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type optionnel de paramètre",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'interface fonctionnelle en Java ?",
+      "explanation": "Une interface fonctionnelle a exactement une méthode abstraite. Elle peut être utilisée avec les lambdas et les références de méthode. Annotée @FunctionalInterface.",
+      "hint": "Une seule méthode abstraite, utilisable avec les lambdas",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une interface avec toutes les méthodes default",
+          "isCorrect": false
+        },
+        {
+          "content": "Une interface avec exactement une méthode abstraite, utilisable avec les lambdas",
+          "isCorrect": true
+        },
+        {
+          "content": "Une interface pour les opérations mathématiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Une interface qui s'auto-implémente",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment implémenter la pagination dans une API REST ?",
+      "explanation": "La pagination peut utiliser offset/limit (?page=1&size=20) ou cursor-based (next_cursor=abc). Cursor-based est plus performant sur de grands datasets.",
+      "hint": "offset/limit ou cursor-based",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Retourner toutes les données et paginer côté client",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser des paramètres ?page/size (offset) ou cursor pour les grands datasets",
+          "isCorrect": true
+        },
+        {
+          "content": "Limiter les résultats à 100 par défaut",
+          "isCorrect": false
+        },
+        {
+          "content": "Utiliser uniquement des index de base de données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque CSRF ?",
+      "explanation": "CSRF (Cross-Site Request Forgery) force un utilisateur authentifié à exécuter des actions non voulues sur une application web via un site malveillant.",
+      "hint": "Forcer des actions via un autre site",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Une injection de script cross-site",
+          "isCorrect": false
+        },
+        {
+          "content": "Forcer un utilisateur authentifié à exécuter des actions non désirées via un site tiers",
+          "isCorrect": true
+        },
+        {
+          "content": "Une attaque de force brute",
+          "isCorrect": false
+        },
+        {
+          "content": "Une attaque par déni de service",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Richardson Maturity Model ?",
+      "explanation": "Le Richardson Maturity Model définit 4 niveaux de maturité REST (0-3): Level 0 (HTTP transport), Level 1 (Resources), Level 2 (HTTP verbs + codes), Level 3 (HATEOAS).",
+      "hint": "4 niveaux de maturité des APIs REST",
+      "difficulty": "EXPERT",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Un framework Java pour les APIs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un modèle définissant 4 niveaux de maturité REST: resources, verbs, HATEOAS",
+          "isCorrect": true
+        },
+        {
+          "content": "Un protocole de versioning d'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Un standard OAuth",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Prometheus dans l'observabilité backend ?",
+      "explanation": "Prometheus est un système de monitoring open-source qui collecte et stocke des métriques time-series, les scrape depuis les applications via HTTP.",
+      "hint": "Collecte de métriques time-series via scraping HTTP",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de log aggregation",
+          "isCorrect": false
+        },
+        {
+          "content": "Un système de monitoring collectant des métriques time-series via scraping HTTP",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de tracing distribué",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service de notification d'alertes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le principe de responsabilité unique (SRP) ?",
+      "explanation": "Le SRP stipule qu'une classe doit avoir une seule raison de changer, c'est-à-dire une seule responsabilité ou fonction dans le système.",
+      "hint": "Une classe, une responsabilité",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Chaque méthode ne fait qu'une chose",
+          "isCorrect": false
+        },
+        {
+          "content": "Une classe doit avoir une seule responsabilité/raison de changer",
+          "isCorrect": true
+        },
+        {
+          "content": "Un seul développeur est responsable d'une classe",
+          "isCorrect": false
+        },
+        {
+          "content": "Une classe ne peut avoir qu'une seule méthode publique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le principe d'inversion des dépendances (DIP) ?",
+      "explanation": "DIP: les modules de haut niveau ne dépendent pas des modules de bas niveau, les deux dépendent d'abstractions. Les abstractions ne dépendent pas des détails.",
+      "hint": "Dépendre des abstractions, pas des implémentations",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Les dépendances sont injectées automatiquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Dépendre d'abstractions (interfaces) plutôt que d'implémentations concrètes",
+          "isCorrect": true
+        },
+        {
+          "content": "L'injection de dépendances Spring",
+          "isCorrect": false
+        },
+        {
+          "content": "Les classes filles ne dépendent pas des parents",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le principe ouvert/fermé (OCP) ?",
+      "explanation": "OCP: une entité logicielle doit être ouverte à l'extension mais fermée à la modification. On étend le comportement via héritage ou composition plutôt que modifier le code existant.",
+      "hint": "Ouverte à l'extension, fermée à la modification",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Le code source doit être ouvert et accessible",
+          "isCorrect": false
+        },
+        {
+          "content": "Ouverte à l'extension (nouvelles fonctionnalités) mais fermée à la modification du code existant",
+          "isCorrect": true
+        },
+        {
+          "content": "Les méthodes publiques peuvent être surchargées",
+          "isCorrect": false
+        },
+        {
+          "content": "Les classes peuvent être héritées librement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un EXPLAIN ANALYZE en PostgreSQL ?",
+      "explanation": "EXPLAIN ANALYZE exécute la requête et affiche le plan d'exécution réel avec les temps d'exécution, les coûts estimés et réels, et les statistiques de chaque nœud.",
+      "hint": "Affiche le plan d'exécution réel d'une requête",
+      "difficulty": "HARD",
+      "tags": [
+        "PostgreSQL"
+      ],
+      "answers": [
+        {
+          "content": "Une commande pour analyser le schéma de la BD",
+          "isCorrect": false
+        },
+        {
+          "content": "Exécute la requête et affiche le plan d'exécution réel avec les statistiques",
+          "isCorrect": true
+        },
+        {
+          "content": "Un outil de monitoring PostgreSQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Une commande pour vérifier les contraintes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le VACUUM dans PostgreSQL ?",
+      "explanation": "VACUUM récupère l'espace disque des tuples morts (supprimés/mis à jour) et met à jour les statistiques du planner. VACUUM FULL reécrit la table entièrement.",
+      "hint": "Récupère l'espace des données supprimées",
+      "difficulty": "HARD",
+      "tags": [
+        "PostgreSQL"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de nettoyage des logs",
+          "isCorrect": false
+        },
+        {
+          "content": "Récupère l'espace des tuples morts et met à jour les statistiques du planner",
+          "isCorrect": true
+        },
+        {
+          "content": "Une sauvegarde complète de la base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "L'optimisation automatique des index",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Flyway ?",
+      "explanation": "Flyway est un outil de migration de base de données basé sur SQL: les migrations sont des scripts SQL versionnés (V1__, V2__...) appliqués séquentiellement et trackés.",
+      "hint": "Migrations BD via scripts SQL versionnés",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "PostgreSQL",
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un outil de backup de base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de migration BD via scripts SQL versionnés appliqués séquentiellement",
+          "isCorrect": true
+        },
+        {
+          "content": "Un ORM Java",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de test de requêtes SQL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la programmation réactive ?",
+      "explanation": "La programmation réactive est un paradigme orienté flux de données asynchrones: les composants réagissent aux changements de données/événements. Bibliothèques: RxJava, Project Reactor, RxJS.",
+      "hint": "Flux de données asynchrones, réaction aux changements",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot",
+        "Node.js"
+      ],
+      "answers": [
+        {
+          "content": "La programmation avec des interfaces réactives",
+          "isCorrect": false
+        },
+        {
+          "content": "Un paradigme basé sur des flux de données asynchrones où les composants réagissent aux changements",
+          "isCorrect": true
+        },
+        {
+          "content": "La programmation sans état",
+          "isCorrect": false
+        },
+        {
+          "content": "Un modèle de programmation fonctionnel",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Spring WebFlux ?",
+      "explanation": "Spring WebFlux est le module réactif de Spring Boot basé sur Project Reactor (Mono, Flux). Il supporte un modèle non-bloquant pour de meilleures performances sous haute charge.",
+      "hint": "Module réactif non-bloquant de Spring",
+      "difficulty": "HARD",
+      "tags": [
+        "Spring Boot"
+      ],
+      "answers": [
+        {
+          "content": "Un framework web alternatif à Spring MVC",
+          "isCorrect": false
+        },
+        {
+          "content": "Le module réactif non-bloquant de Spring basé sur Project Reactor (Mono/Flux)",
+          "isCorrect": true
+        },
+        {
+          "content": "Un framework de templates web",
+          "isCorrect": false
+        },
+        {
+          "content": "Un outil de test de charge",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que gRPC ?",
+      "explanation": "gRPC est un framework RPC haute performance de Google utilisant Protocol Buffers pour la sérialisation et HTTP/2 pour le transport. Efficace pour les microservices.",
+      "hint": "RPC avec Protocol Buffers et HTTP/2",
+      "difficulty": "HARD",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Un framework REST basé sur GraphQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Un framework RPC Google utilisant Protocol Buffers et HTTP/2 pour haute performance",
+          "isCorrect": true
+        },
+        {
+          "content": "Un protocole de communication réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Un langage de description d'API",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

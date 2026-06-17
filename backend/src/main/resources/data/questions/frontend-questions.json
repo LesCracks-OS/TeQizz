@@ -1,0 +1,957 @@
+{
+    "categoryName": "Frontend",
+    "questions": [
+        {
+            "content": "Quel est le rôle principal de la balise <head> en HTML ?",
+            "explanation": "La balise <head> contient les métadonnées, les liens vers les feuilles de style, les scripts, le titre, etc. Elle n'est pas visible à l'écran.",
+            "hint": "C'est la partie non visible de la page",
+            "difficulty": "EASY",
+            "tags": [
+                "HTML"
+            ],
+            "answers": [
+                {
+                    "content": "Afficher le contenu principal",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Contenir les métadonnées et ressources externes",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Créer le footer de la page",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Gérer les événements JavaScript",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle propriété CSS contrôle l'espacement entre les lettres d'un texte ?",
+            "explanation": "letter-spacing ajuste l'espace entre chaque caractère.",
+            "hint": "Pas line-height ni word-spacing",
+            "difficulty": "EASY",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "word-spacing",
+                    "isCorrect": false
+                },
+                {
+                    "content": "letter-spacing",
+                    "isCorrect": true
+                },
+                {
+                    "content": "line-height",
+                    "isCorrect": false
+                },
+                {
+                    "content": "text-indent",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Comment déclare-t-on une variable constante en JavaScript moderne ?",
+            "explanation": "const empêche la réassignation de la variable (mais pas la mutation des objets/arrays).",
+            "hint": "Apparu avec ES6",
+            "difficulty": "EASY",
+            "tags": [
+                "JavaScript"
+            ],
+            "answers": [
+                {
+                    "content": "let",
+                    "isCorrect": false
+                },
+                {
+                    "content": "var",
+                    "isCorrect": false
+                },
+                {
+                    "content": "const",
+                    "isCorrect": true
+                },
+                {
+                    "content": "static",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle méthode transforme un tableau en chaîne de caractères en JS ?",
+            "explanation": "join() est la méthode la plus courante et la plus flexible.",
+            "hint": "On peut choisir le séparateur",
+            "difficulty": "EASY",
+            "tags": [
+                "JavaScript"
+            ],
+            "answers": [
+                {
+                    "content": "toString()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "join()",
+                    "isCorrect": true
+                },
+                {
+                    "content": "concat()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "split()",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quel est le sélecteur CSS qui cible uniquement le premier enfant d'un parent ?",
+            "explanation": ":first-child cible le premier enfant quel que soit son type.",
+            "hint": "Il existe aussi :first-of-type",
+            "difficulty": "EASY",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": ":nth-child(1)",
+                    "isCorrect": false
+                },
+                {
+                    "content": ":first-child",
+                    "isCorrect": true
+                },
+                {
+                    "content": ":first-of-type",
+                    "isCorrect": false
+                },
+                {
+                    "content": ":only-child",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En React, comment passe-t-on des données d'un parent vers un enfant ?",
+            "explanation": "C'est le flux de données unidirectionnel classique de React.",
+            "hint": "Propriété → props",
+            "difficulty": "EASY",
+            "tags": [
+                "React"
+            ],
+            "answers": [
+                {
+                    "content": "Via context",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Via props",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Via state",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Via ref",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle unité CSS est relative à la taille de la police de l'élément racine ?",
+            "explanation": "rem = root em",
+            "hint": "Très utilisée pour l'accessibilité",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "em",
+                    "isCorrect": false
+                },
+                {
+                    "content": "rem",
+                    "isCorrect": true
+                },
+                {
+                    "content": "vw",
+                    "isCorrect": false
+                },
+                {
+                    "content": "%",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle méthode JavaScript renvoie une nouvelle copie superficielle d'un tableau ?",
+            "explanation": "spread + slice + from sont les plus courants",
+            "hint": "[...arr] est très populaire",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "JavaScript"
+            ],
+            "answers": [
+                {
+                    "content": "slice()",
+                    "isCorrect": true
+                },
+                {
+                    "content": "splice()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "map()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "filter()",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quel hook React remplace généralement componentDidMount + componentDidUpdate ?",
+            "explanation": "useEffect avec dépendances vides ou non",
+            "hint": "Le plus utilisé des hooks",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "React"
+            ],
+            "answers": [
+                {
+                    "content": "useState",
+                    "isCorrect": false
+                },
+                {
+                    "content": "useEffect",
+                    "isCorrect": true
+                },
+                {
+                    "content": "useMemo",
+                    "isCorrect": false
+                },
+                {
+                    "content": "useRef",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En CSS, flex-direction: column-reverse fait quoi ?",
+            "explanation": "Inverse l'ordre + change la direction principale en verticale",
+            "hint": "Ordre + axe",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "Inverse l'ordre des items",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Inverse l'ordre et met l'axe principal vertical",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Change seulement la direction sans inverser",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Inverse les items sur l'axe secondaire",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle est la différence principale entre == et === en JavaScript ?",
+            "explanation": "=== compare aussi le type (strict equality)",
+            "hint": "Coercion vs pas de coercion",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "JavaScript"
+            ],
+            "answers": [
+                {
+                    "content": "=== convertit les types, == ne convertit pas",
+                    "isCorrect": false
+                },
+                {
+                    "content": "=== compare type + valeur, == compare seulement la valeur",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Aucune différence réelle",
+                    "isCorrect": false
+                },
+                {
+                    "content": "== est plus rapide",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Que fait la propriété CSS 'object-fit: cover' ?",
+            "explanation": "Remplit le conteneur en rognant l'image si nécessaire",
+            "hint": "Très utilisé pour les images hero / avatars",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "Étire l'image pour remplir le conteneur",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Garde le ratio et remplit en coupant les bords",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Affiche l'image en entier sans rognage",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Centre l'image sans modification",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En React, à quoi sert useMemo ?",
+            "explanation": "Évite de recalculer des valeurs coûteuses à chaque rendu",
+            "hint": "Optimisation de calcul",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "React"
+            ],
+            "answers": [
+                {
+                    "content": "Mémoriser une référence de fonction",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Mémoriser le résultat d'un calcul coûteux",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Gérer les effets de bord",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Créer une référence mutable",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle est la valeur par défaut de la propriété CSS 'position' ?",
+            "explanation": "static → suit le flux normal",
+            "hint": "Pas relative ni absolute",
+            "difficulty": "EASY",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "relative",
+                    "isCorrect": false
+                },
+                {
+                    "content": "absolute",
+                    "isCorrect": false
+                },
+                {
+                    "content": "static",
+                    "isCorrect": true
+                },
+                {
+                    "content": "fixed",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Comment empêcher la propagation d'un événement en JS ?",
+            "explanation": "stopPropagation() bloque la phase de bubbling/capturing",
+            "hint": "Méthode sur l'objet event",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "JavaScript"
+            ],
+            "answers": [
+                {
+                    "content": "event.preventDefault()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "event.stopPropagation()",
+                    "isCorrect": true
+                },
+                {
+                    "content": "event.stopImmediatePropagation()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "return false",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En TypeScript, quel type représente \"n'importe quelle valeur\" (à éviter) ?",
+            "explanation": "any désactive la vérification de type",
+            "hint": "À utiliser avec parcimonie",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "TypeScript"
+            ],
+            "answers": [
+                {
+                    "content": "unknown",
+                    "isCorrect": false
+                },
+                {
+                    "content": "any",
+                    "isCorrect": true
+                },
+                {
+                    "content": "never",
+                    "isCorrect": false
+                },
+                {
+                    "content": "void",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle pseudo-classe CSS s'active quand un élément reçoit le focus clavier ?",
+            "explanation": "Très importante pour l'accessibilité",
+            "hint": "Pas :active",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS",
+                "Accessibilité"
+            ],
+            "answers": [
+                {
+                    "content": ":hover",
+                    "isCorrect": false
+                },
+                {
+                    "content": ":focus",
+                    "isCorrect": true
+                },
+                {
+                    "content": ":active",
+                    "isCorrect": false
+                },
+                {
+                    "content": ":visited",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En React 18, quel est le comportement par défaut du batching des mises à jour ?",
+            "explanation": "Automatic batching même hors événements React",
+            "hint": "Amélioration importante en 18",
+            "difficulty": "HARD",
+            "tags": [
+                "React"
+            ],
+            "answers": [
+                {
+                    "content": "Aucun batching automatique",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Batching automatique dans presque tous les cas",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Batching uniquement dans les gestionnaires d'événements",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Batching désactivé",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle API navigateur permet de stocker des données plus volumineuses que localStorage ?",
+            "explanation": "IndexedDB est une base de données structurée côté client",
+            "hint": "Pas localStorage ni sessionStorage",
+            "difficulty": "HARD",
+            "tags": [
+                "JavaScript",
+                "Browser API"
+            ],
+            "answers": [
+                {
+                    "content": "localStorage",
+                    "isCorrect": false
+                },
+                {
+                    "content": "IndexedDB",
+                    "isCorrect": true
+                },
+                {
+                    "content": "sessionStorage",
+                    "isCorrect": false
+                },
+                {
+                    "content": "cookies",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En CSS, quelle valeur de display supprime l'élément du flux tout en conservant son espace ?",
+            "explanation": "visibility: hidden garde l'espace, contrairement à display: none",
+            "hint": "Pas display: none",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "display: none",
+                    "isCorrect": false
+                },
+                {
+                    "content": "visibility: hidden",
+                    "isCorrect": true
+                },
+                {
+                    "content": "opacity: 0",
+                    "isCorrect": false
+                },
+                {
+                    "content": "position: absolute",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle balise HTML5 sémantique représente le contenu principal indépendant du site ?",
+            "explanation": "La balise <main> indique le contenu principal unique de la page (pas répété sur plusieurs pages).",
+            "hint": "Pas header, footer ou article",
+            "difficulty": "EASY",
+            "tags": [
+                "HTML",
+                "Accessibilité"
+            ],
+            "answers": [
+                {
+                    "content": "<article>",
+                    "isCorrect": false
+                },
+                {
+                    "content": "<main>",
+                    "isCorrect": true
+                },
+                {
+                    "content": "<section>",
+                    "isCorrect": false
+                },
+                {
+                    "content": "<div id=\"content\">",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En CSS, quelle propriété permet de fusionner les marges verticales entre deux éléments adjacents ?",
+            "explanation": "C'est le mécanisme de collapsing des marges (margin collapsing).",
+            "hint": "Cela concerne uniquement les marges verticales",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "margin-collapse: collapse",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Il n'y a pas de propriété – c'est un comportement par défaut",
+                    "isCorrect": true
+                },
+                {
+                    "content": "overflow: hidden",
+                    "isCorrect": false
+                },
+                {
+                    "content": "display: flow-root",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle méthode Array renvoie le premier élément qui satisfait une condition ?",
+            "explanation": "find() renvoie l'élément, findIndex() renvoie l'index.",
+            "hint": "Pas filter() qui renvoie un tableau",
+            "difficulty": "EASY",
+            "tags": [
+                "JavaScript"
+            ],
+            "answers": [
+                {
+                    "content": "filter()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "find()",
+                    "isCorrect": true
+                },
+                {
+                    "content": "some()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "every()",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En React, quel hook permet de créer une référence mutable qui persiste entre les rendus ?",
+            "explanation": "useRef est souvent utilisé pour accéder directement au DOM ou stocker une valeur mutable.",
+            "hint": "Pas useState",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "React"
+            ],
+            "answers": [
+                {
+                    "content": "useMemo",
+                    "isCorrect": false
+                },
+                {
+                    "content": "useRef",
+                    "isCorrect": true
+                },
+                {
+                    "content": "useCallback",
+                    "isCorrect": false
+                },
+                {
+                    "content": "useEffect",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle est la différence principale entre margin et padding ?",
+            "explanation": "margin = espace extérieur, padding = espace intérieur.",
+            "hint": "Box model",
+            "difficulty": "EASY",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "margin est à l'intérieur, padding à l'extérieur",
+                    "isCorrect": false
+                },
+                {
+                    "content": "margin crée de l'espace extérieur, padding de l'espace intérieur",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Aucune différence significative",
+                    "isCorrect": false
+                },
+                {
+                    "content": "padding ne peut pas être négatif",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En JavaScript moderne, quelle syntaxe permet de fusionner deux objets ?",
+            "explanation": "L'opérateur spread (...) est la méthode la plus courante depuis ES2018.",
+            "hint": "Syntaxe très utilisée en React aussi",
+            "difficulty": "EASY",
+            "tags": [
+                "JavaScript"
+            ],
+            "answers": [
+                {
+                    "content": "Object.assign()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "{ ...obj1, ...obj2 }",
+                    "isCorrect": true
+                },
+                {
+                    "content": "obj1.merge(obj2)",
+                    "isCorrect": false
+                },
+                {
+                    "content": "obj1 + obj2",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle propriété CSS permet de tronquer le texte avec des points de suspension quand il dépasse ?",
+            "explanation": "La combinaison classique est text-overflow: ellipsis + overflow: hidden + white-space: nowrap",
+            "hint": "Trois propriétés sont généralement nécessaires",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": "text-overflow: ellipsis",
+                    "isCorrect": false
+                },
+                {
+                    "content": "text-overflow: ellipsis + overflow: hidden + white-space: nowrap",
+                    "isCorrect": true
+                },
+                {
+                    "content": "overflow: ellipsis",
+                    "isCorrect": false
+                },
+                {
+                    "content": "truncate: true",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En React, que renvoie useCallback si on ne lui passe pas de tableau de dépendances ?",
+            "explanation": "Sans dépendances, il renvoie une nouvelle fonction à chaque rendu → inutile.",
+            "hint": "Comportement par défaut dangereux",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "React"
+            ],
+            "answers": [
+                {
+                    "content": "Une fonction mémorisée pour toujours",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Une nouvelle fonction à chaque rendu",
+                    "isCorrect": true
+                },
+                {
+                    "content": "null",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Lance une erreur",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quel attribut HTML indique qu'un champ est obligatoire ?",
+            "explanation": "required est l'attribut booléen standard pour la validation native.",
+            "hint": "Validation côté navigateur",
+            "difficulty": "EASY",
+            "tags": [
+                "HTML",
+                "Formulaires"
+            ],
+            "answers": [
+                {
+                    "content": "mandatory",
+                    "isCorrect": false
+                },
+                {
+                    "content": "required",
+                    "isCorrect": true
+                },
+                {
+                    "content": "validate",
+                    "isCorrect": false
+                },
+                {
+                    "content": "must",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En CSS Grid, quelle propriété raccourcie définit à la fois grid-template-rows et grid-template-columns ?",
+            "explanation": "grid-template est la propriété raccourcie la plus complète.",
+            "hint": "Pas grid",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS",
+                "CSS Grid"
+            ],
+            "answers": [
+                {
+                    "content": "grid",
+                    "isCorrect": false
+                },
+                {
+                    "content": "grid-template",
+                    "isCorrect": true
+                },
+                {
+                    "content": "grid-area",
+                    "isCorrect": false
+                },
+                {
+                    "content": "grid-auto",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle méthode permet de vérifier si une promesse est déjà résolue/rejetée en JS ?",
+            "explanation": "Promise.prototype.then() / catch() ne permet pas de savoir l'état actuel.",
+            "hint": "Il n'existe pas de méthode native directe",
+            "difficulty": "HARD",
+            "tags": [
+                "JavaScript",
+                "Promesses"
+            ],
+            "answers": [
+                {
+                    "content": "promise.status()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Il n'existe pas de méthode native directe",
+                    "isCorrect": true
+                },
+                {
+                    "content": "promise.isResolved()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "promise.state",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En React, quel composant permet de gérer le chargement paresseux d'un composant ?",
+            "explanation": "React.lazy() + <Suspense> est la combinaison standard.",
+            "hint": "Code splitting intégré",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "React"
+            ],
+            "answers": [
+                {
+                    "content": "<LazyLoad>",
+                    "isCorrect": false
+                },
+                {
+                    "content": "React.lazy() + Suspense",
+                    "isCorrect": true
+                },
+                {
+                    "content": "useLazy()",
+                    "isCorrect": false
+                },
+                {
+                    "content": "<CodeSplit>",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quelle pseudo-classe CSS cible un élément qui est le seul de son type parmi ses frères ?",
+            "explanation": ":only-of-type est plus précis que :only-child.",
+            "hint": "Type, pas n'importe quel enfant",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "CSS"
+            ],
+            "answers": [
+                {
+                    "content": ":only-child",
+                    "isCorrect": false
+                },
+                {
+                    "content": ":only-of-type",
+                    "isCorrect": true
+                },
+                {
+                    "content": ":first-of-type",
+                    "isCorrect": false
+                },
+                {
+                    "content": ":last-of-type",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "En JavaScript, que retourne new Set([1,1,2,3,3]) ?",
+            "explanation": "Set supprime automatiquement les doublons.",
+            "hint": "Structure de données sans doublons",
+            "difficulty": "EASY",
+            "tags": [
+                "JavaScript"
+            ],
+            "answers": [
+                {
+                    "content": "[1,1,2,3,3]",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Set {1, 2, 3}",
+                    "isCorrect": true
+                },
+                {
+                    "content": "[1,2,3]",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Erreur",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "content": "Quel rôle joue l'attribut role=\"alert\" en ARIA ?",
+            "explanation": "Il annonce immédiatement le contenu aux lecteurs d'écran (urgence).",
+            "hint": "Messages d'erreur ou notifications importantes",
+            "difficulty": "MEDIUM",
+            "tags": [
+                "Accessibilité",
+                "ARIA"
+            ],
+            "answers": [
+                {
+                    "content": "Crée une alerte visuelle",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Annonce immédiatement le contenu aux technologies d'assistance",
+                    "isCorrect": true
+                },
+                {
+                    "content": "Cache le contenu",
+                    "isCorrect": false
+                },
+                {
+                    "content": "Ajoute un son",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}
