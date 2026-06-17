@@ -38,10 +38,44 @@ env:
 
 jobs:
   # ---------------------------------------------------------------------------
+  # Guard — aucune référence à des outils externes dans les commits
+  # Équivalent d'un hook pre-receive côté serveur pour GitHub standard
+  # ---------------------------------------------------------------------------
+  guard:
+    name: Guard commit integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan commit messages and authors
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+            HEAD="${{ github.event.pull_request.head.sha }}"
+            RANGE="${BASE}..${HEAD}"
+          else
+            RANGE="${{ github.event.before }}..${{ github.sha }}"
+            if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+              RANGE="${{ github.sha }}"
+            fi
+          fi
+
+          LOG=$(git log --format="%s%n%b%n%an%n%ae" $RANGE 2>/dev/null || git log --format="%s%n%b%n%an%n%ae" -20)
+
+          if echo "$LOG" | grep -qi "claude"; then
+            echo "❌ Référence à Claude détectée dans les commits. Pipeline bloqué."
+            exit 1
+          fi
+          echo "✅ Aucune référence interdite détectée."
+
+  # ---------------------------------------------------------------------------
   # Detect which service changed
   # ---------------------------------------------------------------------------
   changes:
     name: Detect changes
+    needs: guard
     runs-on: ubuntu-latest
     outputs:
       backend:  ${{ steps.filter.outputs.backend }}

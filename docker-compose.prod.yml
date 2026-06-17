@@ -109,8 +109,10 @@ services:
       - "traefik.http.routers.teqizz-api-http.entrypoints=web"
       - "traefik.http.routers.teqizz-api-http.middlewares=teqizz-https-redirect"
     networks:
-      - teqizz-internal
-      - traefik-public
+      teqizz-internal:
+        aliases:
+          - tekizz-backend
+      traefik-public: {}
 
   # ---------------------------------------------------------------------------
   # Frontend — React SPA servie par Nginx
