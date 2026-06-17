@@ -1,2 +1,2 @@
 org.springframework.boot.env.EnvironmentPostProcessor=\
-  com.brandonkamga.tekizz.config.DotenvEnvironmentPostProcessor
+  com.brandonkamga.teqizz.config.DotenvEnvironmentPostProcessor
