@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
   ArrowRight, Shuffle, HelpCircle, Heart, Trophy,
   Clock, ChevronDown, PenLine, Code2, HandHeart,
+  Github, Star,
 } from "lucide-react";
 import AuthModal from "@/components/auth/AuthModal";
 
@@ -246,7 +247,15 @@ const EASE_OUT_EXPO = [0.16, 1, 0.3, 1];
 export default function Home() {
   const [authOpen, setAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState("signup");
+  const [stars, setStars]       = useState(null);
   const heroRef = useRef(null);
+
+  useEffect(() => {
+    fetch("https://api.github.com/repos/LesCracks-OS/TeQizz")
+      .then(r => r.json())
+      .then(d => { if (d.stargazers_count !== undefined) setStars(d.stargazers_count); })
+      .catch(() => {});
+  }, []);
 
   const open = (mode) => { setAuthMode(mode); setAuthOpen(true); };
 
@@ -355,6 +364,29 @@ export default function Home() {
                 Connexion
               </button>
             </motion.div>
+
+            <motion.a
+              href="https://github.com/LesCracks-OS/TeQizz"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.1, duration: 0.45 }}
+              className="mt-5 inline-flex items-center gap-2 text-[11px] font-mono text-white/25 hover:text-white/55 transition-colors group"
+            >
+              <Github className="h-3.5 w-3.5 group-hover:text-white/60 transition-colors" />
+              <Star className="h-3 w-3 text-yellow-400/50" />
+              {stars !== null ? (
+                <>
+                  <span className="font-black tabular-nums text-white/40">
+                    {stars.toLocaleString("fr-FR")}
+                  </span>
+                  <span className="text-white/20">stars — open source</span>
+                </>
+              ) : (
+                <span className="text-white/20">Open source sur GitHub</span>
+              )}
+            </motion.a>
 
 
             <motion.div

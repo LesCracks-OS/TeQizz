@@ -459,32 +459,31 @@ public class DataInitializer implements CommandLineRunner {
      * IMPORTANT: Change this password in production!
      */
     private void initAdminUser() {
-        // Check if admin user already exists
-        if (userRepository.findByEmail("admin@teqizz.com").isEmpty()) {
-            // Get ADMIN role and LOCAL provider
-            Role adminRole = roleRepository.findByRoleName(RoleType.ADMIN)
-                    .orElseThrow(() -> new RuntimeException("ADMIN role not found"));
-
-            Provider localProvider = providerRepository.findByProviderName(ProviderType.LOCAL)
-                    .orElseThrow(() -> new RuntimeException("LOCAL provider not found"));
-
-            // Create admin user
-            UserJpaEntity adminUser = UserJpaEntity.builder()
-                    .username("admin")
-                    .email("admin@teqizz.com")
-                    .password(passwordEncoder.encode("Admin@123456"))
-                    .role(adminRole)
-                    .provider(localProvider)
-                    .build();
-
-            userRepository.save(adminUser);
-
-            System.out.println("=".repeat(60));
-            System.out.println("DEFAULT ADMIN USER CREATED");
-            System.out.println("Email: admin@teqizz.com");
-            System.out.println("Password: Admin@123456");
-            System.out.println("IMPORTANT: Change this password in production!");
-            System.out.println("=".repeat(60));
+        if (userRepository.findByUsername("admin").isPresent()
+                || userRepository.findByEmail("admin@teqizz.com").isPresent()) {
+            return;
         }
+        Role adminRole = roleRepository.findByRoleName(RoleType.ADMIN)
+                .orElseThrow(() -> new RuntimeException("ADMIN role not found"));
+
+        Provider localProvider = providerRepository.findByProviderName(ProviderType.LOCAL)
+                .orElseThrow(() -> new RuntimeException("LOCAL provider not found"));
+
+        UserJpaEntity adminUser = UserJpaEntity.builder()
+                .username("admin")
+                .email("admin@teqizz.com")
+                .password(passwordEncoder.encode("Admin@123456"))
+                .role(adminRole)
+                .provider(localProvider)
+                .build();
+
+        userRepository.save(adminUser);
+
+        System.out.println("=".repeat(60));
+        System.out.println("DEFAULT ADMIN USER CREATED");
+        System.out.println("Email: admin@teqizz.com");
+        System.out.println("Password: Admin@123456");
+        System.out.println("IMPORTANT: Change this password in production!");
+        System.out.println("=".repeat(60));
     }
 }
