@@ -196,12 +196,16 @@ jobs:
           key:             ${{ secrets.VPS_SSH_KEY }}
           timeout:         60s
           command_timeout: 20m
+          envs:            DOCKER_USERNAME,DOCKER_PASSWORD
           script: |
             set -euo pipefail
             cd ${{ env.DEPLOY_PATH }}
 
             # Source env vars so shell can use $DB_USERNAME / $DB_NAME in health checks
             set -a; source .env; set +a
+
+            # Docker Hub login with fresh credentials from GitHub Secrets
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
             echo "══════════════════════════════════════════════════"
             echo "  TeQizz — Deployment"
