@@ -208,7 +208,7 @@ const Signup = () => {
                   <button
                     type="button"
                     onClick={() => setShowPassword((prev) => !prev)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-gray-400 hover:text-gray-200 transition-colors"
                     aria-label={
                       showPassword
                         ? "Masquer le mot de passe"
