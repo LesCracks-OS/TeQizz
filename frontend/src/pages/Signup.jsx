@@ -1,14 +1,27 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { X, Github, Mail, AlertCircle } from "lucide-react";
+import {
+  X,
+  Github,
+  Mail,
+  AlertCircle,
+  Eye,
+  EyeOff,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/contexts/AuthContext";
-import { Link, useNavigate, Navigate } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
 
 const Signup = () => {
   const { loginWithOAuth, register, isAuthenticated } = useAuth();
+
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -29,10 +42,10 @@ const Signup = () => {
   };
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   const handleEmailSignup = async (e) => {
@@ -176,17 +189,39 @@ const Signup = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Mot de passe</label>
-                <input
-                  type="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="w-full h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm outline-none focus:border-primary transition-colors"
-                  placeholder="••••••••"
-                  minLength={6}
-                  required
-                />
+                <label className="text-sm font-medium">
+                  Mot de passe
+                </label>
+
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    className="w-full h-12 rounded-xl border border-white/10 bg-white/5 px-4 pr-12 text-sm outline-none focus:border-primary transition-colors"
+                    placeholder="••••••••"
+                    minLength={6}
+                    required
+                  />
+
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label={
+                      showPassword
+                        ? "Masquer le mot de passe"
+                        : "Afficher le mot de passe"
+                    }
+                  >
+                    {showPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
               </div>
               <Button
                 type="submit"
