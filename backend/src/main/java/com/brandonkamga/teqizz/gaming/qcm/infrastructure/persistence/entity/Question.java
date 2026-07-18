@@ -54,6 +54,13 @@ public class Question {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content; // The question text
 
+    /**
+     * SHA-256 of the normalised content — used to reject exact-duplicate questions.
+     * Populated on creation and back-filled for legacy rows. See {@code ContentNormalizer}.
+     */
+    @Column(name = "content_hash", length = 64)
+    private String contentHash;
+
     @Column(columnDefinition = "TEXT")
     private String explanation; // Explanation shown after answering
 

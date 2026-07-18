@@ -1,11 +1,15 @@
 package com.brandonkamga.teqizz.admin.application.service;
 
 import com.brandonkamga.teqizz.catalog.infrastructure.persistence.entity.CategoryJpaEntity;
+import com.brandonkamga.teqizz.catalog.infrastructure.persistence.entity.TagJpaEntity;
 import com.brandonkamga.teqizz.catalog.infrastructure.persistence.repository.CategoryRepository;
+import com.brandonkamga.teqizz.catalog.infrastructure.persistence.repository.TagRepository;
 import com.brandonkamga.teqizz.dto.admin.AdminSmatchDeckRequest;
 import com.brandonkamga.teqizz.dto.admin.AdminSmatchPairRequest;
 import com.brandonkamga.teqizz.exception.BadRequestException;
+import com.brandonkamga.teqizz.exception.ConflictException;
 import com.brandonkamga.teqizz.exception.ResourceNotFoundException;
+import com.brandonkamga.teqizz.shared.domain.ContentNormalizer;
 import com.brandonkamga.teqizz.gaming.smatch.domain.model.vo.SmatchGameMode;
 import com.brandonkamga.teqizz.gaming.smatch.infrastructure.persistence.entity.SmatchAttemptJpaEntity;
 import com.brandonkamga.teqizz.gaming.smatch.infrastructure.persistence.entity.SmatchDeckJpaEntity;
@@ -22,7 +26,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,8 +38,11 @@ public class AdminSmatchApplicationService {
 
     // ─── View records ──────────────────────────────────────────────────────────
 
+    public record TagRefView(Long id, String name) {}
+
     public record DeckSummaryView(Long id, String name, String description, String difficulty,
                                    Boolean isActive, Long categoryId, String categoryName,
+                                   List<TagRefView> tags,
                                    long pairCount, long activePairCount,
                                    String createdAt, String updatedAt) {}
 
@@ -41,6 +51,7 @@ public class AdminSmatchApplicationService {
 
     public record DeckDetailView(Long id, String name, String description, String difficulty,
                                   Boolean isActive, Long categoryId, String categoryName,
+                                  List<TagRefView> tags,
                                   String createdAt, String updatedAt, List<PairView> pairs) {}
 
     public record DeckPage(List<DeckSummaryView> content, long totalElements,
@@ -80,17 +91,20 @@ public class AdminSmatchApplicationService {
     private final SmatchSessionRepository smatchSessionRepository;
     private final SmatchAttemptRepository smatchAttemptRepository;
     private final CategoryRepository categoryRepository;
+    private final TagRepository tagRepository;
 
     public AdminSmatchApplicationService(SmatchDeckRepository smatchDeckRepository,
                                           SmatchPairRepository smatchPairRepository,
                                           SmatchSessionRepository smatchSessionRepository,
                                           SmatchAttemptRepository smatchAttemptRepository,
-                                          CategoryRepository categoryRepository) {
+                                          CategoryRepository categoryRepository,
+                                          TagRepository tagRepository) {
         this.smatchDeckRepository = smatchDeckRepository;
         this.smatchPairRepository = smatchPairRepository;
         this.smatchSessionRepository = smatchSessionRepository;
         this.smatchAttemptRepository = smatchAttemptRepository;
         this.categoryRepository = categoryRepository;
+        this.tagRepository = tagRepository;
     }
 
     // ─── Decks ────────────────────────────────────────────────────────────────
@@ -118,6 +132,7 @@ public class AdminSmatchApplicationService {
                 deck.getIsActive(),
                 deck.getCategory() != null ? deck.getCategory().getId() : null,
                 deck.getCategory() != null ? deck.getCategory().getName() : null,
+                toTagRefs(deck),
                 ts(deck.getCreatedAt()), ts(deck.getUpdatedAt()), pairs);
     }
 
@@ -129,6 +144,7 @@ public class AdminSmatchApplicationService {
         SmatchDeckJpaEntity deck = SmatchDeckJpaEntity.builder()
                 .name(request.getName()).description(request.getDescription())
                 .category(category)
+                .tags(resolveTags(request.getTagIds()))
                 .difficulty(request.getDifficulty() != null ? request.getDifficulty().toUpperCase() : "EASY")
                 .isActive(request.getIsActive() != null ? request.getIsActive() : true)
                 .build();
@@ -145,6 +161,7 @@ public class AdminSmatchApplicationService {
         deck.setName(request.getName());
         deck.setDescription(request.getDescription());
         deck.setCategory(resolveCategory(request.getCategoryId()));
+        if (request.getTagIds() != null) deck.setTags(resolveTags(request.getTagIds()));
         if (request.getDifficulty() != null) deck.setDifficulty(request.getDifficulty().toUpperCase());
         if (request.getIsActive() != null) deck.setIsActive(request.getIsActive());
         return toDeckSummary(smatchDeckRepository.save(deck));
@@ -184,26 +201,26 @@ public class AdminSmatchApplicationService {
     public PairView createPair(Long deckId, AdminSmatchPairRequest request) {
         SmatchDeckJpaEntity deck = smatchDeckRepository.findById(deckId)
                 .orElseThrow(() -> new ResourceNotFoundException("SmatchDeck", "id", deckId));
+        String hash = pairHash(request.getTerm(), request.getDefinition());
+        if (smatchPairRepository.existsByDeckIdAndContentHash(deckId, hash)) {
+            throw new ConflictException("This pair already exists in the deck");
+        }
         SmatchPairJpaEntity pair = SmatchPairJpaEntity.builder()
                 .deck(deck).term(request.getTerm()).definition(request.getDefinition())
-                .hint(request.getHint())
+                .hint(request.getHint()).contentHash(hash)
                 .isActive(request.getIsActive() != null ? request.getIsActive() : true)
                 .build();
         return toPairView(smatchPairRepository.save(pair), deckId);
     }
 
     public BulkResult replacePairs(Long deckId, List<AdminSmatchPairRequest> requests) {
-        smatchDeckRepository.findById(deckId)
+        SmatchDeckJpaEntity deck = smatchDeckRepository.findById(deckId)
                 .orElseThrow(() -> new ResourceNotFoundException("SmatchDeck", "id", deckId));
         smatchPairRepository.deleteByDeckId(deckId);
         if (requests == null || requests.isEmpty()) return new BulkResult(0, deckId);
-        SmatchDeckJpaEntity deck = smatchDeckRepository.findById(deckId).get();
+        // Deck was just cleared, so only intra-batch duplicates can occur.
         List<SmatchPairJpaEntity> saved = smatchPairRepository.saveAll(
-                requests.stream().map(req -> SmatchPairJpaEntity.builder()
-                        .deck(deck).term(req.getTerm()).definition(req.getDefinition())
-                        .hint(req.getHint())
-                        .isActive(req.getIsActive() != null ? req.getIsActive() : true)
-                        .build()).collect(Collectors.toList()));
+                buildDedupedPairs(deck, requests, false));
         return new BulkResult(saved.size(), deckId);
     }
 
@@ -211,24 +228,52 @@ public class AdminSmatchApplicationService {
         if (requests == null || requests.isEmpty()) throw new BadRequestException("No pairs provided");
         SmatchDeckJpaEntity deck = smatchDeckRepository.findById(deckId)
                 .orElseThrow(() -> new ResourceNotFoundException("SmatchDeck", "id", deckId));
+        // Skip pairs already present in the deck as well as duplicates inside the batch.
         List<SmatchPairJpaEntity> saved = smatchPairRepository.saveAll(
-                requests.stream().map(req -> SmatchPairJpaEntity.builder()
-                        .deck(deck).term(req.getTerm()).definition(req.getDefinition())
-                        .hint(req.getHint())
-                        .isActive(req.getIsActive() != null ? req.getIsActive() : true)
-                        .build()).collect(Collectors.toList()));
+                buildDedupedPairs(deck, requests, true));
         return new BulkResult(saved.size(), deckId);
+    }
+
+    /** Build pair entities with content hashes, dropping intra-batch and (optionally) existing duplicates. */
+    private List<SmatchPairJpaEntity> buildDedupedPairs(SmatchDeckJpaEntity deck,
+                                                        List<AdminSmatchPairRequest> requests,
+                                                        boolean skipExistingInDeck) {
+        Set<String> seen = new LinkedHashSet<>();
+        List<SmatchPairJpaEntity> pairs = new java.util.ArrayList<>();
+        for (AdminSmatchPairRequest req : requests) {
+            String hash = pairHash(req.getTerm(), req.getDefinition());
+            if (!seen.add(hash)) continue; // duplicate within this batch
+            if (skipExistingInDeck && smatchPairRepository.existsByDeckIdAndContentHash(deck.getId(), hash)) continue;
+            pairs.add(SmatchPairJpaEntity.builder()
+                    .deck(deck).term(req.getTerm()).definition(req.getDefinition())
+                    .hint(req.getHint()).contentHash(hash)
+                    .isActive(req.getIsActive() != null ? req.getIsActive() : true)
+                    .build());
+        }
+        return pairs;
     }
 
     public PairView updatePair(Long id, AdminSmatchPairRequest request) {
         SmatchPairJpaEntity pair = smatchPairRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("SmatchPair", "id", id));
+        Long deckId = pair.getDeck() != null ? pair.getDeck().getId() : null;
+        String newHash = pairHash(request.getTerm(), request.getDefinition());
+        if (!newHash.equals(pair.getContentHash())
+                && deckId != null && smatchPairRepository.existsByDeckIdAndContentHash(deckId, newHash)) {
+            throw new ConflictException("Another pair with the same term and definition already exists in this deck");
+        }
         pair.setTerm(request.getTerm());
         pair.setDefinition(request.getDefinition());
         pair.setHint(request.getHint());
+        pair.setContentHash(newHash);
         if (request.getIsActive() != null) pair.setIsActive(request.getIsActive());
         SmatchPairJpaEntity saved = smatchPairRepository.save(pair);
-        return toPairView(saved, saved.getDeck() != null ? saved.getDeck().getId() : null);
+        return toPairView(saved, deckId);
+    }
+
+    /** Canonical content hash for a Smatch pair — normalised term + definition. */
+    private String pairHash(String term, String definition) {
+        return ContentNormalizer.hash(term, definition);
     }
 
     public void deletePair(Long id) {
@@ -312,9 +357,28 @@ public class AdminSmatchApplicationService {
                 d.getId(), d.getName(), d.getDescription(), d.getDifficulty(), d.getIsActive(),
                 d.getCategory() != null ? d.getCategory().getId() : null,
                 d.getCategory() != null ? d.getCategory().getName() : null,
+                toTagRefs(d),
                 smatchPairRepository.countByDeckId(d.getId()),
                 smatchPairRepository.countByDeckIdAndIsActiveTrue(d.getId()),
                 ts(d.getCreatedAt()), ts(d.getUpdatedAt()));
+    }
+
+    /** Resolve tag ids into managed entities, ignoring nulls/unknown ids. Order-preserving, de-duplicated. */
+    private Set<TagJpaEntity> resolveTags(List<Long> tagIds) {
+        if (tagIds == null || tagIds.isEmpty()) return new LinkedHashSet<>();
+        Set<TagJpaEntity> resolved = new LinkedHashSet<>();
+        for (Long tagId : tagIds) {
+            if (tagId != null) tagRepository.findById(tagId).ifPresent(resolved::add);
+        }
+        return resolved;
+    }
+
+    private List<TagRefView> toTagRefs(SmatchDeckJpaEntity d) {
+        if (d.getTags() == null) return List.of();
+        return d.getTags().stream()
+                .map(t -> new TagRefView(t.getId(), t.getName()))
+                .sorted(Comparator.comparing(TagRefView::name, String.CASE_INSENSITIVE_ORDER))
+                .collect(Collectors.toList());
     }
 
     private PairView toPairView(SmatchPairJpaEntity p, Long deckId) {

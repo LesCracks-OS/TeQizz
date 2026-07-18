@@ -51,6 +51,9 @@ const getQcmQuestions = (params = {}) =>
 const getQcmQuestion = (id) =>
   apiClient.get(`${BASE}/qcm/questions/${id}`);
 
+const getQcmDuplicates = () =>
+  apiClient.get(`${BASE}/qcm/duplicates`);
+
 const createQcmQuestion = (data) =>
   apiClient.post(`${BASE}/qcm/questions`, data);
 
@@ -82,6 +85,19 @@ const approveContribution = (id) =>
 
 const rejectContribution = (id) =>
   apiClient.put(`${BASE}/contributions/${id}/review`, { decision: 'REJECTED' });
+
+// ─── Smatch contributions (distinct flow) ───────────────────────────────────
+const getSmatchContributions = () =>
+  apiClient.get(`${BASE}/contributions/smatch`);
+
+const getSmatchContributionsCount = () =>
+  apiClient.get(`${BASE}/contributions/smatch/count`);
+
+const approveSmatchContribution = (id) =>
+  apiClient.put(`${BASE}/contributions/smatch/${id}/review`, { decision: 'APPROVED' });
+
+const rejectSmatchContribution = (id, reason) =>
+  apiClient.put(`${BASE}/contributions/smatch/${id}/review`, { decision: 'REJECTED', reason });
 
 // ─── QCM – Sessions ────────────────────────────────────────────────────────
 
@@ -156,10 +172,11 @@ export default {
   // QCM Tags
   getQcmTags, createQcmTag, updateQcmTag, deleteQcmTag,
   // QCM Questions
-  getQcmQuestions, getQcmQuestion, createQcmQuestion, updateQcmQuestion,
+  getQcmQuestions, getQcmQuestion, getQcmDuplicates, createQcmQuestion, updateQcmQuestion,
   updateQcmQuestionStatus, deleteQcmQuestion, getQcmConfig, importQcmQuestions,
   // QCM Contributions
   getContributions, getContributionsCount, approveContribution, rejectContribution,
+  getSmatchContributions, getSmatchContributionsCount, approveSmatchContribution, rejectSmatchContribution,
   // QCM Sessions
   getQcmSessions, forceCompleteQcmSession, deleteQcmSession,
   // Smatch Decks

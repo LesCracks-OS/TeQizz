@@ -1,6 +1,5 @@
 package com.brandonkamga.teqizz.catalog.infrastructure.persistence.entity;
 
-import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.entity.Question;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
@@ -20,18 +18,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
- * Tag JPA entity for question categorization and filtering.
- * Follows normalization principles - tags are stored separately.
- * Many-to-many relationship with questions for flexible tagging.
- * Tags are now linked to categories (specialty tags like React, SpringBoot, etc.)
+ * Tag JPA entity — a reusable catalog concept, shared across games (QCM, Smatch, …).
+ *
+ * The catalog context intentionally knows NOTHING about the games that consume it:
+ * each game owns its own join table to tags (e.g. QCM's {@code question_tags}), so the
+ * dependency always points game → catalog, never the reverse. This keeps tags reusable.
+ *
+ * Tags may optionally belong to a category (specialty tags like React, SpringBoot, etc.).
  */
 @Entity
 @Table(name = "tags", indexes = {
@@ -69,10 +68,6 @@ public class TagJpaEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private CategoryJpaEntity category;
-
-    @ManyToMany(mappedBy = "tags", fetch = FetchType.LAZY)
-    @Builder.Default
-    private Set<Question> questions = new HashSet<>();
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)

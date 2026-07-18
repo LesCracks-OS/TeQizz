@@ -11,7 +11,6 @@ public class TagPersistenceMapper {
         if (entity == null) return null;
         Long catId = entity.getCategory() != null ? entity.getCategory().getId() : null;
         String catName = entity.getCategory() != null ? entity.getCategory().getName() : null;
-        long questionCount = entity.getQuestions() != null ? entity.getQuestions().size() : 0;
         return Tag.reconstitute(
                 entity.getId(),
                 entity.getName(),
@@ -20,7 +19,6 @@ public class TagPersistenceMapper {
                 entity.getIsActive(),
                 catId,
                 catName,
-                questionCount,
                 entity.getCreatedAt(),
                 entity.getUpdatedAt()
         );

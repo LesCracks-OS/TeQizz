@@ -1,6 +1,7 @@
 package com.brandonkamga.teqizz.gaming.smatch.infrastructure.persistence.entity;
 
 import com.brandonkamga.teqizz.catalog.infrastructure.persistence.entity.CategoryJpaEntity;
+import com.brandonkamga.teqizz.catalog.infrastructure.persistence.entity.TagJpaEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -8,6 +9,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "smatch_decks")
@@ -32,6 +35,20 @@ public class SmatchDeckJpaEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private CategoryJpaEntity category;
+
+    /**
+     * Reusable catalog tags applied to this deck. Smatch owns the join table
+     * ({@code smatch_deck_tags}), so the dependency points smatch → catalog — the same
+     * way QCM's {@code question_tags} works. Tags themselves stay game-agnostic.
+     */
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "smatch_deck_tags",
+        joinColumns = @JoinColumn(name = "deck_id"),
+        inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    @Builder.Default
+    private Set<TagJpaEntity> tags = new HashSet<>();
 
     @Column(nullable = false)
     @Builder.Default

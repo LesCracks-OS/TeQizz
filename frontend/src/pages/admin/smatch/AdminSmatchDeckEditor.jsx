@@ -7,6 +7,7 @@ const emptyDeck = {
   name: "",
   description: "",
   categoryId: "",
+  tagIds: [],
   difficulty: "EASY",
   isActive: true,
 };
@@ -21,6 +22,7 @@ export default function AdminSmatchDeckEditor() {
   const [deck, setDeck] = useState(emptyDeck);
   const [pairs, setPairs] = useState([{ ...emptyPair }]);
   const [categories, setCategories] = useState([]);
+  const [tags, setTags] = useState([]);
   const [loading, setLoading] = useState(isEdit);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -28,6 +30,7 @@ export default function AdminSmatchDeckEditor() {
 
   useEffect(() => {
     adminService.getQcmCategories().then(r => setCategories(r.data ?? [])).catch(() => {});
+    adminService.getQcmTags().then(r => setTags(r.data ?? [])).catch(() => {});
     if (isEdit) {
       adminService.getSmatchDeck(id)
         .then(r => {
@@ -36,6 +39,7 @@ export default function AdminSmatchDeckEditor() {
             name: d.name,
             description: d.description ?? "",
             categoryId: d.categoryId ?? "",
+            tagIds: d.tags?.map(t => t.id) ?? [],
             difficulty: d.difficulty ?? "EASY",
             isActive: d.isActive,
           });
@@ -48,6 +52,19 @@ export default function AdminSmatchDeckEditor() {
         .finally(() => setLoading(false));
     }
   }, [id]);
+
+  const toggleTag = (tagId) => {
+    setDeck(d => ({
+      ...d,
+      tagIds: d.tagIds.includes(tagId)
+        ? d.tagIds.filter(x => x !== tagId)
+        : [...d.tagIds, tagId],
+    }));
+  };
+
+  const filteredTags = deck.categoryId
+    ? tags.filter(t => !t.categoryId || String(t.categoryId) === String(deck.categoryId))
+    : tags;
 
   const addPair = () => setPairs(p => [...p, { ...emptyPair }]);
 
@@ -154,7 +171,7 @@ export default function AdminSmatchDeckEditor() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-medium mb-1">Category</label>
-              <select value={deck.categoryId} onChange={e => setDeck(d => ({ ...d, categoryId: e.target.value }))} className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/40">
+              <select value={deck.categoryId} onChange={e => setDeck(d => ({ ...d, categoryId: e.target.value, tagIds: [] }))} className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/40">
                 <option value="">No category</option>
                 {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
               </select>
@@ -168,6 +185,24 @@ export default function AdminSmatchDeckEditor() {
               </select>
             </div>
           </div>
+          {filteredTags.length > 0 && (
+            <div>
+              <label className="block text-xs font-medium mb-1">Tags</label>
+              <div className="flex flex-wrap gap-2">
+                {filteredTags.map(t => (
+                  <button
+                    type="button"
+                    key={t.id}
+                    onClick={() => toggleTag(t.id)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${deck.tagIds.includes(t.id) ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:border-primary/50"}`}
+                  >
+                    {t.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="flex items-center gap-2">
             <input type="checkbox" id="deckActive" checked={deck.isActive} onChange={e => setDeck(d => ({ ...d, isActive: e.target.checked }))} className="rounded" />
             <label htmlFor="deckActive" className="text-sm">Active</label>

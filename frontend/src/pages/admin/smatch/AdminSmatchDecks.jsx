@@ -109,6 +109,13 @@ export default function AdminSmatchDecks() {
                     <div>
                       <p className="font-medium">{deck.name}</p>
                       {deck.description && <p className="text-xs text-muted-foreground line-clamp-1 mt-0.5">{deck.description}</p>}
+                      {deck.tags?.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mt-1">
+                          {deck.tags.map(t => (
+                            <span key={t.id} className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary">{t.name}</span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </td>
                   <td className="px-4 py-3 text-muted-foreground hidden sm:table-cell">{deck.categoryName ?? "—"}</td>

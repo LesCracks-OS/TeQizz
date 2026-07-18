@@ -94,6 +94,12 @@ public class AdminQcmController {
         return ResponseEntity.ok(ApiResponse.success(qcmService.getQuestion(id)));
     }
 
+    /** Dedup queue: groups of existing questions that share identical (normalised) content. */
+    @GetMapping("/duplicates")
+    public ResponseEntity<ApiResponse<List<DuplicateGroupView>>> getDuplicates() {
+        return ResponseEntity.ok(ApiResponse.success(qcmService.getDuplicateGroups()));
+    }
+
     @PostMapping("/questions")
     public ResponseEntity<ApiResponse<QuestionDetailView>> createQuestion(
             @Valid @RequestBody AdminQuestionRequest request) {

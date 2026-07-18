@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard, Users, Tag, Folder, FileQuestion, Play,
-  BarChart3, Layers, LogOut, Zap, Inbox,
+  BarChart3, Layers, LogOut, Zap, Inbox, CopyCheck,
 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { cn } from "@/lib/utils";
@@ -39,6 +39,7 @@ const sections = [
       { to: "/admin/qcm/tags", label: "Tags", icon: Tag },
       { to: "/admin/qcm/questions", label: "Questions", icon: FileQuestion },
       { to: "/admin/qcm/contributions", label: "Contributions", icon: Inbox, badge: true },
+      { to: "/admin/qcm/duplicates", label: "Doublons", icon: CopyCheck },
       { to: "/admin/qcm/sessions", label: "Sessions", icon: Play },
     ],
   },
@@ -46,6 +47,7 @@ const sections = [
     label: "Smatch",
     items: [
       { to: "/admin/smatch/decks", label: "Decks", icon: Layers },
+      { to: "/admin/smatch/contributions", label: "Contributions", icon: Inbox },
       { to: "/admin/smatch/sessions", label: "Sessions", icon: BarChart3 },
     ],
   },

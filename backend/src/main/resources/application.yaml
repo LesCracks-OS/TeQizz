@@ -5,6 +5,15 @@ spring:
   profiles:
     default: dev
 
+  # Flyway owns schema *changes* going forward. baseline-on-migrate lets it adopt the
+  # already-existing schema (created previously by ddl-auto) as version 0, then apply
+  # V1+ migrations from db/migration. New entity changes MUST ship a matching migration.
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+    locations: classpath:db/migration
+
   datasource:
     url: ${DB_URL}
     username: ${DB_USERNAME}

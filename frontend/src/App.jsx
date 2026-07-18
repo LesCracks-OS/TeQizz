@@ -14,6 +14,7 @@ import QcmGameConfig from "./pages/dashboard/QcmGameConfig";
 import QcmGamePlay from "./pages/dashboard/QcmGamePlay";
 import QcmGameResults from "./pages/dashboard/QcmGameResults";
 import SmatchGameConfig from "./pages/dashboard/SmatchGameConfig";
+import SmatchGamePlay from "./pages/dashboard/SmatchGamePlay";
 import PerformancePage from "./pages/dashboard/Performance";
 import LeaderboardPage from "./pages/dashboard/Leaderboard";
 import SettingsPage from "./pages/dashboard/Settings";
@@ -27,11 +28,13 @@ import AdminQcmTags from "./pages/admin/qcm/AdminQcmTags";
 import AdminQcmQuestions from "./pages/admin/qcm/AdminQcmQuestions";
 import AdminQcmQuestionEditor from "./pages/admin/qcm/AdminQcmQuestionEditor";
 import AdminQcmContributions from "./pages/admin/qcm/AdminQcmContributions";
+import AdminQcmDuplicates from "./pages/admin/qcm/AdminQcmDuplicates";
 import AdminQcmSessions from "./pages/admin/qcm/AdminQcmSessions";
 import AdminQcmConfig from "./pages/admin/qcm/AdminQcmConfig";
 import AdminSmatchDecks from "./pages/admin/smatch/AdminSmatchDecks";
 import AdminSmatchDeckEditor from "./pages/admin/smatch/AdminSmatchDeckEditor";
 import AdminSmatchSessions from "./pages/admin/smatch/AdminSmatchSessions";
+import AdminSmatchContributions from "./pages/admin/smatch/AdminSmatchContributions";
 import AdminSmatchConfig from "./pages/admin/smatch/AdminSmatchConfig";
 import { ThemeProvider } from "./components/theme-provider";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
@@ -91,6 +94,7 @@ export default function App() {
               <Route path="/dashboard/play" element={<PlayPage />} />
               <Route path="/dashboard/play/qcm/config" element={<QcmGameConfig />} />
               <Route path="/dashboard/play/smatch/config" element={<SmatchGameConfig />} />
+              <Route path="/dashboard/play/smatch/:sessionId" element={<SmatchGamePlay />} />
               <Route path="/dashboard/play/qcm/:sessionId" element={<QcmGamePlay />} />
               <Route path="/dashboard/play/qcm/:sessionId/results" element={<QcmGameResults />} />
               <Route path="/dashboard/performance" element={<PerformancePage />} />
@@ -116,11 +120,13 @@ export default function App() {
               <Route path="/admin/qcm/questions/new" element={<AdminQcmQuestionEditor />} />
               <Route path="/admin/qcm/questions/:id/edit" element={<AdminQcmQuestionEditor />} />
               <Route path="/admin/qcm/contributions" element={<AdminQcmContributions />} />
+              <Route path="/admin/qcm/duplicates" element={<AdminQcmDuplicates />} />
               <Route path="/admin/qcm/sessions" element={<AdminQcmSessions />} />
               <Route path="/admin/qcm/config" element={<AdminQcmConfig />} />
               <Route path="/admin/smatch/decks" element={<AdminSmatchDecks />} />
               <Route path="/admin/smatch/decks/new" element={<AdminSmatchDeckEditor />} />
               <Route path="/admin/smatch/decks/:id/edit" element={<AdminSmatchDeckEditor />} />
+              <Route path="/admin/smatch/contributions" element={<AdminSmatchContributions />} />
               <Route path="/admin/smatch/sessions" element={<AdminSmatchSessions />} />
               <Route path="/admin/smatch/config" element={<AdminSmatchConfig />} />
             </Route>

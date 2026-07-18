@@ -30,6 +30,13 @@ public class SmatchPairJpaEntity {
     @Column(columnDefinition = "TEXT")
     private String hint;
 
+    /**
+     * SHA-256 of the normalised term+definition — rejects duplicate pairs within the same deck.
+     * See {@code ContentNormalizer}; back-filled for legacy rows at startup.
+     */
+    @Column(name = "content_hash", length = 64)
+    private String contentHash;
+
     @Column(name = "is_active", nullable = false)
     @Builder.Default
     private Boolean isActive = true;

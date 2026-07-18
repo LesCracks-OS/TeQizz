@@ -17,5 +17,11 @@ public interface SmatchPairRepository extends JpaRepository<SmatchPairJpaEntity,
 
     long countByDeckIdAndIsActiveTrue(Long deckId);
 
+    /** Exact-duplicate guard: same normalised term+definition already present in this deck. */
+    boolean existsByDeckIdAndContentHash(Long deckId, String contentHash);
+
+    /** Legacy rows needing a back-filled hash. */
+    List<SmatchPairJpaEntity> findByContentHashIsNull();
+
     void deleteByDeckId(Long deckId);
 }

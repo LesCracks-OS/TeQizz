@@ -5,6 +5,7 @@ import com.brandonkamga.teqizz.contribution.application.port.in.SubmitContributi
 import com.brandonkamga.teqizz.contribution.application.service.ContributionApplicationService;
 import com.brandonkamga.teqizz.dto.ApiResponse;
 import com.brandonkamga.teqizz.dto.contribution.ContributionQuestionRequest;
+import com.brandonkamga.teqizz.gaming.qcm.application.service.QcmDuplicateGuard;
 import com.brandonkamga.teqizz.exception.ResourceNotFoundException;
 import com.brandonkamga.teqizz.iam.infrastructure.persistence.repository.UserJpaRepository;
 import jakarta.validation.Valid;
@@ -61,6 +62,13 @@ public class ContributionController {
         result.put("submitted", submitted);
         result.put("errors", errors);
         return ResponseEntity.ok(ApiResponse.success(result, submitted + " question(s) submitted for review"));
+    }
+
+    /** Non-blocking near-duplicate check used by the contribution form to warn before submitting. */
+    @GetMapping("/questions/similar")
+    public ResponseEntity<ApiResponse<List<QcmDuplicateGuard.SimilarQuestion>>> findSimilar(
+            @RequestParam String content) {
+        return ResponseEntity.ok(ApiResponse.success(contributionService.findSimilarQuestions(content)));
     }
 
     @GetMapping("/questions/mine")

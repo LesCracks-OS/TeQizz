@@ -91,20 +91,41 @@ public class SmatchGameApplicationService
             throw new IllegalStateException("Session is already completed");
         }
 
-        SmatchPairJpaEntity pair = pairRepository.findById(command.pairId())
-                .orElseThrow(() -> new ResourceNotFoundException("SmatchPair", "id", command.pairId()));
+        Long deckId = session.getDeck().getId();
+        SmatchPairJpaEntity termPair = pairRepository.findById(command.termPairId())
+                .orElseThrow(() -> new ResourceNotFoundException("SmatchPair", "id", command.termPairId()));
+        SmatchPairJpaEntity definitionPair = pairRepository.findById(command.definitionPairId())
+                .orElseThrow(() -> new ResourceNotFoundException("SmatchPair", "id", command.definitionPairId()));
 
-        if (!pair.getDeck().getId().equals(session.getDeck().getId())) {
-            throw new IllegalArgumentException("Pair does not belong to this session's deck");
-        }
+        // Both cards the player associated must be real, active cards from THIS deck.
+        requireActivePairInDeck(termPair, deckId);
+        requireActivePairInDeck(definitionPair, deckId);
 
         SmatchGameMode mode = session.getGameMode();
-        boolean correct = Boolean.TRUE.equals(pair.getIsActive());
+
+        // The heart of the game: a match is correct only when the term card and the
+        // definition card come from the same pair. Decided here, never trusted from the client.
+        boolean correct = command.termPairId().equals(command.definitionPairId());
+
+        // Idempotent guard: matching a pair that was already solved earns nothing and
+        // costs nothing — it protects the score/lives from double submissions or replays.
+        boolean alreadyMatched = correct
+                && attemptRepository.existsBySessionIdAndPairIdAndIsCorrectTrue(session.getId(), termPair.getId());
+
+        int totalPairs = (int) pairRepository.countByDeckIdAndIsActiveTrue(deckId);
+
+        if (correct && alreadyMatched) {
+            int livesNow = session.getLivesRemaining() != null ? session.getLivesRemaining() : Integer.MAX_VALUE;
+            return new AttemptResultView(true, true, 0, livesNow,
+                    session.getPairsMatched(), totalPairs, session.getTotalScore(),
+                    session.isCompleted(), false);
+        }
+
         int pointsEarned = correct ? mode.getPointsPerCorrect() : 0;
 
         SmatchAttemptJpaEntity attempt = SmatchAttemptJpaEntity.builder()
                 .session(session)
-                .pair(pair)
+                .pair(termPair)
                 .isCorrect(correct)
                 .timeTakenMs(command.timeTakenMs())
                 .pointsEarned(pointsEarned)
@@ -121,7 +142,6 @@ public class SmatchGameApplicationService
             }
         }
 
-        int totalPairs = (int) pairRepository.countByDeckIdAndIsActiveTrue(session.getDeck().getId());
         boolean allMatched = session.getPairsMatched() >= totalPairs;
         boolean gameOver = mode.hasLives() && session.getLivesRemaining() != null
                 && session.getLivesRemaining() <= 0;
@@ -133,7 +153,7 @@ public class SmatchGameApplicationService
         session = sessionRepository.save(session);
         int livesLeft = session.getLivesRemaining() != null ? session.getLivesRemaining() : Integer.MAX_VALUE;
 
-        return new AttemptResultView(correct, pointsEarned, livesLeft,
+        return new AttemptResultView(correct, false, pointsEarned, livesLeft,
                 session.getPairsMatched(), totalPairs, session.getTotalScore(),
                 allMatched, gameOver);
     }
@@ -188,16 +208,18 @@ public class SmatchGameApplicationService
 
     @Override
     @Transactional(readOnly = true)
-    public List<SmatchDeckView> getActiveDecks(Long categoryId) {
+    public List<SmatchDeckView> getActiveDecks(Long categoryId, Long tagId) {
         List<SmatchDeckJpaEntity> decks = categoryId != null
                 ? deckRepository.findByCategoryId(categoryId)
                 : deckRepository.findByIsActiveTrue();
         return decks.stream()
                 .filter(d -> Boolean.TRUE.equals(d.getIsActive()))
+                .filter(d -> tagId == null || hasTag(d, tagId))
                 .map(d -> new SmatchDeckView(
                         d.getId(), d.getName(), d.getDescription(), d.getDifficulty(),
                         d.getCategory() != null ? d.getCategory().getId() : null,
                         d.getCategory() != null ? d.getCategory().getName() : null,
+                        toTagRefs(d),
                         (int) pairRepository.countByDeckIdAndIsActiveTrue(d.getId())))
                 .collect(Collectors.toList());
     }
@@ -214,7 +236,21 @@ public class SmatchGameApplicationService
                 deck.getId(), deck.getName(), deck.getDescription(), deck.getDifficulty(),
                 deck.getCategory() != null ? deck.getCategory().getId() : null,
                 deck.getCategory() != null ? deck.getCategory().getName() : null,
+                toTagRefs(deck),
                 pairs);
+    }
+
+    private boolean hasTag(SmatchDeckJpaEntity deck, Long tagId) {
+        return deck.getTags() != null && deck.getTags().stream()
+                .anyMatch(t -> t.getId().equals(tagId));
+    }
+
+    private List<TagRefView> toTagRefs(SmatchDeckJpaEntity deck) {
+        if (deck.getTags() == null) return List.of();
+        return deck.getTags().stream()
+                .map(t -> new TagRefView(t.getId(), t.getName()))
+                .sorted(java.util.Comparator.comparing(TagRefView::name, String.CASE_INSENSITIVE_ORDER))
+                .collect(Collectors.toList());
     }
 
     // ─── Session ownership ────────────────────────────────────────────────────
@@ -228,6 +264,15 @@ public class SmatchGameApplicationService
     }
 
     // ─── Helpers ──────────────────────────────────────────────────────────────
+
+    private void requireActivePairInDeck(SmatchPairJpaEntity pair, Long deckId) {
+        if (!pair.getDeck().getId().equals(deckId)) {
+            throw new IllegalArgumentException("Pair " + pair.getId() + " does not belong to this session's deck");
+        }
+        if (!Boolean.TRUE.equals(pair.getIsActive())) {
+            throw new IllegalArgumentException("Pair " + pair.getId() + " is not active");
+        }
+    }
 
     private SmatchGameMode parseMode(String gameMode) {
         try { return SmatchGameMode.valueOf(gameMode.toUpperCase()); }

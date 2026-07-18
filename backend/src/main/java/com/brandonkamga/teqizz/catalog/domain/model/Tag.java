@@ -15,12 +15,11 @@ public class Tag extends DomainEntity<TagId> {
     private boolean active;
     private CategoryId categoryId;
     private String categoryName;
-    private long questionCount;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     private Tag(TagId id, String name, String slug, String description, boolean active,
-                CategoryId categoryId, String categoryName, long questionCount,
+                CategoryId categoryId, String categoryName,
                 LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
@@ -29,19 +28,18 @@ public class Tag extends DomainEntity<TagId> {
         this.active = active;
         this.categoryId = categoryId;
         this.categoryName = categoryName;
-        this.questionCount = questionCount;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
     public static Tag reconstitute(Long id, String name, String slug, String description,
                                    Boolean active, Long categoryId, String categoryName,
-                                   long questionCount, LocalDateTime createdAt, LocalDateTime updatedAt) {
+                                   LocalDateTime createdAt, LocalDateTime updatedAt) {
         return new Tag(
                 new TagId(id), name, slug, description,
                 Boolean.TRUE.equals(active),
                 categoryId != null ? new CategoryId(categoryId) : null,
-                categoryName, questionCount,
+                categoryName,
                 createdAt, updatedAt
         );
     }
@@ -53,7 +51,6 @@ public class Tag extends DomainEntity<TagId> {
     public boolean isActive() { return active; }
     public CategoryId getCategoryId() { return categoryId; }
     public String getCategoryName() { return categoryName; }
-    public long getQuestionCount() { return questionCount; }
     public LocalDateTime getCreatedAt() { return createdAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
 }

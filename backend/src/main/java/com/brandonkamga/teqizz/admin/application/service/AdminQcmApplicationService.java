@@ -8,7 +8,9 @@ import com.brandonkamga.teqizz.dto.admin.AdminCategoryRequest;
 import com.brandonkamga.teqizz.dto.admin.AdminQuestionRequest;
 import com.brandonkamga.teqizz.dto.admin.AdminTagRequest;
 import com.brandonkamga.teqizz.exception.BadRequestException;
+import com.brandonkamga.teqizz.exception.ConflictException;
 import com.brandonkamga.teqizz.exception.ResourceNotFoundException;
+import com.brandonkamga.teqizz.gaming.qcm.application.service.QcmDuplicateGuard;
 import com.brandonkamga.teqizz.gaming.qcm.domain.model.vo.GameMode;
 import com.brandonkamga.teqizz.gaming.qcm.domain.model.vo.QuestionLevelType;
 import com.brandonkamga.teqizz.gaming.qcm.domain.model.vo.QuestionStatusType;
@@ -43,7 +45,7 @@ public class AdminQcmApplicationService {
                                 Integer displayOrder, Boolean isActive, long questionsCount) {}
 
     public record TagView(Long id, String name, String slug, String description,
-                           Boolean isActive, Long categoryId, String categoryName) {}
+                           Boolean isActive, Long categoryId, String categoryName, long questionCount) {}
 
     public record AnswerView(Long id, String content, Boolean isCorrect, Boolean isActive) {}
 
@@ -68,6 +70,11 @@ public class AdminQcmApplicationService {
 
     public record BulkImportResult(int imported, List<String> errors) {}
 
+    public record DuplicateItemView(Long id, String content, String status,
+                                     String submittedBy, String createdAt) {}
+
+    public record DuplicateGroupView(String hash, List<DuplicateItemView> questions) {}
+
     // ─── Repositories ──────────────────────────────────────────────────────────
 
     private final CategoryRepository categoryRepository;
@@ -78,6 +85,7 @@ public class AdminQcmApplicationService {
     private final GameRepository gameRepository;
     private final QuestionLevelRepository questionLevelRepository;
     private final QuestionStatusRepository questionStatusRepository;
+    private final QcmDuplicateGuard duplicateGuard;
 
     public AdminQcmApplicationService(CategoryRepository categoryRepository,
                                        TagRepository tagRepository,
@@ -86,7 +94,8 @@ public class AdminQcmApplicationService {
                                        GameSessionRepository gameSessionRepository,
                                        GameRepository gameRepository,
                                        QuestionLevelRepository questionLevelRepository,
-                                       QuestionStatusRepository questionStatusRepository) {
+                                       QuestionStatusRepository questionStatusRepository,
+                                       QcmDuplicateGuard duplicateGuard) {
         this.categoryRepository = categoryRepository;
         this.tagRepository = tagRepository;
         this.questionRepository = questionRepository;
@@ -95,6 +104,7 @@ public class AdminQcmApplicationService {
         this.gameRepository = gameRepository;
         this.questionLevelRepository = questionLevelRepository;
         this.questionStatusRepository = questionStatusRepository;
+        this.duplicateGuard = duplicateGuard;
     }
 
     // ─── Categories ───────────────────────────────────────────────────────────
@@ -216,6 +226,8 @@ public class AdminQcmApplicationService {
         boolean hasCorrect = request.getAnswers().stream().anyMatch(AdminQuestionRequest.AnswerRequest::getIsCorrect);
         if (!hasCorrect) throw new BadRequestException("At least one answer must be marked as correct");
 
+        duplicateGuard.assertNoExactDuplicate(request.getContent());
+
         CategoryJpaEntity category = resolveCategory(request);
         Game game = gameRepository.findByName("QCM")
                 .orElseThrow(() -> new ResourceNotFoundException("Game", "name", "QCM"));
@@ -226,7 +238,8 @@ public class AdminQcmApplicationService {
                 .orElseThrow(() -> new ResourceNotFoundException("QuestionStatus", "name", request.getStatus()));
 
         Question question = questionRepository.save(Question.builder()
-                .content(request.getContent()).explanation(request.getExplanation()).hint(request.getHint())
+                .content(request.getContent()).contentHash(duplicateGuard.hashFor(request.getContent()))
+                .explanation(request.getExplanation()).hint(request.getHint())
                 .game(game).category(category).level(level).status(status).build());
 
         for (AdminQuestionRequest.AnswerRequest ar : request.getAnswers()) {
@@ -241,7 +254,17 @@ public class AdminQcmApplicationService {
     public QuestionDetailView updateQuestion(Long id, AdminQuestionRequest request) {
         Question question = questionRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Question", "id", id));
-        if (request.getContent() != null) question.setContent(request.getContent());
+        if (request.getContent() != null) {
+            String newHash = duplicateGuard.hashFor(request.getContent());
+            if (!newHash.equals(question.getContentHash())) {
+                questionRepository.findFirstByContentHash(newHash)
+                        .filter(other -> !other.getId().equals(id))
+                        .ifPresent(other -> { throw new ConflictException(
+                                "Another question already has this content (#" + other.getId() + ")", other.getId()); });
+            }
+            question.setContent(request.getContent());
+            question.setContentHash(newHash);
+        }
         if (request.getExplanation() != null) question.setExplanation(request.getExplanation());
         if (request.getHint() != null) question.setHint(request.getHint());
         if (request.getCategoryId() != null) {
@@ -269,6 +292,24 @@ public class AdminQcmApplicationService {
             resolveAndApplyTags(request, question);
         }
         return toDetailView(questionRepository.save(question));
+    }
+
+    // ─── Dedup queue (exact duplicates that predate the anti-redundancy guard) ──
+
+    @Transactional(readOnly = true)
+    public List<DuplicateGroupView> getDuplicateGroups() {
+        return questionRepository.findDuplicateContentHashes().stream()
+                .map(hash -> new DuplicateGroupView(hash,
+                        questionRepository.findByContentHash(hash).stream()
+                                .sorted(Comparator.comparing(Question::getId))
+                                .map(q -> new DuplicateItemView(
+                                        q.getId(),
+                                        q.getContent(),
+                                        q.getStatus() != null ? q.getStatus().getStatusName().name() : null,
+                                        q.getSubmittedBy() != null ? q.getSubmittedBy().getUsername() : null,
+                                        q.getCreatedAt() != null ? q.getCreatedAt().toString() : null))
+                                .collect(Collectors.toList())))
+                .collect(Collectors.toList());
     }
 
     // ─── Category / Tag helpers ────────────────────────────────────────────────
@@ -406,7 +447,8 @@ public class AdminQcmApplicationService {
     private TagView toTagView(TagJpaEntity t) {
         return new TagView(t.getId(), t.getName(), t.getSlug(), t.getDescription(), t.getIsActive(),
                 t.getCategory() != null ? t.getCategory().getId() : null,
-                t.getCategory() != null ? t.getCategory().getName() : null);
+                t.getCategory() != null ? t.getCategory().getName() : null,
+                questionRepository.countByTagId(t.getId()));
     }
 
     private QuestionDetailView toDetailView(Question q) {

@@ -8,6 +8,7 @@ import com.brandonkamga.teqizz.contribution.application.port.in.GetAllContributi
 import com.brandonkamga.teqizz.contribution.application.port.in.SubmitContributionUseCase.*;
 import com.brandonkamga.teqizz.exception.BadRequestException;
 import com.brandonkamga.teqizz.exception.ResourceNotFoundException;
+import com.brandonkamga.teqizz.gaming.qcm.application.service.QcmDuplicateGuard;
 import com.brandonkamga.teqizz.gaming.qcm.domain.model.vo.GameTypeName;
 import com.brandonkamga.teqizz.gaming.qcm.domain.model.vo.QuestionLevelType;
 import com.brandonkamga.teqizz.gaming.qcm.domain.model.vo.QuestionStatusType;
@@ -45,6 +46,7 @@ public class ContributionApplicationService
     private final QuestionLevelRepository questionLevelRepository;
     private final QuestionStatusRepository questionStatusRepository;
     private final UserJpaRepository userRepository;
+    private final QcmDuplicateGuard duplicateGuard;
 
     public ContributionApplicationService(
             QuestionRepository questionRepository,
@@ -54,7 +56,8 @@ public class ContributionApplicationService
             GameRepository gameRepository,
             QuestionLevelRepository questionLevelRepository,
             QuestionStatusRepository questionStatusRepository,
-            UserJpaRepository userRepository) {
+            UserJpaRepository userRepository,
+            QcmDuplicateGuard duplicateGuard) {
         this.questionRepository = questionRepository;
         this.answerRepository = answerRepository;
         this.categoryRepository = categoryRepository;
@@ -63,6 +66,7 @@ public class ContributionApplicationService
         this.questionLevelRepository = questionLevelRepository;
         this.questionStatusRepository = questionStatusRepository;
         this.userRepository = userRepository;
+        this.duplicateGuard = duplicateGuard;
     }
 
     // ─── Submit ───────────────────────────────────────────────────────────────
@@ -71,6 +75,9 @@ public class ContributionApplicationService
     public ContributionView submit(SubmitContributionCommand command) {
         boolean hasCorrect = command.answers().stream().anyMatch(AnswerCommand::isCorrect);
         if (!hasCorrect) throw new IllegalArgumentException("At least one answer must be correct");
+
+        // Hard-block exact duplicates before doing any work.
+        duplicateGuard.assertNoExactDuplicate(command.content());
 
         UserJpaEntity user = userRepository.findById(command.userId())
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", command.userId()));
@@ -85,6 +92,7 @@ public class ContributionApplicationService
 
         Question question = Question.builder()
                 .content(command.content())
+                .contentHash(duplicateGuard.hashFor(command.content()))
                 .explanation(command.explanation())
                 .hint(command.hint())
                 .game(game).category(category).level(level).status(reviewStatus)
@@ -106,6 +114,13 @@ public class ContributionApplicationService
         }
 
         return toSummaryView(question);
+    }
+
+    // ─── Similar questions (near-duplicate warning, non-blocking) ───────────────
+
+    @Transactional(readOnly = true)
+    public List<QcmDuplicateGuard.SimilarQuestion> findSimilarQuestions(String content) {
+        return duplicateGuard.findSimilar(content, null);
     }
 
     // ─── Withdraw ─────────────────────────────────────────────────────────────

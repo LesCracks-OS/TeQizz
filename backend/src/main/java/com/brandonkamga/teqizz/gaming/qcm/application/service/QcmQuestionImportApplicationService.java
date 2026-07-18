@@ -43,6 +43,7 @@ public class QcmQuestionImportApplicationService {
     private final QuestionStatusRepository questionStatusRepository;
     private final GameRepository gameRepository;
     private final ObjectMapper objectMapper;
+    private final QcmDuplicateGuard duplicateGuard;
 
     public QcmQuestionImportApplicationService(
             CategoryRepository categoryRepository,
@@ -52,7 +53,8 @@ public class QcmQuestionImportApplicationService {
             QuestionLevelRepository questionLevelRepository,
             QuestionStatusRepository questionStatusRepository,
             GameRepository gameRepository,
-            ObjectMapper objectMapper) {
+            ObjectMapper objectMapper,
+            QcmDuplicateGuard duplicateGuard) {
         this.categoryRepository = categoryRepository;
         this.tagRepository = tagRepository;
         this.questionRepository = questionRepository;
@@ -61,12 +63,14 @@ public class QcmQuestionImportApplicationService {
         this.questionStatusRepository = questionStatusRepository;
         this.gameRepository = gameRepository;
         this.objectMapper = objectMapper;
+        this.duplicateGuard = duplicateGuard;
     }
 
 
     public QuestionImportResponse importQuestions(QuestionImportRequest request) {
         List<QuestionImportResponse.ImportError> errors = new ArrayList<>();
         Set<String> createdTags = new HashSet<>();
+        Set<String> seenHashes = new HashSet<>(); // exact-duplicate guard within this batch
         int imported = 0;
         int skipped = 0;
 
@@ -134,6 +138,18 @@ public class QcmQuestionImportApplicationService {
                     continue;
                 }
 
+                // Skip exact duplicates — both against the DB and earlier rows in this same batch.
+                String contentHash = duplicateGuard.hashFor(questionData.getContent());
+                if (!seenHashes.add(contentHash)
+                        || questionRepository.findFirstByContentHash(contentHash).isPresent()) {
+                    errors.add(QuestionImportResponse.ImportError.builder()
+                            .questionIndex(questionIndex)
+                            .questionContent(truncate(questionData.getContent(), 50))
+                            .error("Duplicate question — already exists, skipped").build());
+                    skipped++;
+                    continue;
+                }
+
                 QuestionLevel level = questionLevelRepository.findByLevelName(questionData.getDifficulty())
                         .orElseThrow(() -> new ResourceNotFoundException("QuestionLevel", "levelName", questionData.getDifficulty().name()));
 
@@ -141,6 +157,7 @@ public class QcmQuestionImportApplicationService {
 
                 Question question = Question.builder()
                         .content(questionData.getContent())
+                        .contentHash(contentHash)
                         .hint(questionData.getHint())
                         .explanation(questionData.getExplanation())
                         .category(category)

@@ -37,9 +37,10 @@ public class SmatchGameController {
 
     @GetMapping("/decks")
     public ResponseEntity<ApiResponse<List<SmatchDeckView>>> getDecks(
-            @RequestParam(required = false) Long categoryId) {
+            @RequestParam(required = false) Long categoryId,
+            @RequestParam(required = false) Long tagId) {
         return ResponseEntity.ok(ApiResponse.success(
-                smatchGameService.getActiveDecks(categoryId), "Decks retrieved successfully"));
+                smatchGameService.getActiveDecks(categoryId, tagId), "Decks retrieved successfully"));
     }
 
     @GetMapping("/decks/{deckId}")
@@ -77,7 +78,8 @@ public class SmatchGameController {
             @Valid @RequestBody AttemptRequest request) {
         validateOwnership(sessionId, userDetails);
         AttemptResultView result = smatchGameService.submit(
-                new SubmitSmatchAttemptUseCase.SubmitAttemptCommand(sessionId, request.pairId(), request.timeTakenMs()));
+                new SubmitSmatchAttemptUseCase.SubmitAttemptCommand(
+                        sessionId, request.termPairId(), request.definitionPairId(), request.timeTakenMs()));
         return ResponseEntity.ok(ApiResponse.success(result, "Attempt submitted successfully"));
     }
 
@@ -103,7 +105,7 @@ public class SmatchGameController {
 
     public record StartSessionRequest(@NotNull Long deckId, @NotNull String gameMode) {}
 
-    public record AttemptRequest(@NotNull Long pairId, Integer timeTakenMs) {}
+    public record AttemptRequest(@NotNull Long termPairId, @NotNull Long definitionPairId, Integer timeTakenMs) {}
 
     // ─── Helpers ──────────────────────────────────────────────────────────────
 

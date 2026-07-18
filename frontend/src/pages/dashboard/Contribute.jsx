@@ -23,13 +23,17 @@ const LEVELS = [
 const STATUS_STYLES = {
   REVIEW:   'bg-blue-500/10 text-blue-400 border-blue-500/20',
   ACTIVE:   'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+  APPROVED: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
   ARCHIVED: 'bg-muted text-muted-foreground border-border',
+  REJECTED: 'bg-red-500/10 text-red-400 border-red-500/20',
 };
 
 const STATUS_LABELS = {
   REVIEW:   'En attente de review',
   ACTIVE:   'Approuvée',
+  APPROVED: 'Approuvée',
   ARCHIVED: 'Refusée',
+  REJECTED: 'Refusée',
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -58,6 +62,19 @@ function SubmitForm({ categories }) {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState('');
+  const [similar, setSimilar] = useState([]);
+
+  // Non-blocking near-duplicate check: warn if a similar question already exists.
+  useEffect(() => {
+    const q = content.trim();
+    if (q.length < 10) { setSimilar([]); return; }
+    const t = setTimeout(() => {
+      contributionService.findSimilarQuestions(q)
+        .then(r => setSimilar(r.data ?? []))
+        .catch(() => setSimilar([]));
+    }, 500);
+    return () => clearTimeout(t);
+  }, [content]);
 
   const reset = () => {
     setStep(1); setGame(null); setCategory(null); setLevel(null);
@@ -68,7 +85,7 @@ function SubmitForm({ categories }) {
       { content: '', isCorrect: false },
       { content: '', isCorrect: false },
     ]);
-    setDone(false); setError('');
+    setDone(false); setError(''); setSimilar([]);
   };
 
   const setAnswer = (i, field, value) =>
@@ -124,6 +141,11 @@ function SubmitForm({ categories }) {
         </button>
       </motion.div>
     );
+  }
+
+  // Smatch has its own distinct submission flow (deck + pairs), delegated once chosen.
+  if (game?.key === 'SMATCH' && step >= 2) {
+    return <SmatchSubmitForm categories={categories} onBack={() => setStep(1)} />;
   }
 
   return (
@@ -207,6 +229,23 @@ function SubmitForm({ categories }) {
             <p className={`text-xs text-right ${content.length < 10 ? 'text-muted-foreground' : 'text-emerald-400'}`}>
               {content.length} caractères {content.length < 10 && '(min 10)'}
             </p>
+
+            {similar.length > 0 && (
+              <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-3 space-y-2">
+                <p className="flex items-center gap-1.5 text-xs font-semibold text-amber-500">
+                  <AlertCircle className="h-3.5 w-3.5 shrink-0" />
+                  {similar.length} question{similar.length > 1 ? 's' : ''} similaire{similar.length > 1 ? 's' : ''} existe{similar.length > 1 ? 'nt' : ''} déjà
+                </p>
+                <ul className="space-y-1">
+                  {similar.map(s => (
+                    <li key={s.id} className="text-xs text-muted-foreground line-clamp-2">
+                      • {s.content}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[11px] text-amber-500/80">Vérifie que ta question n'est pas un doublon avant de continuer.</p>
+              </div>
+            )}
           </motion.div>
         )}
 
@@ -298,6 +337,148 @@ function SubmitForm({ categories }) {
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CONTENU — Proposer un deck Smatch (flux distinct)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const emptySmatchPair = { term: '', definition: '', hint: '' };
+
+function SmatchSubmitForm({ categories, onBack }) {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [categoryId, setCategoryId] = useState('');
+  const [difficulty, setDifficulty] = useState('EASY');
+  const [pairs, setPairs] = useState([{ ...emptySmatchPair }, { ...emptySmatchPair }, { ...emptySmatchPair }]);
+  const [submitting, setSubmitting] = useState(false);
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState('');
+
+  const setPairField = (i, field, value) =>
+    setPairs(prev => prev.map((p, idx) => idx === i ? { ...p, [field]: value } : p));
+  const addPair = () => setPairs(prev => [...prev, { ...emptySmatchPair }]);
+  const removePair = (i) => setPairs(prev => prev.length > 3 ? prev.filter((_, idx) => idx !== i) : prev);
+
+  const validPairs = pairs.filter(p => p.term.trim() && p.definition.trim());
+  const canSubmit = name.trim().length >= 2 && validPairs.length >= 3;
+
+  const handleSubmit = async () => {
+    if (!canSubmit) { setError('Nom requis et au moins 3 paires complètes'); return; }
+    setSubmitting(true); setError('');
+    try {
+      await contributionService.submitSmatchDeck({
+        name: name.trim(),
+        description: description.trim() || undefined,
+        categoryId: categoryId ? Number(categoryId) : undefined,
+        difficulty,
+        pairs: validPairs.map(p => ({ term: p.term.trim(), definition: p.definition.trim(), hint: p.hint.trim() || undefined })),
+      });
+      setDone(true);
+    } catch (e) {
+      setError(e?.message || 'Échec de la soumission');
+    }
+    setSubmitting(false);
+  };
+
+  if (done) {
+    return (
+      <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
+        className="flex flex-col items-center justify-center py-16 text-center space-y-4">
+        <div className="h-14 w-14 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
+          <Check className="h-7 w-7 text-emerald-400" />
+        </div>
+        <div>
+          <h3 className="text-xl font-black">Deck soumis !</h3>
+          <p className="text-sm text-muted-foreground mt-1">Ton deck Smatch est en attente de validation par l'équipe.</p>
+        </div>
+        <button onClick={onBack}
+          className="mt-4 px-6 py-3 rounded-2xl bg-primary text-primary-foreground text-sm font-black hover:bg-primary/90 transition-colors">
+          Proposer un autre
+        </button>
+      </motion.div>
+    );
+  }
+
+  return (
+    <div className="space-y-6 pb-28">
+      <button onClick={onBack} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Changer de jeu
+      </button>
+
+      <div className="space-y-4">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-1.5">Nom du deck</p>
+          <input value={name} onChange={e => setName(e.target.value)} placeholder="ex. Vocabulaire réseau"
+            className="w-full px-4 py-3 text-sm rounded-2xl border border-border bg-card focus:outline-none focus:ring-2 focus:ring-primary/30" />
+        </div>
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-1.5">Description (optionnel)</p>
+          <textarea value={description} onChange={e => setDescription(e.target.value)} rows={2}
+            className="w-full px-4 py-3 text-sm rounded-2xl border border-border bg-card focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none" />
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-1.5">Catégorie</p>
+            <select value={categoryId} onChange={e => setCategoryId(e.target.value)}
+              className="w-full px-3 py-3 text-sm rounded-2xl border border-border bg-card focus:outline-none focus:ring-2 focus:ring-primary/30">
+              <option value="">Aucune</option>
+              {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+            </select>
+          </div>
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-1.5">Difficulté</p>
+            <select value={difficulty} onChange={e => setDifficulty(e.target.value)}
+              className="w-full px-3 py-3 text-sm rounded-2xl border border-border bg-card focus:outline-none focus:ring-2 focus:ring-primary/30">
+              {LEVELS.map(l => <option key={l.key} value={l.key}>{l.label}</option>)}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">Paires ({validPairs.length})</p>
+          <p className="text-[11px] text-muted-foreground">min. 3</p>
+        </div>
+        {pairs.map((pair, i) => (
+          <div key={i} className="rounded-2xl border border-border bg-card p-3 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-xs text-muted-foreground font-medium">Paire {i + 1}</span>
+              <button onClick={() => removePair(i)} disabled={pairs.length <= 3}
+                className="text-muted-foreground hover:text-red-500 disabled:opacity-30 transition-colors">
+                <Trash2 className="h-3.5 w-3.5" />
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <input value={pair.term} onChange={e => setPairField(i, 'term', e.target.value)} placeholder="Terme"
+                className="px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30" />
+              <input value={pair.definition} onChange={e => setPairField(i, 'definition', e.target.value)} placeholder="Définition"
+                className="px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            </div>
+            <input value={pair.hint} onChange={e => setPairField(i, 'hint', e.target.value)} placeholder="Indice (optionnel)"
+              className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30" />
+          </div>
+        ))}
+        <button onClick={addPair}
+          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full justify-center py-3 rounded-lg border border-dashed border-border hover:border-primary/50">
+          <Plus className="h-4 w-4" /> Ajouter une paire
+        </button>
+      </div>
+
+      {error && (
+        <p className="flex items-center gap-1.5 text-xs text-red-500">
+          <AlertCircle className="h-3.5 w-3.5 shrink-0" /> {error}
+        </p>
+      )}
+
+      <button disabled={submitting || !canSubmit} onClick={handleSubmit}
+        className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-primary text-primary-foreground text-sm font-black hover:bg-primary/90 transition-colors disabled:opacity-50">
+        {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+        {submitting ? 'Envoi…' : 'Soumettre le deck'}
+      </button>
     </div>
   );
 }
@@ -473,17 +654,22 @@ function MySubmissions() {
   const [expandedId, setExpandedId] = useState(null);
 
   useEffect(() => {
-    contributionService.getMySubmissions()
-      .then(r => setItems(r.data ?? []))
-      .catch(() => {})
-      .finally(() => setLoading(false));
+    Promise.all([
+      contributionService.getMySubmissions().catch(() => ({ data: [] })),
+      contributionService.getMySmatchSubmissions().catch(() => ({ data: [] })),
+    ]).then(([q, sm]) => {
+      const qcm = (q.data ?? []).map(x => ({ ...x, kind: 'QCM', _key: `q-${x.id}`, title: x.content }));
+      const smatch = (sm.data ?? []).map(x => ({ ...x, kind: 'SMATCH', _key: `s-${x.id}`, title: x.name }));
+      setItems([...qcm, ...smatch].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
+    }).finally(() => setLoading(false));
   }, []);
 
-  const handleWithdraw = async (id) => {
-    setWithdrawing(id);
+  const handleWithdraw = async (item) => {
+    setWithdrawing(item._key);
     try {
-      await contributionService.withdrawSubmission(id);
-      setItems(prev => prev.filter(s => s.id !== id));
+      if (item.kind === 'SMATCH') await contributionService.withdrawSmatchSubmission(item.id);
+      else await contributionService.withdrawSubmission(item.id);
+      setItems(prev => prev.filter(s => s._key !== item._key));
     } catch {}
     setWithdrawing(null);
   };
@@ -505,29 +691,30 @@ function MySubmissions() {
   return (
     <div className="space-y-3 pb-8">
       {items.map(s => {
-        const expanded = expandedId === s.id;
+        const expanded = expandedId === s._key;
         return (
-          <div key={s.id} className="rounded-2xl border border-border bg-card overflow-hidden">
+          <div key={s._key} className="rounded-2xl border border-border bg-card overflow-hidden">
             <div className="flex items-start gap-3 p-4">
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium leading-snug line-clamp-2">{s.content}</p>
+                <p className="text-sm font-medium leading-snug line-clamp-2">{s.title}</p>
                 <div className="flex items-center gap-2 mt-1.5 flex-wrap">
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary">{s.kind}</span>
                   <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold border ${STATUS_STYLES[s.status] ?? STATUS_STYLES.REVIEW}`}>
                     {STATUS_LABELS[s.status] ?? s.status}
                   </span>
-                  <span className="text-[11px] text-muted-foreground">{s.categoryName}</span>
+                  {s.categoryName && <span className="text-[11px] text-muted-foreground">{s.categoryName}</span>}
                   <span className="text-[11px] text-muted-foreground">{new Date(s.createdAt).toLocaleDateString('fr-FR')}</span>
                 </div>
               </div>
               <div className="flex items-center gap-1 shrink-0">
-                <button onClick={() => setExpandedId(expanded ? null : s.id)}
+                <button onClick={() => setExpandedId(expanded ? null : s._key)}
                   className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
                   <ChevronDown className={`h-4 w-4 transition-transform ${expanded ? 'rotate-180' : ''}`} />
                 </button>
                 {s.status === 'REVIEW' && (
-                  <button disabled={withdrawing === s.id} onClick={() => handleWithdraw(s.id)}
+                  <button disabled={withdrawing === s._key} onClick={() => handleWithdraw(s)}
                     className="p-2 rounded-lg text-muted-foreground hover:text-red-400 hover:bg-red-500/10 transition-colors disabled:opacity-50">
-                    {withdrawing === s.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <X className="h-4 w-4" />}
+                    {withdrawing === s._key ? <Loader2 className="h-4 w-4 animate-spin" /> : <X className="h-4 w-4" />}
                   </button>
                 )}
               </div>
@@ -537,9 +724,20 @@ function MySubmissions() {
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.18 }} className="overflow-hidden">
                   <div className="px-4 pb-4 border-t border-border pt-3 space-y-1">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Question complète</p>
-                    <p className="text-sm">{s.content}</p>
-                    <p className="text-xs text-muted-foreground">{s.answersCount} réponses · {s.level}</p>
+                    {s.kind === 'SMATCH' ? (
+                      <>
+                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Deck</p>
+                        <p className="text-sm">{s.title}</p>
+                        <p className="text-xs text-muted-foreground">{s.pairCount} paires · {s.difficulty}</p>
+                        {s.rejectReason && <p className="text-xs text-red-400">Motif : {s.rejectReason}</p>}
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Question complète</p>
+                        <p className="text-sm">{s.content}</p>
+                        <p className="text-xs text-muted-foreground">{s.answersCount} réponses · {s.level}</p>
+                      </>
+                    )}
                   </div>
                 </motion.div>
               )}

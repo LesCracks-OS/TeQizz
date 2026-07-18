@@ -13,5 +13,8 @@ public interface SmatchAttemptRepository extends JpaRepository<SmatchAttemptJpaE
 
     long countBySessionId(Long sessionId);
 
+    /** A pair is "already matched" once it has a correct attempt in this session. */
+    boolean existsBySessionIdAndPairIdAndIsCorrectTrue(Long sessionId, Long pairId);
+
     void deleteBySessionId(Long sessionId);
 }
