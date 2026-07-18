@@ -3,6 +3,7 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { QcmGameProvider, useQcmGame } from '../../contexts/QcmGameContext';
 import qcmGameService from '../../services/qcmGame.service';
+import AnimatedNumber from '../../components/dashboard/AnimatedNumber';
 import {
   Heart, Clock, Trophy, Loader2, Lightbulb,
   CheckCircle2, XCircle, ArrowRight, AlertTriangle, Zap,
@@ -278,7 +279,7 @@ function QcmGamePlayContent() {
             <div className="flex items-center gap-2.5">
               <div className="flex items-center gap-1.5 bg-primary/10 border border-primary/20 rounded-full px-3 py-1">
                 <Trophy className="h-3 w-3 text-primary" />
-                <span className="font-black text-primary text-xs tabular-nums">{score}</span>
+                <AnimatedNumber value={score} pop className="font-black text-primary text-xs" />
               </div>
               <button onClick={abandon}
                 className="text-[10px] text-white/20 hover:text-white/55 px-2 py-1 rounded-lg hover:bg-white/[0.05] transition-colors">

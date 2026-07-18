@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Heart, Timer, Trophy, ArrowLeft, RotateCcw, Loader2, Check } from "lucide-react";
 import smatchGameService from "../../services/smatchGame.service";
+import AnimatedNumber from "../../components/dashboard/AnimatedNumber";
 
 const TIMER_SECONDS = { TIME_ATTACK: 90, SURVIVAL: 120, ZEN: null };
 
@@ -188,7 +189,7 @@ export default function SmatchGamePlay() {
               </span>
             )}
             <span className="flex items-center gap-1.5 font-bold text-orange-400">
-              <Trophy className="h-4 w-4" /> {score}
+              <Trophy className="h-4 w-4" /> <AnimatedNumber value={score} pop />
             </span>
           </div>
         </div>
