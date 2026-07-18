@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { QcmGameProvider, useQcmGame } from '../../contexts/QcmGameContext';
 import qcmGameService from '../../services/qcmGame.service';
-import { Loader2, HelpCircle, Zap, Timer, Clock, ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
+import { Loader2, Braces, Bolt, Timer, Clock, ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 
 const MODES = [
   {
     key: 'BLITZ',
     label: 'Blitz',
     sub: '2 min',
-    icon: Zap,
+    icon: Bolt,
     initialTime: 60,
     maxTime: 90,
     desc: 'Sprint intense. Questions enchaînées à vitesse maximale.',
@@ -184,7 +184,7 @@ function QcmGameConfigContent() {
           className="flex items-center gap-4"
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20">
-            <HelpCircle className="h-5 w-5 text-primary" />
+            <Braces className="h-5 w-5 text-primary" />
           </div>
           <div>
             <h1 className="text-3xl font-black leading-none tracking-tight text-white">QCM</h1>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  TrendingUp, Trophy, Target, Brain, Zap, Loader2, Flame,
-  BarChart3, Star, CheckCircle2, XCircle, Clock,
+  ChartSpline, Medal, Crosshair, Dices, Sigma, Loader2, Milestone,
+  ChartNoAxesCombined, Star, CheckCircle2, XCircle, Clock,
 } from "lucide-react";
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis,
@@ -77,7 +77,7 @@ export default function PerformancePage() {
         <div className="relative w-12 h-12">
           <div className="absolute inset-0 bg-primary/15 rounded-full animate-ping" />
           <div className="relative flex items-center justify-center w-12 h-12 bg-primary/10 border border-primary/20 rounded-full">
-            <BarChart3 className="h-5 w-5 text-primary" />
+            <ChartNoAxesCombined className="h-5 w-5 text-primary" />
           </div>
         </div>
       </div>
@@ -102,7 +102,7 @@ export default function PerformancePage() {
         <h1 className="mt-1 text-3xl font-black tracking-tight text-white">Performance.</h1>
         <div className="flex flex-col items-center py-28 gap-4 text-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/[0.07] bg-white/2">
-            <Target className="h-7 w-7 text-white/20" />
+            <Crosshair className="h-7 w-7 text-white/20" />
           </div>
           <h3 className="text-base font-black text-white/50">Aucune donnée pour l'instant</h3>
           <p className="text-sm text-white/25">Jouez quelques parties pour voir vos stats ici.</p>
@@ -178,10 +178,10 @@ export default function PerformancePage() {
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1, ease: EASE }}
         className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          { icon: Trophy,  label: "Meilleur score",  value: stats.bestScore || 0,                               accent: true },
-          { icon: Brain,   label: "Parties",          value: stats.totalGamesPlayed,                             accent: false },
-          { icon: Flame,   label: "Série",            value: `${stats.currentStreak || 0}j`,                    accent: false },
-          { icon: Zap,     label: "Total pts",        value: (stats.totalPointsEarned || 0).toLocaleString(),   accent: false },
+          { icon: Medal,  label: "Meilleur score",  value: stats.bestScore || 0,                               accent: true },
+          { icon: Dices,   label: "Parties",          value: stats.totalGamesPlayed,                             accent: false },
+          { icon: Milestone,   label: "Série",            value: `${stats.currentStreak || 0}j`,                    accent: false },
+          { icon: Sigma,     label: "Total pts",        value: (stats.totalPointsEarned || 0).toLocaleString(),   accent: false },
         ].map(({ icon: Icon, label, value, accent }) => (
           <div key={label} className={`rounded-2xl border p-5 flex flex-col gap-2 ${
             accent ? "border-primary/25 bg-primary/6" : "border-white/[0.07] bg-white/2"
@@ -229,7 +229,7 @@ export default function PerformancePage() {
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.19, ease: EASE }}
           className={`${cardClass} space-y-4`}>
           <div className="flex items-center gap-2">
-            <BarChart3 className="h-4 w-4 text-primary" />
+            <ChartNoAxesCombined className="h-4 w-4 text-primary" />
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25">Précision par catégorie</p>
           </div>
           <ResponsiveContainer width="100%" height={220}>
@@ -285,7 +285,7 @@ export default function PerformancePage() {
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.25, ease: EASE }}
           className={`${cardClass} space-y-4`}>
           <div className="flex items-center gap-2">
-            <TrendingUp className="h-4 w-4 text-primary" />
+            <ChartSpline className="h-4 w-4 text-primary" />
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25">Score moyen par mode</p>
           </div>
           <ResponsiveContainer width="100%" height={160}>

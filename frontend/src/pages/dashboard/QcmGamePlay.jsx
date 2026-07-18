@@ -5,8 +5,8 @@ import { QcmGameProvider, useQcmGame } from '../../contexts/QcmGameContext';
 import qcmGameService from '../../services/qcmGame.service';
 import AnimatedNumber from '../../components/dashboard/AnimatedNumber';
 import {
-  Heart, Clock, Trophy, Loader2, Lightbulb,
-  CheckCircle2, XCircle, ArrowRight, AlertTriangle, Zap,
+  Heart, Clock, Medal, Loader2, Lightbulb,
+  CheckCircle2, XCircle, ArrowRight, AlertTriangle, Bolt,
 } from 'lucide-react';
 
 function fmt(s) {
@@ -212,7 +212,7 @@ function QcmGamePlayContent() {
           <div className="relative w-14 h-14 mx-auto">
             <div className="absolute inset-0 bg-primary/15 rounded-full animate-ping" />
             <div className="relative flex items-center justify-center w-14 h-14 bg-primary/10 border border-primary/20 rounded-full">
-              <Zap className="h-6 w-6 text-primary" />
+              <Bolt className="h-6 w-6 text-primary" />
             </div>
           </div>
           <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">Chargement...</p>
@@ -284,7 +284,7 @@ function QcmGamePlayContent() {
             </div>
             <div className="flex items-center gap-2.5">
               <div className="flex items-center gap-1.5 bg-primary/10 border border-primary/20 rounded-full px-3 py-1">
-                <Trophy className="h-3 w-3 text-primary" />
+                <Medal className="h-3 w-3 text-primary" />
                 <AnimatedNumber value={score} pop className="font-black text-primary text-xs" />
               </div>
               <button onClick={abandon}

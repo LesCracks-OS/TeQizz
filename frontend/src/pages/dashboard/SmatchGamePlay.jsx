@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart, Timer, Trophy, ArrowLeft, RotateCcw, Loader2, Check } from "lucide-react";
+import { Heart, Timer, Medal, ArrowLeft, RotateCcw, Loader2, Check } from "lucide-react";
 import smatchGameService from "../../services/smatchGame.service";
 import AnimatedNumber from "../../components/dashboard/AnimatedNumber";
 
@@ -214,7 +214,7 @@ export default function SmatchGamePlay() {
               </span>
             )}
             <span className="flex items-center gap-1.5 font-bold text-orange-400">
-              <Trophy className="h-4 w-4" /> <AnimatedNumber value={score} pop />
+              <Medal className="h-4 w-4" /> <AnimatedNumber value={score} pop />
             </span>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function SmatchGamePlay() {
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
             className="bg-card border border-border rounded-3xl p-8 w-full max-w-sm text-center space-y-5">
             <div className="h-14 w-14 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center mx-auto">
-              <Trophy className="h-7 w-7 text-orange-400" />
+              <Medal className="h-7 w-7 text-orange-400" />
             </div>
             <div>
               <h3 className="text-2xl font-black">Partie terminée !</h3>

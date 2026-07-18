@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Trophy, HelpCircle, Shuffle, Loader2, Crown, Medal } from "lucide-react";
+import { ChartNoAxesCombined, Loader2, Crown, Medal, Award, Braces, Puzzle } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useAuth } from "@/contexts/AuthContext";
 import qcmGameService from "@/services/qcmGame.service";
@@ -25,9 +25,9 @@ const QCM_MODES = [
 ];
 
 const PODIUM_CFG = [
-  { place: 1, order: 2, height: "h-28", color: "#F59E0B", glow: "bg-yellow-400/20",  ring: "ring-yellow-400/40",  size: "h-16 w-16" },
-  { place: 2, order: 1, height: "h-20", color: "#94A3B8", glow: "bg-slate-400/10",   ring: "ring-slate-400/30",   size: "h-12 w-12" },
-  { place: 3, order: 3, height: "h-14", color: "#B45309", glow: "bg-amber-700/10",   ring: "ring-amber-700/30",   size: "h-12 w-12" },
+  { place: 1, order: 2, height: "h-32 sm:h-40", color: "#F59E0B", glow: "bg-yellow-400/20", ring: "ring-yellow-400/50", size: "h-20 w-20 sm:h-24 sm:w-24" },
+  { place: 2, order: 1, height: "h-24 sm:h-28", color: "#94A3B8", glow: "bg-slate-400/10",  ring: "ring-slate-400/40",  size: "h-16 w-16 sm:h-20 sm:w-20" },
+  { place: 3, order: 3, height: "h-16 sm:h-20", color: "#B45309", glow: "bg-amber-700/10",  ring: "ring-amber-700/40",  size: "h-16 w-16 sm:h-20 sm:w-20" },
 ];
 
 function PodiumSlot({ entry, cfg, delay }) {
@@ -55,10 +55,10 @@ function PodiumSlot({ entry, cfg, delay }) {
       </div>
 
       <div className="text-center">
-        <p className="text-xs font-black text-white/70 max-w-[80px] truncate">{entry.username}</p>
-        <p className="text-base font-black tabular-nums mt-0.5" style={{ color: cfg.color }}>
+        <p className="text-sm font-black text-white/80 max-w-[110px] truncate">{entry.username}</p>
+        <p className="text-2xl font-black tabular-nums mt-0.5" style={{ color: cfg.color }}>
           {Math.round(entry.compositeScore ?? 0)}
-          <span className="text-[10px] font-normal text-white/25 ml-0.5">rating</span>
+          <span className="text-[10px] font-normal text-white/25 ml-1">rating</span>
         </p>
         {entry.highestDifficulty && (
           <span className={`inline-block mt-1 text-[9px] font-black uppercase tracking-wider border rounded px-1.5 py-0.5 ${DIFF_BADGE[entry.highestDifficulty] ?? "text-white/30 border-white/10"}`}>
@@ -68,7 +68,7 @@ function PodiumSlot({ entry, cfg, delay }) {
       </div>
 
       <div
-        className={`w-20 rounded-t-2xl flex items-end justify-center pb-2.5 text-2xl font-black ${cfg.height}`}
+        className={`w-24 sm:w-28 rounded-t-2xl flex items-end justify-center pb-3 text-3xl font-black ${cfg.height}`}
         style={{
           background: `linear-gradient(to top, ${cfg.color}22, ${cfg.color}08)`,
           border: `1px solid ${cfg.color}25`,
@@ -109,14 +109,14 @@ function QcmLeaderboard() {
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6 sm:space-y-8">
       {/* Mode pills */}
       <div className="flex flex-wrap gap-2">
         {QCM_MODES.map(({ key, label }) => (
           <button
             key={key}
             onClick={() => setGameMode(key)}
-            className={`px-4 py-1.5 rounded-full border text-xs font-black transition-all duration-200 ${
+            className={`px-4 sm:px-5 py-2 rounded-full border text-xs sm:text-sm font-black transition-all duration-200 ${
               gameMode === key
                 ? "border-primary/40 bg-primary/10 text-primary"
                 : "border-white/[0.07] text-white/30 hover:border-white/20 hover:text-white/60"
@@ -134,7 +134,7 @@ function QcmLeaderboard() {
             <div className="relative w-10 h-10">
               <div className="absolute inset-0 bg-primary/15 rounded-full animate-ping" />
               <div className="relative flex items-center justify-center w-10 h-10 bg-primary/10 border border-primary/20 rounded-full">
-                <Trophy className="h-4 w-4 text-primary" />
+                <Award className="h-4 w-4 text-primary" />
               </div>
             </div>
           </motion.div>
@@ -149,7 +149,7 @@ function QcmLeaderboard() {
           <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="flex flex-col items-center py-28 gap-4">
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/[0.07] bg-white/2">
-              <Trophy className="h-7 w-7 text-white/15" />
+              <Award className="h-7 w-7 text-white/15" />
             </div>
             <p className="text-sm text-white/25">Aucun joueur pour ce mode — soyez le premier.</p>
           </motion.div>
@@ -177,7 +177,7 @@ function QcmLeaderboard() {
             {/* Full rank list */}
             <div className="rounded-2xl border border-white/[0.07] bg-white/2 overflow-hidden">
               {/* Header */}
-              <div className="grid grid-cols-[2rem_1fr_auto_auto_auto] gap-4 px-5 py-3 border-b border-white/[0.06]">
+              <div className="grid grid-cols-[2rem_1fr_auto_auto_auto] gap-3 sm:gap-4 px-4 sm:px-6 py-3 border-b border-white/[0.06]">
                 <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white/20">#</span>
                 <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white/20">Joueur</span>
                 <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white/20 hidden sm:block text-right">Précision</span>
@@ -195,7 +195,7 @@ function QcmLeaderboard() {
                       initial={{ opacity: 0, x: -8 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: Math.min(i * 0.025, 0.5), ease: EASE }}
-                      className={`grid grid-cols-[2rem_1fr_auto_auto_auto] gap-4 items-center px-5 py-3.5 transition-colors ${
+                      className={`grid grid-cols-[2rem_1fr_auto_auto_auto] gap-3 sm:gap-4 items-center px-4 sm:px-6 py-4 transition-colors ${
                         isMe
                           ? "bg-primary/[0.06] border-l-2 border-l-primary/50"
                           : isTop3
@@ -206,20 +206,20 @@ function QcmLeaderboard() {
                       {/* Rank */}
                       <div className="flex items-center justify-center w-8">
                         {isTop3 ? medalIcon(entry.rank) : (
-                          <span className="text-xs font-mono text-white/25">{entry.rank}</span>
+                          <span className="text-sm font-mono text-white/25">{entry.rank}</span>
                         )}
                       </div>
 
                       {/* Player */}
                       <div className="flex items-center gap-3 min-w-0">
-                        <Avatar className="h-8 w-8 shrink-0 ring-1 ring-white/10">
+                        <Avatar className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 ring-1 ring-white/10">
                           <AvatarImage src={entry.avatarUrl} />
-                          <AvatarFallback className="text-[10px] font-black bg-white/5 text-white/40">
+                          <AvatarFallback className="text-xs font-black bg-white/5 text-white/50">
                             {getInitials(entry.username)}
                           </AvatarFallback>
                         </Avatar>
                         <div className="min-w-0">
-                          <p className={`text-sm truncate ${isTop3 ? "font-black text-white/85" : "font-semibold text-white/65"}`}>
+                          <p className={`text-sm sm:text-base truncate ${isTop3 ? "font-black text-white/90" : "font-semibold text-white/70"}`}>
                             {entry.username}
                             {isMe && <span className="ml-2 text-[10px] font-black text-primary/70 uppercase tracking-wider">vous</span>}
                           </p>
@@ -249,7 +249,7 @@ function QcmLeaderboard() {
 
                       {/* Rating (fair composite — same value that decides the rank) */}
                       <div className="text-right">
-                        <span className={`text-base font-black tabular-nums ${isTop3 ? "text-primary" : "text-white/60"}`}>
+                        <span className={`text-lg sm:text-xl font-black tabular-nums ${isTop3 ? "text-primary" : "text-white/70"}`}>
                           {Math.round(entry.compositeScore ?? 0)}
                         </span>
                       </div>
@@ -275,7 +275,7 @@ function SmatchLeaderboard() {
       <div className="relative">
         <div className="absolute inset-0 bg-orange-500/10 rounded-2xl blur-xl scale-125" />
         <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-orange-500/20 bg-orange-500/8">
-          <Shuffle className="h-7 w-7 text-orange-400" />
+          <Puzzle className="h-7 w-7 text-orange-400" />
         </div>
       </div>
       <div className="text-center">
@@ -290,30 +290,36 @@ export default function LeaderboardPage() {
   const [tab, setTab] = useState("qcm");
 
   return (
-    <div className="px-6 py-10 max-w-4xl mx-auto space-y-7">
+    <div className="px-5 sm:px-6 py-6 sm:py-10 max-w-5xl mx-auto space-y-6 sm:space-y-8">
 
       {/* Header */}
-      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: EASE }}>
-        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-white/25">Rankings</p>
-        <h1 className="mt-1 text-3xl font-black tracking-tight text-white">Classement.</h1>
+      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: EASE }}
+        className="flex items-center gap-4">
+        <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20 shrink-0">
+          <ChartNoAxesCombined className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
+        </div>
+        <div>
+          <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white leading-none">Classement</h1>
+          <p className="text-xs sm:text-sm text-white/30 mt-1">Le rating récompense la difficulté atteinte, pas le volume.</p>
+        </div>
       </motion.div>
 
       {/* Tab switcher */}
-      <div className="flex gap-1 p-1 rounded-2xl border border-white/[0.07] bg-white/2 w-fit">
+      <div className="flex gap-1 p-1 rounded-2xl border border-white/[0.07] bg-white/2 w-full sm:w-fit">
         {[
-          { key: "qcm",    icon: HelpCircle, label: "QCM" },
-          { key: "smatch", icon: Shuffle,    label: "Smatch" },
+          { key: "qcm",    icon: Braces, label: "QCM" },
+          { key: "smatch", icon: Puzzle, label: "Smatch" },
         ].map(({ key, icon: Icon, label }) => (
           <button
             key={key}
             onClick={() => setTab(key)}
-            className={`flex items-center gap-2 px-5 py-2 rounded-xl text-sm font-black transition-all duration-200 ${
+            className={`flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-black transition-all duration-200 ${
               tab === key
                 ? "bg-white/[0.07] text-white shadow-sm"
                 : "text-white/30 hover:text-white/60"
             }`}
           >
-            <Icon className="h-3.5 w-3.5" />
+            <Icon className="h-4 w-4" />
             {label}
           </button>
         ))}

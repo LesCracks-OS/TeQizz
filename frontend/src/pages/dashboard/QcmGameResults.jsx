@@ -3,8 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import qcmGameService from '../../services/qcmGame.service';
 import {
-  Trophy, Target, Clock, TrendingUp, CheckCircle2, XCircle,
-  Lightbulb, Loader2, Play, Home, ChevronDown, ChevronUp, Zap,
+  Medal, Crosshair, Clock, ChartSpline, CheckCircle2, XCircle,
+  Lightbulb, Loader2, Play, Home, ChevronDown, ChevronUp, Bolt,
 } from 'lucide-react';
 
 const DIFFICULTY_COLORS = {
@@ -123,7 +123,7 @@ export default function QcmGameResults() {
           <div className="relative w-12 h-12 mx-auto">
             <div className="absolute inset-0 bg-primary/15 rounded-full animate-ping" />
             <div className="relative flex items-center justify-center w-12 h-12 bg-primary/10 border border-primary/20 rounded-full">
-              <Trophy className="h-5 w-5 text-primary" />
+              <Medal className="h-5 w-5 text-primary" />
             </div>
           </div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-white/25">Chargement des résultats...</p>
@@ -164,9 +164,9 @@ export default function QcmGameResults() {
   };
 
   const getInsight = () => {
-    if (accuracy >= 90) return { icon: Trophy,    text: "Excellent ! Tu maîtrises cette catégorie !", color: 'text-yellow-400' };
-    if (accuracy >= 75) return { icon: TrendingUp, text: "Belle performance ! Continue à t'entraîner.", color: 'text-primary' };
-    if (accuracy >= 50) return { icon: Target,     text: "Bon effort ! Revois les questions manquées.", color: 'text-yellow-400' };
+    if (accuracy >= 90) return { icon: Medal,    text: "Excellent ! Tu maîtrises cette catégorie !", color: 'text-yellow-400' };
+    if (accuracy >= 75) return { icon: ChartSpline, text: "Belle performance ! Continue à t'entraîner.", color: 'text-primary' };
+    if (accuracy >= 50) return { icon: Crosshair,     text: "Bon effort ! Revois les questions manquées.", color: 'text-yellow-400' };
     return                      { icon: Lightbulb,  text: "Continue à t'entraîner — concentre-toi sur les concepts.", color: 'text-orange-400' };
   };
 
@@ -190,7 +190,7 @@ export default function QcmGameResults() {
 
         <div className="relative">
           <div className="flex items-center justify-center w-16 h-16 mx-auto bg-yellow-400/10 border border-yellow-400/20 rounded-2xl mb-4">
-            <Trophy className="h-7 w-7 text-yellow-400" />
+            <Medal className="h-7 w-7 text-yellow-400" />
           </div>
           <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/25 mb-2">Résultats</p>
           <h1 className="text-[5rem] font-black tabular-nums leading-none text-white">{totalScore}</h1>
@@ -215,8 +215,8 @@ export default function QcmGameResults() {
         className="grid grid-cols-4 gap-3"
       >
         {[
-          { icon: Target,      value: `${(accuracy || 0).toFixed(0)}%`, label: "Précision",  iconClass: 'text-primary' },
-          { icon: Zap,         value: (efficiency || 0).toFixed(1),    label: "Efficacité", iconClass: 'text-orange-400' },
+          { icon: Crosshair,      value: `${(accuracy || 0).toFixed(0)}%`, label: "Précision",  iconClass: 'text-primary' },
+          { icon: Bolt,         value: (efficiency || 0).toFixed(1),    label: "Efficacité", iconClass: 'text-orange-400' },
           { icon: Clock,       value: formatDuration(durationSeconds),  label: "Durée",      iconClass: 'text-purple-400' },
           { icon: CheckCircle2, value: `${correctAnswers || 0}/${totalQuestionsAnswered || 0}`, label: "Correct", iconClass: 'text-emerald-400' },
         ].map(({ icon: Icon, value, label, iconClass }) => (
@@ -243,7 +243,7 @@ export default function QcmGameResults() {
             <p className="font-semibold text-sm text-white/80">{insight.text}</p>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-xs text-white/30">
               <span className="flex items-center gap-1">
-                <TrendingUp className="h-3.5 w-3.5" />
+                <ChartSpline className="h-3.5 w-3.5" />
                 Atteint :{" "}
                 <span className={`font-bold ml-0.5 ${DIFFICULTY_COLORS[maxDifficultyReached || endingDifficulty] || ''}`}>
                   {maxDifficultyReached || endingDifficulty}
@@ -276,7 +276,7 @@ export default function QcmGameResults() {
 
         {efficiency > 0 && (
           <div className="flex items-center gap-2 text-xs text-white/30">
-            <Zap className="h-3.5 w-3.5 text-orange-400" />
+            <Bolt className="h-3.5 w-3.5 text-orange-400" />
             <span>Score par minute :</span>
             <span className="font-semibold text-white/50">{efficiency.toFixed(1)} pts/min</span>
           </div>

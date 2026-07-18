@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Shuffle, Timer, Infinity, Heart, ArrowLeft, Loader2, Layers } from "lucide-react";
+import { Puzzle, Timer, Infinity, Heart, ArrowLeft, Loader2, Layers } from "lucide-react";
 import smatchGameService from "../../services/smatchGame.service";
 
 const MODES = [
@@ -59,7 +59,7 @@ export default function SmatchGameConfig() {
 
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-orange-500/30 bg-orange-500/15">
-            <Shuffle className="h-5 w-5 text-orange-400" />
+            <Puzzle className="h-5 w-5 text-orange-400" />
           </div>
           <div>
             <h1 className="text-3xl font-black leading-none">Smatch</h1>
@@ -139,7 +139,7 @@ export default function SmatchGameConfig() {
             <motion.button initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }}
               disabled={!canStart} onClick={start}
               className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl bg-orange-500 text-white text-sm font-black hover:bg-orange-600 transition-colors disabled:opacity-50">
-              {starting ? <Loader2 className="h-5 w-5 animate-spin" /> : <Shuffle className="h-5 w-5" />}
+              {starting ? <Loader2 className="h-5 w-5 animate-spin" /> : <Puzzle className="h-5 w-5" />}
               {starting ? "Démarrage…" : `Commencer — ${MODES.find(m => m.key === selectedMode)?.label}`}
             </motion.button>
           )}

@@ -581,7 +581,8 @@ public class QcmGameApplicationService
             double compositeScore = computeCompositeScore(userSessions, highestDifficulty);
 
             entries.add(QcmLeaderboardResponse.LeaderboardEntry.builder()
-                    .userId(userId).username(user.getUsername()).avatarUrl(null)
+                    .userId(userId).username(user.getUsername())
+                    .avatarUrl(user.getProfile() != null ? user.getProfile().getAvatarUrl() : null)
                     .compositeScore(compositeScore).totalScore(totalScore).gamesPlayed(gamesPlayed)
                     .accuracy(accuracy).bestScore(bestScore).averageScore(averageScore)
                     .topCategory(topCategory).highestDifficulty(highestDifficulty).difficultyFactor(difficultyFactor)
