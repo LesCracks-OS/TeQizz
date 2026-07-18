@@ -54,6 +54,8 @@ import java.util.List;
  */
 @Component
 @Profile("!test") // Don't run in test profile
+@org.springframework.core.annotation.Order(100) // run AFTER the hash backfill runners (@Order 50/51),
+// so re-imported questions are correctly de-duplicated against already-hashed existing rows
 public class DataInitializer implements CommandLineRunner {
 
     private final RoleRepository roleRepository;
@@ -377,14 +379,12 @@ public class DataInitializer implements CommandLineRunner {
      * Files are automatically detected and imported on application startup.
      */
     private void importQuestionsFromJsonFiles() {
-        // Only import if no questions exist
+        // Import on every boot: the anti-redundancy guard (content_hash) makes it idempotent —
+        // questions already present are skipped, and any NEW questions added to the JSON bank are
+        // picked up even on a database that already has data (the old "skip if not empty" guard
+        // meant new question files never loaded on an existing DB).
         long questionCount = questionRepository.count();
-        System.out.println("[DEBUG] Current question count: " + questionCount);
-
-        if (questionCount > 0) {
-            System.out.println("Questions already exist in database. Skipping JSON import.");
-            return;
-        }
+        System.out.println("[DEBUG] Current question count before import: " + questionCount);
 
         System.out.println("=".repeat(60));
         System.out.println("IMPORTING QUESTIONS FROM JSON FILES");
