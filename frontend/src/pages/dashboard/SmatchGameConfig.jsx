@@ -37,6 +37,8 @@ export default function SmatchGameConfig() {
   const start = async () => {
     if (!canStart) return;
     setStarting(true); setError("");
+    // Remember the last config so "Rejouer" can relaunch instantly without reconfiguring.
+    try { localStorage.setItem("teqizz:lastSmatchConfig", JSON.stringify({ deckId: selectedDeck.id, gameMode: selectedMode })); } catch { /* ignore */ }
     try {
       const session = await smatchGameService.startSession({ deckId: selectedDeck.id, gameMode: selectedMode });
       navigate(`/dashboard/play/smatch/${session.sessionId}`);

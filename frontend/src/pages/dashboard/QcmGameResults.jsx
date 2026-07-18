@@ -88,6 +88,24 @@ export default function QcmGameResults() {
   const [results, setResults] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [replaying, setReplaying] = useState(false);
+
+  // Replay instantly with the exact same config as the last game — no reconfiguration.
+  const handleReplay = async () => {
+    setReplaying(true);
+    let config = null;
+    try { config = JSON.parse(localStorage.getItem('teqizz:lastQcmConfig')); } catch { /* ignore */ }
+    if (!config) { navigate('/dashboard/play/qcm/config'); return; }
+    try {
+      const session = await qcmGameService.createGameSession(config);
+      navigate(`/dashboard/play/qcm/${session.sessionId}`, {
+        state: { showHints: config.showHints, showExplanations: config.showExplanations },
+      });
+    } catch {
+      setReplaying(false);
+      navigate('/dashboard/play/qcm/config');
+    }
+  };
 
   useEffect(() => {
     if (!sessionId) return;
@@ -231,7 +249,11 @@ export default function QcmGameResults() {
                   {maxDifficultyReached || endingDifficulty}
                 </span>
               </span>
-              <span>{endReason === 'LIVES_DEPLETED' ? "Vies épuisées" : "Temps écoulé"}</span>
+              <span>{
+                endReason === 'LIVES_DEPLETED' ? "Vies épuisées"
+                : endReason === 'TIMER_EXPIRED' ? "Temps écoulé"
+                : "Toutes les questions jouées"
+              }</span>
             </div>
           </div>
         </div>
@@ -295,11 +317,12 @@ export default function QcmGameResults() {
         className="flex gap-3"
       >
         <button
-          onClick={() => navigate('/dashboard/play/qcm/configure')}
-          className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-primary text-white text-sm font-black hover:brightness-110 transition-all shadow-xl shadow-primary/20"
+          onClick={handleReplay}
+          disabled={replaying}
+          className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-primary text-white text-sm font-black hover:brightness-110 transition-all shadow-xl shadow-primary/20 disabled:opacity-50"
         >
-          <Play className="h-4 w-4" />
-          Rejouer
+          {replaying ? <Loader2 className="h-4 w-4 animate-spin" /> : <Play className="h-4 w-4" />}
+          {replaying ? 'Relance…' : 'Rejouer'}
         </button>
         <button
           onClick={() => navigate('/dashboard/play')}

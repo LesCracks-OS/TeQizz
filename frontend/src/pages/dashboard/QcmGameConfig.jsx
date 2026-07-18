@@ -136,6 +136,8 @@ function QcmGameConfigContent() {
         showHints,
         showExplanations,
       };
+      // Remember the last config so "Rejouer" can relaunch instantly without reconfiguring.
+      try { localStorage.setItem('teqizz:lastQcmConfig', JSON.stringify(config)); } catch { /* ignore */ }
       const response = await qcmGameService.createGameSession(config);
       setSession(response);
       setConfig(config);

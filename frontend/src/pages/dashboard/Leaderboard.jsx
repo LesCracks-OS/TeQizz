@@ -9,6 +9,14 @@ const EASE = [0.16, 1, 0.3, 1];
 
 const getInitials = (u) => u?.slice(0, 2).toUpperCase() || "??";
 
+// Difficulty reached — the primary driver of rank, surfaced so the ranking reads as fair.
+const DIFF_BADGE = {
+  EASY:   "text-emerald-400 border-emerald-500/25 bg-emerald-500/10",
+  MEDIUM: "text-yellow-400 border-yellow-500/25 bg-yellow-500/10",
+  HARD:   "text-orange-400 border-orange-500/25 bg-orange-500/10",
+  EXPERT: "text-red-400 border-red-500/25 bg-red-500/10",
+};
+
 const QCM_MODES = [
   { key: "ALL",     label: "Tous" },
   { key: "BLITZ",   label: "Blitz" },
@@ -49,11 +57,13 @@ function PodiumSlot({ entry, cfg, delay }) {
       <div className="text-center">
         <p className="text-xs font-black text-white/70 max-w-[80px] truncate">{entry.username}</p>
         <p className="text-base font-black tabular-nums mt-0.5" style={{ color: cfg.color }}>
-          {Math.round(entry.averageScore || 0)}
-          <span className="text-[10px] font-normal text-white/25 ml-0.5">pts</span>
+          {Math.round(entry.compositeScore ?? 0)}
+          <span className="text-[10px] font-normal text-white/25 ml-0.5">rating</span>
         </p>
-        {entry.accuracy != null && (
-          <p className="text-[10px] text-white/30">{(entry.accuracy || 0).toFixed(0)}% acc.</p>
+        {entry.highestDifficulty && (
+          <span className={`inline-block mt-1 text-[9px] font-black uppercase tracking-wider border rounded px-1.5 py-0.5 ${DIFF_BADGE[entry.highestDifficulty] ?? "text-white/30 border-white/10"}`}>
+            {entry.highestDifficulty}
+          </span>
         )}
       </div>
 
@@ -172,7 +182,7 @@ function QcmLeaderboard() {
                 <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white/20">Joueur</span>
                 <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white/20 hidden sm:block text-right">Précision</span>
                 <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white/20 hidden md:block text-right">Parties</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white/20 text-right">Score</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.18em] text-white/20 text-right">Rating</span>
               </div>
 
               <div className="divide-y divide-white/[0.04]">
@@ -213,6 +223,11 @@ function QcmLeaderboard() {
                             {entry.username}
                             {isMe && <span className="ml-2 text-[10px] font-black text-primary/70 uppercase tracking-wider">vous</span>}
                           </p>
+                          {entry.highestDifficulty && (
+                            <span className={`inline-block mt-0.5 text-[9px] font-black uppercase tracking-wider border rounded px-1.5 py-0.5 ${DIFF_BADGE[entry.highestDifficulty] ?? "text-white/30 border-white/10"}`}>
+                              {entry.highestDifficulty}
+                            </span>
+                          )}
                         </div>
                       </div>
 
@@ -232,12 +247,11 @@ function QcmLeaderboard() {
                         <span className="text-xs text-white/25 tabular-nums">{entry.gamesPlayed}</span>
                       </div>
 
-                      {/* Score */}
+                      {/* Rating (fair composite — same value that decides the rank) */}
                       <div className="text-right">
                         <span className={`text-base font-black tabular-nums ${isTop3 ? "text-primary" : "text-white/60"}`}>
-                          {Math.round(entry.averageScore || 0)}
+                          {Math.round(entry.compositeScore ?? 0)}
                         </span>
-                        <span className="text-[10px] text-white/20 ml-0.5">pts</span>
                       </div>
                     </motion.div>
                   );

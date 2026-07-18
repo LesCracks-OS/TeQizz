@@ -36,12 +36,37 @@ export default function SmatchGamePlay() {
   const [timeLeft, setTimeLeft] = useState(null);
   const [result, setResult] = useState(null);
 
+  const [replaying, setReplaying] = useState(false);
   const finishedRef = useRef(false);
   const attemptStartRef = useRef(Date.now());
 
-  // Load session + deck pairs.
+  // Replay instantly with the same deck + mode — no reconfiguration.
+  const handleReplay = async () => {
+    setReplaying(true);
+    let cfg = null;
+    try { cfg = JSON.parse(localStorage.getItem("teqizz:lastSmatchConfig")); } catch { /* ignore */ }
+    if (!cfg) { navigate("/dashboard/play/smatch/config"); return; }
+    try {
+      const s = await smatchGameService.startSession(cfg);
+      navigate(`/dashboard/play/smatch/${s.sessionId}`);
+    } catch {
+      setReplaying(false);
+      navigate("/dashboard/play/smatch/config");
+    }
+  };
+
+  // Load session + deck pairs. Also resets transient state so an in-place replay
+  // (same route, new sessionId) starts from a clean board.
   useEffect(() => {
     let cancelled = false;
+    finishedRef.current = false;
+    setMatched(new Set());
+    setSelectedTerm(null);
+    setSelectedDef(null);
+    setWrong(null);
+    setResult(null);
+    setReplaying(false);
+    setLoading(true);
     (async () => {
       try {
         const s = await smatchGameService.getSession(sessionId);
@@ -255,8 +280,9 @@ export default function SmatchGamePlay() {
               <button onClick={() => navigate("/dashboard/play")} className="flex-1 py-3 rounded-2xl border border-border text-sm font-bold hover:bg-muted transition-colors">
                 Retour
               </button>
-              <button onClick={() => navigate("/dashboard/play/smatch/config")} className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl bg-orange-500 text-white text-sm font-bold hover:bg-orange-600 transition-colors">
-                <RotateCcw className="h-4 w-4" /> Rejouer
+              <button onClick={handleReplay} disabled={replaying} className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl bg-orange-500 text-white text-sm font-bold hover:bg-orange-600 transition-colors disabled:opacity-50">
+                {replaying ? <Loader2 className="h-4 w-4 animate-spin" /> : <RotateCcw className="h-4 w-4" />}
+                {replaying ? "Relance…" : "Rejouer"}
               </button>
             </div>
           </motion.div>

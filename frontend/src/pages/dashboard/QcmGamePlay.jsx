@@ -167,8 +167,14 @@ function QcmGamePlayContent() {
       const res = await qcmGameService.getNextQuestion(sessionId);
       setQuestion(res);
     } catch (e) {
-      if (e.message?.includes('completed') || e.message?.includes('Game over')) gameOver();
-      else setError(e.message);
+      const m = e.message || '';
+      // Any terminal condition (out of questions, already completed, game over) → results screen,
+      // never a stuck error state.
+      if (m.includes('No more questions') || m.includes('completed') || m.includes('Game over')) {
+        navigate(`/dashboard/play/qcm/${sessionId}/results`);
+      } else {
+        setError(m);
+      }
     } finally { setLoading(false); }
   }, [sessionId, setQuestion, setLoading, setError, gameOver]);
 

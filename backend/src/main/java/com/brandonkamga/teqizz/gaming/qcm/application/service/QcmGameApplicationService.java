@@ -184,6 +184,14 @@ public class QcmGameApplicationService
         QuestionLevelType currentDifficulty = determineCurrentDifficulty(session.getTotalScore(), gameMode);
         Question question = selectNextQuestion(session, answeredQuestions, currentDifficulty);
 
+        // Ran out of questions matching this session → end the game cleanly instead of erroring,
+        // so the player always reaches the results screen (never a stuck, un-finishable game).
+        if (question == null) {
+            session.complete();
+            gameSessionRepository.save(session);
+            throw new BadRequestException("No more questions available — game completed");
+        }
+
         List<Answer> answers = answerRepository.findByQuestionIdAndIsActiveTrue(question.getId());
         Collections.shuffle(answers);
 
@@ -346,7 +354,16 @@ public class QcmGameApplicationService
                 .max(Comparator.comparingInt(this::getDifficultyOrder))
                 .orElse(QuestionLevelType.EASY);
 
-        String endReason = session.getLivesRemaining() <= 0 ? "LIVES_DEPLETED" : "TIMER_EXPIRED";
+        // Distinguish the three ways a game ends so the results screen tells the truth:
+        // out of lives, timer ran out, or all available questions answered.
+        String endReason;
+        if (session.getLivesRemaining() <= 0) {
+            endReason = "LIVES_DEPLETED";
+        } else if (session.getCurrentTimerSeconds() != null && session.getCurrentTimerSeconds() <= 0) {
+            endReason = "TIMER_EXPIRED";
+        } else {
+            endReason = "COMPLETED";
+        }
 
         return QcmGameResultResponse.builder()
                 .sessionId(session.getId())
@@ -556,9 +573,8 @@ public class QcmGameApplicationService
                     .map(Map.Entry::getKey).orElse("N/A");
 
             String highestDifficulty = highestDifficultiesMap.getOrDefault(userId, "EASY");
-            int difficultyFactor = getDifficultyFactor(highestDifficulty);
-            double normalizedAvgScore = Math.min(averageScore / 100.0 * 100, 100);
-            double compositeScore = Math.min((normalizedAvgScore * 0.5) + (accuracy * 0.3) + (difficultyFactor * 5), 100);
+            int difficultyFactor = getDifficultyFactor(highestDifficulty); // EASY 1 → EXPERT 4
+            double compositeScore = computeCompositeScore(userSessions, highestDifficulty);
 
             entries.add(QcmLeaderboardResponse.LeaderboardEntry.builder()
                     .userId(userId).username(user.getUsername()).avatarUrl(null)
@@ -636,7 +652,8 @@ public class QcmGameApplicationService
             return available.get(0);
         }
 
-        throw new BadRequestException("No more questions available");
+        // Pool exhausted for this session — caller ends the game cleanly (see getNextQuestion).
+        return null;
     }
 
     private QuestionLevelType determineCurrentDifficulty(int currentScore, GameMode gameMode) {
@@ -735,11 +752,34 @@ public class QcmGameApplicationService
         return answers.get(answers.size() - 1).getQuestion().getLevel().getLevelName().name();
     }
 
+    /**
+     * Fair composite rating in [0, 100). SINGLE SOURCE OF TRUTH for ranking, used by both the
+     * public leaderboard and a player's own position. Difficulty reached forms non-overlapping
+     * 25-point bands (EASY/MEDIUM/HARD/EXPERT), so climbing a tier always outranks any volume of
+     * lower-tier play; within a band, accuracy and a saturating experience factor decide.
+     */
+    private double computeCompositeScore(List<GameSession> userSessions, String highestDifficulty) {
+        int gamesPlayed = userSessions.size();
+        if (gamesPlayed == 0) return 0.0;
+        int totalQuestions = userSessions.stream().mapToInt(GameSession::getTotalQuestions).sum();
+        int totalCorrect = userSessions.stream().mapToInt(GameSession::getCorrectAnswers).sum();
+        double accuracy01 = totalQuestions > 0 ? (double) totalCorrect / totalQuestions : 0.0;
+        accuracy01 = Math.max(0.0, Math.min(accuracy01, 1.0));
+        double experience01 = gamesPlayed / (gamesPlayed + 15.0); // diminishing returns
+        double tierBase = (getDifficultyFactor(highestDifficulty) - 1) * 25.0;
+        double qualityWithinTier = (0.70 * accuracy01 + 0.30 * experience01) * 24.9; // < 25 → stays in band
+        return tierBase + qualityWithinTier;
+    }
+
     private int calculateLeaderboardPosition(Long userId) {
-        Map<Long, Integer> scores = gameSessionRepository.findByCompletedAtIsNotNull().stream()
-                .collect(Collectors.groupingBy(s -> s.getUser().getId(), Collectors.summingInt(GameSession::getTotalScore)));
-        List<Map.Entry<Long, Integer>> sorted = scores.entrySet().stream()
-                .sorted((a, b) -> Integer.compare(b.getValue(), a.getValue())).collect(Collectors.toList());
+        Map<Long, List<GameSession>> byUser = gameSessionRepository.findByCompletedAtIsNotNull().stream()
+                .collect(Collectors.groupingBy(s -> s.getUser().getId()));
+        Map<Long, String> highest = getHighestDifficultiesForUsers(byUser.keySet());
+        List<Map.Entry<Long, Double>> sorted = byUser.entrySet().stream()
+                .map(e -> Map.entry(e.getKey(),
+                        computeCompositeScore(e.getValue(), highest.getOrDefault(e.getKey(), "EASY"))))
+                .sorted((a, b) -> Double.compare(b.getValue(), a.getValue()))
+                .collect(Collectors.toList());
         for (int i = 0; i < sorted.size(); i++) {
             if (sorted.get(i).getKey().equals(userId)) return i + 1;
         }
