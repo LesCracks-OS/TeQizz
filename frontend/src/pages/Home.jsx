@@ -11,17 +11,6 @@ import AuthModal from "@/components/auth/AuthModal";
 // DATA
 // ─────────────────────────────────────────────────────────────────────────────
 
-const LIVE_FEED = [
-  { user: "axelr",    val: "940 pts",    mode: "Blitz",    ago: "2m" },
-  { user: "sophiabe", val: "rank #12",   mode: "Classic",  ago: "5m" },
-  { user: "mrquiz",   val: "1 240 pts",  mode: "Rush",     ago: "8m" },
-  { user: "lena_k",   val: "streak 7j",  mode: "",         ago: "12m" },
-  { user: "devhub",   val: "780 pts",    mode: "Blitz",    ago: "15m" },
-  { user: "camille7", val: "rank #3",    mode: "Classic",  ago: "18m" },
-  { user: "noxvoid",  val: "1 080 pts",  mode: "Survival", ago: "22m" },
-  { user: "julek",    val: "860 pts",    mode: "Rush",     ago: "27m" },
-];
-
 const FAQ_ITEMS = [
   {
     q: "C'est quoi TeQizz ?",
@@ -151,42 +140,6 @@ function GameCard() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// LIVE ACTIVITY BAR
-// ─────────────────────────────────────────────────────────────────────────────
-
-function LiveBar() {
-  return (
-    <div className="relative overflow-hidden bg-[#050505] border-y border-white/[0.05] py-3">
-      <div className="absolute left-0 inset-y-0 z-10 flex items-center pl-4 pr-14 bg-gradient-to-r from-[#050505] via-[#050505] to-transparent pointer-events-none">
-        <span className="flex items-center gap-2 text-[10px] font-black tracking-[0.25em] uppercase text-red-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" />
-          LIVE
-        </span>
-      </div>
-      <div className="absolute right-0 inset-y-0 z-10 w-20 bg-gradient-to-l from-[#050505] to-transparent pointer-events-none" />
-      <motion.div
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 44, repeat: Infinity, ease: "linear" }}
-        className="flex gap-12 whitespace-nowrap pl-28 font-mono"
-      >
-        {[...LIVE_FEED, ...LIVE_FEED].map((f, i) => (
-          <span key={i} className="flex items-center gap-3 text-[11px] shrink-0">
-            <span className="text-white/25">{f.ago}</span>
-            <span className="text-white/70 font-semibold">{f.user}</span>
-            <span className="text-primary font-black">{f.val}</span>
-            {f.mode && (
-              <span className="text-[10px] text-white/25 border border-white/[0.07] rounded px-1.5 py-0.5">
-                {f.mode}
-              </span>
-            )}
-          </span>
-        ))}
-      </motion.div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
 // FAQ ITEM
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -304,8 +257,8 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="mb-4 flex items-center gap-2 text-[10px] font-mono tracking-[0.18em] text-white/30 uppercase"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-              2 845 joueurs en ligne
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+              Gratuit · Open source · Classé
             </motion.p>
 
             <h1 className="text-[clamp(2rem,5.5vw,5rem)] font-black leading-[0.9] tracking-[-0.03em]">
@@ -396,10 +349,10 @@ export default function Home() {
               className="mt-12 pt-8 border-t border-white/[0.07] grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-0 sm:divide-x sm:divide-white/[0.07]"
             >
               {[
-                { val: "2.8K+", label: "joueurs" },
-                { val: "50K+",  label: "questions" },
-                { val: "1.2M",  label: "parties" },
-                { val: "30+",   label: "pays" },
+                { val: "2", label: "jeux" },
+                { val: "∞", label: "parties gratuites" },
+                { val: "100%", label: "open source" },
+                { val: "0€", label: "pour jouer" },
               ].map(s => (
                 <div key={s.label} className="sm:px-6 first:pl-0 last:pr-0">
                   <p className="text-2xl font-black tabular-nums">{s.val}</p>
@@ -426,11 +379,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════ */}
-      {/*  LIVE BAR                                                          */}
-      {/* ═══════════════════════════════════════════════════════════════════ */}
-      <LiveBar />
 
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/*  GAMES BENTO                                                       */}
