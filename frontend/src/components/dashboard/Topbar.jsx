@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Menu } from "lucide-react";
+import { Menu, ArrowLeft } from "lucide-react";
 
 const PAGE_TITLES = {
   "/dashboard/play":        "Play",
@@ -10,6 +10,12 @@ const PAGE_TITLES = {
   "/dashboard/settings":    "Paramètres",
   "/dashboard/about":       "À propos",
 };
+
+// Top-level destinations reached from the sidebar — these never need an in-app back button.
+const ROOT_ROUTES = new Set([
+  "/dashboard", "/dashboard/play", "/dashboard/performance",
+  "/dashboard/leaderboard", "/dashboard/settings", "/dashboard/about",
+]);
 
 const Topbar = ({ onMenuClick }) => {
   const { pathname } = useLocation();
@@ -20,6 +26,8 @@ const Topbar = ({ onMenuClick }) => {
     ?? (pathname.includes("/smatch/") ? "Smatch"
       : pathname.includes("/qcm/") ? "QCM"
       : "Dashboard");
+
+  const showBack = !ROOT_ROUTES.has(pathname);
 
   const initials = () => {
     if (user?.firstName && user?.lastName)
@@ -38,6 +46,15 @@ const Topbar = ({ onMenuClick }) => {
         >
           <Menu className="h-5 w-5" />
         </button>
+        {showBack && (
+          <button
+            onClick={() => navigate(-1)}
+            aria-label="Retour"
+            className="flex items-center justify-center w-9 h-9 rounded-xl text-white/45 hover:text-white hover:bg-white/6 transition-colors"
+          >
+            <ArrowLeft className="h-4.5 w-4.5" />
+          </button>
+        )}
         <div className="flex items-center gap-2.5">
           <h1 className="text-base font-black tracking-tight text-white/90">{title}</h1>
         </div>
