@@ -47,6 +47,7 @@ public class QcmUserStatsResponse {
     // Leaderboard position
     private int leaderboardPosition;
     private int totalPlayers;
+    private double rating; // Fair composite rating [0,100) — same metric that decides the leaderboard rank
 
     @Data
     @Builder

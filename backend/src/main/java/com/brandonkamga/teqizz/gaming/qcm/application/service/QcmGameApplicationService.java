@@ -521,6 +521,8 @@ public class QcmGameApplicationService
 
         int leaderboardPosition = calculateLeaderboardPosition(userId);
         int totalPlayers = gameSessionRepository.countDistinctUsersWithCompletedSessions();
+        String highestDifficultyReached = getHighestDifficultiesForUsers(Set.of(userId)).getOrDefault(userId, "EASY");
+        double rating = computeCompositeScore(sessions, highestDifficultyReached);
 
         return QcmUserStatsResponse.builder()
                 .totalGamesPlayed(totalGamesPlayed).totalQuestionsAnswered(totalQuestionsAnswered)
@@ -528,9 +530,11 @@ public class QcmGameApplicationService
                 .overallAccuracy(overallAccuracy).totalPointsEarned(totalPointsEarned)
                 .bestScore(bestScore).averageScore(averageScore).recentAccuracy(recentAccuracy)
                 .recentGamesPlayed(recentSessions.size()).currentStreak(currentStreak)
+                .highestDifficultyReached(highestDifficultyReached)
                 .bestPerformingLevel(bestPerformingLevel).accuracyByDifficulty(accuracyByDifficulty)
                 .categoryStats(categoryStats).gameModeStats(gameModeStats).recentGames(recentGames)
                 .leaderboardPosition(leaderboardPosition).totalPlayers(totalPlayers)
+                .rating(rating)
                 .build();
     }
 

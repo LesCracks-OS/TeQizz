@@ -138,17 +138,23 @@ export default function PerformancePage() {
         <h1 className="mt-1 text-3xl font-black tracking-tight text-white">Performance.</h1>
       </motion.div>
 
-      {/* Hero */}
+      {/* Hero — leads with the fair rating (the metric that actually decides the rank) */}
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.05, ease: EASE }}
-        className="relative rounded-2xl border border-white/[0.07] bg-white/2 p-7 overflow-hidden">
-        <div className="pointer-events-none absolute -top-16 -right-16 w-56 h-56 rounded-full bg-primary/8 blur-3xl" />
-        <div className="relative flex flex-wrap items-center gap-8">
+        className="relative rounded-2xl border border-white/[0.07] bg-white/2 p-7">
+        <div className="flex flex-wrap items-center gap-8">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25 mb-1">Score moyen</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25 mb-1">Rating</p>
             <p className="text-7xl font-black tabular-nums leading-none text-white">
-              {Math.round(stats.averageScore || 0)}
+              {Math.round(stats.rating || 0)}
             </p>
-            <p className="text-xs text-white/25 mt-1.5">pts / partie</p>
+            <div className="mt-2.5 flex items-center gap-2">
+              {stats.highestDifficultyReached && (
+                <span className={`text-[10px] font-black uppercase tracking-wider border rounded px-1.5 py-0.5 ${difficultyColor[stats.highestDifficultyReached]?.bg || "border-white/10"} ${difficultyColor[stats.highestDifficultyReached]?.text || "text-white/40"}`}>
+                  {stats.highestDifficultyReached}
+                </span>
+              )}
+              <span className="text-xs text-white/25">niveau atteint · moy. {Math.round(stats.averageScore || 0)} pts/partie</span>
+            </div>
           </div>
           <div className="h-14 w-px bg-white/[0.07] hidden sm:block" />
           <div className="flex flex-col items-center gap-1.5">
