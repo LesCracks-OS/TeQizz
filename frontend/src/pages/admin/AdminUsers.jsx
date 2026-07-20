@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { Shield, ShieldOff, Trash2, Search, ChevronDown } from "lucide-react";
 import adminService from "@/services/admin.service";
 import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "@/contexts/ToastContext";
 
 function Badge({ children, variant = "default" }) {
   const styles = {
@@ -43,7 +44,10 @@ export default function AdminUsers() {
     try {
       await adminService.updateUserRole(u.id, newRole);
       setUsers(prev => prev.map(x => x.id === u.id ? { ...x, roleName: newRole } : x));
-    } catch {}
+      toast.success(`Rôle mis à jour : ${u.username} → ${newRole}`);
+    } catch (e) {
+      toast.error(e?.message || "Échec de la mise à jour du rôle");
+    }
     setActionLoading(null);
   };
 
@@ -52,7 +56,10 @@ export default function AdminUsers() {
     try {
       await adminService.deleteUser(id);
       setUsers(prev => prev.filter(x => x.id !== id));
-    } catch {}
+      toast.success("Utilisateur supprimé");
+    } catch (e) {
+      toast.error(e?.message || "Échec de la suppression");
+    }
     setConfirmDelete(null);
     setActionLoading(null);
   };

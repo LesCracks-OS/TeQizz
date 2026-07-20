@@ -123,6 +123,9 @@ public class AdminQcmApplicationService {
     }
 
     public CategoryView createCategory(AdminCategoryRequest request) {
+        if (categoryRepository.findByName(request.getName()).isPresent()) {
+            throw new ConflictException("A category named \"" + request.getName() + "\" already exists");
+        }
         String slug = request.getSlug() != null && !request.getSlug().isBlank()
                 ? request.getSlug() : toSlug(request.getName());
         CategoryJpaEntity category = categoryRepository.save(CategoryJpaEntity.builder()
@@ -171,6 +174,9 @@ public class AdminQcmApplicationService {
     }
 
     public TagView createTag(AdminTagRequest request) {
+        if (tagRepository.existsByName(request.getName())) {
+            throw new ConflictException("A tag named \"" + request.getName() + "\" already exists");
+        }
         TagJpaEntity tag = TagJpaEntity.builder()
                 .name(request.getName())
                 .slug(request.getSlug() != null ? request.getSlug() : toSlug(request.getName()))
