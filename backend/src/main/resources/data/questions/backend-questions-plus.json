@@ -1,0 +1,1409 @@
+{
+  "categoryName": "Backend",
+  "questions": [
+    {
+      "content": "Quel code de statut HTTP indique qu'une ressource a été créée avec succès ?",
+      "explanation": "201 Created signale qu'une nouvelle ressource a été créée suite à la requête (souvent un POST).",
+      "hint": "C'est un code de la famille 2xx, différent de 200.",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "201 Created",
+          "isCorrect": true
+        },
+        {
+          "content": "200 OK",
+          "isCorrect": false
+        },
+        {
+          "content": "204 No Content",
+          "isCorrect": false
+        },
+        {
+          "content": "301 Moved Permanently",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle méthode HTTP est idempotente et sert à remplacer entièrement une ressource ?",
+      "explanation": "PUT remplace la ressource ciblée dans son intégralité ; l'appeler plusieurs fois produit le même état.",
+      "hint": "À distinguer de PATCH qui est partiel.",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "PUT",
+          "isCorrect": true
+        },
+        {
+          "content": "POST",
+          "isCorrect": false
+        },
+        {
+          "content": "PATCH",
+          "isCorrect": false
+        },
+        {
+          "content": "CONNECT",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie l'idempotence d'une méthode HTTP ?",
+      "explanation": "Une opération idempotente produit le même effet côté serveur qu'on l'exécute une ou plusieurs fois.",
+      "hint": "Pense à GET, PUT, DELETE.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Répéter la requête laisse l'état serveur inchangé après le premier appel",
+          "isCorrect": true
+        },
+        {
+          "content": "La requête est toujours mise en cache",
+          "isCorrect": false
+        },
+        {
+          "content": "La requête ne renvoie jamais d'erreur",
+          "isCorrect": false
+        },
+        {
+          "content": "La requête est chiffrée de bout en bout",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Dans une architecture REST, que représente le principe 'stateless' ?",
+      "explanation": "Chaque requête contient toute l'information nécessaire ; le serveur ne conserve pas d'état de session entre les requêtes.",
+      "hint": "Le serveur ne 'se souvient' pas du client entre deux appels.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Le serveur ne conserve aucun contexte client entre les requêtes",
+          "isCorrect": true
+        },
+        {
+          "content": "Le serveur garde la session en mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Le client ne peut pas envoyer de cookies",
+          "isCorrect": false
+        },
+        {
+          "content": "Les réponses ne sont jamais mises en cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel code HTTP renvoie-t-on quand le client n'est pas authentifié ?",
+      "explanation": "401 Unauthorized indique une authentification manquante ou invalide.",
+      "hint": "Ne pas confondre avec 403.",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "401 Unauthorized",
+          "isCorrect": true
+        },
+        {
+          "content": "403 Forbidden",
+          "isCorrect": false
+        },
+        {
+          "content": "400 Bad Request",
+          "isCorrect": false
+        },
+        {
+          "content": "404 Not Found",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle différence entre 401 et 403 ?",
+      "explanation": "401 = non authentifié (identité inconnue) ; 403 = authentifié mais non autorisé à accéder à la ressource.",
+      "hint": "L'un concerne l'identité, l'autre les droits.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "401 = identité non prouvée, 403 = droits insuffisants",
+          "isCorrect": true
+        },
+        {
+          "content": "401 = droits insuffisants, 403 = identité non prouvée",
+          "isCorrect": false
+        },
+        {
+          "content": "Les deux sont équivalents",
+          "isCorrect": false
+        },
+        {
+          "content": "403 concerne uniquement HTTPS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'connection pool' de base de données ?",
+      "explanation": "Un pool réutilise un ensemble de connexions ouvertes pour éviter le coût d'ouverture/fermeture à chaque requête.",
+      "hint": "On évite de rouvrir une connexion à chaque appel.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Un ensemble de connexions réutilisables partagées par l'application",
+          "isCorrect": true
+        },
+        {
+          "content": "Un cache de résultats de requêtes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index sur plusieurs colonnes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mécanisme de réplication",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "En SQL, que fait une clause GROUP BY ?",
+      "explanation": "GROUP BY regroupe les lignes partageant les mêmes valeurs pour appliquer des agrégats (COUNT, SUM…).",
+      "hint": "Souvent utilisée avec des fonctions d'agrégation.",
+      "difficulty": "EASY",
+      "tags": [
+        "SQL"
+      ],
+      "answers": [
+        {
+          "content": "Elle regroupe les lignes pour calculer des agrégats par groupe",
+          "isCorrect": true
+        },
+        {
+          "content": "Elle trie les résultats",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle filtre les lignes avant agrégation",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle joint deux tables",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle clause SQL filtre les lignes APRÈS agrégation ?",
+      "explanation": "HAVING filtre sur le résultat des agrégats, contrairement à WHERE qui filtre avant regroupement.",
+      "hint": "WHERE agit avant, l'autre après GROUP BY.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "SQL"
+      ],
+      "answers": [
+        {
+          "content": "HAVING",
+          "isCorrect": true
+        },
+        {
+          "content": "WHERE",
+          "isCorrect": false
+        },
+        {
+          "content": "ORDER BY",
+          "isCorrect": false
+        },
+        {
+          "content": "LIMIT",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une transaction ACID ?",
+      "explanation": "ACID = Atomicité, Cohérence, Isolation, Durabilité : les propriétés garantissant la fiabilité des transactions.",
+      "hint": "Quatre lettres, quatre garanties.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Un ensemble d'opérations atomiques, cohérentes, isolées et durables",
+          "isCorrect": true
+        },
+        {
+          "content": "Un index composite",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cache distribué",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel niveau d'isolation évite les 'dirty reads' mais autorise les 'non-repeatable reads' ?",
+      "explanation": "READ COMMITTED empêche de lire des données non validées, mais une même ligne peut changer entre deux lectures.",
+      "hint": "C'est le niveau par défaut de PostgreSQL.",
+      "difficulty": "HARD",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "READ COMMITTED",
+          "isCorrect": true
+        },
+        {
+          "content": "READ UNCOMMITTED",
+          "isCorrect": false
+        },
+        {
+          "content": "REPEATABLE READ",
+          "isCorrect": false
+        },
+        {
+          "content": "SERIALIZABLE",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que garantit le niveau d'isolation SERIALIZABLE ?",
+      "explanation": "SERIALIZABLE donne le résultat comme si les transactions s'exécutaient l'une après l'autre, éliminant les anomalies de concurrence.",
+      "hint": "Le plus strict des niveaux.",
+      "difficulty": "HARD",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Un résultat équivalent à une exécution séquentielle des transactions",
+          "isCorrect": true
+        },
+        {
+          "content": "Uniquement l'absence de dirty reads",
+          "isCorrect": false
+        },
+        {
+          "content": "La réplication synchrone",
+          "isCorrect": false
+        },
+        {
+          "content": "Le verrouillage optimiste automatique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un index B-tree sert principalement à accélérer ?",
+      "explanation": "Un index B-tree accélère les recherches par égalité et par plage sur des colonnes ordonnables.",
+      "hint": "Idéal pour =, <, >, BETWEEN.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Les recherches par égalité et par intervalle ordonné",
+          "isCorrect": true
+        },
+        {
+          "content": "Les recherches plein texte",
+          "isCorrect": false
+        },
+        {
+          "content": "Les jointures cartésiennes",
+          "isCorrect": false
+        },
+        {
+          "content": "Le stockage des BLOB",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Dans un ORM, que désigne le problème du 'N+1 select' ?",
+      "explanation": "On exécute 1 requête pour la liste puis N requêtes pour charger une relation de chaque élément, au lieu d'une jointure ou d'un fetch groupé.",
+      "hint": "Une requête, puis une par élément…",
+      "difficulty": "HARD",
+      "tags": [
+        "ORM"
+      ],
+      "answers": [
+        {
+          "content": "Une requête initiale suivie d'une requête par élément pour charger une relation",
+          "isCorrect": true
+        },
+        {
+          "content": "Un index manquant sur N colonnes",
+          "isCorrect": false
+        },
+        {
+          "content": "N connexions ouvertes en parallèle",
+          "isCorrect": false
+        },
+        {
+          "content": "Une transaction imbriquée N fois",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel mécanisme évite le N+1 en chargeant les relations en une requête ?",
+      "explanation": "Le 'eager fetching' via JOIN FETCH (ou équivalent) charge les entités liées en une seule requête.",
+      "hint": "On précharge la relation.",
+      "difficulty": "HARD",
+      "tags": [
+        "ORM"
+      ],
+      "answers": [
+        {
+          "content": "Le chargement anticipé (JOIN FETCH / eager)",
+          "isCorrect": true
+        },
+        {
+          "content": "Le lazy loading",
+          "isCorrect": false
+        },
+        {
+          "content": "L'augmentation du pool",
+          "isCorrect": false
+        },
+        {
+          "content": "La désactivation du cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un message broker comme RabbitMQ ou Kafka permet ?",
+      "explanation": "Il découple producteurs et consommateurs en transmettant des messages de façon asynchrone.",
+      "hint": "Communication asynchrone entre services.",
+      "difficulty": "EASY",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Échanger des messages de façon asynchrone et découplée entre services",
+          "isCorrect": true
+        },
+        {
+          "content": "Exécuter des requêtes SQL distribuées",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le trafic HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Servir des fichiers statiques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la principale différence entre Kafka et une file classique (RabbitMQ) ?",
+      "explanation": "Kafka est un log distribué persistant où les messages sont conservés et relisibles par offset ; une file traditionnelle supprime le message après consommation.",
+      "hint": "L'un conserve un journal, l'autre consomme et oublie.",
+      "difficulty": "HARD",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Kafka conserve un journal ordonné relisible par offset",
+          "isCorrect": true
+        },
+        {
+          "content": "RabbitMQ ne supporte pas plusieurs consommateurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Kafka ne persiste jamais les messages",
+          "isCorrect": false
+        },
+        {
+          "content": "RabbitMQ est uniquement synchrone",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern 'idempotency key' dans une API de paiement ?",
+      "explanation": "Une clé d'idempotence permet de rejouer une requête sans créer de doublon (ex. double débit), le serveur renvoyant le résultat initial.",
+      "hint": "Évite le double paiement en cas de retry.",
+      "difficulty": "HARD",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Une clé fournie par le client pour dédupliquer les requêtes rejouées",
+          "isCorrect": true
+        },
+        {
+          "content": "Une clé de chiffrement de la carte",
+          "isCorrect": false
+        },
+        {
+          "content": "Un token OAuth de session",
+          "isCorrect": false
+        },
+        {
+          "content": "Un identifiant de transaction aléatoire ignoré du serveur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'reverse proxy' comme Nginx devant un backend ?",
+      "explanation": "Il reçoit les requêtes clientes et les transmet aux serveurs applicatifs, gérant TLS, cache, répartition de charge, etc.",
+      "hint": "Il est placé côté serveur, face au client.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Il reçoit les requêtes et les relaie aux serveurs d'application",
+          "isCorrect": true
+        },
+        {
+          "content": "Il cache uniquement les images du navigateur",
+          "isCorrect": false
+        },
+        {
+          "content": "Il remplace la base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Il exécute le code métier",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'rate limiting' protège principalement ?",
+      "explanation": "Il limite le nombre de requêtes par client sur une période pour prévenir les abus et la surcharge.",
+      "hint": "Limiter le nombre d'appels.",
+      "difficulty": "EASY",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "L'API contre les abus et la surcharge",
+          "isCorrect": true
+        },
+        {
+          "content": "La base contre les injections SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Le mot de passe contre le brute force uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Les fichiers contre la corruption",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Dans JWT, que contient la partie 'payload' ?",
+      "explanation": "Le payload contient les 'claims' (données) comme l'identifiant utilisateur, l'expiration, etc. — encodés en base64url, non chiffrés.",
+      "hint": "Ce sont les données, pas la signature.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Les claims (données) du token, encodés mais non chiffrés",
+          "isCorrect": true
+        },
+        {
+          "content": "La signature cryptographique",
+          "isCorrect": false
+        },
+        {
+          "content": "La clé privée du serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "Le hash du mot de passe",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Un JWT signé garantit-il la confidentialité des données qu'il contient ?",
+      "explanation": "Non : la signature garantit l'intégrité/authenticité, mais le payload est seulement encodé (lisible). Il ne faut pas y mettre de secret.",
+      "hint": "Signé ≠ chiffré.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Non, il garantit l'intégrité mais le payload reste lisible",
+          "isCorrect": true
+        },
+        {
+          "content": "Oui, le payload est chiffré",
+          "isCorrect": false
+        },
+        {
+          "content": "Oui, seulement si HTTPS",
+          "isCorrect": false
+        },
+        {
+          "content": "Oui, la clé publique chiffre le payload",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est le rôle d'un 'refresh token' ?",
+      "explanation": "Il permet d'obtenir un nouveau token d'accès sans redemander les identifiants, tout en gardant l'access token à courte durée.",
+      "hint": "Renouveler l'accès sans se reconnecter.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Obtenir un nouvel access token sans re-saisir les identifiants",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les cookies",
+          "isCorrect": false
+        },
+        {
+          "content": "Stocker le mot de passe",
+          "isCorrect": false
+        },
+        {
+          "content": "Signer les requêtes API",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'OAuth2 'authorization code flow' ?",
+      "explanation": "Le client obtient un code d'autorisation via l'utilisateur, puis l'échange (côté serveur) contre un token, protégeant le secret client.",
+      "hint": "Un code intermédiaire échangé contre un token.",
+      "difficulty": "HARD",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Un flux où un code temporaire est échangé côté serveur contre un token",
+          "isCorrect": true
+        },
+        {
+          "content": "Un flux qui envoie le mot de passe à l'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Un flux sans redirection",
+          "isCorrect": false
+        },
+        {
+          "content": "Un flux réservé aux applications mobiles",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "En programmation concurrente, qu'est-ce qu'un 'deadlock' ?",
+      "explanation": "Deux threads/transactions s'attendent mutuellement pour des ressources qu'ils détiennent, bloquant indéfiniment.",
+      "hint": "Blocage mutuel circulaire.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Concurrence"
+      ],
+      "answers": [
+        {
+          "content": "Un blocage mutuel où chaque partie attend une ressource détenue par l'autre",
+          "isCorrect": true
+        },
+        {
+          "content": "Un thread qui consomme 100% CPU",
+          "isCorrect": false
+        },
+        {
+          "content": "Une fuite de mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Une requête trop lente",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une 'race condition' ?",
+      "explanation": "Le résultat dépend de l'ordre non déterministe d'exécution d'opérations concurrentes sur une ressource partagée.",
+      "hint": "L'ordre d'exécution change le résultat.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Concurrence"
+      ],
+      "answers": [
+        {
+          "content": "Un bug où le résultat dépend de l'ordre d'exécution concurrent",
+          "isCorrect": true
+        },
+        {
+          "content": "Un thread bloqué en attente",
+          "isCorrect": false
+        },
+        {
+          "content": "Une boucle infinie",
+          "isCorrect": false
+        },
+        {
+          "content": "Un dépassement de pile",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fournit un 'mutex' ?",
+      "explanation": "Un mutex garantit qu'un seul thread accède à une section critique à la fois (exclusion mutuelle).",
+      "hint": "Mutual EXclusion.",
+      "difficulty": "EASY",
+      "tags": [
+        "Concurrence"
+      ],
+      "answers": [
+        {
+          "content": "L'exclusion mutuelle sur une section critique",
+          "isCorrect": true
+        },
+        {
+          "content": "Un canal de communication",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cache thread-local",
+          "isCorrect": false
+        },
+        {
+          "content": "Une file de priorité",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern CQRS ?",
+      "explanation": "Command Query Responsibility Segregation sépare les modèles/chemins d'écriture (commandes) et de lecture (requêtes).",
+      "hint": "On sépare lectures et écritures.",
+      "difficulty": "HARD",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Séparer les modèles de lecture et d'écriture",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les commandes SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Répliquer la base en cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Mettre en cache toutes les requêtes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Dans le pattern 'Saga', comment gère-t-on une transaction distribuée ?",
+      "explanation": "Une saga enchaîne des transactions locales avec des actions de compensation en cas d'échec, plutôt qu'un verrou global.",
+      "hint": "Compensation plutôt que rollback global.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Par une suite de transactions locales avec compensations en cas d'échec",
+          "isCorrect": true
+        },
+        {
+          "content": "Par un verrou distribué sur toutes les bases",
+          "isCorrect": false
+        },
+        {
+          "content": "Par une transaction ACID globale à deux phases uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "En ignorant les échecs partiels",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'circuit breaker' évite dans un système distribué ?",
+      "explanation": "Il coupe temporairement les appels vers un service défaillant pour éviter d'aggraver la panne et permettre sa récupération.",
+      "hint": "Il 'ouvre le circuit' vers un service en panne.",
+      "difficulty": "HARD",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "La propagation en cascade des pannes vers un service défaillant",
+          "isCorrect": true
+        },
+        {
+          "content": "Les injections SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Les fuites mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Les erreurs de compilation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie 'eventual consistency' ?",
+      "explanation": "Les répliques convergent vers le même état après un délai, sans garantie de cohérence immédiate à chaque instant.",
+      "hint": "Cohérence atteinte 'à terme'.",
+      "difficulty": "HARD",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Les répliques convergent vers un état cohérent après un délai",
+          "isCorrect": true
+        },
+        {
+          "content": "Cohérence immédiate garantie partout",
+          "isCorrect": false
+        },
+        {
+          "content": "Absence totale de cohérence",
+          "isCorrect": false
+        },
+        {
+          "content": "Cohérence uniquement en lecture",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Selon le théorème CAP, que doit-on sacrifier lors d'une partition réseau ?",
+      "explanation": "En cas de partition (P), un système doit choisir entre cohérence (C) et disponibilité (A) — il ne peut garantir les deux.",
+      "hint": "P est imposé, on arbitre entre C et A.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "La cohérence ou la disponibilité",
+          "isCorrect": true
+        },
+        {
+          "content": "La tolérance au partitionnement",
+          "isCorrect": false
+        },
+        {
+          "content": "La durabilité",
+          "isCorrect": false
+        },
+        {
+          "content": "La sécurité",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'index couvrant' (covering index) ?",
+      "explanation": "Un index qui contient toutes les colonnes nécessaires à la requête, permettant d'y répondre sans lire la table.",
+      "hint": "La requête se résout dans l'index seul.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "SQL"
+      ],
+      "answers": [
+        {
+          "content": "Un index contenant toutes les colonnes requises par la requête",
+          "isCorrect": true
+        },
+        {
+          "content": "Un index sur toutes les tables",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index temporaire en mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index sans clé primaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est l'intérêt de la pagination par 'keyset' (seek) plutôt que par OFFSET ?",
+      "explanation": "Le keyset utilise un WHERE sur la dernière valeur vue, évitant de parcourir et jeter les OFFSET premières lignes — bien plus stable en performance.",
+      "hint": "OFFSET lit puis jette les N premières lignes.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "SQL"
+      ],
+      "answers": [
+        {
+          "content": "Elle évite de parcourir les lignes précédentes, gardant des perfs stables",
+          "isCorrect": true
+        },
+        {
+          "content": "Elle trie automatiquement les résultats",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle supprime le besoin d'index",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle garantit l'absence de doublons",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le mot-clé 'volatile' concernant la visibilité mémoire (JVM) ?",
+      "explanation": "Il garantit que les lectures/écritures d'une variable sont visibles entre threads, sans mise en cache locale, mais n'assure pas l'atomicité composée.",
+      "hint": "Visibilité, pas atomicité.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Concurrence"
+      ],
+      "answers": [
+        {
+          "content": "Il assure la visibilité inter-thread d'une variable, sans garantir l'atomicité composée",
+          "isCorrect": true
+        },
+        {
+          "content": "Il rend l'opération atomique et verrouillée",
+          "isCorrect": false
+        },
+        {
+          "content": "Il empêche le garbage collector",
+          "isCorrect": false
+        },
+        {
+          "content": "Il crée une copie par thread",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'connection draining' lors d'un déploiement ?",
+      "explanation": "On laisse les connexions en cours se terminer avant d'arrêter une instance, évitant de couper des requêtes actives.",
+      "hint": "On 'vide' les connexions en douceur.",
+      "difficulty": "HARD",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Laisser finir les requêtes en cours avant d'arrêter une instance",
+          "isCorrect": true
+        },
+        {
+          "content": "Fermer brutalement toutes les connexions",
+          "isCorrect": false
+        },
+        {
+          "content": "Vider le cache applicatif",
+          "isCorrect": false
+        },
+        {
+          "content": "Réinitialiser la base",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Dans une API GraphQL, quel problème le 'DataLoader' résout-il ?",
+      "explanation": "Il regroupe et met en cache les requêtes pour éviter le N+1 en batchant les accès aux données par identifiant.",
+      "hint": "Batching des accès pour éviter le N+1.",
+      "difficulty": "HARD",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Le N+1 en regroupant (batch) les accès aux données",
+          "isCorrect": true
+        },
+        {
+          "content": "L'authentification des requêtes",
+          "isCorrect": false
+        },
+        {
+          "content": "La validation du schéma",
+          "isCorrect": false
+        },
+        {
+          "content": "La compression des réponses",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre PATCH et PUT ?",
+      "explanation": "PUT remplace toute la ressource ; PATCH applique une modification partielle.",
+      "hint": "Total vs partiel.",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "PUT remplace entièrement, PATCH modifie partiellement",
+          "isCorrect": true
+        },
+        {
+          "content": "PATCH remplace entièrement, PUT partiellement",
+          "isCorrect": false
+        },
+        {
+          "content": "Les deux sont non idempotents",
+          "isCorrect": false
+        },
+        {
+          "content": "PATCH ne peut pas avoir de corps",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'health check' d'endpoint sert à faire ?",
+      "explanation": "Il permet à un orchestrateur/load balancer de vérifier que l'instance est vivante et prête à recevoir du trafic.",
+      "hint": "Vérifier que le service est 'en vie'.",
+      "difficulty": "EASY",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Vérifier que le service est vivant et prêt à recevoir du trafic",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les échanges",
+          "isCorrect": false
+        },
+        {
+          "content": "Journaliser les erreurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Mettre à jour la base",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que représente le 'p99' d'une latence ?",
+      "explanation": "Le 99e percentile : 99% des requêtes sont plus rapides que cette valeur ; il révèle les pires cas courants.",
+      "hint": "Un percentile, pas une moyenne.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "La latence sous laquelle se trouvent 99% des requêtes",
+          "isCorrect": true
+        },
+        {
+          "content": "La latence moyenne",
+          "isCorrect": false
+        },
+        {
+          "content": "La latence maximale absolue",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de requêtes par seconde",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'backpressure' dans un flux de données ?",
+      "explanation": "C'est le mécanisme par lequel un consommateur lent signale au producteur de ralentir pour éviter la saturation.",
+      "hint": "Le consommateur régule le producteur.",
+      "difficulty": "HARD",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Un signal permettant au consommateur de réguler le débit du producteur",
+          "isCorrect": true
+        },
+        {
+          "content": "Une compression du flux",
+          "isCorrect": false
+        },
+        {
+          "content": "Un chiffrement de bout en bout",
+          "isCorrect": false
+        },
+        {
+          "content": "Une file sans limite de taille",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est l'intérêt d'un cache 'write-through' ?",
+      "explanation": "Les écritures passent par le cache ET la base simultanément, garantissant leur cohérence au prix d'écritures plus lentes.",
+      "hint": "Écrit dans le cache et la base ensemble.",
+      "difficulty": "HARD",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Écrire simultanément dans le cache et la base pour garder la cohérence",
+          "isCorrect": true
+        },
+        {
+          "content": "Écrire seulement en base et invalider le cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Ne jamais écrire en base",
+          "isCorrect": false
+        },
+        {
+          "content": "Écrire uniquement en cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'idempotent consumer' dans une file de messages ?",
+      "explanation": "Un consommateur capable de traiter un message dupliqué sans effet de bord, essentiel avec la livraison 'at-least-once'.",
+      "hint": "Gérer les doublons de livraison.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Un consommateur qui traite un doublon sans effet de bord",
+          "isCorrect": true
+        },
+        {
+          "content": "Un consommateur qui ignore tous les messages",
+          "isCorrect": false
+        },
+        {
+          "content": "Un consommateur unique par file",
+          "isCorrect": false
+        },
+        {
+          "content": "Un consommateur qui chiffre les messages",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que garantit la livraison 'exactly-once' (idéale) dans un système de messages ?",
+      "explanation": "Chaque message est traité une et une seule fois — très difficile à atteindre, souvent approché via idempotence + at-least-once.",
+      "hint": "Ni perte ni doublon.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Chaque message est traité exactement une fois",
+          "isCorrect": true
+        },
+        {
+          "content": "Chaque message peut être perdu",
+          "isCorrect": false
+        },
+        {
+          "content": "Chaque message est traité au moins deux fois",
+          "isCorrect": false
+        },
+        {
+          "content": "Les messages ne sont jamais persistés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Dans le versioning d'API, quel est l'avantage de versionner via l'URL (/v1/…) ?",
+      "explanation": "C'est explicite, facile à router et à mettre en cache, au prix d'URLs qui changent entre versions.",
+      "hint": "La version est visible dans le chemin.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "La version est explicite, facile à router et à cacher",
+          "isCorrect": true
+        },
+        {
+          "content": "Cela chiffre automatiquement l'API",
+          "isCorrect": false
+        },
+        {
+          "content": "Cela évite toute rupture de compatibilité",
+          "isCorrect": false
+        },
+        {
+          "content": "Cela supprime le besoin de documentation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'graceful shutdown' d'un serveur ?",
+      "explanation": "Le serveur cesse d'accepter de nouvelles requêtes, termine celles en cours, ferme proprement les ressources, puis s'arrête.",
+      "hint": "Arrêt en douceur, pas brutal.",
+      "difficulty": "EASY",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Un arrêt qui termine les requêtes en cours et libère proprement les ressources",
+          "isCorrect": true
+        },
+        {
+          "content": "Un arrêt immédiat sans finir les requêtes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un redémarrage forcé",
+          "isCorrect": false
+        },
+        {
+          "content": "Une purge de la base",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'bloom filter' ?",
+      "explanation": "Une structure probabiliste qui teste l'appartenance : les faux positifs sont possibles, les faux négatifs non.",
+      "hint": "Probabiliste : 'peut-être présent' ou 'sûrement absent'.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Tester l'appartenance avec faux positifs possibles mais jamais de faux négatifs",
+          "isCorrect": true
+        },
+        {
+          "content": "Trier des données en O(1)",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer des clés",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser des index sans perte",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est le rôle d'un 'WAL' (Write-Ahead Log) dans une base ?",
+      "explanation": "Les modifications sont écrites dans un journal avant d'être appliquées, garantissant durabilité et récupération après crash.",
+      "hint": "On journalise avant d'appliquer.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Journaliser les changements avant de les appliquer pour la durabilité et la reprise",
+          "isCorrect": true
+        },
+        {
+          "content": "Mettre en cache les lectures",
+          "isCorrect": false
+        },
+        {
+          "content": "Répartir la charge",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les tables",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la 'dénormalisation' en base de données ?",
+      "explanation": "On duplique volontairement des données pour accélérer les lectures, au prix de redondance et de mises à jour plus complexes.",
+      "hint": "On accepte de la redondance pour lire plus vite.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Dupliquer des données pour accélérer les lectures",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer toutes les clés étrangères",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les colonnes sensibles",
+          "isCorrect": false
+        },
+        {
+          "content": "Fusionner deux bases",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert l'en-tête HTTP 'ETag' ?",
+      "explanation": "L'ETag identifie une version de ressource ; combiné à If-None-Match, il permet la validation de cache (304) et le contrôle de concurrence.",
+      "hint": "Une empreinte de version de ressource.",
+      "difficulty": "HARD",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Identifier une version de ressource pour la validation de cache et la concurrence",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer la réponse",
+          "isCorrect": false
+        },
+        {
+          "content": "Indiquer la langue",
+          "isCorrect": false
+        },
+        {
+          "content": "Fixer la durée de session",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie un code HTTP 429 ?",
+      "explanation": "429 Too Many Requests indique que le client a dépassé la limite de débit autorisée.",
+      "hint": "Lié au rate limiting.",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Too Many Requests (limite de débit dépassée)",
+          "isCorrect": true
+        },
+        {
+          "content": "Service indisponible",
+          "isCorrect": false
+        },
+        {
+          "content": "Requête invalide",
+          "isCorrect": false
+        },
+        {
+          "content": "Non authentifié",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'connection keep-alive' HTTP ?",
+      "explanation": "Il réutilise une même connexion TCP pour plusieurs requêtes/réponses, réduisant la latence d'établissement.",
+      "hint": "On garde la connexion ouverte.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Réutiliser une connexion TCP pour plusieurs requêtes",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer la connexion",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser le corps",
+          "isCorrect": false
+        },
+        {
+          "content": "Limiter le nombre de requêtes",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1355 @@
+{
+  "categoryName": "Data Science",
+  "questions": [
+    {
+      "content": "Quelle est la différence entre apprentissage supervisé et non supervisé ?",
+      "explanation": "Le supervisé apprend à partir de données étiquetées (entrée→sortie connue) ; le non supervisé trouve des structures dans des données non étiquetées.",
+      "hint": "Avec ou sans étiquettes.",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Le supervisé utilise des données étiquetées, le non supervisé non",
+          "isCorrect": true
+        },
+        {
+          "content": "Le non supervisé est toujours plus précis",
+          "isCorrect": false
+        },
+        {
+          "content": "Le supervisé ne prédit pas",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils nécessitent tous deux des labels",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le surapprentissage (overfitting) ?",
+      "explanation": "Le modèle colle trop aux données d'entraînement (bruit inclus) et généralise mal sur de nouvelles données.",
+      "hint": "Trop bien sur le train, mal ailleurs.",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Le modèle mémorise le bruit du train et généralise mal",
+          "isCorrect": true
+        },
+        {
+          "content": "Le modèle est trop simple",
+          "isCorrect": false
+        },
+        {
+          "content": "Les données sont chiffrées",
+          "isCorrect": false
+        },
+        {
+          "content": "Le modèle n'apprend rien",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est le symptôme typique du sous-apprentissage (underfitting) ?",
+      "explanation": "Erreur élevée à la fois sur l'entraînement et la validation : le modèle est trop simple pour capturer la structure.",
+      "hint": "Mauvais partout.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Une erreur élevée aussi bien en entraînement qu'en validation",
+          "isCorrect": true
+        },
+        {
+          "content": "Erreur nulle en train",
+          "isCorrect": false
+        },
+        {
+          "content": "Erreur nulle en validation",
+          "isCorrect": false
+        },
+        {
+          "content": "Un temps d'entraînement très long",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert la validation croisée (cross-validation) ?",
+      "explanation": "Estimer la performance de généralisation en entraînant/testant sur plusieurs découpages des données.",
+      "hint": "Plusieurs découpages train/test.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Estimer la généralisation via plusieurs découpages des données",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Augmenter la taille du dataset",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer l'inférence",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que représente le compromis biais-variance ?",
+      "explanation": "Un modèle trop simple a un biais élevé (sous-apprentissage) ; trop complexe, une variance élevée (surapprentissage). On cherche l'équilibre.",
+      "hint": "Simplicité vs complexité.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "L'équilibre entre erreur due à la simplicité (biais) et à la complexité (variance)",
+          "isCorrect": true
+        },
+        {
+          "content": "Le compromis vitesse/mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Le ratio train/test",
+          "isCorrect": false
+        },
+        {
+          "content": "Le taux d'apprentissage",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que mesure la précision (precision) d'un classifieur ?",
+      "explanation": "Parmi les cas prédits positifs, la proportion réellement positifs : VP / (VP + FP).",
+      "hint": "Fiabilité des positifs prédits.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "La proportion de vrais positifs parmi les prédits positifs",
+          "isCorrect": true
+        },
+        {
+          "content": "La proportion de positifs détectés",
+          "isCorrect": false
+        },
+        {
+          "content": "Le taux d'erreur global",
+          "isCorrect": false
+        },
+        {
+          "content": "La vitesse de prédiction",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que mesure le rappel (recall) ?",
+      "explanation": "Parmi les vrais positifs réels, la proportion correctement détectés : VP / (VP + FN).",
+      "hint": "Capacité à ne rien rater.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "La proportion de vrais positifs correctement détectés",
+          "isCorrect": true
+        },
+        {
+          "content": "La proportion de bonnes prédictions positives",
+          "isCorrect": false
+        },
+        {
+          "content": "La précision moyenne",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de faux positifs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi l'accuracy est-elle trompeuse sur un jeu déséquilibré ?",
+      "explanation": "Un modèle prédisant toujours la classe majoritaire peut avoir une accuracy élevée tout en étant inutile ; d'où precision/recall/F1.",
+      "hint": "La classe majoritaire fausse la mesure.",
+      "difficulty": "HARD",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "Parce qu'un modèle biaisé vers la classe majoritaire peut sembler bon",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce qu'elle ignore les vrais positifs",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce qu'elle dépend du taux d'apprentissage",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce qu'elle nécessite des labels",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le F1-score ?",
+      "explanation": "La moyenne harmonique de la précision et du rappel, utile quand on veut un équilibre entre les deux.",
+      "hint": "Moyenne harmonique precision/recall.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "La moyenne harmonique de la précision et du rappel",
+          "isCorrect": true
+        },
+        {
+          "content": "La moyenne de l'accuracy",
+          "isCorrect": false
+        },
+        {
+          "content": "Le taux de faux positifs",
+          "isCorrect": false
+        },
+        {
+          "content": "La variance du modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert la normalisation/standardisation des features ?",
+      "explanation": "Mettre les variables à des échelles comparables pour éviter qu'une domine, aidant la convergence de nombreux algorithmes.",
+      "hint": "Mêmes échelles pour toutes les variables.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Feature Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Mettre les variables à des échelles comparables",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer les valeurs manquantes",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire le nombre de lignes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'one-hot encoding' ?",
+      "explanation": "Transformer une variable catégorielle en colonnes binaires, une par catégorie.",
+      "hint": "Une colonne binaire par catégorie.",
+      "difficulty": "EASY",
+      "tags": [
+        "Feature Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Encoder une variable catégorielle en colonnes binaires",
+          "isCorrect": true
+        },
+        {
+          "content": "Normaliser une variable numérique",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Imputer les valeurs manquantes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la 'malédiction de la dimensionnalité' ?",
+      "explanation": "En haute dimension, les données deviennent éparses et les distances peu discriminantes, dégradant de nombreux algorithmes.",
+      "hint": "Trop de dimensions nuit.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "En haute dimension, les données s'éparpillent et les distances perdent leur sens",
+          "isCorrect": true
+        },
+        {
+          "content": "Un excès de lignes",
+          "isCorrect": false
+        },
+        {
+          "content": "Un manque de mémoire GPU",
+          "isCorrect": false
+        },
+        {
+          "content": "Un taux d'apprentissage trop faible",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'analyse en composantes principales (PCA) ?",
+      "explanation": "Elle projette les données sur de nouveaux axes (composantes) maximisant la variance, réduisant la dimension avec un minimum de perte.",
+      "hint": "Réduire la dimension en gardant la variance.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Réduire la dimension en projetant sur les axes de variance maximale",
+          "isCorrect": true
+        },
+        {
+          "content": "Classer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Imputer les manquants",
+          "isCorrect": false
+        },
+        {
+          "content": "Augmenter les features",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la régularisation L2 (ridge) fait à un modèle ?",
+      "explanation": "Elle pénalise les grands coefficients (somme des carrés), réduisant le surapprentissage et la variance.",
+      "hint": "Pénaliser les gros poids.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Pénaliser les grands coefficients pour réduire le surapprentissage",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer des features à zéro",
+          "isCorrect": false
+        },
+        {
+          "content": "Augmenter la variance",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer l'inférence",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la particularité de la régularisation L1 (lasso) ?",
+      "explanation": "Elle tend à mettre certains coefficients exactement à zéro, réalisant une sélection de variables.",
+      "hint": "Elle met des poids à zéro.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Elle annule certains coefficients, faisant une sélection de features",
+          "isCorrect": true
+        },
+        {
+          "content": "Elle ne réduit jamais les poids",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle chiffre les features",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle augmente la dimension",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le taux d'apprentissage (learning rate) en descente de gradient ?",
+      "explanation": "Il contrôle l'ampleur des pas de mise à jour des poids : trop grand → divergence, trop petit → convergence lente.",
+      "hint": "La taille du pas d'optimisation.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "L'ampleur des pas de mise à jour des poids",
+          "isCorrect": true
+        },
+        {
+          "content": "Le nombre d'époques",
+          "isCorrect": false
+        },
+        {
+          "content": "La taille du batch",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de couches",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une 'epoch' à l'entraînement ?",
+      "explanation": "Un passage complet sur l'ensemble des données d'entraînement.",
+      "hint": "Un tour complet du dataset.",
+      "difficulty": "EASY",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un passage complet sur toutes les données d'entraînement",
+          "isCorrect": true
+        },
+        {
+          "content": "Une seule prédiction",
+          "isCorrect": false
+        },
+        {
+          "content": "Un lot de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Une couche du réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert une fonction d'activation non linéaire (ReLU, sigmoïde) ?",
+      "explanation": "Elle introduit de la non-linéarité, permettant au réseau d'apprendre des relations complexes ; sans elle, il resterait linéaire.",
+      "hint": "Sans elle, tout serait linéaire.",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Introduire de la non-linéarité pour apprendre des relations complexes",
+          "isCorrect": true
+        },
+        {
+          "content": "Normaliser les entrées",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire le nombre de poids",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les activations",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le 'dropout' dans un réseau de neurones ?",
+      "explanation": "Il désactive aléatoirement des neurones à l'entraînement pour réduire le surapprentissage.",
+      "hint": "Éteindre des neurones au hasard.",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Désactiver aléatoirement des neurones pour réduire le surapprentissage",
+          "isCorrect": true
+        },
+        {
+          "content": "Accélérer l'inférence",
+          "isCorrect": false
+        },
+        {
+          "content": "Augmenter la profondeur",
+          "isCorrect": false
+        },
+        {
+          "content": "Normaliser les batches",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la descente de gradient stochastique (SGD) ?",
+      "explanation": "Elle met à jour les poids sur des mini-lots (ou un exemple) plutôt que tout le dataset, accélérant et bruitant l'optimisation.",
+      "hint": "Mise à jour sur des mini-lots.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Mettre à jour les poids sur des mini-lots plutôt que tout le dataset",
+          "isCorrect": true
+        },
+        {
+          "content": "Calculer le gradient exact sur tout le dataset",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer le gradient",
+          "isCorrect": false
+        },
+        {
+          "content": "Fixer les poids",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'gradient vanishing' ?",
+      "explanation": "Dans les réseaux profonds, les gradients deviennent minuscules en rétropropagation, empêchant les premières couches d'apprendre.",
+      "hint": "Le gradient s'évanouit en profondeur.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Des gradients qui deviennent trop petits pour entraîner les premières couches",
+          "isCorrect": true
+        },
+        {
+          "content": "Un gradient qui explose",
+          "isCorrect": false
+        },
+        {
+          "content": "Un excès de neurones",
+          "isCorrect": false
+        },
+        {
+          "content": "Un taux d'apprentissage nul imposé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la différence entre régression et classification ?",
+      "explanation": "La régression prédit une valeur continue ; la classification prédit une catégorie discrète.",
+      "hint": "Continu vs catégoriel.",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "La régression prédit une valeur continue, la classification une catégorie",
+          "isCorrect": true
+        },
+        {
+          "content": "La régression n'utilise pas de labels",
+          "isCorrect": false
+        },
+        {
+          "content": "La classification prédit des nombres réels",
+          "isCorrect": false
+        },
+        {
+          "content": "Elles sont identiques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un arbre de décision ?",
+      "explanation": "Il divise récursivement les données selon des conditions sur les features pour prédire une sortie.",
+      "hint": "Des 'si/alors' successifs.",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Partitionner les données via des conditions successives pour prédire",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Calculer une moyenne mobile",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une 'random forest' ?",
+      "explanation": "Un ensemble d'arbres de décision entraînés sur des sous-échantillons, dont les prédictions sont agrégées (bagging), réduisant la variance.",
+      "hint": "Beaucoup d'arbres agrégés.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Un ensemble d'arbres agrégés pour réduire la variance",
+          "isCorrect": true
+        },
+        {
+          "content": "Un seul arbre très profond",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau de neurones",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme de clustering",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle différence entre bagging et boosting ?",
+      "explanation": "Le bagging entraîne des modèles en parallèle sur des sous-échantillons (réduit la variance) ; le boosting les entraîne séquentiellement en corrigeant les erreurs précédentes (réduit le biais).",
+      "hint": "Parallèle vs séquentiel correctif.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Bagging entraîne en parallèle, boosting séquentiellement en corrigeant les erreurs",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Le boosting est parallèle",
+          "isCorrect": false
+        },
+        {
+          "content": "Le bagging corrige les erreurs successives",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le clustering K-means cherche à faire ?",
+      "explanation": "Partitionner les données en K groupes en minimisant la distance des points à leur centroïde.",
+      "hint": "K groupes autour de centroïdes.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Regrouper les données en K clusters autour de centroïdes",
+          "isCorrect": true
+        },
+        {
+          "content": "Prédire une valeur continue",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Étiqueter des données supervisées",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment choisit-on souvent le K dans K-means ?",
+      "explanation": "Via la méthode du coude (elbow) : on cherche le K où l'inertie cesse de chuter fortement.",
+      "hint": "La méthode du 'coude'.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Par la méthode du coude sur l'inertie intra-cluster",
+          "isCorrect": true
+        },
+        {
+          "content": "Toujours K=2",
+          "isCorrect": false
+        },
+        {
+          "content": "Au hasard",
+          "isCorrect": false
+        },
+        {
+          "content": "Par le taux d'apprentissage",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une matrice de confusion ?",
+      "explanation": "Un tableau croisant prédictions et vérités (VP, FP, VN, FN) pour analyser les erreurs d'un classifieur.",
+      "hint": "Croiser prédit vs réel.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "Un tableau croisant prédictions et valeurs réelles (VP/FP/VN/FN)",
+          "isCorrect": true
+        },
+        {
+          "content": "Une matrice de corrélation",
+          "isCorrect": false
+        },
+        {
+          "content": "Une matrice de covariance",
+          "isCorrect": false
+        },
+        {
+          "content": "Une matrice de poids",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que représente l'AUC de la courbe ROC ?",
+      "explanation": "L'aire sous la courbe ROC mesure la capacité du modèle à distinguer les classes, indépendamment du seuil (0,5 = hasard, 1 = parfait).",
+      "hint": "Séparabilité indépendante du seuil.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "La capacité à distinguer les classes, tous seuils confondus",
+          "isCorrect": true
+        },
+        {
+          "content": "La précision au seuil 0,5",
+          "isCorrect": false
+        },
+        {
+          "content": "Le rappel maximal",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de faux positifs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la fuite de données (data leakage) ?",
+      "explanation": "Quand des informations du futur/de la cible s'infiltrent dans les features d'entraînement, gonflant artificiellement la performance.",
+      "hint": "Une info interdite fuite dans le train.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Des informations non disponibles à l'inférence qui fuient dans l'entraînement",
+          "isCorrect": true
+        },
+        {
+          "content": "Un vol de base de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un manque de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un chiffrement raté",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi séparer un jeu de test avant tout traitement ?",
+      "explanation": "Pour estimer honnêtement la généralisation : tout prétraitement appris doit l'être sur le train seul afin d'éviter la fuite.",
+      "hint": "Éviter que le test influence l'entraînement.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Pour une estimation honnête et éviter la fuite de données",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer l'entraînement",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour équilibrer les classes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'feature engineering' ?",
+      "explanation": "Créer/transformer des variables pertinentes à partir des données brutes pour améliorer le modèle.",
+      "hint": "Fabriquer de bonnes variables.",
+      "difficulty": "EASY",
+      "tags": [
+        "Feature Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Créer et transformer des variables pertinentes pour le modèle",
+          "isCorrect": true
+        },
+        {
+          "content": "Choisir l'algorithme",
+          "isCorrect": false
+        },
+        {
+          "content": "Régler le learning rate",
+          "isCorrect": false
+        },
+        {
+          "content": "Déployer le modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment gère-t-on classiquement des valeurs manquantes ?",
+      "explanation": "Par imputation (moyenne, médiane, modèle) ou suppression, selon la quantité et le mécanisme d'absence.",
+      "hint": "Imputer ou supprimer.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Feature Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Par imputation ou suppression selon le contexte",
+          "isCorrect": true
+        },
+        {
+          "content": "En chiffrant les colonnes",
+          "isCorrect": false
+        },
+        {
+          "content": "En augmentant le learning rate",
+          "isCorrect": false
+        },
+        {
+          "content": "En ajoutant des couches",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la corrélation mesure-t-elle (Pearson) ?",
+      "explanation": "La force et le sens d'une relation LINÉAIRE entre deux variables, entre -1 et 1.",
+      "hint": "Relation linéaire, -1 à 1.",
+      "difficulty": "EASY",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "La force et le sens d'une relation linéaire entre deux variables",
+          "isCorrect": true
+        },
+        {
+          "content": "Une relation causale",
+          "isCorrect": false
+        },
+        {
+          "content": "Une relation non linéaire",
+          "isCorrect": false
+        },
+        {
+          "content": "La variance d'une variable",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Corrélation implique-t-elle causalité ?",
+      "explanation": "Non : deux variables peuvent être corrélées sans lien causal (facteur confondant, hasard).",
+      "hint": "Un piège classique.",
+      "difficulty": "EASY",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "Non, la corrélation n'implique pas la causalité",
+          "isCorrect": true
+        },
+        {
+          "content": "Oui, toujours",
+          "isCorrect": false
+        },
+        {
+          "content": "Oui, si la corrélation dépasse 0,9",
+          "isCorrect": false
+        },
+        {
+          "content": "Oui, en régression linéaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une p-value en test d'hypothèse ?",
+      "explanation": "La probabilité d'observer un résultat au moins aussi extrême sous l'hypothèse nulle ; une faible p-value suggère de la rejeter.",
+      "hint": "Probabilité sous H0.",
+      "difficulty": "HARD",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "La probabilité d'un résultat aussi extrême si l'hypothèse nulle est vraie",
+          "isCorrect": true
+        },
+        {
+          "content": "La probabilité que H0 soit vraie",
+          "isCorrect": false
+        },
+        {
+          "content": "La taille de l'effet",
+          "isCorrect": false
+        },
+        {
+          "content": "Le taux d'erreur du modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le théorème central limite ?",
+      "explanation": "La distribution des moyennes d'échantillons tend vers une loi normale quand la taille d'échantillon augmente, quelle que soit la loi d'origine.",
+      "hint": "Les moyennes tendent vers la normale.",
+      "difficulty": "HARD",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "La moyenne d'échantillons suit approximativement une loi normale pour n grand",
+          "isCorrect": true
+        },
+        {
+          "content": "Toute variable est normale",
+          "isCorrect": false
+        },
+        {
+          "content": "La médiane égale la moyenne",
+          "isCorrect": false
+        },
+        {
+          "content": "La variance est toujours nulle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert la 'stratification' lors du split train/test ?",
+      "explanation": "Elle conserve la même proportion de classes dans chaque sous-ensemble, cruciale pour des données déséquilibrées.",
+      "hint": "Garder les proportions de classes.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Conserver la proportion des classes dans chaque sous-ensemble",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le test",
+          "isCorrect": false
+        },
+        {
+          "content": "Augmenter la taille du train",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer les outliers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un outlier (valeur aberrante) ?",
+      "explanation": "Une observation très éloignée du reste des données, pouvant fausser statistiques et modèles.",
+      "hint": "Une valeur extrême isolée.",
+      "difficulty": "EASY",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "Une observation très éloignée du reste des données",
+          "isCorrect": true
+        },
+        {
+          "content": "Une valeur manquante",
+          "isCorrect": false
+        },
+        {
+          "content": "Une variable catégorielle",
+          "isCorrect": false
+        },
+        {
+          "content": "Une moyenne",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait une 'embedding' de mots (word embedding) ?",
+      "explanation": "Elle représente les mots par des vecteurs denses capturant des relations sémantiques (mots proches → vecteurs proches).",
+      "hint": "Des vecteurs qui capturent le sens.",
+      "difficulty": "HARD",
+      "tags": [
+        "NLP"
+      ],
+      "answers": [
+        {
+          "content": "Représenter les mots par des vecteurs denses capturant leur sémantique",
+          "isCorrect": true
+        },
+        {
+          "content": "Compter les mots",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le texte",
+          "isCorrect": false
+        },
+        {
+          "content": "Trier alphabétiquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le TF-IDF ?",
+      "explanation": "Une pondération qui valorise les termes fréquents dans un document mais rares dans le corpus, pour mesurer leur importance.",
+      "hint": "Fréquent ici, rare ailleurs.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "NLP"
+      ],
+      "answers": [
+        {
+          "content": "Une pondération valorisant les termes fréquents localement et rares globalement",
+          "isCorrect": true
+        },
+        {
+          "content": "Un modèle de langage",
+          "isCorrect": false
+        },
+        {
+          "content": "Un encodage one-hot",
+          "isCorrect": false
+        },
+        {
+          "content": "Une distance euclidienne",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le mécanisme d''attention' apporte aux modèles séquentiels ?",
+      "explanation": "Il permet au modèle de pondérer dynamiquement l'importance de différentes parties de l'entrée pour chaque sortie, base des Transformers.",
+      "hint": "Pondérer dynamiquement l'entrée.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Pondérer dynamiquement les parties pertinentes de l'entrée",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les séquences",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer la récurrence sans contrepartie",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'batch normalization' ?",
+      "explanation": "Il normalise les activations par mini-lot, stabilisant et accélérant l'entraînement des réseaux profonds.",
+      "hint": "Normaliser les activations par lot.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Normaliser les activations par mini-lot pour stabiliser l'entraînement",
+          "isCorrect": true
+        },
+        {
+          "content": "Éteindre des neurones",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire le nombre de couches",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les gradients",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi utiliser une métrique adaptée plutôt que l'accuracy en détection de fraude ?",
+      "explanation": "La fraude est rare (déséquilibre fort) ; precision/recall/F1 ou l'AUC reflètent mieux la détection des cas positifs.",
+      "hint": "Classe positive très rare.",
+      "difficulty": "HARD",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "Parce que la classe fraude est rare et l'accuracy y est trompeuse",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce que l'accuracy est incalculable",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que la fraude n'a pas de labels",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que l'accuracy est trop lente",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'augmentation de données (data augmentation) ?",
+      "explanation": "Générer des variantes des données (rotations, bruit, recadrage…) pour enrichir l'entraînement et réduire le surapprentissage.",
+      "hint": "Créer des variantes des données.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Générer des variantes des données pour enrichir l'entraînement",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer des données",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les images",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'pipeline' scikit-learn ?",
+      "explanation": "Il enchaîne prétraitements et modèle en une seule séquence, garantissant que les transformations sont apprises sur le train uniquement.",
+      "hint": "Enchaîner prétraitement + modèle proprement.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Enchaîner prétraitements et modèle en évitant la fuite de données",
+          "isCorrect": true
+        },
+        {
+          "content": "Déployer un modèle en production",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les features",
+          "isCorrect": false
+        },
+        {
+          "content": "Visualiser les données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'hyperparameter tuning' ?",
+      "explanation": "Rechercher les meilleures valeurs des hyperparamètres (ex. profondeur, learning rate) via grid/random search ou méthodes bayésiennes.",
+      "hint": "Régler les réglages du modèle.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Rechercher les meilleures valeurs des hyperparamètres",
+          "isCorrect": true
+        },
+        {
+          "content": "Entraîner les poids du modèle",
+          "isCorrect": false
+        },
+        {
+          "content": "Nettoyer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Déployer le modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre paramètres et hyperparamètres d'un modèle ?",
+      "explanation": "Les paramètres sont appris des données (ex. poids) ; les hyperparamètres sont fixés avant l'entraînement (ex. learning rate, K).",
+      "hint": "Appris vs fixés avant.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Les paramètres sont appris, les hyperparamètres fixés avant l'entraînement",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Les hyperparamètres sont appris",
+          "isCorrect": false
+        },
+        {
+          "content": "Les paramètres sont fixés à la main",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'inertie mesure en clustering K-means ?",
+      "explanation": "La somme des distances au carré des points à leur centroïde ; plus elle est faible, plus les clusters sont compacts.",
+      "hint": "Compacité des clusters.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "La somme des distances au carré des points à leur centroïde",
+          "isCorrect": true
+        },
+        {
+          "content": "La séparation entre clusters",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de clusters",
+          "isCorrect": false
+        },
+        {
+          "content": "La précision du modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi mélanger (shuffle) les données avant l'entraînement ?",
+      "explanation": "Pour éviter que l'ordre (ex. données triées par classe) biaise l'apprentissage et les mini-lots.",
+      "hint": "Casser l'ordre pour éviter un biais.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Pour éviter qu'un ordre initial biaise l'apprentissage",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour réduire leur taille",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour supprimer les doublons",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
