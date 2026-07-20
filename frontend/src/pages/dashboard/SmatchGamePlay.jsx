@@ -198,7 +198,12 @@ export default function SmatchGamePlay() {
       <div className="max-w-3xl mx-auto space-y-6">
         {/* HUD */}
         <div className="flex items-center justify-between">
-          <button onClick={() => { smatchGameService.abandonSession(sessionId).catch(() => {}); navigate("/dashboard/play"); }}
+          <button onClick={() => {
+              if (result || window.confirm("Quitter la partie ? Ta progression sera perdue.")) {
+                smatchGameService.abandonSession(sessionId).catch(() => {});
+                navigate("/dashboard/play");
+              }
+            }}
             className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
             <ArrowLeft className="h-4 w-4" /> Quitter
           </button>

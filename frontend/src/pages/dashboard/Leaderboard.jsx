@@ -87,6 +87,7 @@ function QcmLeaderboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [gameMode, setGameMode] = useState("ALL");
+  const [me, setMe] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -98,8 +99,15 @@ function QcmLeaderboard() {
       .finally(() => setLoading(false));
   }, [gameMode]);
 
+  // Player's own (global) standing — used to pin a "you" row when out of the visible top.
+  useEffect(() => {
+    qcmGameService.getUserStats().then(s => setMe(s?.data ?? s)).catch(() => setMe(null));
+  }, []);
+
   const top3 = entries.slice(0, 3);
   const rest = entries.slice(3);
+  const meVisible = user?.id && entries.some(e => String(e.userId) === String(user.id));
+  const showMyRow = gameMode === "ALL" && me && (me.leaderboardPosition > 0) && !meVisible;
 
   const medalIcon = (rank) => {
     if (rank === 1) return <Crown className="h-4 w-4 text-yellow-400" />;
@@ -258,6 +266,35 @@ function QcmLeaderboard() {
                 })}
               </div>
             </div>
+
+            {/* Your own standing, pinned when you're outside the visible top */}
+            {showMyRow && (
+              <div className="rounded-2xl border border-primary/30 bg-primary/[0.06] px-4 sm:px-6 py-4 flex items-center gap-3">
+                <div className="flex items-center justify-center w-8">
+                  <span className="text-sm font-mono text-primary/70">{me.leaderboardPosition}</span>
+                </div>
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <Avatar className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 ring-1 ring-primary/30">
+                    <AvatarImage src={me.avatarUrl || user?.avatarUrl} />
+                    <AvatarFallback className="text-xs font-black bg-primary/20 text-primary">
+                      {getInitials(me.username || user?.username)}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="min-w-0">
+                    <p className="text-sm sm:text-base font-black text-white/90 truncate">
+                      {me.username || user?.username}
+                      <span className="ml-2 text-[10px] font-black text-primary/70 uppercase tracking-wider">vous</span>
+                    </p>
+                    {me.highestDifficultyReached && (
+                      <span className={`inline-block mt-0.5 text-[9px] font-black uppercase tracking-wider border rounded px-1.5 py-0.5 ${DIFF_BADGE[me.highestDifficultyReached] ?? "text-white/30 border-white/10"}`}>
+                        {me.highestDifficultyReached}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <span className="text-lg sm:text-xl font-black tabular-nums text-primary">{Math.round(me.rating ?? 0)}</span>
+              </div>
+            )}
 
             <p className="text-[10px] text-white/20 text-right font-semibold uppercase tracking-wider">
               {entries.length} joueur{entries.length > 1 ? "s" : ""} classé{entries.length > 1 ? "s" : ""}

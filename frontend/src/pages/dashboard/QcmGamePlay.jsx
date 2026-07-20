@@ -204,6 +204,37 @@ function QcmGamePlayContent() {
     navigate('/dashboard/play');
   };
 
+  // Keyboard controls: 1-9 or A-F to pick an answer, Enter to validate / go to the next question.
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.target && ['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+      if (lastAnswerResult) {
+        if ((e.key === 'Enter' || e.key === ' ') && lastAnswerResult.hasNextQuestion) {
+          e.preventDefault();
+          fetchNext();
+        }
+        return;
+      }
+      const answers = currentQuestion?.answers;
+      if (submitting || !answers) return;
+      let idx = -1;
+      if (e.key >= '1' && e.key <= '9') idx = parseInt(e.key, 10) - 1;
+      else {
+        const k = e.key.toLowerCase();
+        if (k >= 'a' && k <= 'f') idx = k.charCodeAt(0) - 97;
+      }
+      if (idx >= 0 && idx < answers.length) {
+        e.preventDefault();
+        setSelectedId(answers[idx].answerId);
+      } else if (e.key === 'Enter' && selectedId) {
+        e.preventDefault();
+        submit();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [currentQuestion, selectedId, submitting, lastAnswerResult, fetchNext]); // eslint-disable-line react-hooks/exhaustive-deps
+
   /* ─── Loading ─── */
   if ((isLoading && !currentQuestion) || !loaded) {
     return (
@@ -428,6 +459,9 @@ function QcmGamePlayContent() {
               </motion.div>
             )}
           </AnimatePresence>
+          <p className="hidden sm:block text-center text-[10px] text-white/20 mt-1.5">
+            {lastAnswerResult ? 'Entrée → question suivante' : 'Touches 1–4 pour choisir · Entrée pour valider'}
+          </p>
         </div>
       </div>
 
