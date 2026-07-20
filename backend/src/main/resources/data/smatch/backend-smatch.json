@@ -1,0 +1,191 @@
+{
+  "decks": [
+    {
+      "name": "Verbes HTTP",
+      "categoryName": "Backend",
+      "difficulty": "EASY",
+      "description": "Associe chaque méthode HTTP à son rôle.",
+      "pairs": [
+        {
+          "term": "GET",
+          "definition": "Récupérer une ressource sans la modifier",
+          "hint": "lecture"
+        },
+        {
+          "term": "POST",
+          "definition": "Créer une nouvelle ressource",
+          "hint": "création"
+        },
+        {
+          "term": "PUT",
+          "definition": "Remplacer entièrement une ressource",
+          "hint": "remplacement"
+        },
+        {
+          "term": "PATCH",
+          "definition": "Modifier partiellement une ressource",
+          "hint": "partiel"
+        },
+        {
+          "term": "DELETE",
+          "definition": "Supprimer une ressource",
+          "hint": "suppression"
+        },
+        {
+          "term": "HEAD",
+          "definition": "Récupérer les en-têtes sans le corps",
+          "hint": "en-têtes seuls"
+        },
+        {
+          "term": "OPTIONS",
+          "definition": "Décrire les options de communication",
+          "hint": "pré-vol CORS"
+        }
+      ]
+    },
+    {
+      "name": "Codes de statut HTTP",
+      "categoryName": "Backend",
+      "difficulty": "EASY",
+      "description": "Associe chaque code à sa signification.",
+      "pairs": [
+        {
+          "term": "200",
+          "definition": "OK — succès",
+          "hint": "succès standard"
+        },
+        {
+          "term": "201",
+          "definition": "Created — ressource créée",
+          "hint": "après POST"
+        },
+        {
+          "term": "204",
+          "definition": "No Content — succès sans corps",
+          "hint": "corps vide"
+        },
+        {
+          "term": "301",
+          "definition": "Moved Permanently — redirection permanente",
+          "hint": "redirection"
+        },
+        {
+          "term": "400",
+          "definition": "Bad Request — requête invalide",
+          "hint": "côté client"
+        },
+        {
+          "term": "401",
+          "definition": "Unauthorized — non authentifié",
+          "hint": "identité"
+        },
+        {
+          "term": "403",
+          "definition": "Forbidden — droits insuffisants",
+          "hint": "autorisation"
+        },
+        {
+          "term": "404",
+          "definition": "Not Found — ressource introuvable",
+          "hint": "absent"
+        },
+        {
+          "term": "429",
+          "definition": "Too Many Requests — limite dépassée",
+          "hint": "rate limit"
+        },
+        {
+          "term": "500",
+          "definition": "Internal Server Error — erreur serveur",
+          "hint": "côté serveur"
+        }
+      ]
+    },
+    {
+      "name": "Structures de données",
+      "categoryName": "Backend",
+      "difficulty": "MEDIUM",
+      "description": "Associe chaque structure à sa caractéristique.",
+      "pairs": [
+        {
+          "term": "Pile (Stack)",
+          "definition": "LIFO — dernier entré, premier sorti",
+          "hint": "LIFO"
+        },
+        {
+          "term": "File (Queue)",
+          "definition": "FIFO — premier entré, premier sorti",
+          "hint": "FIFO"
+        },
+        {
+          "term": "Table de hachage",
+          "definition": "Accès par clé en O(1) moyen",
+          "hint": "clé/valeur"
+        },
+        {
+          "term": "Arbre binaire de recherche",
+          "definition": "Recherche ordonnée en O(log n)",
+          "hint": "ordonné"
+        },
+        {
+          "term": "Tas (Heap)",
+          "definition": "Accès rapide au min/max",
+          "hint": "priorité"
+        },
+        {
+          "term": "Liste chaînée",
+          "definition": "Insertion/suppression en O(1) en tête",
+          "hint": "nœuds liés"
+        },
+        {
+          "term": "Graphe",
+          "definition": "Sommets reliés par des arêtes",
+          "hint": "réseau"
+        }
+      ]
+    },
+    {
+      "name": "Concepts base de données",
+      "categoryName": "Backend",
+      "difficulty": "MEDIUM",
+      "description": "Associe chaque concept SQL à sa définition.",
+      "pairs": [
+        {
+          "term": "INDEX",
+          "definition": "Structure accélérant les recherches",
+          "hint": "perf lecture"
+        },
+        {
+          "term": "JOIN",
+          "definition": "Combiner des lignes de plusieurs tables",
+          "hint": "jointure"
+        },
+        {
+          "term": "Transaction ACID",
+          "definition": "Atomique, cohérente, isolée, durable",
+          "hint": "fiabilité"
+        },
+        {
+          "term": "Clé primaire",
+          "definition": "Identifiant unique d'une ligne",
+          "hint": "unique"
+        },
+        {
+          "term": "Clé étrangère",
+          "definition": "Référence vers une autre table",
+          "hint": "relation"
+        },
+        {
+          "term": "Normalisation",
+          "definition": "Réduire la redondance des données",
+          "hint": "3NF"
+        },
+        {
+          "term": "GROUP BY",
+          "definition": "Regrouper pour agréger",
+          "hint": "agrégation"
+        }
+      ]
+    }
+  ]
+}

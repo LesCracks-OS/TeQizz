@@ -1,0 +1,166 @@
+{
+  "decks": [
+    {
+      "name": "Hooks React",
+      "categoryName": "Frontend",
+      "difficulty": "MEDIUM",
+      "description": "Associe chaque hook React à son rôle.",
+      "pairs": [
+        {
+          "term": "useState",
+          "definition": "Gérer un état local",
+          "hint": "état"
+        },
+        {
+          "term": "useEffect",
+          "definition": "Effets de bord après rendu",
+          "hint": "effet"
+        },
+        {
+          "term": "useMemo",
+          "definition": "Mémoriser une valeur calculée",
+          "hint": "valeur"
+        },
+        {
+          "term": "useCallback",
+          "definition": "Mémoriser une fonction",
+          "hint": "fonction"
+        },
+        {
+          "term": "useRef",
+          "definition": "Référence mutable persistante",
+          "hint": "ref/DOM"
+        },
+        {
+          "term": "useContext",
+          "definition": "Consommer un contexte",
+          "hint": "partage"
+        },
+        {
+          "term": "useReducer",
+          "definition": "Gérer un état complexe via reducer",
+          "hint": "reducer"
+        }
+      ]
+    },
+    {
+      "name": "Propriétés CSS Flexbox",
+      "categoryName": "Frontend",
+      "difficulty": "EASY",
+      "description": "Associe chaque propriété à son effet.",
+      "pairs": [
+        {
+          "term": "justify-content",
+          "definition": "Aligner sur l'axe principal",
+          "hint": "axe principal"
+        },
+        {
+          "term": "align-items",
+          "definition": "Aligner sur l'axe transversal",
+          "hint": "axe transverse"
+        },
+        {
+          "term": "flex-direction",
+          "definition": "Définir la direction des éléments",
+          "hint": "row/column"
+        },
+        {
+          "term": "flex-wrap",
+          "definition": "Autoriser le passage à la ligne",
+          "hint": "retour ligne"
+        },
+        {
+          "term": "gap",
+          "definition": "Espacer les éléments",
+          "hint": "espacement"
+        },
+        {
+          "term": "flex-grow",
+          "definition": "Facteur d'agrandissement",
+          "hint": "grandir"
+        }
+      ]
+    },
+    {
+      "name": "Méthodes de tableau JS",
+      "categoryName": "Frontend",
+      "difficulty": "EASY",
+      "description": "Associe chaque méthode à son comportement.",
+      "pairs": [
+        {
+          "term": "map",
+          "definition": "Transformer chaque élément (nouveau tableau)",
+          "hint": "transformer"
+        },
+        {
+          "term": "filter",
+          "definition": "Garder les éléments qui passent un test",
+          "hint": "filtrer"
+        },
+        {
+          "term": "reduce",
+          "definition": "Agréger en une seule valeur",
+          "hint": "accumuler"
+        },
+        {
+          "term": "find",
+          "definition": "Premier élément correspondant",
+          "hint": "premier"
+        },
+        {
+          "term": "forEach",
+          "definition": "Itérer sans retour",
+          "hint": "boucle"
+        },
+        {
+          "term": "some",
+          "definition": "Au moins un élément correspond",
+          "hint": "au moins un"
+        },
+        {
+          "term": "every",
+          "definition": "Tous les éléments correspondent",
+          "hint": "tous"
+        }
+      ]
+    },
+    {
+      "name": "Balises HTML sémantiques",
+      "categoryName": "Frontend",
+      "difficulty": "EASY",
+      "description": "Associe chaque balise à son usage.",
+      "pairs": [
+        {
+          "term": "<nav>",
+          "definition": "Zone de navigation",
+          "hint": "menu"
+        },
+        {
+          "term": "<main>",
+          "definition": "Contenu principal unique",
+          "hint": "principal"
+        },
+        {
+          "term": "<article>",
+          "definition": "Contenu autonome réutilisable",
+          "hint": "autonome"
+        },
+        {
+          "term": "<header>",
+          "definition": "En-tête d'une section",
+          "hint": "haut"
+        },
+        {
+          "term": "<footer>",
+          "definition": "Pied d'une section",
+          "hint": "bas"
+        },
+        {
+          "term": "<aside>",
+          "definition": "Contenu annexe",
+          "hint": "latéral"
+        }
+      ]
+    }
+  ]
+}

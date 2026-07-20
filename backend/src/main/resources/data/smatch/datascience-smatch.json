@@ -1,0 +1,118 @@
+{
+  "decks": [
+    {
+      "name": "Métriques d'évaluation ML",
+      "categoryName": "Data Science",
+      "difficulty": "MEDIUM",
+      "description": "Associe chaque métrique à ce qu'elle mesure.",
+      "pairs": [
+        {
+          "term": "Précision (precision)",
+          "definition": "Vrais positifs parmi les prédits positifs",
+          "hint": "fiabilité +"
+        },
+        {
+          "term": "Rappel (recall)",
+          "definition": "Vrais positifs correctement détectés",
+          "hint": "couverture"
+        },
+        {
+          "term": "F1-score",
+          "definition": "Moyenne harmonique précision/rappel",
+          "hint": "équilibre"
+        },
+        {
+          "term": "Accuracy",
+          "definition": "Proportion de bonnes prédictions",
+          "hint": "global"
+        },
+        {
+          "term": "AUC-ROC",
+          "definition": "Capacité à distinguer les classes",
+          "hint": "séparabilité"
+        },
+        {
+          "term": "RMSE",
+          "definition": "Erreur quadratique moyenne (racine)",
+          "hint": "régression"
+        }
+      ]
+    },
+    {
+      "name": "Concepts Machine Learning",
+      "categoryName": "Data Science",
+      "difficulty": "MEDIUM",
+      "description": "Associe chaque concept à sa définition.",
+      "pairs": [
+        {
+          "term": "Surapprentissage",
+          "definition": "Le modèle mémorise le bruit du train",
+          "hint": "overfitting"
+        },
+        {
+          "term": "Sous-apprentissage",
+          "definition": "Modèle trop simple, erreur élevée",
+          "hint": "underfitting"
+        },
+        {
+          "term": "Validation croisée",
+          "definition": "Évaluer via plusieurs découpages",
+          "hint": "robustesse"
+        },
+        {
+          "term": "Régularisation",
+          "definition": "Pénaliser la complexité du modèle",
+          "hint": "L1/L2"
+        },
+        {
+          "term": "PCA",
+          "definition": "Réduire la dimension en gardant la variance",
+          "hint": "dimension"
+        },
+        {
+          "term": "Apprentissage supervisé",
+          "definition": "Apprendre à partir de données étiquetées",
+          "hint": "labels"
+        }
+      ]
+    },
+    {
+      "name": "Algorithmes ML",
+      "categoryName": "Data Science",
+      "difficulty": "HARD",
+      "description": "Associe chaque algorithme à sa nature.",
+      "pairs": [
+        {
+          "term": "k-NN",
+          "definition": "Classe selon les k plus proches voisins",
+          "hint": "voisins"
+        },
+        {
+          "term": "Random Forest",
+          "definition": "Ensemble d'arbres agrégés (bagging)",
+          "hint": "forêt"
+        },
+        {
+          "term": "SVM",
+          "definition": "Séparer par un hyperplan à marge maximale",
+          "hint": "marge"
+        },
+        {
+          "term": "K-means",
+          "definition": "Regrouper en K clusters",
+          "hint": "clustering"
+        },
+        {
+          "term": "Régression logistique",
+          "definition": "Prédire une probabilité de classe",
+          "hint": "sigmoïde"
+        },
+        {
+          "term": "Gradient boosting",
+          "definition": "Arbres corrigeant les erreurs successives",
+          "hint": "boosting"
+        }
+      ]
+    }
+  ]
+}

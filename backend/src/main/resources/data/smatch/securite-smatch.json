@@ -1,0 +1,80 @@
+{
+  "decks": [
+    {
+      "name": "Attaques web courantes",
+      "categoryName": "Securite",
+      "difficulty": "MEDIUM",
+      "description": "Associe chaque attaque à sa description.",
+      "pairs": [
+        {
+          "term": "Injection SQL",
+          "definition": "Injecter du SQL via une entrée non filtrée",
+          "hint": "requête"
+        },
+        {
+          "term": "XSS",
+          "definition": "Injecter du script exécuté chez la victime",
+          "hint": "script"
+        },
+        {
+          "term": "CSRF",
+          "definition": "Forcer une action via la session d'une victime",
+          "hint": "session"
+        },
+        {
+          "term": "SSRF",
+          "definition": "Faire émettre des requêtes internes au serveur",
+          "hint": "serveur émet"
+        },
+        {
+          "term": "Path traversal",
+          "definition": "Accéder à des fichiers hors du dossier prévu",
+          "hint": "../"
+        },
+        {
+          "term": "Clickjacking",
+          "definition": "Piéger le clic via un iframe invisible",
+          "hint": "iframe"
+        }
+      ]
+    },
+    {
+      "name": "Concepts cryptographie",
+      "categoryName": "Securite",
+      "difficulty": "HARD",
+      "description": "Associe chaque concept à sa définition.",
+      "pairs": [
+        {
+          "term": "Chiffrement symétrique",
+          "definition": "Une même clé chiffre et déchiffre",
+          "hint": "une clé"
+        },
+        {
+          "term": "Chiffrement asymétrique",
+          "definition": "Paire clé publique/privée",
+          "hint": "deux clés"
+        },
+        {
+          "term": "Hachage",
+          "definition": "Empreinte à sens unique",
+          "hint": "irréversible"
+        },
+        {
+          "term": "Sel (salt)",
+          "definition": "Valeur aléatoire par mot de passe",
+          "hint": "anti-rainbow"
+        },
+        {
+          "term": "HMAC",
+          "definition": "Intégrité + authenticité via clé secrète",
+          "hint": "hash+clé"
+        },
+        {
+          "term": "TLS",
+          "definition": "Chiffrer et authentifier le réseau",
+          "hint": "HTTPS"
+        }
+      ]
+    }
+  ]
+}

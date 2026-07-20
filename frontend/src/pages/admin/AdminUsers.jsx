@@ -3,6 +3,7 @@ import { Shield, ShieldOff, Trash2, Search, ChevronDown } from "lucide-react";
 import adminService from "@/services/admin.service";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "@/contexts/ToastContext";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function Badge({ children, variant = "default" }) {
   const styles = {
@@ -127,9 +128,12 @@ export default function AdminUsers() {
                     <tr key={u.id} className="hover:bg-muted/20 transition-colors">
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-3">
-                          <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold text-primary shrink-0">
-                            {u.username?.[0]?.toUpperCase()}
-                          </div>
+                          <Avatar className="h-8 w-8 shrink-0">
+                            <AvatarImage src={u.avatarUrl} />
+                            <AvatarFallback className="text-xs font-bold bg-primary/20 text-primary">
+                              {u.username?.[0]?.toUpperCase()}
+                            </AvatarFallback>
+                          </Avatar>
                           <div>
                             <p className="font-medium text-sm">{u.username}</p>
                             <p className="text-xs text-muted-foreground md:hidden">{u.email}</p>

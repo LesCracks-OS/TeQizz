@@ -1,0 +1,128 @@
+{
+  "decks": [
+    {
+      "name": "Commandes Docker",
+      "categoryName": "Devops",
+      "difficulty": "MEDIUM",
+      "description": "Associe chaque commande Docker à son action.",
+      "pairs": [
+        {
+          "term": "docker build",
+          "definition": "Construire une image",
+          "hint": "image"
+        },
+        {
+          "term": "docker run",
+          "definition": "Lancer un conteneur",
+          "hint": "exécuter"
+        },
+        {
+          "term": "docker ps",
+          "definition": "Lister les conteneurs actifs",
+          "hint": "liste"
+        },
+        {
+          "term": "docker exec",
+          "definition": "Exécuter une commande dans un conteneur",
+          "hint": "entrer"
+        },
+        {
+          "term": "docker pull",
+          "definition": "Télécharger une image",
+          "hint": "récupérer"
+        },
+        {
+          "term": "docker logs",
+          "definition": "Afficher les logs d'un conteneur",
+          "hint": "journaux"
+        },
+        {
+          "term": "docker compose up",
+          "definition": "Démarrer une app multi-conteneurs",
+          "hint": "orchestration"
+        }
+      ]
+    },
+    {
+      "name": "Objets Kubernetes",
+      "categoryName": "Devops",
+      "difficulty": "HARD",
+      "description": "Associe chaque objet K8s à son rôle.",
+      "pairs": [
+        {
+          "term": "Pod",
+          "definition": "Plus petite unité déployable",
+          "hint": "conteneur(s)"
+        },
+        {
+          "term": "Deployment",
+          "definition": "Gérer les répliques et mises à jour",
+          "hint": "répliques"
+        },
+        {
+          "term": "Service",
+          "definition": "Adresse stable vers des Pods",
+          "hint": "réseau interne"
+        },
+        {
+          "term": "Ingress",
+          "definition": "Router le trafic HTTP externe",
+          "hint": "entrée HTTP"
+        },
+        {
+          "term": "ConfigMap",
+          "definition": "Stocker de la configuration non sensible",
+          "hint": "config"
+        },
+        {
+          "term": "Secret",
+          "definition": "Stocker des données sensibles",
+          "hint": "sensible"
+        },
+        {
+          "term": "Namespace",
+          "definition": "Isoler des ressources",
+          "hint": "cloisonnement"
+        }
+      ]
+    },
+    {
+      "name": "Commandes Git",
+      "categoryName": "Devops",
+      "difficulty": "EASY",
+      "description": "Associe chaque commande Git à son effet.",
+      "pairs": [
+        {
+          "term": "git commit",
+          "definition": "Enregistrer les changements indexés",
+          "hint": "enregistrer"
+        },
+        {
+          "term": "git stash",
+          "definition": "Mettre de côté les modifications",
+          "hint": "de côté"
+        },
+        {
+          "term": "git rebase",
+          "definition": "Rejouer des commits sur une nouvelle base",
+          "hint": "historique linéaire"
+        },
+        {
+          "term": "git cherry-pick",
+          "definition": "Appliquer un commit précis",
+          "hint": "un commit"
+        },
+        {
+          "term": "git merge",
+          "definition": "Fusionner des branches",
+          "hint": "fusion"
+        },
+        {
+          "term": "git bisect",
+          "definition": "Trouver le commit fautif",
+          "hint": "dichotomie"
+        }
+      ]
+    }
+  ]
+}

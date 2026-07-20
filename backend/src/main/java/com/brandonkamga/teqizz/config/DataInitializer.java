@@ -71,6 +71,7 @@ public class DataInitializer implements CommandLineRunner {
     private final UserJpaRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final QcmQuestionImportApplicationService questionImportService;
+    private final com.brandonkamga.teqizz.gaming.smatch.application.service.SmatchDeckImportApplicationService smatchDeckImportService;
 
     public DataInitializer(
             RoleRepository roleRepository,
@@ -85,7 +86,9 @@ public class DataInitializer implements CommandLineRunner {
             QuestionRepository questionRepository,
             UserJpaRepository userRepository,
             PasswordEncoder passwordEncoder,
-            QcmQuestionImportApplicationService questionImportService) {
+            QcmQuestionImportApplicationService questionImportService,
+            com.brandonkamga.teqizz.gaming.smatch.application.service.SmatchDeckImportApplicationService smatchDeckImportService) {
+        this.smatchDeckImportService = smatchDeckImportService;
         this.roleRepository = roleRepository;
         this.providerRepository = providerRepository;
         this.gameStatusRepository = gameStatusRepository;
@@ -119,6 +122,9 @@ public class DataInitializer implements CommandLineRunner {
 
         // Import questions from JSON files
         importQuestionsFromJsonFiles();
+
+        // Import Smatch decks from JSON files
+        importSmatchDecksFromJsonFiles();
 
         // Initialize default admin user
         initAdminUser();
@@ -446,6 +452,37 @@ public class DataInitializer implements CommandLineRunner {
         } catch (IOException e) {
             System.out.println("Failed to scan for JSON files: " + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Import Smatch decks from JSON files in classpath:data/smatch/. Runs on every boot; the loader
+     * is idempotent (existing decks by name are skipped), so new deck files load on any database.
+     */
+    private void importSmatchDecksFromJsonFiles() {
+        try {
+            PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+            Resource[] resources = resolver.getResources("classpath:data/smatch/*.json");
+            if (resources.length == 0) return;
+
+            System.out.println("=".repeat(60));
+            System.out.println("IMPORTING SMATCH DECKS FROM JSON FILES (" + resources.length + " file(s))");
+            int totalCreated = 0;
+            for (Resource resource : resources) {
+                String filename = resource.getFilename();
+                if (filename == null) continue;
+                try {
+                    int created = smatchDeckImportService.importFromInputStream(resource.getInputStream());
+                    totalCreated += created;
+                    System.out.println("  - " + filename + ": " + created + " deck(s) created");
+                } catch (Exception e) {
+                    System.out.println("  - Failed to import " + filename + ": " + e.getMessage());
+                }
+            }
+            System.out.println("Smatch decks created: " + totalCreated);
+            System.out.println("=".repeat(60));
+        } catch (IOException e) {
+            System.out.println("Failed to scan for Smatch JSON files: " + e.getMessage());
         }
     }
 
