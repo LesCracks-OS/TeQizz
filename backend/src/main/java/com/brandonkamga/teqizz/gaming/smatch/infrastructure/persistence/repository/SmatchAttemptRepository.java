@@ -17,4 +17,7 @@ public interface SmatchAttemptRepository extends JpaRepository<SmatchAttemptJpaE
     boolean existsBySessionIdAndPairIdAndIsCorrectTrue(Long sessionId, Long pairId);
 
     void deleteBySessionId(Long sessionId);
+
+    /** Remove all attempts referencing a pair — needed before deleting the pair. */
+    void deleteByPairId(Long pairId);
 }

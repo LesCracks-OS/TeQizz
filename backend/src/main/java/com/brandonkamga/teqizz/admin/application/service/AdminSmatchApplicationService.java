@@ -279,6 +279,8 @@ public class AdminSmatchApplicationService {
     public void deletePair(Long id) {
         SmatchPairJpaEntity pair = smatchPairRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("SmatchPair", "id", id));
+        // A pair may have been played (attempts reference it) — remove those first to avoid an FK error.
+        smatchAttemptRepository.deleteByPairId(id);
         smatchPairRepository.delete(pair);
     }
 

@@ -23,6 +23,7 @@ import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.entity.Ques
 import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.AnswerRepository;
 import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.GameRepository;
 import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.GameSessionRepository;
+import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.UserAnswerRepository;
 import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.QuestionLevelRepository;
 import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.QuestionRepository;
 import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.QuestionStatusRepository;
@@ -85,6 +86,7 @@ public class AdminQcmApplicationService {
     private final GameRepository gameRepository;
     private final QuestionLevelRepository questionLevelRepository;
     private final QuestionStatusRepository questionStatusRepository;
+    private final UserAnswerRepository userAnswerRepository;
     private final QcmDuplicateGuard duplicateGuard;
 
     public AdminQcmApplicationService(CategoryRepository categoryRepository,
@@ -95,6 +97,7 @@ public class AdminQcmApplicationService {
                                        GameRepository gameRepository,
                                        QuestionLevelRepository questionLevelRepository,
                                        QuestionStatusRepository questionStatusRepository,
+                                       UserAnswerRepository userAnswerRepository,
                                        QcmDuplicateGuard duplicateGuard) {
         this.categoryRepository = categoryRepository;
         this.tagRepository = tagRepository;
@@ -104,6 +107,7 @@ public class AdminQcmApplicationService {
         this.gameRepository = gameRepository;
         this.questionLevelRepository = questionLevelRepository;
         this.questionStatusRepository = questionStatusRepository;
+        this.userAnswerRepository = userAnswerRepository;
         this.duplicateGuard = duplicateGuard;
     }
 
@@ -143,11 +147,14 @@ public class AdminQcmApplicationService {
     public String deleteCategory(Long id) {
         CategoryJpaEntity category = categoryRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Category", "id", id));
-        long count = questionRepository.countByCategoryId(id);
-        if (count > 0) {
+        long questionCount = questionRepository.countByCategoryId(id);
+        long tagCount = tagRepository.findByCategoryId(id).size();
+        // A category is also referenced by tags (and Smatch decks). If it's used anywhere,
+        // deactivate it instead of hard-deleting to avoid a foreign-key error.
+        if (questionCount > 0 || tagCount > 0) {
             category.setIsActive(false);
             categoryRepository.save(category);
-            return "Category deactivated (has " + count + " questions)";
+            return "Category deactivated (still in use: " + questionCount + " question(s), " + tagCount + " tag(s))";
         }
         categoryRepository.delete(category);
         return "Category deleted";
@@ -358,8 +365,12 @@ public class AdminQcmApplicationService {
     }
 
     public void deleteQuestion(Long id) {
-        questionRepository.delete(questionRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Question", "id", id)));
+        Question question = questionRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Question", "id", id));
+        // Players may have answered this question — remove those records first (they reference
+        // the question and its answers via NOT NULL foreign keys), otherwise the delete fails.
+        userAnswerRepository.deleteByQuestionId(id);
+        questionRepository.delete(question);
     }
 
     public String updateQuestionStatus(Long id, String requestedStatus) {
@@ -420,8 +431,11 @@ public class AdminQcmApplicationService {
     }
 
     public void deleteSession(Long id) {
-        gameSessionRepository.delete(gameSessionRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("GameSession", "id", id)));
+        GameSession session = gameSessionRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("GameSession", "id", id));
+        // Remove the session's recorded answers first (FK on game_session_id).
+        userAnswerRepository.deleteByGameSessionId(id);
+        gameSessionRepository.delete(session);
     }
 
     // ─── Config ───────────────────────────────────────────────────────────────

@@ -5,8 +5,14 @@ import com.brandonkamga.teqizz.dto.admin.AdminStatsResponse;
 import com.brandonkamga.teqizz.exception.BadRequestException;
 import com.brandonkamga.teqizz.exception.ResourceNotFoundException;
 import com.brandonkamga.teqizz.gaming.qcm.domain.model.vo.QuestionStatusType;
+import com.brandonkamga.teqizz.contribution.infrastructure.persistence.SmatchContributionRepository;
+import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.entity.GameSession;
+import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.entity.Question;
 import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.GameSessionRepository;
 import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.QuestionRepository;
+import com.brandonkamga.teqizz.gaming.qcm.infrastructure.persistence.repository.UserAnswerRepository;
+import com.brandonkamga.teqizz.gaming.smatch.infrastructure.persistence.entity.SmatchSessionJpaEntity;
+import com.brandonkamga.teqizz.gaming.smatch.infrastructure.persistence.repository.SmatchAttemptRepository;
 import com.brandonkamga.teqizz.gaming.smatch.infrastructure.persistence.repository.SmatchDeckRepository;
 import com.brandonkamga.teqizz.gaming.smatch.infrastructure.persistence.repository.SmatchPairRepository;
 import com.brandonkamga.teqizz.gaming.smatch.infrastructure.persistence.repository.SmatchSessionRepository;
@@ -34,26 +40,35 @@ public class AdminPlatformApplicationService {
     private final QuestionRepository questionRepository;
     private final CategoryRepository categoryRepository;
     private final GameSessionRepository gameSessionRepository;
+    private final UserAnswerRepository userAnswerRepository;
     private final SmatchDeckRepository smatchDeckRepository;
     private final SmatchPairRepository smatchPairRepository;
     private final SmatchSessionRepository smatchSessionRepository;
+    private final SmatchAttemptRepository smatchAttemptRepository;
+    private final SmatchContributionRepository smatchContributionRepository;
 
     public AdminPlatformApplicationService(UserJpaRepository userRepository,
                                            RoleRepository roleRepository,
                                            QuestionRepository questionRepository,
                                            CategoryRepository categoryRepository,
                                            GameSessionRepository gameSessionRepository,
+                                           UserAnswerRepository userAnswerRepository,
                                            SmatchDeckRepository smatchDeckRepository,
                                            SmatchPairRepository smatchPairRepository,
-                                           SmatchSessionRepository smatchSessionRepository) {
+                                           SmatchSessionRepository smatchSessionRepository,
+                                           SmatchAttemptRepository smatchAttemptRepository,
+                                           SmatchContributionRepository smatchContributionRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.questionRepository = questionRepository;
         this.categoryRepository = categoryRepository;
         this.gameSessionRepository = gameSessionRepository;
+        this.userAnswerRepository = userAnswerRepository;
         this.smatchDeckRepository = smatchDeckRepository;
         this.smatchPairRepository = smatchPairRepository;
         this.smatchSessionRepository = smatchSessionRepository;
+        this.smatchAttemptRepository = smatchAttemptRepository;
+        this.smatchContributionRepository = smatchContributionRepository;
     }
 
     @Transactional(readOnly = true)
@@ -104,6 +119,36 @@ public class AdminPlatformApplicationService {
         if (user.getEmail().equals(currentUserEmail)) {
             throw new BadRequestException("Cannot delete your own account");
         }
+
+        // A user is referenced by several tables via NOT NULL foreign keys, so a naive delete
+        // fails with a constraint violation. Clean up the dependents first, in order.
+
+        // 1. QCM game history (sessions + their answers).
+        List<GameSession> qcmSessions = gameSessionRepository.findByUserId(userId);
+        for (GameSession s : qcmSessions) {
+            userAnswerRepository.deleteByGameSessionId(s.getId());
+        }
+        gameSessionRepository.deleteAll(qcmSessions);
+
+        // 2. Smatch game history (sessions + their attempts).
+        List<SmatchSessionJpaEntity> smatchSessions = smatchSessionRepository.findByUserId(userId);
+        for (SmatchSessionJpaEntity s : smatchSessions) {
+            smatchAttemptRepository.deleteBySessionId(s.getId());
+        }
+        smatchSessionRepository.deleteAll(smatchSessions);
+
+        // 3. Pending Smatch contributions authored by the user.
+        smatchContributionRepository.deleteAll(
+                smatchContributionRepository.findBySubmittedByIdOrderByCreatedAtDesc(userId));
+
+        // 4. Keep the questions this user contributed to the bank, but detach the author.
+        List<Question> authoredQuestions = questionRepository.findBySubmittedById(userId);
+        for (Question q : authoredQuestions) {
+            q.setSubmittedBy(null);
+        }
+        questionRepository.saveAll(authoredQuestions);
+
+        // 5. Finally remove the user (the profile cascades via the OneToOne relation).
         userRepository.delete(user);
     }
 

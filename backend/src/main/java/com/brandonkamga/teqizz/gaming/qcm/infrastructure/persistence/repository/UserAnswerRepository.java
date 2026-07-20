@@ -37,6 +37,9 @@ public interface UserAnswerRepository extends JpaRepository<UserAnswer, Long> {
 
     void deleteByGameSessionId(Long gameSessionId);
 
+    /** Remove all recorded answers referencing a question — needed before deleting the question. */
+    void deleteByQuestionId(Long questionId);
+
     // New method for stats - get all answers by user
     @Query("SELECT ua FROM UserAnswer ua WHERE ua.gameSession.user.id = :userId")
     List<UserAnswer> findByGameSessionUserId(@Param("userId") Long userId);
