@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CheckCircle, XCircle, Eye, X, ChevronDown, ChevronUp } from "lucide-react";
 import adminService from "@/services/admin.service";
+import { toast } from "@/contexts/ToastContext";
 
 const LEVEL_COLORS = {
   EASY: "bg-emerald-500/10 text-emerald-500",
@@ -105,7 +106,7 @@ export default function AdminQcmContributions() {
       await adminService.approveContribution(id);
       setContributions(prev => prev.filter(c => c.id !== id));
       setSelected(null);
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
     setActing(false);
   };
 
@@ -115,7 +116,7 @@ export default function AdminQcmContributions() {
       await adminService.rejectContribution(id);
       setContributions(prev => prev.filter(c => c.id !== id));
       setSelected(null);
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
     setActing(false);
   };
 

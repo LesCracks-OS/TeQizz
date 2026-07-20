@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Trash2, StopCircle, Search } from "lucide-react";
 import adminService from "@/services/admin.service";
+import { toast } from "@/contexts/ToastContext";
 
 const MODE_COLORS = {
   BLITZ: "bg-purple-500/10 text-purple-500",
@@ -31,7 +32,7 @@ export default function AdminQcmSessions() {
     try {
       await adminService.forceCompleteQcmSession(id);
       setSessions(prev => prev.map(s => s.id === id ? { ...s, completed: true } : s));
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
     setActionId(null);
   };
 
@@ -40,7 +41,7 @@ export default function AdminQcmSessions() {
     try {
       await adminService.deleteQcmSession(id);
       setSessions(prev => prev.filter(s => s.id !== id));
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
     setActionId(null);
     setConfirmDelete(null);
   };

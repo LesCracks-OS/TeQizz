@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Plus, Pencil, Trash2, ToggleLeft, ToggleRight, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
 import adminService from "@/services/admin.service";
+import { toast } from "@/contexts/ToastContext";
 
 const DIFF_COLORS = {
   EASY: "bg-emerald-500/10 text-emerald-500",
@@ -41,7 +42,7 @@ export default function AdminSmatchDecks() {
     try {
       await adminService.updateSmatchDeckStatus(deck.id, !deck.isActive);
       setDecks(prev => prev.map(d => d.id === deck.id ? { ...d, isActive: !deck.isActive } : d));
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
     setActionId(null);
   };
 

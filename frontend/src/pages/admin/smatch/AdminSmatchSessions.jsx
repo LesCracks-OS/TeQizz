@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Trash2, Search, Eye, X } from "lucide-react";
 import adminService from "@/services/admin.service";
+import { toast } from "@/contexts/ToastContext";
 
 const MODE_COLORS = {
   TIME_ATTACK: "bg-orange-500/10 text-orange-500",
@@ -81,7 +82,7 @@ export default function AdminSmatchSessions() {
     try {
       const res = await adminService.getSmatchSession(id);
       setDetailSession(res.data);
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
   };
 
   const handleDelete = async (id) => {
@@ -90,7 +91,7 @@ export default function AdminSmatchSessions() {
       await adminService.deleteSmatchSession(id);
       setSessions(prev => prev.filter(s => s.id !== id));
       setConfirmDelete(null);
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
     setActionId(null);
   };
 

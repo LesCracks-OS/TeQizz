@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CheckCircle, XCircle, ChevronDown, ChevronUp } from "lucide-react";
 import adminService from "@/services/admin.service";
+import { toast } from "@/contexts/ToastContext";
 
 const DIFF_COLORS = {
   EASY: "bg-emerald-500/10 text-emerald-500",
@@ -33,7 +34,7 @@ export default function AdminSmatchContributions() {
     try {
       await adminService.approveSmatchContribution(id);
       setItems(prev => prev.filter(c => c.id !== id));
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
     setActing(false);
   };
 
@@ -43,7 +44,7 @@ export default function AdminSmatchContributions() {
     try {
       await adminService.rejectSmatchContribution(id, reason);
       setItems(prev => prev.filter(c => c.id !== id));
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
     setActing(false);
   };
 

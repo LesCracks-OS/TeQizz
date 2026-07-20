@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Plus, Pencil, Trash2, ToggleLeft, ToggleRight, Search, Download, Upload, X, Loader2, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import adminService from "@/services/admin.service";
+import { toast } from "@/contexts/ToastContext";
 
 const LEVEL_COLORS = {
   EASY: "bg-emerald-500/10 text-emerald-500",
@@ -201,7 +202,7 @@ export default function AdminQcmQuestions() {
     try {
       await adminService.updateQcmQuestionStatus(q.id, newStatus);
       setQuestions(prev => prev.map(x => x.id === q.id ? { ...x, status: newStatus } : x));
-    } catch {}
+    } catch (e) { toast.error(e?.message || "Une erreur est survenue"); }
   };
 
   const handleDelete = async (id) => {
