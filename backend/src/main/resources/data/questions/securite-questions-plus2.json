@@ -1,0 +1,1301 @@
+{
+  "categoryName": "Securite",
+  "questions": [
+    {
+      "content": "Qu'est-ce qu'une attaque SSRF (Server-Side Request Forgery) ?",
+      "explanation": "Forcer le serveur à émettre des requêtes vers des cibles internes/choisies par l'attaquant (ex. métadonnées cloud), via une entrée non validée.",
+      "hint": "Le serveur émet des requêtes choisies par l'attaquant.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Faire émettre au serveur des requêtes vers des cibles choisies par l'attaquant",
+          "isCorrect": true
+        },
+        {
+          "content": "Injecter du script côté client",
+          "isCorrect": false
+        },
+        {
+          "content": "Deviner un mot de passe",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer le réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque par 'path traversal' ?",
+      "explanation": "Manipuler un chemin de fichier (ex. ../../etc/passwd) pour accéder à des fichiers hors du répertoire prévu.",
+      "hint": "Remonter l'arborescence avec ../.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Accéder à des fichiers hors du dossier prévu via des séquences ../",
+          "isCorrect": true
+        },
+        {
+          "content": "Injecter du SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Voler un cookie",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer un serveur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une injection de commande (command injection) ?",
+      "explanation": "Insérer des commandes système via une entrée passée à un shell, exécutées avec les droits du serveur.",
+      "hint": "Faire exécuter des commandes shell.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Faire exécuter des commandes système via une entrée non assainie",
+          "isCorrect": true
+        },
+        {
+          "content": "Injecter du CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Modifier un cookie",
+          "isCorrect": false
+        },
+        {
+          "content": "Deviner une clé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'attaque 'alg: none' sur un JWT ?",
+      "explanation": "Forcer l'algorithme de signature à 'none' pour qu'un token sans signature soit accepté si le serveur ne valide pas l'algorithme.",
+      "hint": "Supprimer la signature du token.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Faire accepter un token non signé en imposant l'algorithme none",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le token",
+          "isCorrect": false
+        },
+        {
+          "content": "Rallonger la clé",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser le payload",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que protège l'extension PKCE dans OAuth2 ?",
+      "explanation": "Elle protège le flux authorization code des clients publics (mobile/SPA) contre l'interception du code, via un challenge/verifier.",
+      "hint": "Sécuriser le code pour les clients publics.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "L'interception du code d'autorisation par les clients publics",
+          "isCorrect": true
+        },
+        {
+          "content": "Le vol de mot de passe",
+          "isCorrect": false
+        },
+        {
+          "content": "Le CSRF de session",
+          "isCorrect": false
+        },
+        {
+          "content": "Le chiffrement du token",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le clickjacking et comment s'en protéger ?",
+      "explanation": "Piéger l'utilisateur en superposant un iframe invisible ; on s'en protège avec X-Frame-Options ou frame-ancestors (CSP).",
+      "hint": "Un iframe invisible piège le clic.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité web"
+      ],
+      "answers": [
+        {
+          "content": "Piéger les clics via un iframe invisible ; contré par X-Frame-Options/CSP",
+          "isCorrect": true
+        },
+        {
+          "content": "Injecter du SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer le serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "Deviner un mot de passe",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque 'open redirect' ?",
+      "explanation": "Abuser d'un paramètre de redirection non validé pour envoyer la victime vers un site malveillant, en apparence depuis un domaine de confiance.",
+      "hint": "Rediriger via un paramètre non validé.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité web"
+      ],
+      "answers": [
+        {
+          "content": "Rediriger la victime vers un site malveillant via un paramètre non validé",
+          "isCorrect": true
+        },
+        {
+          "content": "Injecter du script",
+          "isCorrect": false
+        },
+        {
+          "content": "Voler un fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer une API",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'mass assignment' (affectation en masse) ?",
+      "explanation": "Lier automatiquement toutes les entrées d'une requête aux champs d'un objet, permettant de modifier des champs non prévus (ex. isAdmin).",
+      "hint": "Le client remplit des champs interdits.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Lier des entrées à des champs non prévus (ex. rôle) faute de liste blanche",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer un objet",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer la mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Deviner une clé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la désérialisation non sécurisée ?",
+      "explanation": "Désérialiser des données non fiables peut instancier des objets malveillants et mener à l'exécution de code (RCE).",
+      "hint": "Désérialiser du non-fiable peut exécuter du code.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Désérialiser des données non fiables pouvant conduire à une exécution de code",
+          "isCorrect": true
+        },
+        {
+          "content": "Compresser des objets",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer un flux",
+          "isCorrect": false
+        },
+        {
+          "content": "Valider un schéma",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque XXE (XML External Entity) ?",
+      "explanation": "Un parseur XML mal configuré traite des entités externes, permettant lecture de fichiers, SSRF ou déni de service.",
+      "hint": "Abuser des entités XML externes.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Abuser d'entités XML externes pour lire des fichiers ou faire du SSRF",
+          "isCorrect": true
+        },
+        {
+          "content": "Injecter du JavaScript",
+          "isCorrect": false
+        },
+        {
+          "content": "Deviner un hash",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer le CPU uniquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un HMAC ?",
+      "explanation": "Un code d'authentification de message basé sur une clé secrète et une fonction de hachage, garantissant intégrité ET authenticité.",
+      "hint": "Hash + clé secrète = intégrité + authenticité.",
+      "difficulty": "HARD",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Garantir l'intégrité et l'authenticité d'un message via une clé secrète",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer un message",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser des données",
+          "isCorrect": false
+        },
+        {
+          "content": "Générer une paire de clés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait une fonction de dérivation de clé comme PBKDF2 ?",
+      "explanation": "Elle dérive une clé forte d'un mot de passe en appliquant de nombreuses itérations + sel, ralentissant le brute force.",
+      "hint": "Étirer un mot de passe en clé, lentement.",
+      "difficulty": "HARD",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Dériver lentement une clé d'un mot de passe avec sel et itérations",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer un fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Signer un message",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser une clé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi préférer AES-GCM à AES-CBC dans beaucoup de cas ?",
+      "explanation": "GCM est un mode authentifié (AEAD) : il fournit confidentialité ET intégrité/authenticité, évitant des attaques que CBC seul ne prévient pas.",
+      "hint": "GCM = chiffrement authentifié.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Parce que GCM fournit aussi l'authenticité (AEAD), pas seulement la confidentialité",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce que CBC est asymétrique",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que GCM n'a pas de clé",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que CBC est plus récent",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la 'forward secrecy' (PFS) ?",
+      "explanation": "Une propriété où la compromission future d'une clé long-terme ne permet pas de déchiffrer les sessions passées, grâce à des clés de session éphémères.",
+      "hint": "Le passé reste protégé si la clé fuit.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Les sessions passées restent protégées même si la clé long-terme fuit plus tard",
+          "isCorrect": true
+        },
+        {
+          "content": "Le chiffrement du futur trafic",
+          "isCorrect": false
+        },
+        {
+          "content": "Un algorithme symétrique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un certificat auto-signé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert une autorité de certification (CA) dans le PKI ?",
+      "explanation": "Elle signe et atteste l'authenticité des certificats (liant une clé publique à une identité), servant de tiers de confiance.",
+      "hint": "Un tiers de confiance qui signe les certificats.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Attester l'authenticité des certificats en les signant",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le trafic",
+          "isCorrect": false
+        },
+        {
+          "content": "Générer des mots de passe",
+          "isCorrect": false
+        },
+        {
+          "content": "Router les requêtes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le mTLS (mutual TLS) ?",
+      "explanation": "Une authentification TLS mutuelle où le client ET le serveur présentent un certificat, courante entre microservices.",
+      "hint": "Les deux parties s'authentifient par certificat.",
+      "difficulty": "HARD",
+      "tags": [
+        "Réseau"
+      ],
+      "answers": [
+        {
+          "content": "Une authentification mutuelle client et serveur par certificats",
+          "isCorrect": true
+        },
+        {
+          "content": "Un chiffrement asymétrique du mot de passe",
+          "isCorrect": false
+        },
+        {
+          "content": "Un TLS sans certificat",
+          "isCorrect": false
+        },
+        {
+          "content": "Un tunnel VPN",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque de 'session fixation' ?",
+      "explanation": "Forcer la victime à utiliser un identifiant de session connu de l'attaquant, qui hérite ensuite de la session authentifiée. Contre-mesure : régénérer l'ID à la connexion.",
+      "hint": "Imposer un ID de session connu.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité web"
+      ],
+      "answers": [
+        {
+          "content": "Imposer un identifiant de session connu de l'attaquant avant authentification",
+          "isCorrect": true
+        },
+        {
+          "content": "Injecter du SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Voler un fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer la session",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la 'dependency confusion' ?",
+      "explanation": "Publier un paquet public malveillant du même nom qu'un paquet interne, que l'outil de build récupère par erreur.",
+      "hint": "Un paquet public usurpe un paquet interne.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Faire installer un paquet public malveillant à la place d'un paquet interne",
+          "isCorrect": true
+        },
+        {
+          "content": "Saturer le registre",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le paquet",
+          "isCorrect": false
+        },
+        {
+          "content": "Deviner une clé npm",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'typosquatting' de paquets ?",
+      "explanation": "Publier un paquet malveillant dont le nom ressemble à un paquet populaire (faute de frappe) pour piéger les installations.",
+      "hint": "Un nom proche d'un paquet connu.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Publier un paquet malveillant au nom proche d'un paquet légitime",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer un paquet",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer npm",
+          "isCorrect": false
+        },
+        {
+          "content": "Voler un token",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que garantit une signature numérique (clé privée) ?",
+      "explanation": "L'authenticité et l'intégrité : seul le détenteur de la clé privée a pu signer, et toute altération invalide la signature.",
+      "hint": "Signé par le détenteur, non altéré.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "L'authenticité et l'intégrité, vérifiables avec la clé publique",
+          "isCorrect": true
+        },
+        {
+          "content": "La confidentialité du message",
+          "isCorrect": false
+        },
+        {
+          "content": "La compression",
+          "isCorrect": false
+        },
+        {
+          "content": "La disponibilité",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi ne pas rouler sa propre cryptographie ?",
+      "explanation": "Les implémentations maison contiennent souvent des failles subtiles ; il faut utiliser des primitives éprouvées et auditées.",
+      "hint": "Utiliser des primitives éprouvées.",
+      "difficulty": "HARD",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Parce que les implémentations maison contiennent souvent des failles subtiles",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce que c'est trop lent",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que c'est interdit par la loi",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que ça prend trop de mémoire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque par force brute sur un hash volé ?",
+      "explanation": "Essayer massivement des mots de passe, les hacher et comparer au hash volé ; d'où l'intérêt d'algorithmes lents et salés.",
+      "hint": "Tester des millions de candidats.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Tester massivement des mots de passe hachés contre un hash volé",
+          "isCorrect": true
+        },
+        {
+          "content": "Rejouer une requête",
+          "isCorrect": false
+        },
+        {
+          "content": "Injecter du SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Intercepter le réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une 'rainbow table' ?",
+      "explanation": "Une table précalculée de hash pour retrouver rapidement un mot de passe ; le sel la rend inefficace.",
+      "hint": "Des hash précalculés, contrés par le sel.",
+      "difficulty": "HARD",
+      "tags": [
+        "Cryptographie"
+      ],
+      "answers": [
+        {
+          "content": "Une table de hash précalculés contrée par l'usage d'un sel",
+          "isCorrect": true
+        },
+        {
+          "content": "Un chiffrement par blocs",
+          "isCorrect": false
+        },
+        {
+          "content": "Une clé publique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un tunnel TLS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le principe 'zero trust' ?",
+      "explanation": "Ne faire confiance à aucune requête par défaut, même interne : chaque accès est authentifié, autorisé et chiffré.",
+      "hint": "Ne jamais faire confiance implicitement.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Vérifier chaque accès, sans confiance implicite même en interne",
+          "isCorrect": true
+        },
+        {
+          "content": "Ouvrir le réseau interne",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer une seule fois",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer l'authentification interne",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'security by obscurity' et pourquoi est-il insuffisant ?",
+      "explanation": "Compter sur le secret de l'implémentation comme seule défense ; c'est fragile car la découverte du secret effondre la sécurité.",
+      "hint": "Cacher n'est pas protéger.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Compter sur le secret de conception, insuffisant car fragile s'il est découvert",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer fortement",
+          "isCorrect": false
+        },
+        {
+          "content": "Auditer le code",
+          "isCorrect": false
+        },
+        {
+          "content": "Limiter les privilèges",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi imposer une politique de mots de passe basée sur la longueur/passphrases ?",
+      "explanation": "L'entropie croît surtout avec la longueur ; les passphrases longues résistent mieux que des règles de complexité difficiles à retenir.",
+      "hint": "La longueur bat la complexité.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Parce que la longueur augmente l'entropie plus efficacement que la complexité",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce que c'est plus rapide à taper",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que ça chiffre mieux",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que la loi l'exige",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque par 'credential stuffing' ?",
+      "explanation": "Rejouer massivement des couples identifiant/mot de passe fuités ailleurs, exploitant la réutilisation des mots de passe.",
+      "hint": "Rejouer des identifiants fuités.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Tester des identifiants fuités ailleurs, exploitant leur réutilisation",
+          "isCorrect": true
+        },
+        {
+          "content": "Deviner aléatoirement",
+          "isCorrect": false
+        },
+        {
+          "content": "Injecter du SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Intercepter le réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment atténuer le credential stuffing ?",
+      "explanation": "Par MFA, détection d'anomalies, limitation de débit, CAPTCHA et surveillance des fuites connues.",
+      "hint": "MFA + détection + rate limit.",
+      "difficulty": "HARD",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Par MFA, rate limiting, détection d'anomalies et CAPTCHA",
+          "isCorrect": true
+        },
+        {
+          "content": "En allongeant les sessions",
+          "isCorrect": false
+        },
+        {
+          "content": "En chiffrant les cookies uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "En désactivant HTTPS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'security header' Referrer-Policy ?",
+      "explanation": "Il contrôle quelle information de référent (URL d'origine) est envoyée lors des navigations, limitant les fuites d'URL sensibles.",
+      "hint": "Limiter l'info de référent envoyée.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité web"
+      ],
+      "answers": [
+        {
+          "content": "Contrôler l'information de référent transmise pour éviter les fuites d'URL",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les cookies",
+          "isCorrect": false
+        },
+        {
+          "content": "Forcer HTTPS",
+          "isCorrect": false
+        },
+        {
+          "content": "Bloquer les scripts",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le principe de 'fail securely' ?",
+      "explanation": "En cas d'erreur, revenir à un état sûr (refuser l'accès) plutôt qu'ouvert, pour ne pas exposer de ressource par défaut.",
+      "hint": "Échouer en refusant, pas en ouvrant.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "En cas d'erreur, refuser par défaut plutôt qu'autoriser",
+          "isCorrect": true
+        },
+        {
+          "content": "Ignorer l'erreur",
+          "isCorrect": false
+        },
+        {
+          "content": "Autoriser par défaut",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer l'erreur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi limiter la taille des uploads et valider leur type ?",
+      "explanation": "Pour éviter le déni de service par gros fichiers et l'exécution de contenus malveillants (ex. faux type MIME).",
+      "hint": "Éviter DoS et fichiers malveillants.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Pour prévenir le déni de service et l'upload de contenus malveillants",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer l'upload",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer le fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour compresser l'image",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'audit log' de sécurité ?",
+      "explanation": "Un journal inaltérable des actions sensibles (connexions, changements de droits) pour la traçabilité et l'investigation.",
+      "hint": "Traçabilité des actions sensibles.",
+      "difficulty": "EASY",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Un journal des actions sensibles pour la traçabilité et l'investigation",
+          "isCorrect": true
+        },
+        {
+          "content": "Un cache de sessions",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pare-feu",
+          "isCorrect": false
+        },
+        {
+          "content": "Un chiffrement des données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi chiffrer les sauvegardes (backups) ?",
+      "explanation": "Une sauvegarde volée non chiffrée expose toutes les données ; le chiffrement au repos la protège.",
+      "hint": "Une backup volée = fuite si non chiffrée.",
+      "difficulty": "EASY",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Parce qu'une sauvegarde volée exposerait toutes les données si non chiffrée",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour réduire sa taille",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour accélérer la restauration",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour supprimer les doublons",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque 'replay' sur un token et comment l'éviter ?",
+      "explanation": "Rejouer un token capturé ; on l'atténue par des tokens à courte durée, liés au contexte (nonce, binding) et via HTTPS.",
+      "hint": "Rejouer un token intercepté.",
+      "difficulty": "HARD",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Rejouer un token capturé ; contré par courte durée de vie et HTTPS",
+          "isCorrect": true
+        },
+        {
+          "content": "Injecter du SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Voler un fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Saturer l'API",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la validation du 'Content-Type' côté serveur d'une API JSON ?",
+      "explanation": "Rejeter les requêtes au mauvais type de contenu réduit certains vecteurs (CSRF via formulaires, confusion de parsing).",
+      "hint": "Refuser les mauvais types de contenu.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Refuser les requêtes au mauvais Content-Type, réduisant certains abus",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le corps",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser la réponse",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer le parsing",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'bug bounty' ?",
+      "explanation": "Un programme récompensant les chercheurs qui signalent des vulnérabilités de façon responsable.",
+      "hint": "Récompenser la divulgation responsable.",
+      "difficulty": "EASY",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Un programme récompensant le signalement responsable de vulnérabilités",
+          "isCorrect": true
+        },
+        {
+          "content": "Un scanner automatique",
+          "isCorrect": false
+        },
+        {
+          "content": "Un pare-feu",
+          "isCorrect": false
+        },
+        {
+          "content": "Un audit interne obligatoire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi appliquer les mises à jour de sécurité rapidement ?",
+      "explanation": "Les correctifs ferment des failles connues et publiquement documentées, activement exploitées après divulgation.",
+      "hint": "Fermer les failles connues vite.",
+      "difficulty": "EASY",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Parce que les failles corrigées sont publiques et activement exploitées",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour gagner en performance",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour réduire la taille",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour changer l'UI",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une attaque 'DNS rebinding' ?",
+      "explanation": "Faire varier la résolution DNS d'un domaine contrôlé pour contourner la same-origin policy et atteindre des services internes.",
+      "hint": "Changer la résolution DNS pour viser l'interne.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Réseau"
+      ],
+      "answers": [
+        {
+          "content": "Manipuler la résolution DNS pour contourner l'isolation et viser des services internes",
+          "isCorrect": true
+        },
+        {
+          "content": "Saturer un résolveur",
+          "isCorrect": false
+        },
+        {
+          "content": "Injecter du SQL",
+          "isCorrect": false
+        },
+        {
+          "content": "Voler un certificat",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la segmentation réseau en sécurité ?",
+      "explanation": "Découper le réseau en zones isolées pour limiter la propagation latérale d'un attaquant après une compromission.",
+      "hint": "Cloisonner pour limiter la propagation.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Réseau"
+      ],
+      "answers": [
+        {
+          "content": "Isoler des zones réseau pour limiter le déplacement latéral d'un attaquant",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le trafic",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer le réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Router plus vite",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la 'threat modeling' ?",
+      "explanation": "Analyser en amont les menaces, actifs et vecteurs d'attaque d'un système pour prioriser les défenses (ex. STRIDE).",
+      "hint": "Modéliser les menaces en amont.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Analyser menaces et vecteurs d'attaque pour prioriser les défenses",
+          "isCorrect": true
+        },
+        {
+          "content": "Scanner le code",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Tester la charge",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi valider et assainir aussi les données provenant d'API tierces ?",
+      "explanation": "Une source tierce peut être compromise ou renvoyer des données malveillantes ; la confiance ne doit pas être aveugle.",
+      "hint": "Une tierce partie n'est pas de confiance absolue.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Parce qu'une source tierce peut être compromise ou renvoyer du contenu malveillant",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer l'appel",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que c'est du JSON",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer la réponse",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'least functionality' (surface d'attaque minimale) ?",
+      "explanation": "Désactiver services, ports et fonctionnalités inutiles pour réduire les points d'entrée exploitables.",
+      "hint": "Le moins de surface exposée possible.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Désactiver ce qui est inutile pour réduire la surface d'attaque",
+          "isCorrect": true
+        },
+        {
+          "content": "Ajouter des fonctionnalités",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer tout",
+          "isCorrect": false
+        },
+        {
+          "content": "Doubler les serveurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que protège un CAPTCHA sur un formulaire public ?",
+      "explanation": "Il freine les soumissions automatisées par des bots (spam, brute force, création de comptes en masse).",
+      "hint": "Distinguer humain et bot.",
+      "difficulty": "EASY",
+      "tags": [
+        "Sécurité web"
+      ],
+      "answers": [
+        {
+          "content": "Freiner les soumissions automatisées par des bots",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le formulaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Valider les champs",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer l'envoi",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi un token de réinitialisation de mot de passe doit-il être à usage unique et expirer ?",
+      "explanation": "Pour empêcher qu'un lien intercepté ou rejoué serve plusieurs fois ou indéfiniment à prendre le contrôle du compte.",
+      "hint": "Usage unique + expiration = moins d'exploitation.",
+      "difficulty": "HARD",
+      "tags": [
+        "Authentification"
+      ],
+      "answers": [
+        {
+          "content": "Pour empêcher son réemploi ou son usage tardif par un attaquant",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer la réinitialisation",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer l'email",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour compresser le lien",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une politique CORS trop permissive (Access-Control-Allow-Origin: *) risque ?",
+      "explanation": "Autoriser n'importe quelle origine à lire des réponses ; combiné à des credentials, cela peut exposer des données sensibles.",
+      "hint": "'*' laisse tout le monde lire.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité web"
+      ],
+      "answers": [
+        {
+          "content": "Laisser n'importe quelle origine accéder aux réponses, exposant des données",
+          "isCorrect": true
+        },
+        {
+          "content": "Bloquer toutes les requêtes",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les cookies",
+          "isCorrect": false
+        },
+        {
+          "content": "Forcer HTTPS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'principle of complete mediation' ?",
+      "explanation": "Vérifier l'autorisation à CHAQUE accès à une ressource, sans se fier à une vérification antérieure mise en cache.",
+      "hint": "Vérifier les droits à chaque accès.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Contrôler l'autorisation à chaque accès, sans se fier à un cache",
+          "isCorrect": true
+        },
+        {
+          "content": "Vérifier une fois au login",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer chaque accès",
+          "isCorrect": false
+        },
+        {
+          "content": "Auditer une fois par jour",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi séparer les environnements (dev/staging/prod) et leurs secrets ?",
+      "explanation": "Pour éviter qu'une compromission ou une erreur en dev n'affecte la prod, et cloisonner les accès aux données sensibles.",
+      "hint": "Cloisonner pour limiter l'impact.",
+      "difficulty": "EASY",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Pour éviter qu'un incident en dev n'affecte la prod et ses données",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer les tests",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour réduire les coûts uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer le code",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une 'security regression' et comment l'éviter en CI ?",
+      "explanation": "Réintroduire une faille déjà corrigée ; on l'évite par des tests de sécurité automatisés (SAST/DAST/dépendances) dans le pipeline.",
+      "hint": "Une faille corrigée qui revient.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité applicative"
+      ],
+      "answers": [
+        {
+          "content": "Réintroduire une faille corrigée ; évité par des tests de sécurité en CI",
+          "isCorrect": true
+        },
+        {
+          "content": "Un ralentissement du build",
+          "isCorrect": false
+        },
+        {
+          "content": "Une fuite mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Un doublon de commit",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

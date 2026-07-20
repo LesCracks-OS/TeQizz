@@ -1,0 +1,1328 @@
+{
+  "categoryName": "Data Science",
+  "questions": [
+    {
+      "content": "Quelle fonction de perte est typique pour une régression ?",
+      "explanation": "L'erreur quadratique moyenne (MSE) pénalise le carré des écarts entre prédiction et valeur réelle.",
+      "hint": "Erreur au carré.",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "L'erreur quadratique moyenne (MSE)",
+          "isCorrect": true
+        },
+        {
+          "content": "L'entropie croisée",
+          "isCorrect": false
+        },
+        {
+          "content": "La hinge loss",
+          "isCorrect": false
+        },
+        {
+          "content": "La log-vraisemblance binaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle fonction de perte est typique pour une classification multi-classes ?",
+      "explanation": "L'entropie croisée (cross-entropy) mesure l'écart entre la distribution prédite et la vraie classe.",
+      "hint": "Entropie croisée.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "L'entropie croisée (cross-entropy)",
+          "isCorrect": true
+        },
+        {
+          "content": "La MSE",
+          "isCorrect": false
+        },
+        {
+          "content": "La MAE",
+          "isCorrect": false
+        },
+        {
+          "content": "La variance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la fonction softmax en sortie d'un réseau ?",
+      "explanation": "Elle transforme un vecteur de scores en distribution de probabilités (somme = 1) sur les classes.",
+      "hint": "Scores → probabilités.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Convertir des scores en probabilités sommant à 1",
+          "isCorrect": true
+        },
+        {
+          "content": "Normaliser les entrées",
+          "isCorrect": false
+        },
+        {
+          "content": "Éteindre des neurones",
+          "isCorrect": false
+        },
+        {
+          "content": "Calculer la moyenne",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel optimiseur combine momentum et taux d'apprentissage adaptatif ?",
+      "explanation": "Adam adapte le pas par paramètre à partir des moments de premier et second ordre du gradient.",
+      "hint": "Un optimiseur adaptatif très courant.",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Adam",
+          "isCorrect": true
+        },
+        {
+          "content": "SGD pur",
+          "isCorrect": false
+        },
+        {
+          "content": "K-means",
+          "isCorrect": false
+        },
+        {
+          "content": "PCA",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert le 'momentum' en descente de gradient ?",
+      "explanation": "Il accumule une inertie des gradients passés pour accélérer la convergence et amortir les oscillations.",
+      "hint": "De l'inertie sur les gradients.",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Accélérer la convergence en accumulant l'élan des gradients passés",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire le nombre de couches",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les poids",
+          "isCorrect": false
+        },
+        {
+          "content": "Augmenter le bruit",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'early stopping à l'entraînement ?",
+      "explanation": "Il arrête l'entraînement quand la performance de validation cesse de s'améliorer, évitant le surapprentissage.",
+      "hint": "Arrêter quand la validation stagne.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Arrêter l'entraînement quand la validation ne progresse plus",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer des couches",
+          "isCorrect": false
+        },
+        {
+          "content": "Augmenter le learning rate",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert une couche de convolution (CNN) ?",
+      "explanation": "Elle applique des filtres locaux partagés pour détecter des motifs spatiaux (bords, textures) dans des images.",
+      "hint": "Détecter des motifs locaux via des filtres.",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Détecter des motifs spatiaux locaux via des filtres partagés",
+          "isCorrect": true
+        },
+        {
+          "content": "Aplatir l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "Normaliser les pixels",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire la profondeur des canaux uniquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi les RNN classiques peinent-ils sur les longues séquences ?",
+      "explanation": "À cause du gradient qui s'évanouit/explose sur de longues dépendances ; les LSTM/GRU atténuent ce problème via des portes.",
+      "hint": "Dépendances longues = gradients instables.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Le gradient s'évanouit sur les longues dépendances",
+          "isCorrect": true
+        },
+        {
+          "content": "Trop de mémoire GPU",
+          "isCorrect": false
+        },
+        {
+          "content": "Un excès de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un learning rate nul",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'apporte une cellule LSTM par rapport à un RNN simple ?",
+      "explanation": "Des portes (oubli, entrée, sortie) et un état de cellule qui préservent l'information sur de longues dépendances.",
+      "hint": "Des portes pour la mémoire long terme.",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Des portes qui préservent l'information sur de longues dépendances",
+          "isCorrect": true
+        },
+        {
+          "content": "Une convolution",
+          "isCorrect": false
+        },
+        {
+          "content": "Une réduction de dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Un clustering",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le transfer learning ?",
+      "explanation": "Réutiliser un modèle pré-entraîné sur une grande tâche et l'adapter (fine-tuning) à une tâche cible avec peu de données.",
+      "hint": "Réutiliser un modèle pré-entraîné.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Réutiliser un modèle pré-entraîné et l'adapter à une nouvelle tâche",
+          "isCorrect": true
+        },
+        {
+          "content": "Entraîner de zéro",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Regrouper des données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le fine-tuning d'un modèle pré-entraîné ?",
+      "explanation": "Poursuivre l'entraînement (souvent des dernières couches) sur des données spécifiques pour spécialiser le modèle.",
+      "hint": "Continuer l'entraînement sur la tâche cible.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Poursuivre l'entraînement sur des données spécifiques pour spécialiser le modèle",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire la taille du modèle",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les poids",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer des couches aléatoirement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que mesure le coefficient de détermination R² ?",
+      "explanation": "La proportion de variance de la cible expliquée par le modèle (1 = parfait, 0 = équivaut à prédire la moyenne).",
+      "hint": "Part de variance expliquée.",
+      "difficulty": "HARD",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "La proportion de variance expliquée par le modèle",
+          "isCorrect": true
+        },
+        {
+          "content": "L'erreur absolue moyenne",
+          "isCorrect": false
+        },
+        {
+          "content": "La corrélation entre features",
+          "isCorrect": false
+        },
+        {
+          "content": "Le taux de bonne classification",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle métrique de régression pénalise plus fortement les grosses erreurs, MAE ou RMSE ?",
+      "explanation": "La RMSE, car elle élève les écarts au carré, amplifiant l'effet des grandes erreurs par rapport à la MAE.",
+      "hint": "Le carré amplifie les grosses erreurs.",
+      "difficulty": "HARD",
+      "tags": [
+        "Métriques"
+      ],
+      "answers": [
+        {
+          "content": "La RMSE",
+          "isCorrect": true
+        },
+        {
+          "content": "La MAE",
+          "isCorrect": false
+        },
+        {
+          "content": "Elles sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Ni l'une ni l'autre",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le kernel trick d'un SVM ?",
+      "explanation": "Il calcule des produits scalaires dans un espace de plus haute dimension sans y projeter explicitement, permettant des frontières non linéaires.",
+      "hint": "Séparer non-linéairement sans projeter explicitement.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Calculer implicitement dans un espace de dimension supérieure pour séparer non-linéairement",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Normaliser les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Éliminer les outliers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Sur quoi repose l'algorithme k-NN pour classer un point ?",
+      "explanation": "Il attribue la classe majoritaire parmi ses k plus proches voisins selon une distance.",
+      "hint": "Voter parmi les voisins proches.",
+      "difficulty": "EASY",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "La classe majoritaire de ses k plus proches voisins",
+          "isCorrect": true
+        },
+        {
+          "content": "Un hyperplan séparateur",
+          "isCorrect": false
+        },
+        {
+          "content": "Un arbre de décision",
+          "isCorrect": false
+        },
+        {
+          "content": "Une régression linéaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle hypothèse forte fait le Naive Bayes ?",
+      "explanation": "Il suppose l'indépendance conditionnelle des features sachant la classe, souvent fausse mais efficace en pratique (ex. texte).",
+      "hint": "Indépendance des features (naïve).",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "L'indépendance conditionnelle des features sachant la classe",
+          "isCorrect": true
+        },
+        {
+          "content": "La linéarité des données",
+          "isCorrect": false
+        },
+        {
+          "content": "L'absence de bruit",
+          "isCorrect": false
+        },
+        {
+          "content": "La normalité stricte",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que prédit une régression logistique ?",
+      "explanation": "Elle modélise la probabilité d'appartenance à une classe via une fonction logistique (sigmoïde) sur une combinaison linéaire.",
+      "hint": "Probabilité de classe via sigmoïde.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "La probabilité d'appartenance à une classe (via la sigmoïde)",
+          "isCorrect": true
+        },
+        {
+          "content": "Une valeur continue non bornée",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Une dimension réduite",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la multicolinéarité en régression et pourquoi pose-t-elle problème ?",
+      "explanation": "Des features fortement corrélées rendent les coefficients instables et difficiles à interpréter, sans forcément dégrader la prédiction.",
+      "hint": "Features corrélées → coefficients instables.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "Des features corrélées rendent les coefficients instables et peu interprétables",
+          "isCorrect": true
+        },
+        {
+          "content": "Elle supprime des lignes",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle chiffre les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle réduit toujours la précision",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert le VIF (Variance Inflation Factor) ?",
+      "explanation": "À quantifier la multicolinéarité : un VIF élevé indique qu'une variable est fortement expliquée par les autres.",
+      "hint": "Mesurer la multicolinéarité.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "Détecter la multicolinéarité entre variables explicatives",
+          "isCorrect": true
+        },
+        {
+          "content": "Mesurer l'accuracy",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Imputer les manquants",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la technique SMOTE traite ?",
+      "explanation": "Le déséquilibre de classes, en générant des exemples synthétiques de la classe minoritaire par interpolation.",
+      "hint": "Rééquilibrer par exemples synthétiques.",
+      "difficulty": "HARD",
+      "tags": [
+        "Feature Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Le déséquilibre de classes via des exemples synthétiques de la minorité",
+          "isCorrect": true
+        },
+        {
+          "content": "Les valeurs manquantes",
+          "isCorrect": false
+        },
+        {
+          "content": "La dimensionnalité",
+          "isCorrect": false
+        },
+        {
+          "content": "Le bruit dans les images",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'gradient boosting' (ex. XGBoost) construit ?",
+      "explanation": "Une suite d'arbres où chaque nouvel arbre corrige les erreurs résiduelles des précédents, réduisant le biais.",
+      "hint": "Des arbres qui corrigent les erreurs précédentes.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Une séquence d'arbres corrigeant les résidus des précédents",
+          "isCorrect": true
+        },
+        {
+          "content": "Des arbres indépendants agrégés",
+          "isCorrect": false
+        },
+        {
+          "content": "Un seul grand arbre",
+          "isCorrect": false
+        },
+        {
+          "content": "Un réseau de neurones",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que mesure l'entropie dans la construction d'un arbre de décision ?",
+      "explanation": "L'impureté/désordre d'un ensemble ; un split cherche à réduire l'entropie (maximiser le gain d'information).",
+      "hint": "Le désordre d'un ensemble.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "L'impureté d'un ensemble, que le split cherche à réduire",
+          "isCorrect": true
+        },
+        {
+          "content": "La corrélation",
+          "isCorrect": false
+        },
+        {
+          "content": "La variance des poids",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de features",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'gain d'information' guide dans un arbre ?",
+      "explanation": "Le choix du split : on retient l'attribut/seuil qui réduit le plus l'impureté (entropie/Gini) des sous-ensembles.",
+      "hint": "Choisir le meilleur découpage.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Le choix du split qui réduit le plus l'impureté",
+          "isCorrect": true
+        },
+        {
+          "content": "Le taux d'apprentissage",
+          "isCorrect": false
+        },
+        {
+          "content": "La normalisation",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre d'époques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la similarité cosinus mesure entre deux vecteurs ?",
+      "explanation": "L'angle entre eux (indépendamment de leur norme), utile pour comparer des embeddings ou des documents.",
+      "hint": "L'angle, pas la longueur.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "NLP"
+      ],
+      "answers": [
+        {
+          "content": "L'orientation (angle) entre deux vecteurs, indépendamment de leur norme",
+          "isCorrect": true
+        },
+        {
+          "content": "La distance euclidienne exacte",
+          "isCorrect": false
+        },
+        {
+          "content": "La corrélation temporelle",
+          "isCorrect": false
+        },
+        {
+          "content": "La variance",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert t-SNE ou UMAP ?",
+      "explanation": "À réduire la dimension pour la VISUALISATION en préservant les structures locales/voisinages, pas pour l'entraînement.",
+      "hint": "Visualiser en 2D/3D.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Réduire la dimension pour visualiser en préservant les voisinages",
+          "isCorrect": true
+        },
+        {
+          "content": "Classer des données",
+          "isCorrect": false
+        },
+        {
+          "content": "Imputer des manquants",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer l'inférence en production",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un autoencodeur apprend ?",
+      "explanation": "À reconstruire son entrée via une représentation compressée (goulot), apprenant des features non supervisées.",
+      "hint": "Compresser puis reconstruire l'entrée.",
+      "difficulty": "HARD",
+      "tags": [
+        "Deep Learning"
+      ],
+      "answers": [
+        {
+          "content": "Une représentation compressée permettant de reconstruire l'entrée",
+          "isCorrect": true
+        },
+        {
+          "content": "Une classification supervisée",
+          "isCorrect": false
+        },
+        {
+          "content": "Un clustering K-means",
+          "isCorrect": false
+        },
+        {
+          "content": "Une régression linéaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la dérive des données (data drift) ?",
+      "explanation": "La distribution des données d'entrée en production s'éloigne de celle d'entraînement, dégradant les performances.",
+      "hint": "Les entrées changent de distribution.",
+      "difficulty": "HARD",
+      "tags": [
+        "MLOps"
+      ],
+      "answers": [
+        {
+          "content": "Un changement de distribution des entrées par rapport à l'entraînement",
+          "isCorrect": true
+        },
+        {
+          "content": "Une fuite de labels",
+          "isCorrect": false
+        },
+        {
+          "content": "Un manque de mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Un surapprentissage initial",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre 'data drift' et 'concept drift' ?",
+      "explanation": "Le data drift change la distribution des entrées ; le concept drift change la relation entrée→sortie (la cible évolue).",
+      "hint": "Entrées vs relation entrée/sortie.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "MLOps"
+      ],
+      "answers": [
+        {
+          "content": "Le data drift change les entrées, le concept drift la relation entrée→sortie",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Le concept drift change les entrées",
+          "isCorrect": false
+        },
+        {
+          "content": "Le data drift change les labels",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un test A/B ?",
+      "explanation": "Comparer deux variantes (A et B) sur un échantillon aléatoire pour mesurer l'effet causal d'un changement.",
+      "hint": "Comparer deux variantes aléatoirement.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "Comparer deux variantes sur des échantillons aléatoires pour mesurer un effet",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Nettoyer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les résultats",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un intervalle de confiance à 95% signifie ?",
+      "explanation": "Si l'on répétait l'échantillonnage, ~95% des intervalles calculés contiendraient le vrai paramètre — pas '95% de probabilité' pour un intervalle donné.",
+      "hint": "Sur répétitions, 95% contiennent le vrai paramètre.",
+      "difficulty": "HARD",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "Sur des échantillons répétés, ~95% des intervalles contiennent le vrai paramètre",
+          "isCorrect": true
+        },
+        {
+          "content": "Le paramètre a 95% de chance d'être dans l'intervalle donné",
+          "isCorrect": false
+        },
+        {
+          "content": "95% des données y sont",
+          "isCorrect": false
+        },
+        {
+          "content": "L'erreur est de 5%",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le bootstrap en statistiques ?",
+      "explanation": "Ré-échantillonner avec remise les données pour estimer la distribution d'une statistique (ex. son écart-type) sans hypothèse forte.",
+      "hint": "Ré-échantillonner avec remise.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "Estimer la variabilité d'une statistique par ré-échantillonnage avec remise",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer l'échantillon",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer les outliers",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le maximum de vraisemblance (MLE) ?",
+      "explanation": "Estimer les paramètres qui rendent les données observées les plus probables sous le modèle.",
+      "hint": "Maximiser la probabilité des données observées.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "Choisir les paramètres maximisant la vraisemblance des données observées",
+          "isCorrect": true
+        },
+        {
+          "content": "Minimiser la variance des features",
+          "isCorrect": false
+        },
+        {
+          "content": "Maximiser l'entropie",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "En inférence bayésienne, que combine-t-on avec la vraisemblance pour obtenir la postérieure ?",
+      "explanation": "La distribution a priori (prior) : postérieure ∝ vraisemblance × prior.",
+      "hint": "On part d'un a priori.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Statistiques"
+      ],
+      "answers": [
+        {
+          "content": "La distribution a priori (prior)",
+          "isCorrect": true
+        },
+        {
+          "content": "La matrice de confusion",
+          "isCorrect": false
+        },
+        {
+          "content": "Le taux d'apprentissage",
+          "isCorrect": false
+        },
+        {
+          "content": "La variance résiduelle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la 'feature importance' d'un modèle d'arbres indique ?",
+      "explanation": "La contribution relative de chaque variable aux décisions du modèle, utile pour l'interprétation.",
+      "hint": "Quelles variables comptent le plus.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "La contribution relative de chaque variable aux prédictions",
+          "isCorrect": true
+        },
+        {
+          "content": "La corrélation entre features",
+          "isCorrect": false
+        },
+        {
+          "content": "La taille du dataset",
+          "isCorrect": false
+        },
+        {
+          "content": "Le learning rate",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que SHAP apporte à l'interprétabilité ?",
+      "explanation": "Il attribue à chaque feature une contribution à une prédiction donnée, sur des bases théoriques (valeurs de Shapley).",
+      "hint": "Contribution par feature et par prédiction.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Expliquer une prédiction en attribuant une contribution à chaque feature",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer l'entraînement",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le modèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la différence entre un data warehouse et un data lake ?",
+      "explanation": "Un warehouse stocke des données structurées et schématisées pour l'analytique ; un lake stocke des données brutes (structurées ou non) à grande échelle.",
+      "hint": "Structuré/schéma vs brut à grande échelle.",
+      "difficulty": "HARD",
+      "tags": [
+        "Data Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Le warehouse stocke du structuré schématisé, le lake du brut à grande échelle",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Le lake n'accepte que du structuré",
+          "isCorrect": false
+        },
+        {
+          "content": "Le warehouse ne fait pas d'analytique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie ETL en ingénierie de données ?",
+      "explanation": "Extract, Transform, Load : extraire les données, les transformer, puis les charger dans une destination analytique.",
+      "hint": "Extraire, transformer, charger.",
+      "difficulty": "EASY",
+      "tags": [
+        "Data Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Extract, Transform, Load",
+          "isCorrect": true
+        },
+        {
+          "content": "Encode, Test, Log",
+          "isCorrect": false
+        },
+        {
+          "content": "Evaluate, Train, Learn",
+          "isCorrect": false
+        },
+        {
+          "content": "Extract, Train, Label",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre ETL et ELT ?",
+      "explanation": "En ETL on transforme avant de charger ; en ELT on charge d'abord les données brutes puis on transforme dans l'entrepôt (moderne, scalable).",
+      "hint": "Transformer avant ou après le chargement.",
+      "difficulty": "HARD",
+      "tags": [
+        "Data Engineering"
+      ],
+      "answers": [
+        {
+          "content": "ETL transforme avant chargement, ELT charge d'abord puis transforme",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "ELT ne charge jamais",
+          "isCorrect": false
+        },
+        {
+          "content": "ETL n'extrait pas",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'feature store' ?",
+      "explanation": "Un système centralisé pour définir, stocker et servir des features cohérentes entre entraînement et inférence.",
+      "hint": "Centraliser les features réutilisables.",
+      "difficulty": "HARD",
+      "tags": [
+        "MLOps"
+      ],
+      "answers": [
+        {
+          "content": "Un dépôt centralisé de features réutilisables et cohérentes train/serving",
+          "isCorrect": true
+        },
+        {
+          "content": "Un entrepôt d'images",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cache HTTP",
+          "isCorrect": false
+        },
+        {
+          "content": "Un registre de conteneurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi la cohérence train/serving des features est-elle critique ?",
+      "explanation": "Si le calcul des features diffère entre entraînement et production (training-serving skew), les prédictions se dégradent silencieusement.",
+      "hint": "Éviter le training-serving skew.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "MLOps"
+      ],
+      "answers": [
+        {
+          "content": "Pour éviter que des features calculées différemment dégradent les prédictions",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer l'entraînement",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer les features",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour réduire la dimension",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la 'sélection de variables' (feature selection) apporte ?",
+      "explanation": "Retenir les features les plus informatives réduit le surapprentissage, le coût et améliore l'interprétabilité.",
+      "hint": "Garder les variables utiles.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Feature Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Réduire le surapprentissage et le coût en gardant les features informatives",
+          "isCorrect": true
+        },
+        {
+          "content": "Augmenter la dimension",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer des labels",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la standardisation z-score d'une variable ?",
+      "explanation": "Elle centre (moyenne 0) et réduit (écart-type 1) la variable, la rendant comparable et adaptée à de nombreux algorithmes.",
+      "hint": "Moyenne 0, écart-type 1.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Feature Engineering"
+      ],
+      "answers": [
+        {
+          "content": "Centrer et réduire la variable (moyenne 0, écart-type 1)",
+          "isCorrect": true
+        },
+        {
+          "content": "La borner entre 0 et 1",
+          "isCorrect": false
+        },
+        {
+          "content": "La rendre catégorielle",
+          "isCorrect": false
+        },
+        {
+          "content": "La chiffrer",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre standardisation (z-score) et normalisation min-max ?",
+      "explanation": "La z-score centre/réduit selon moyenne et écart-type ; la min-max ramène linéairement les valeurs dans [0,1].",
+      "hint": "Moyenne/écart-type vs bornes [0,1].",
+      "difficulty": "HARD",
+      "tags": [
+        "Feature Engineering"
+      ],
+      "answers": [
+        {
+          "content": "La z-score centre-réduit, la min-max borne les valeurs dans [0,1]",
+          "isCorrect": true
+        },
+        {
+          "content": "Elles sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "La min-max supprime les outliers",
+          "isCorrect": false
+        },
+        {
+          "content": "La z-score borne dans [0,1]",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la 'régularisation elastic net' combine ?",
+      "explanation": "Une combinaison des pénalités L1 (sélection) et L2 (rétrécissement), utile quand des features sont corrélées.",
+      "hint": "L1 + L2 ensemble.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Les pénalités L1 et L2 combinées",
+          "isCorrect": true
+        },
+        {
+          "content": "Aucune régularisation",
+          "isCorrect": false
+        },
+        {
+          "content": "Uniquement L1",
+          "isCorrect": false
+        },
+        {
+          "content": "Uniquement le dropout",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une courbe d'apprentissage (learning curve) révèle ?",
+      "explanation": "L'évolution de l'erreur train/validation selon la taille des données, aidant à diagnostiquer biais (sous-ajustement) ou variance (surajustement).",
+      "hint": "Erreur vs quantité de données.",
+      "difficulty": "HARD",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Le diagnostic biais/variance selon la quantité de données",
+          "isCorrect": true
+        },
+        {
+          "content": "La vitesse d'inférence",
+          "isCorrect": false
+        },
+        {
+          "content": "La corrélation des features",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de clusters optimal",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la recherche bayésienne d'hyperparamètres vs grid search ?",
+      "explanation": "Elle modélise la fonction objectif pour choisir intelligemment les prochains essais, plus efficace que tester une grille exhaustive.",
+      "hint": "Choisir les essais intelligemment.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Choisir les prochains essais via un modèle probabiliste plutôt qu'une grille exhaustive",
+          "isCorrect": true
+        },
+        {
+          "content": "Tester toutes les combinaisons",
+          "isCorrect": false
+        },
+        {
+          "content": "Ignorer la validation",
+          "isCorrect": false
+        },
+        {
+          "content": "Fixer les hyperparamètres",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'label leakage' via une feature calculée après la cible ?",
+      "explanation": "Utiliser une variable qui n'existe qu'après ou à cause de la cible gonfle la performance mais est indisponible à l'inférence.",
+      "hint": "Une feature qui 'connaît' la cible.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Machine Learning"
+      ],
+      "answers": [
+        {
+          "content": "Utiliser une feature indisponible à l'inférence qui encode la cible",
+          "isCorrect": true
+        },
+        {
+          "content": "Un manque de données",
+          "isCorrect": false
+        },
+        {
+          "content": "Un excès de couches",
+          "isCorrect": false
+        },
+        {
+          "content": "Un mauvais learning rate",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi évaluer un modèle sur des données représentatives de la production ?",
+      "explanation": "Un score sur des données non représentatives ne prédit pas la performance réelle, menant à de mauvaises décisions.",
+      "hint": "Le test doit ressembler à la prod.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MLOps"
+      ],
+      "answers": [
+        {
+          "content": "Parce qu'un score non représentatif ne prédit pas la performance réelle",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer l'évaluation",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour réduire la dimension",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le ré-entraînement périodique d'un modèle adresse ?",
+      "explanation": "La dérive des données/concept : réentraîner sur des données récentes maintient la performance dans le temps.",
+      "hint": "Contrer la dérive dans le temps.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "MLOps"
+      ],
+      "answers": [
+        {
+          "content": "La dérive des données/concept, en maintenant la performance dans le temps",
+          "isCorrect": true
+        },
+        {
+          "content": "Le surapprentissage initial",
+          "isCorrect": false
+        },
+        {
+          "content": "Le manque de mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "La taille du modèle",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

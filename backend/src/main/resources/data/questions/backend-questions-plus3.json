@@ -1,0 +1,329 @@
+{
+  "categoryName": "Backend",
+  "questions": [
+    {
+      "content": "Quelle est la complexité temporelle moyenne d'une recherche dans une table de hachage ?",
+      "explanation": "En moyenne O(1) grâce au hachage direct ; O(n) dans le pire cas si toutes les clés collisionnent.",
+      "hint": "Accès direct par clé.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "O(1) en moyenne",
+          "isCorrect": true
+        },
+        {
+          "content": "O(n) en moyenne",
+          "isCorrect": false
+        },
+        {
+          "content": "O(log n)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(n log n)",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle structure de données suit le principe LIFO ?",
+      "explanation": "Une pile (stack) : le dernier élément entré est le premier sorti (Last In, First Out).",
+      "hint": "Dernier entré, premier sorti.",
+      "difficulty": "EASY",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "La pile (stack)",
+          "isCorrect": true
+        },
+        {
+          "content": "La file (queue)",
+          "isCorrect": false
+        },
+        {
+          "content": "L'arbre",
+          "isCorrect": false
+        },
+        {
+          "content": "Le graphe",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle structure suit le principe FIFO ?",
+      "explanation": "Une file (queue) : le premier élément entré est le premier sorti (First In, First Out).",
+      "hint": "Premier entré, premier sorti.",
+      "difficulty": "EASY",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "La file (queue)",
+          "isCorrect": true
+        },
+        {
+          "content": "La pile",
+          "isCorrect": false
+        },
+        {
+          "content": "Le tas",
+          "isCorrect": false
+        },
+        {
+          "content": "La table de hachage",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la complexité d'une recherche binaire sur un tableau trié ?",
+      "explanation": "O(log n) : on divise l'espace de recherche par deux à chaque étape.",
+      "hint": "On divise par deux à chaque fois.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "O(log n)",
+          "isCorrect": true
+        },
+        {
+          "content": "O(n)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(1)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(n log n)",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel est le pire cas de complexité du tri rapide (quicksort) ?",
+      "explanation": "O(n²) quand le pivot est systématiquement mal choisi (ex. tableau déjà trié sans pivot aléatoire) ; O(n log n) en moyenne.",
+      "hint": "Mauvais pivot répété.",
+      "difficulty": "HARD",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "O(n²)",
+          "isCorrect": true
+        },
+        {
+          "content": "O(n log n)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(log n)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(n)",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la notation Big O décrit ?",
+      "explanation": "Le comportement asymptotique (borne supérieure) du temps ou de l'espace d'un algorithme quand la taille d'entrée croît.",
+      "hint": "Le comportement quand n grandit.",
+      "difficulty": "EASY",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "La croissance asymptotique du coût en fonction de la taille d'entrée",
+          "isCorrect": true
+        },
+        {
+          "content": "Le temps exact en secondes",
+          "isCorrect": false
+        },
+        {
+          "content": "La mémoire physique utilisée",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de bugs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle structure est idéale pour récupérer efficacement le minimum/maximum en priorité ?",
+      "explanation": "Un tas (heap) : il donne accès en O(1) au min/max et insertion/extraction en O(log n).",
+      "hint": "Un arbre partiellement ordonné.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "Un tas (heap)",
+          "isCorrect": true
+        },
+        {
+          "content": "Une liste chaînée",
+          "isCorrect": false
+        },
+        {
+          "content": "Une table de hachage",
+          "isCorrect": false
+        },
+        {
+          "content": "Une pile",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la programmation dynamique exploite ?",
+      "explanation": "La résolution de sous-problèmes qui se chevauchent en mémorisant leurs résultats (mémoïsation), évitant les recalculs.",
+      "hint": "Mémoriser les sous-problèmes répétés.",
+      "difficulty": "HARD",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "La mémorisation de sous-problèmes qui se chevauchent",
+          "isCorrect": true
+        },
+        {
+          "content": "La récursion sans mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Le tri des données",
+          "isCorrect": false
+        },
+        {
+          "content": "Le hachage des clés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la complexité d'un parcours en largeur (BFS) d'un graphe ?",
+      "explanation": "O(V + E) : chaque sommet et chaque arête sont visités une fois.",
+      "hint": "Sommets + arêtes.",
+      "difficulty": "HARD",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "O(V + E)",
+          "isCorrect": true
+        },
+        {
+          "content": "O(V²)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(E log V)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(V·E)",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un algorithme glouton (greedy) ?",
+      "explanation": "Il fait à chaque étape le choix localement optimal en espérant un optimum global, ce qui n'est garanti que pour certains problèmes.",
+      "hint": "Le meilleur choix local à chaque étape.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "Un algorithme choisissant l'optimum local à chaque étape",
+          "isCorrect": true
+        },
+        {
+          "content": "Un algorithme récursif exhaustif",
+          "isCorrect": false
+        },
+        {
+          "content": "Un tri stable",
+          "isCorrect": false
+        },
+        {
+          "content": "Une recherche binaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que garantit un tri 'stable' ?",
+      "explanation": "Il préserve l'ordre relatif des éléments de clés égales.",
+      "hint": "L'ordre des égaux est conservé.",
+      "difficulty": "HARD",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "L'ordre relatif des éléments égaux est préservé",
+          "isCorrect": true
+        },
+        {
+          "content": "Une complexité O(n)",
+          "isCorrect": false
+        },
+        {
+          "content": "L'absence de comparaisons",
+          "isCorrect": false
+        },
+        {
+          "content": "Un tri en place obligatoire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle complexité spatiale a une solution récursive naïve de Fibonacci (pile d'appels) ?",
+      "explanation": "O(n) pour la profondeur de la pile d'appels (même si le temps est exponentiel sans mémoïsation).",
+      "hint": "La profondeur de récursion.",
+      "difficulty": "HARD",
+      "tags": [
+        "Algorithmes"
+      ],
+      "answers": [
+        {
+          "content": "O(n) (profondeur de la pile d'appels)",
+          "isCorrect": true
+        },
+        {
+          "content": "O(1)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(2^n)",
+          "isCorrect": false
+        },
+        {
+          "content": "O(log n)",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

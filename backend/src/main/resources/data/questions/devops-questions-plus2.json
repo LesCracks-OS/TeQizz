@@ -1,0 +1,1301 @@
+{
+  "categoryName": "Devops",
+  "questions": [
+    {
+      "content": "Que fait 'git stash' ?",
+      "explanation": "Il met de côté les modifications non validées pour retrouver un espace de travail propre, à réappliquer plus tard.",
+      "hint": "Mettre de côté temporairement.",
+      "difficulty": "EASY",
+      "tags": [
+        "Git"
+      ],
+      "answers": [
+        {
+          "content": "Mettre de côté les modifications non commitées pour les réappliquer plus tard",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer les changements",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer une branche",
+          "isCorrect": false
+        },
+        {
+          "content": "Fusionner deux branches",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert 'git bisect' ?",
+      "explanation": "Il localise le commit ayant introduit un bug par recherche dichotomique entre un état bon et un mauvais.",
+      "hint": "Recherche dichotomique du commit fautif.",
+      "difficulty": "HARD",
+      "tags": [
+        "Git"
+      ],
+      "answers": [
+        {
+          "content": "Trouver le commit responsable d'un bug par recherche dichotomique",
+          "isCorrect": true
+        },
+        {
+          "content": "Annuler un commit",
+          "isCorrect": false
+        },
+        {
+          "content": "Fusionner des branches",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser l'historique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'git cherry-pick <commit>' ?",
+      "explanation": "Il applique les changements d'un commit précis sur la branche courante, sans fusionner toute la branche.",
+      "hint": "Reprendre un commit précis.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Git"
+      ],
+      "answers": [
+        {
+          "content": "Appliquer un commit spécifique sur la branche courante",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer un commit",
+          "isCorrect": false
+        },
+        {
+          "content": "Fusionner deux branches",
+          "isCorrect": false
+        },
+        {
+          "content": "Réinitialiser l'historique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que représente un tag Git annoté ?",
+      "explanation": "Un objet Git à part entière (avec auteur, date, message), souvent utilisé pour marquer des versions de release.",
+      "hint": "Un marqueur de version durable.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Git"
+      ],
+      "answers": [
+        {
+          "content": "Un marqueur de release stocké comme objet avec métadonnées",
+          "isCorrect": true
+        },
+        {
+          "content": "Une branche temporaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Un stash",
+          "isCorrect": false
+        },
+        {
+          "content": "Un fichier ignoré",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un fichier .dockerignore ?",
+      "explanation": "Il exclut des fichiers du contexte de build envoyé au démon Docker, accélérant le build et allégeant l'image.",
+      "hint": "Exclure du contexte de build.",
+      "difficulty": "EASY",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Exclure des fichiers du contexte de build Docker",
+          "isCorrect": true
+        },
+        {
+          "content": "Ignorer des conteneurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "Masquer des ports",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi ordonner les instructions d'un Dockerfile du moins au plus changeant ?",
+      "explanation": "Docker met en cache les couches ; placer ce qui change rarement en haut maximise la réutilisation du cache lors des rebuilds.",
+      "hint": "Maximiser le cache des couches.",
+      "difficulty": "HARD",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Pour maximiser la réutilisation du cache de couches lors des rebuilds",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour chiffrer les couches",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour réduire le nombre de ports",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour paralléliser le build",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait une 'restart policy: always' sur un conteneur ?",
+      "explanation": "Le conteneur est redémarré automatiquement s'il s'arrête, y compris après un redémarrage du démon.",
+      "hint": "Redémarrage automatique.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Redémarrer automatiquement le conteneur s'il s'arrête",
+          "isCorrect": true
+        },
+        {
+          "content": "Le supprimer à l'arrêt",
+          "isCorrect": false
+        },
+        {
+          "content": "Le mettre en pause",
+          "isCorrect": false
+        },
+        {
+          "content": "Le chiffrer",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un volume Docker (par rapport à un bind mount) ?",
+      "explanation": "Un volume est géré par Docker et découplé du système hôte ; un bind mount lie un chemin précis de l'hôte.",
+      "hint": "Géré par Docker vs chemin hôte.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Un stockage géré par Docker, indépendant d'un chemin hôte précis",
+          "isCorrect": true
+        },
+        {
+          "content": "Un réseau virtuel",
+          "isCorrect": false
+        },
+        {
+          "content": "Une image de base",
+          "isCorrect": false
+        },
+        {
+          "content": "Un registre privé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un 'namespace' Kubernetes ?",
+      "explanation": "Il isole logiquement des ressources dans un même cluster (ex. par équipe/environnement), avec quotas et droits séparés.",
+      "hint": "Cloisonner les ressources du cluster.",
+      "difficulty": "EASY",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Isoler logiquement des ressources dans un cluster",
+          "isCorrect": true
+        },
+        {
+          "content": "Créer un nœud",
+          "isCorrect": false
+        },
+        {
+          "content": "Router le trafic externe",
+          "isCorrect": false
+        },
+        {
+          "content": "Stocker des secrets chiffrés",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le RBAC dans Kubernetes ?",
+      "explanation": "Role-Based Access Control définit qui (comptes) peut faire quoi (verbes) sur quelles ressources, via Roles et RoleBindings.",
+      "hint": "Qui peut faire quoi sur quelles ressources.",
+      "difficulty": "HARD",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Contrôler les permissions par rôle sur les ressources",
+          "isCorrect": true
+        },
+        {
+          "content": "Équilibrer la charge",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les Pods",
+          "isCorrect": false
+        },
+        {
+          "content": "Planifier des tâches",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un HorizontalPodAutoscaler (HPA) ?",
+      "explanation": "Il ajuste automatiquement le nombre de répliques d'un Deployment selon des métriques (CPU, etc.).",
+      "hint": "Ajuster les répliques selon la charge.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Ajuster le nombre de répliques selon des métriques de charge",
+          "isCorrect": true
+        },
+        {
+          "content": "Augmenter la RAM d'un Pod",
+          "isCorrect": false
+        },
+        {
+          "content": "Router le trafic",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer des namespaces",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi servent les 'taints' et 'tolerations' ?",
+      "explanation": "Un taint repousse les Pods d'un nœud sauf ceux qui le tolèrent, permettant de réserver des nœuds à certains workloads.",
+      "hint": "Réserver des nœuds à certains Pods.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Repousser les Pods d'un nœud sauf ceux qui tolèrent le taint",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les nœuds",
+          "isCorrect": false
+        },
+        {
+          "content": "Équilibrer la charge réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Stocker la configuration",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'StatefulSet' comparé à un Deployment ?",
+      "explanation": "Il gère des Pods avec identité stable et stockage persistant par Pod, adapté aux applications à état (bases).",
+      "hint": "Identité et stockage stables par Pod.",
+      "difficulty": "HARD",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Gérer des Pods avec identité et stockage persistant stables",
+          "isCorrect": true
+        },
+        {
+          "content": "Des Pods strictement identiques et interchangeables",
+          "isCorrect": false
+        },
+        {
+          "content": "Un job planifié",
+          "isCorrect": false
+        },
+        {
+          "content": "Un service réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un 'init container' ?",
+      "explanation": "Il s'exécute et se termine avant les conteneurs principaux du Pod, pour préparer l'environnement (migrations, attente de dépendances).",
+      "hint": "S'exécute avant le conteneur principal.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Exécuter une tâche de préparation avant les conteneurs principaux",
+          "isCorrect": true
+        },
+        {
+          "content": "Redémarrer le Pod",
+          "isCorrect": false
+        },
+        {
+          "content": "Router le trafic",
+          "isCorrect": false
+        },
+        {
+          "content": "Stocker des logs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait une NetworkPolicy Kubernetes ?",
+      "explanation": "Elle contrôle le trafic réseau autorisé entre Pods (entrée/sortie), par défaut tout est permis sans elle.",
+      "hint": "Filtrer le trafic entre Pods.",
+      "difficulty": "HARD",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Restreindre le trafic réseau autorisé entre Pods",
+          "isCorrect": true
+        },
+        {
+          "content": "Créer des Pods",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le disque",
+          "isCorrect": false
+        },
+        {
+          "content": "Équilibrer les nœuds",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que Helm dans l'écosystème Kubernetes ?",
+      "explanation": "Un gestionnaire de paquets pour Kubernetes : il package des applications en 'charts' paramétrables et versionnés.",
+      "hint": "Le gestionnaire de paquets K8s.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Un gestionnaire de paquets qui déploie des applications via des charts",
+          "isCorrect": true
+        },
+        {
+          "content": "Un moteur de conteneurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Un load balancer",
+          "isCorrect": false
+        },
+        {
+          "content": "Un registre d'images",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que collecte Prometheus ?",
+      "explanation": "Il collecte des métriques en les 'scrapant' périodiquement sur des endpoints exposés par les services.",
+      "hint": "Scraper des métriques.",
+      "difficulty": "EASY",
+      "tags": [
+        "Observabilité"
+      ],
+      "answers": [
+        {
+          "content": "Des métriques scrapées périodiquement sur des endpoints",
+          "isCorrect": true
+        },
+        {
+          "content": "Des logs bruts",
+          "isCorrect": false
+        },
+        {
+          "content": "Des traces distribuées uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Des sauvegardes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel modèle de collecte Prometheus utilise-t-il ?",
+      "explanation": "Le modèle 'pull' : Prometheus interroge (scrape) les cibles, au lieu que les cibles poussent leurs métriques.",
+      "hint": "Prometheus va chercher (pull).",
+      "difficulty": "HARD",
+      "tags": [
+        "Observabilité"
+      ],
+      "answers": [
+        {
+          "content": "Le pull : il interroge périodiquement les cibles",
+          "isCorrect": true
+        },
+        {
+          "content": "Le push exclusif",
+          "isCorrect": false
+        },
+        {
+          "content": "Le streaming continu",
+          "isCorrect": false
+        },
+        {
+          "content": "Le polling DNS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un SLI (Service Level Indicator) ?",
+      "explanation": "Une mesure quantitative concrète de la qualité de service (ex. latence, taux d'erreurs) sur laquelle se base le SLO.",
+      "hint": "La mesure qui alimente le SLO.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Observabilité"
+      ],
+      "answers": [
+        {
+          "content": "Une mesure quantitative de la qualité de service",
+          "isCorrect": true
+        },
+        {
+          "content": "Un contrat commercial",
+          "isCorrect": false
+        },
+        {
+          "content": "Un budget financier",
+          "isCorrect": false
+        },
+        {
+          "content": "Un type de log",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le déploiement par 'feature flags' permet ?",
+      "explanation": "Activer/désactiver des fonctionnalités à chaud sans redéployer, permettant releases progressives et rollback instantané.",
+      "hint": "Activer une feature sans redéployer.",
+      "difficulty": "HARD",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Activer/désactiver des fonctionnalités à chaud sans redéploiement",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le code",
+          "isCorrect": false
+        },
+        {
+          "content": "Compiler plus vite",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer les tests",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'trunk-based development' ?",
+      "explanation": "Tous intègrent fréquemment sur une branche principale unique (petits commits), réduisant les fusions douloureuses.",
+      "hint": "Intégration fréquente sur une branche unique.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Intégrer fréquemment sur une seule branche principale",
+          "isCorrect": true
+        },
+        {
+          "content": "Une branche par développeur à vie",
+          "isCorrect": false
+        },
+        {
+          "content": "Interdire les commits",
+          "isCorrect": false
+        },
+        {
+          "content": "Déployer manuellement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que signifie la version sémantique MAJOR.MINOR.PATCH ?",
+      "explanation": "MAJOR = ruptures de compatibilité, MINOR = ajouts rétrocompatibles, PATCH = corrections rétrocompatibles.",
+      "hint": "Rupture / ajout / correctif.",
+      "difficulty": "EASY",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "MAJOR rupture, MINOR ajout compatible, PATCH correctif compatible",
+          "isCorrect": true
+        },
+        {
+          "content": "Année.mois.jour",
+          "isCorrect": false
+        },
+        {
+          "content": "Priorité du bug",
+          "isCorrect": false
+        },
+        {
+          "content": "Taille du binaire",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un scanner de vulnérabilités d'images (ex. Trivy) ?",
+      "explanation": "Il analyse les couches d'une image pour détecter des dépendances/paquets présentant des CVE connues.",
+      "hint": "Chercher des CVE dans l'image.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Détecter les vulnérabilités connues dans les paquets d'une image",
+          "isCorrect": true
+        },
+        {
+          "content": "Compiler l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "Router le trafic",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi signer les images de conteneurs (ex. cosign) ?",
+      "explanation": "Pour garantir l'intégrité et l'origine de l'image et n'exécuter que des images de confiance vérifiables.",
+      "hint": "Prouver origine et intégrité.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Garantir l'intégrité et l'authenticité de l'image déployée",
+          "isCorrect": true
+        },
+        {
+          "content": "Réduire sa taille",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer le pull",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'ResourceQuota' dans un namespace Kubernetes ?",
+      "explanation": "Il plafonne la consommation totale de ressources (CPU, mémoire, nombre d'objets) d'un namespace.",
+      "hint": "Plafonner les ressources d'un namespace.",
+      "difficulty": "HARD",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Limiter la consommation totale de ressources d'un namespace",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les Pods",
+          "isCorrect": false
+        },
+        {
+          "content": "Router le trafic",
+          "isCorrect": false
+        },
+        {
+          "content": "Sauvegarder les volumes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert 'kubectl describe pod <nom>' ?",
+      "explanation": "Il affiche les détails et surtout les événements récents d'un Pod, utile pour diagnostiquer un problème de démarrage.",
+      "hint": "Voir détails et événements.",
+      "difficulty": "EASY",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Afficher les détails et événements d'un Pod pour le diagnostic",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer le Pod",
+          "isCorrect": false
+        },
+        {
+          "content": "Le mettre à l'échelle",
+          "isCorrect": false
+        },
+        {
+          "content": "Ouvrir un shell",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'node affinity' dans Kubernetes ?",
+      "explanation": "Elle influence le placement des Pods sur des nœuds selon des labels (préférence ou obligation).",
+      "hint": "Placer les Pods selon des labels de nœud.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Contraindre/préférer le placement des Pods sur certains nœuds",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les nœuds",
+          "isCorrect": false
+        },
+        {
+          "content": "Équilibrer le réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer des volumes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi un pipeline doit-il échouer rapidement (fail fast) ?",
+      "explanation": "Placer les étapes rapides (lint, tests unitaires) en premier donne un retour immédiat et économise du temps/ressources.",
+      "hint": "Retour d'erreur au plus tôt.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Pour donner un retour d'échec au plus tôt et économiser des ressources",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour chiffrer le pipeline",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour paralléliser le déploiement",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour ignorer les erreurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'agrégation de logs centralisée résout ?",
+      "explanation": "Elle rassemble les logs de multiples instances/services en un seul endroit interrogeable, essentiel en systèmes distribués.",
+      "hint": "Tous les logs au même endroit.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Observabilité"
+      ],
+      "answers": [
+        {
+          "content": "Rassembler les logs dispersés en un point central interrogeable",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les logs",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire leur volume automatiquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer les anciens logs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'docker system prune' ?",
+      "explanation": "Il supprime les ressources inutilisées (conteneurs arrêtés, réseaux orphelins, images pendantes, cache) pour libérer de l'espace.",
+      "hint": "Nettoyer le superflu.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Supprimer les ressources Docker inutilisées pour libérer de l'espace",
+          "isCorrect": true
+        },
+        {
+          "content": "Redémarrer Docker",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les images",
+          "isCorrect": false
+        },
+        {
+          "content": "Lister les conteneurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'readiness gate' au déploiement ?",
+      "explanation": "Un contrôle (métriques, tests) qui doit être satisfait avant de router du trafic vers la nouvelle version.",
+      "hint": "Un feu vert avant d'ouvrir le trafic.",
+      "difficulty": "HARD",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Une condition à valider avant d'envoyer du trafic à la nouvelle version",
+          "isCorrect": true
+        },
+        {
+          "content": "Un pare-feu réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cache de build",
+          "isCorrect": false
+        },
+        {
+          "content": "Un secret chiffré",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un webhook dans un pipeline CI/CD ?",
+      "explanation": "Recevoir un événement (ex. push Git) qui déclenche automatiquement une action (build/déploiement).",
+      "hint": "Déclencher via un événement.",
+      "difficulty": "EASY",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Déclencher automatiquement une action à la réception d'un événement",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le dépôt",
+          "isCorrect": false
+        },
+        {
+          "content": "Compiler le code localement",
+          "isCorrect": false
+        },
+        {
+          "content": "Stocker les artefacts",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que garantit l'idempotence d'un playbook (Ansible/Terraform) ?",
+      "explanation": "Appliquer plusieurs fois produit le même état final sans effets cumulatifs ni erreurs inutiles.",
+      "hint": "Même état final quel que soit le nombre d'exécutions.",
+      "difficulty": "HARD",
+      "tags": [
+        "IaC"
+      ],
+      "answers": [
+        {
+          "content": "Appliquer plusieurs fois aboutit au même état final",
+          "isCorrect": true
+        },
+        {
+          "content": "Une exécution plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Un chiffrement des états",
+          "isCorrect": false
+        },
+        {
+          "content": "Une exécution parallèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'blue/green' au niveau base de données complique ?",
+      "explanation": "Les migrations de schéma : les deux versions doivent coexister avec le même schéma, imposant des migrations rétrocompatibles (expand/contract).",
+      "hint": "Le schéma partagé par deux versions.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "La compatibilité du schéma partagé par les deux versions",
+          "isCorrect": true
+        },
+        {
+          "content": "Le routage réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "La taille des images",
+          "isCorrect": false
+        },
+        {
+          "content": "Le chiffrement TLS",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern 'expand/contract' de migration ?",
+      "explanation": "On ajoute d'abord (expand) sans casser, on déploie le code, puis on retire l'ancien (contract) — pour des migrations sans interruption.",
+      "hint": "Ajouter, migrer, puis retirer.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Ajouter le nouveau, migrer le code, puis retirer l'ancien sans interruption",
+          "isCorrect": true
+        },
+        {
+          "content": "Tout supprimer d'un coup",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le schéma",
+          "isCorrect": false
+        },
+        {
+          "content": "Verrouiller la table entière",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'kubectl logs -f <pod>' ?",
+      "explanation": "Il affiche et suit en continu (follow) les logs d'un Pod.",
+      "hint": "Suivre les logs en direct.",
+      "difficulty": "EASY",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Afficher et suivre en continu les logs d'un Pod",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer les logs",
+          "isCorrect": false
+        },
+        {
+          "content": "Redémarrer le Pod",
+          "isCorrect": false
+        },
+        {
+          "content": "Exporter les métriques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi utiliser des tags immuables de digest (sha256) pour les images en prod ?",
+      "explanation": "Un digest référence un contenu exact et immuable ; contrairement à un tag, il ne peut pas être réécrit, garantissant reproductibilité et sécurité.",
+      "hint": "Le digest ne change jamais.",
+      "difficulty": "HARD",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Parce que le digest référence un contenu exact et immuable",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce qu'il est plus court",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce qu'il chiffre l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce qu'il accélère le pull",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'observabilité 'push' vs 'pull' pour les métriques ?",
+      "explanation": "En pull, le collecteur interroge les cibles ; en push, les cibles envoient leurs métriques (utile pour jobs éphémères via un gateway).",
+      "hint": "Collecteur interroge vs cible envoie.",
+      "difficulty": "HARD",
+      "tags": [
+        "Observabilité"
+      ],
+      "answers": [
+        {
+          "content": "Pull : le collecteur interroge ; push : la cible envoie ses métriques",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Le pull ne fonctionne qu'en local",
+          "isCorrect": false
+        },
+        {
+          "content": "Le push nécessite un GPU",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'canary analysis' automatisé ?",
+      "explanation": "Il compare automatiquement des métriques (erreurs, latence) entre canary et version stable pour décider de poursuivre ou annuler.",
+      "hint": "Comparer canary vs stable automatiquement.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Comparer les métriques du canary à la version stable pour décider",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le trafic",
+          "isCorrect": false
+        },
+        {
+          "content": "Doubler les répliques",
+          "isCorrect": false
+        },
+        {
+          "content": "Compiler le canary",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un 'liveness' distinct d'un 'startup probe' ?",
+      "explanation": "Le startup probe protège les applications lentes à démarrer en désactivant liveness/readiness jusqu'au démarrage complet.",
+      "hint": "Protéger les démarrages lents.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Éviter que liveness tue un conteneur encore en train de démarrer",
+          "isCorrect": true
+        },
+        {
+          "content": "Router le trafic",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le démarrage",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer un volume",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'rolling restart' d'un Deployment ?",
+      "explanation": "Il redémarre progressivement les Pods (ex. pour recharger une config) sans interruption de service.",
+      "hint": "Redémarrer progressivement.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Redémarrer les Pods progressivement sans coupure",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer le Deployment",
+          "isCorrect": false
+        },
+        {
+          "content": "Doubler les répliques",
+          "isCorrect": false
+        },
+        {
+          "content": "Vider les volumes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi éviter d'exécuter un conteneur en 'root' ?",
+      "explanation": "Réduire l'impact d'une évasion de conteneur : un utilisateur non privilégié limite ce qu'un attaquant peut faire.",
+      "hint": "Moindre privilège dans le conteneur.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Pour limiter l'impact d'une compromission (moindre privilège)",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer le conteneur",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour réduire la taille de l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que Docker l'interdit",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'artifact promotion' entre environnements ?",
+      "explanation": "Promouvoir le MÊME artefact testé de staging vers prod, plutôt que de reconstruire, garantissant que ce qui est testé est déployé.",
+      "hint": "Promouvoir l'artefact testé, sans rebuild.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "CI/CD"
+      ],
+      "answers": [
+        {
+          "content": "Déployer en prod le même artefact déjà testé, sans le reconstruire",
+          "isCorrect": true
+        },
+        {
+          "content": "Rebâtir pour chaque environnement",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer l'artefact",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer l'historique",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que permet 'docker build --platform linux/amd64,linux/arm64' (buildx) ?",
+      "explanation": "Construire une image multi-architecture utilisable sur différentes plateformes CPU.",
+      "hint": "Image multi-architecture.",
+      "difficulty": "HARD",
+      "tags": [
+        "Docker"
+      ],
+      "answers": [
+        {
+          "content": "Construire une image pour plusieurs architectures CPU",
+          "isCorrect": true
+        },
+        {
+          "content": "Compiler plus vite",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire les couches",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'log level' (INFO/WARN/ERROR) sert à faire ?",
+      "explanation": "Catégoriser la gravité des messages pour filtrer et régler la verbosité selon l'environnement.",
+      "hint": "Filtrer par gravité.",
+      "difficulty": "EASY",
+      "tags": [
+        "Observabilité"
+      ],
+      "answers": [
+        {
+          "content": "Catégoriser la gravité des messages et régler la verbosité",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les logs",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser les logs",
+          "isCorrect": false
+        },
+        {
+          "content": "Router le trafic",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'secret rotation' automatisé ?",
+      "explanation": "Renouveler périodiquement les secrets (clés, mots de passe) et propager les nouvelles valeurs, limitant l'impact d'une fuite.",
+      "hint": "Renouveler les secrets régulièrement.",
+      "difficulty": "HARD",
+      "tags": [
+        "Sécurité"
+      ],
+      "answers": [
+        {
+          "content": "Renouveler périodiquement les secrets pour limiter l'impact d'une fuite",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer une seule fois",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer les secrets",
+          "isCorrect": false
+        },
+        {
+          "content": "Partager les secrets",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi versionner les charts Helm ?",
+      "explanation": "Pour des déploiements reproductibles et des rollbacks à une version connue du package d'application.",
+      "hint": "Reproductibilité et rollback.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Kubernetes"
+      ],
+      "answers": [
+        {
+          "content": "Pour des déploiements reproductibles et des rollbacks fiables",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour chiffrer le cluster",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour accélérer le scaling",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour supprimer les Pods",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'terraform apply -target=<ressource>' ?",
+      "explanation": "Il applique les changements uniquement à la ressource ciblée (et ses dépendances), utile en dépannage mais à éviter en routine.",
+      "hint": "Cibler une ressource précise.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "IaC"
+      ],
+      "answers": [
+        {
+          "content": "Appliquer les changements à une ressource ciblée seulement",
+          "isCorrect": true
+        },
+        {
+          "content": "Détruire toute l'infra",
+          "isCorrect": false
+        },
+        {
+          "content": "Formatter le code",
+          "isCorrect": false
+        },
+        {
+          "content": "Lister l'état",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

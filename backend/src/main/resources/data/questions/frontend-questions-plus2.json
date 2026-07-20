@@ -1,0 +1,1301 @@
+{
+  "categoryName": "Frontend",
+  "questions": [
+    {
+      "content": "Que fait une media query '@media (min-width: 768px)' ?",
+      "explanation": "Elle applique des styles seulement quand la largeur du viewport atteint au moins 768px (approche mobile-first).",
+      "hint": "Styles conditionnels selon la largeur.",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Appliquer des styles à partir d'une largeur d'écran donnée",
+          "isCorrect": true
+        },
+        {
+          "content": "Charger une autre page",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Bloquer le zoom",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que mesure le Cumulative Layout Shift (CLS) ?",
+      "explanation": "L'instabilité visuelle : l'ampleur des décalages inattendus d'éléments pendant le chargement (Core Web Vital).",
+      "hint": "Les sauts de mise en page.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "L'ampleur des décalages visuels inattendus pendant le chargement",
+          "isCorrect": true
+        },
+        {
+          "content": "Le temps de réponse serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "La taille du bundle",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre de requêtes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment éviter un CLS élevé dû aux images ?",
+      "explanation": "En réservant l'espace via les attributs width/height (ou aspect-ratio) pour que l'image ne pousse pas le contenu.",
+      "hint": "Réserver la place de l'image.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "En spécifiant les dimensions (width/height ou aspect-ratio)",
+          "isCorrect": true
+        },
+        {
+          "content": "En chargeant l'image plus tard",
+          "isCorrect": false
+        },
+        {
+          "content": "En chiffrant l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "En désactivant le cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'attribut 'loading=\"lazy\"' sur une image ?",
+      "explanation": "Il diffère le chargement de l'image jusqu'à ce qu'elle approche du viewport, économisant de la bande passante.",
+      "hint": "Charger l'image à l'approche.",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Différer le chargement de l'image jusqu'à ce qu'elle soit proche de l'écran",
+          "isCorrect": true
+        },
+        {
+          "content": "Compresser l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "La chiffrer",
+          "isCorrect": false
+        },
+        {
+          "content": "La précharger immédiatement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "En JavaScript, à quoi sert 'this' dans une fonction fléchée ?",
+      "explanation": "Une fonction fléchée n'a pas son propre 'this' : elle capture celui du contexte englobant (lexical).",
+      "hint": "Pas de 'this' propre, hérité du contexte.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Il est hérité lexicalement du contexte englobant",
+          "isCorrect": true
+        },
+        {
+          "content": "Il pointe vers window toujours",
+          "isCorrect": false
+        },
+        {
+          "content": "Il est undefined",
+          "isCorrect": false
+        },
+        {
+          "content": "Il pointe vers l'objet appelant",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'Array.prototype.filter' ?",
+      "explanation": "Il renvoie un nouveau tableau ne contenant que les éléments satisfaisant le prédicat.",
+      "hint": "Garder ceux qui passent le test.",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Renvoyer un nouveau tableau des éléments qui passent le test",
+          "isCorrect": true
+        },
+        {
+          "content": "Transformer chaque élément",
+          "isCorrect": false
+        },
+        {
+          "content": "Muter le tableau",
+          "isCorrect": false
+        },
+        {
+          "content": "Réduire à une valeur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que retourne 'Promise.allSettled' ?",
+      "explanation": "Elle attend toutes les promesses et renvoie leur statut (fulfilled/rejected) sans court-circuiter en cas d'échec.",
+      "hint": "Attend tout, ne rejette jamais.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Le résultat de chaque promesse (réussie ou échouée), sans court-circuit",
+          "isCorrect": true
+        },
+        {
+          "content": "La première résolue",
+          "isCorrect": false
+        },
+        {
+          "content": "Rejette au premier échec",
+          "isCorrect": false
+        },
+        {
+          "content": "Uniquement les réussites",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle différence entre Promise.all et Promise.race ?",
+      "explanation": "all attend toutes les promesses (échoue si une échoue) ; race se résout/rejette dès la première réglée.",
+      "hint": "Toutes vs la première.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "all attend toutes, race renvoie la première réglée",
+          "isCorrect": true
+        },
+        {
+          "content": "all renvoie la première",
+          "isCorrect": false
+        },
+        {
+          "content": "race attend toutes",
+          "isCorrect": false
+        },
+        {
+          "content": "Elles sont identiques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert AbortController avec fetch ?",
+      "explanation": "Il permet d'annuler une requête fetch en cours via un signal, utile pour éviter les réponses obsolètes.",
+      "hint": "Annuler une requête en cours.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Annuler une requête fetch en cours via un signal",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer la requête",
+          "isCorrect": false
+        },
+        {
+          "content": "Mettre en cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Réessayer automatiquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'Array.prototype.find' ?",
+      "explanation": "Il renvoie le premier élément satisfaisant le prédicat, ou undefined si aucun.",
+      "hint": "Le premier qui correspond.",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Renvoyer le premier élément satisfaisant la condition",
+          "isCorrect": true
+        },
+        {
+          "content": "Tous les éléments correspondants",
+          "isCorrect": false
+        },
+        {
+          "content": "L'index de l'élément",
+          "isCorrect": false
+        },
+        {
+          "content": "Un booléen",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle est la sortie de '[1,2,3].map(String)' ?",
+      "explanation": "map appelle String(élément, index, tableau) ; ici String ignore les arguments superflus et renvoie ['1','2','3'].",
+      "hint": "String ne prend que le 1er argument utile.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "['1','2','3']",
+          "isCorrect": true
+        },
+        {
+          "content": "[1,2,3]",
+          "isCorrect": false
+        },
+        {
+          "content": "['1','0','1','1','2','2']",
+          "isCorrect": false
+        },
+        {
+          "content": "['NaN','NaN','NaN']",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre modules ES (import/export) et CommonJS (require) ?",
+      "explanation": "ESM est statique (analysable au build, tree-shakable) et asynchrone ; CommonJS est dynamique et synchrone (Node historique).",
+      "hint": "Statique vs dynamique.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "ESM est statique et tree-shakable, CommonJS dynamique et synchrone",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "CommonJS est tree-shakable",
+          "isCorrect": false
+        },
+        {
+          "content": "ESM n'existe pas en Node",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le hook 'useRef' en React ?",
+      "explanation": "Il fournit une référence mutable persistante entre les rendus, sans déclencher de re-render lorsqu'elle change (ex. accès DOM).",
+      "hint": "Une valeur mutable qui ne re-render pas.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Conserver une valeur mutable persistante sans provoquer de re-render",
+          "isCorrect": true
+        },
+        {
+          "content": "Mémoriser un calcul",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer un état",
+          "isCorrect": false
+        },
+        {
+          "content": "Définir un contexte",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un 'error boundary' en React ?",
+      "explanation": "Un composant qui capture les erreurs de rendu de ses descendants pour afficher un fallback au lieu de casser toute l'UI.",
+      "hint": "Attraper les erreurs de rendu.",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Capturer les erreurs de rendu des enfants et afficher un fallback",
+          "isCorrect": true
+        },
+        {
+          "content": "Gérer les erreurs réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Valider les formulaires",
+          "isCorrect": false
+        },
+        {
+          "content": "Mémoriser l'état",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre composant contrôlé et non contrôlé (formulaire React) ?",
+      "explanation": "Contrôlé : la valeur est pilotée par l'état React ; non contrôlé : le DOM garde la valeur, lue via une ref.",
+      "hint": "État React vs DOM.",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Contrôlé pilote la valeur via l'état, non contrôlé la laisse au DOM",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Le non contrôlé utilise useState",
+          "isCorrect": false
+        },
+        {
+          "content": "Le contrôlé n'a pas d'onChange",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert 'useContext' ?",
+      "explanation": "Consommer une valeur d'un contexte sans la passer manuellement de parent en enfant (prop drilling).",
+      "hint": "Éviter le prop drilling.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Consommer une valeur partagée sans la passer via toutes les props",
+          "isCorrect": true
+        },
+        {
+          "content": "Créer un état local",
+          "isCorrect": false
+        },
+        {
+          "content": "Mémoriser une fonction",
+          "isCorrect": false
+        },
+        {
+          "content": "Charger un composant",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'React Portal' ?",
+      "explanation": "Il rend un enfant dans un nœud DOM hors de la hiérarchie du parent (ex. modales), tout en gardant le contexte React.",
+      "hint": "Rendre ailleurs dans le DOM.",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Rendre un enfant dans un nœud DOM en dehors du parent",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le rendu",
+          "isCorrect": false
+        },
+        {
+          "content": "Charger en différé",
+          "isCorrect": false
+        },
+        {
+          "content": "Mémoriser le composant",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert 'Suspense' en React ?",
+      "explanation": "Il affiche un fallback pendant qu'un composant en cours de chargement (lazy/données) n'est pas prêt.",
+      "hint": "Fallback pendant le chargement.",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Afficher un fallback pendant le chargement d'un composant/donnée",
+          "isCorrect": true
+        },
+        {
+          "content": "Gérer les erreurs",
+          "isCorrect": false
+        },
+        {
+          "content": "Valider un formulaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Mémoriser l'état",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi éviter d'indexer une liste par l'index de tableau comme 'key' si l'ordre change ?",
+      "explanation": "Si l'ordre/insertion change, les index ne correspondent plus aux mêmes éléments, causant des rendus incorrects et pertes d'état.",
+      "hint": "L'index ne suit pas l'élément.",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Parce que l'index ne suit pas l'identité de l'élément si l'ordre change",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce que c'est plus lent",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que React l'interdit",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que ça chiffre la clé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le CSS 'transition: all 0.3s ease' ?",
+      "explanation": "Il anime en douceur toutes les propriétés animables lors d'un changement, sur 0,3s avec une accélération 'ease'.",
+      "hint": "Animer les changements de style.",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Animer en douceur les changements de propriétés sur 0,3s",
+          "isCorrect": true
+        },
+        {
+          "content": "Charger un fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Cacher l'élément",
+          "isCorrect": false
+        },
+        {
+          "content": "Fixer la position",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quelle propriété CSS est la plus performante pour animer un déplacement ?",
+      "explanation": "transform (translate) est composé par le GPU sans déclencher de reflow, contrairement à top/left.",
+      "hint": "transform évite le reflow.",
+      "difficulty": "HARD",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "transform (ex. translate), car il évite reflow et repaint coûteux",
+          "isCorrect": true
+        },
+        {
+          "content": "top/left",
+          "isCorrect": false
+        },
+        {
+          "content": "margin",
+          "isCorrect": false
+        },
+        {
+          "content": "width",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'display: grid' avec grid-template-areas ?",
+      "explanation": "Il permet de nommer des zones et de placer les éléments par nom, rendant la mise en page lisible.",
+      "hint": "Placer par zones nommées.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Définir une grille où l'on place les éléments par zones nommées",
+          "isCorrect": true
+        },
+        {
+          "content": "Empiler en flex",
+          "isCorrect": false
+        },
+        {
+          "content": "Cacher les éléments",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer des colonnes flottantes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert l'attribut 'role' ARIA ?",
+      "explanation": "Il communique le rôle sémantique d'un élément aux technologies d'assistance quand le HTML natif ne suffit pas.",
+      "hint": "Rôle sémantique pour l'accessibilité.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Indiquer le rôle sémantique d'un élément aux lecteurs d'écran",
+          "isCorrect": true
+        },
+        {
+          "content": "Styliser l'élément",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le contenu",
+          "isCorrect": false
+        },
+        {
+          "content": "Router la page",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi gérer le focus au clavier dans une modale (a11y) ?",
+      "explanation": "Il faut piéger le focus dans la modale et le restituer à la fermeture, sinon les utilisateurs clavier/lecteur d'écran se perdent.",
+      "hint": "Piéger et restituer le focus.",
+      "difficulty": "HARD",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Pour piéger le focus dans la modale et le restituer à la fermeture",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer le rendu",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer la modale",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour éviter le reflow",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'JSON.stringify' avec une valeur undefined dans un objet ?",
+      "explanation": "Les propriétés valant undefined sont omises du JSON produit.",
+      "hint": "undefined disparaît.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "La propriété est omise du JSON",
+          "isCorrect": true
+        },
+        {
+          "content": "Elle devient null",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle lève une erreur",
+          "isCorrect": false
+        },
+        {
+          "content": "Elle devient une chaîne 'undefined'",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que renvoie 'parseInt(\"08\")' en JS moderne ?",
+      "explanation": "parseInt interprète en base 10 par défaut (les anciennes bases octales pour '0x' à part), donc 8.",
+      "hint": "Base 10 par défaut.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "8",
+          "isCorrect": true
+        },
+        {
+          "content": "0",
+          "isCorrect": false
+        },
+        {
+          "content": "NaN",
+          "isCorrect": false
+        },
+        {
+          "content": "Une erreur",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'debounced input' améliore côté UX/perf ?",
+      "explanation": "Il évite de déclencher trop d'appels (recherche, validation) à chaque frappe en attendant une pause.",
+      "hint": "Moins d'appels pendant la frappe.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Réduire le nombre d'appels déclenchés pendant la saisie",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer la saisie",
+          "isCorrect": false
+        },
+        {
+          "content": "Bloquer le clavier",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer le rendu du DOM",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un WebSocket comparé à HTTP classique ?",
+      "explanation": "Il ouvre un canal bidirectionnel persistant pour un échange temps réel, sans re-négocier une requête à chaque message.",
+      "hint": "Canal temps réel bidirectionnel.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Établir une communication bidirectionnelle persistante en temps réel",
+          "isCorrect": true
+        },
+        {
+          "content": "Charger des pages statiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser les images",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les cookies",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert IndexedDB dans le navigateur ?",
+      "explanation": "Une base de données côté client pour stocker de grandes quantités de données structurées, avec transactions et index.",
+      "hint": "Base structurée côté client.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Stocker de grandes données structurées côté client avec index/transactions",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les cookies",
+          "isCorrect": false
+        },
+        {
+          "content": "Mettre en cache le CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Router les requêtes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le CSS 'object-fit: cover' sur une image ?",
+      "explanation": "L'image remplit son conteneur en gardant ses proportions, quitte à être rognée.",
+      "hint": "Remplir en gardant le ratio (rognage).",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Remplir le conteneur en conservant le ratio, avec rognage si besoin",
+          "isCorrect": true
+        },
+        {
+          "content": "Déformer l'image",
+          "isCorrect": false
+        },
+        {
+          "content": "La réduire sans rogner",
+          "isCorrect": false
+        },
+        {
+          "content": "La masquer",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'prop drilling' ?",
+      "explanation": "Passer des props à travers de nombreux composants intermédiaires qui ne les utilisent pas, juste pour atteindre un descendant.",
+      "hint": "Faire descendre une prop de niveau en niveau.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Faire transiter une prop par des composants intermédiaires inutiles",
+          "isCorrect": true
+        },
+        {
+          "content": "Muter les props",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les props",
+          "isCorrect": false
+        },
+        {
+          "content": "Mémoriser les props",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi 'useEffect' avec un tableau de dépendances vide s'exécute-t-il une fois ?",
+      "explanation": "Un tableau vide signifie 'aucune dépendance', donc l'effet ne se relance jamais après le montage initial.",
+      "hint": "Aucune dépendance = au montage.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Parce qu'aucune dépendance ne change, il ne se rejoue qu'au montage",
+          "isCorrect": true
+        },
+        {
+          "content": "Il s'exécute à chaque rendu",
+          "isCorrect": false
+        },
+        {
+          "content": "Il ne s'exécute jamais",
+          "isCorrect": false
+        },
+        {
+          "content": "Il s'exécute au démontage seulement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'e.preventDefault()' sur la soumission d'un formulaire ?",
+      "explanation": "Il empêche le comportement par défaut (rechargement/navigation), permettant une gestion en JavaScript.",
+      "hint": "Empêcher le rechargement.",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Empêcher le comportement par défaut (rechargement de la page)",
+          "isCorrect": true
+        },
+        {
+          "content": "Valider le formulaire",
+          "isCorrect": false
+        },
+        {
+          "content": "Envoyer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les champs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'event delegation' ?",
+      "explanation": "Attacher un seul écouteur sur un parent qui gère les événements de ses enfants via le bubbling, plus efficace que N écouteurs.",
+      "hint": "Un écouteur parent pour tous les enfants.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Gérer les événements des enfants via un seul écouteur sur le parent",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les événements",
+          "isCorrect": false
+        },
+        {
+          "content": "Désactiver le bubbling",
+          "isCorrect": false
+        },
+        {
+          "content": "Cloner les nœuds",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la propriété CSS 'z-index' ?",
+      "explanation": "Elle contrôle l'ordre d'empilement des éléments positionnés sur l'axe de profondeur.",
+      "hint": "Ordre de superposition.",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Contrôler l'ordre d'empilement des éléments positionnés",
+          "isCorrect": true
+        },
+        {
+          "content": "La transparence",
+          "isCorrect": false
+        },
+        {
+          "content": "La largeur",
+          "isCorrect": false
+        },
+        {
+          "content": "La rotation",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'stacking context' en CSS ?",
+      "explanation": "Un contexte d'empilement isolé (créé par ex. par opacity<1, transform, position+z-index) dans lequel les z-index sont relatifs.",
+      "hint": "Un contexte isolé pour les z-index.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Un contexte isolé où les z-index des enfants sont relatifs",
+          "isCorrect": true
+        },
+        {
+          "content": "Une grille CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cache du navigateur",
+          "isCorrect": false
+        },
+        {
+          "content": "Une media query",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'requestAnimationFrame' ?",
+      "explanation": "Il planifie un callback avant le prochain repaint, synchronisant les animations JS avec le taux de rafraîchissement.",
+      "hint": "Synchroniser avec le repaint.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Exécuter un callback avant le prochain rendu, synchronisé à l'écran",
+          "isCorrect": true
+        },
+        {
+          "content": "Retarder d'une seconde",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer l'animation",
+          "isCorrect": false
+        },
+        {
+          "content": "Charger une image",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi préférer 'const' par défaut en JavaScript ?",
+      "explanation": "const signale une liaison non réassignable, réduisant les erreurs ; on n'utilise let que si la réassignation est nécessaire.",
+      "hint": "Immuabilité de la liaison par défaut.",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Parce qu'il empêche la réassignation accidentelle de la variable",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce qu'il est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce qu'il chiffre la valeur",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que let n'existe plus",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que retourne 'typeof NaN' ?",
+      "explanation": "NaN est de type 'number' malgré son nom (Not a Number).",
+      "hint": "Contre-intuitif mais logique.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "'number'",
+          "isCorrect": true
+        },
+        {
+          "content": "'NaN'",
+          "isCorrect": false
+        },
+        {
+          "content": "'undefined'",
+          "isCorrect": false
+        },
+        {
+          "content": "'object'",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'Object.entries(obj)' ?",
+      "explanation": "Il renvoie un tableau de paires [clé, valeur] des propriétés énumérables de l'objet.",
+      "hint": "Paires clé/valeur en tableau.",
+      "difficulty": "EASY",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Renvoyer les paires [clé, valeur] de l'objet",
+          "isCorrect": true
+        },
+        {
+          "content": "Les clés seules",
+          "isCorrect": false
+        },
+        {
+          "content": "Les valeurs seules",
+          "isCorrect": false
+        },
+        {
+          "content": "Une copie profonde",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'critical CSS' inline ?",
+      "explanation": "Injecter directement le CSS nécessaire au rendu initial (above-the-fold) pour éviter un aller-retour bloquant.",
+      "hint": "Le CSS visible d'emblée, inline.",
+      "difficulty": "HARD",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Injecter en ligne le CSS nécessaire au premier rendu visible",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le CSS",
+          "isCorrect": false
+        },
+        {
+          "content": "Charger tout le CSS en dernier",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser les images",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'flex: 1' sur un enfant flex ?",
+      "explanation": "Raccourci pour flex-grow:1 flex-shrink:1 flex-basis:0 : l'élément grandit pour occuper l'espace disponible équitablement.",
+      "hint": "Occuper l'espace disponible.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "L'élément grandit pour remplir équitablement l'espace disponible",
+          "isCorrect": true
+        },
+        {
+          "content": "Le fixe à 1px",
+          "isCorrect": false
+        },
+        {
+          "content": "Le cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Le centre",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un 'Symbol' en JavaScript ?",
+      "explanation": "Un type primitif produisant des identifiants uniques, souvent utilisés comme clés de propriété non collidantes.",
+      "hint": "Un identifiant unique.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Un type primitif générant des identifiants uniques",
+          "isCorrect": true
+        },
+        {
+          "content": "Un objet mutable",
+          "isCorrect": false
+        },
+        {
+          "content": "Une chaîne spéciale",
+          "isCorrect": false
+        },
+        {
+          "content": "Un nombre entier",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que permet un générateur (function*) en JavaScript ?",
+      "explanation": "Produire une séquence de valeurs à la demande via yield, en suspendant/reprenant l'exécution.",
+      "hint": "Produire des valeurs à la demande.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Produire des valeurs paresseusement via yield en suspendant l'exécution",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer une fonction",
+          "isCorrect": false
+        },
+        {
+          "content": "Créer une classe",
+          "isCorrect": false
+        },
+        {
+          "content": "Exécuter en parallèle",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'flex-wrap: wrap' ?",
+      "explanation": "Il autorise les éléments flex à passer à la ligne suivante quand ils manquent de place.",
+      "hint": "Passer à la ligne si besoin.",
+      "difficulty": "EASY",
+      "tags": [
+        "HTML/CSS"
+      ],
+      "answers": [
+        {
+          "content": "Autoriser les éléments à passer sur plusieurs lignes",
+          "isCorrect": true
+        },
+        {
+          "content": "Empêcher tout retour à la ligne",
+          "isCorrect": false
+        },
+        {
+          "content": "Centrer les éléments",
+          "isCorrect": false
+        },
+        {
+          "content": "Inverser l'ordre",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi le 'hydration mismatch' pose problème en SSR ?",
+      "explanation": "Si le HTML serveur diffère du rendu client initial, React avertit et peut recréer le DOM, causant clignotements/bugs.",
+      "hint": "HTML serveur ≠ rendu client.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Une divergence entre HTML serveur et rendu client casse l'hydratation",
+          "isCorrect": true
+        },
+        {
+          "content": "Un excès de props",
+          "isCorrect": false
+        },
+        {
+          "content": "Un cache trop agressif",
+          "isCorrect": false
+        },
+        {
+          "content": "Une media query manquante",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait 'localStorage.setItem' quand le quota est dépassé ?",
+      "explanation": "Il lève une exception (QuotaExceededError) ; il faut la gérer pour éviter de casser l'app.",
+      "hint": "Une erreur de quota.",
+      "difficulty": "HARD",
+      "tags": [
+        "JavaScript"
+      ],
+      "answers": [
+        {
+          "content": "Il lève une exception QuotaExceededError",
+          "isCorrect": true
+        },
+        {
+          "content": "Il écrase silencieusement",
+          "isCorrect": false
+        },
+        {
+          "content": "Il compresse les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Il chiffre les données",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'reconciliation' en React ?",
+      "explanation": "Le processus par lequel React compare l'arbre virtuel précédent au nouveau pour appliquer le minimum de changements au DOM.",
+      "hint": "Diff des arbres virtuels.",
+      "difficulty": "HARD",
+      "tags": [
+        "React"
+      ],
+      "answers": [
+        {
+          "content": "Le processus de diff des arbres virtuels pour minimiser les changements DOM",
+          "isCorrect": true
+        },
+        {
+          "content": "Le rendu serveur",
+          "isCorrect": false
+        },
+        {
+          "content": "La compression du bundle",
+          "isCorrect": false
+        },
+        {
+          "content": "La gestion des routes",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

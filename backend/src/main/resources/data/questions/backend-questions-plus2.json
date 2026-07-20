@@ -1,0 +1,1328 @@
+{
+  "categoryName": "Backend",
+  "questions": [
+    {
+      "content": "Qu'apporte le multiplexage de HTTP/2 par rapport à HTTP/1.1 ?",
+      "explanation": "HTTP/2 envoie plusieurs requêtes/réponses en parallèle sur une seule connexion TCP, éliminant le head-of-line blocking applicatif de HTTP/1.1.",
+      "hint": "Plusieurs flux sur une seule connexion.",
+      "difficulty": "HARD",
+      "tags": [
+        "Réseau"
+      ],
+      "answers": [
+        {
+          "content": "Plusieurs échanges en parallèle sur une seule connexion",
+          "isCorrect": true
+        },
+        {
+          "content": "Le chiffrement obligatoire",
+          "isCorrect": false
+        },
+        {
+          "content": "La compression des images",
+          "isCorrect": false
+        },
+        {
+          "content": "Des cookies plus grands",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Quel format sérialise plus compactement qu'JSON et est fortement typé (gRPC) ?",
+      "explanation": "Protocol Buffers (protobuf) est un format binaire compact et schématisé, utilisé par gRPC.",
+      "hint": "Binaire et schématisé.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Protocol Buffers",
+          "isCorrect": true
+        },
+        {
+          "content": "XML",
+          "isCorrect": false
+        },
+        {
+          "content": "YAML",
+          "isCorrect": false
+        },
+        {
+          "content": "CSV",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "En Spring, que fait l'injection de dépendances (IoC) ?",
+      "explanation": "Le conteneur crée et fournit les dépendances d'un composant au lieu que celui-ci les instancie lui-même, favorisant le découplage.",
+      "hint": "Le conteneur fournit les dépendances.",
+      "difficulty": "EASY",
+      "tags": [
+        "Spring"
+      ],
+      "answers": [
+        {
+          "content": "Le conteneur fournit les dépendances au lieu de les instancier soi-même",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les beans",
+          "isCorrect": false
+        },
+        {
+          "content": "Compiler le code",
+          "isCorrect": false
+        },
+        {
+          "content": "Router les requêtes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait la propagation REQUIRES_NEW d'une transaction Spring ?",
+      "explanation": "Elle suspend la transaction courante et en démarre une nouvelle indépendante, qui peut committer/rollbacker séparément.",
+      "hint": "Une transaction imbriquée indépendante.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Spring"
+      ],
+      "answers": [
+        {
+          "content": "Suspendre la transaction courante et en ouvrir une nouvelle indépendante",
+          "isCorrect": true
+        },
+        {
+          "content": "Réutiliser la transaction existante",
+          "isCorrect": false
+        },
+        {
+          "content": "Désactiver les transactions",
+          "isCorrect": false
+        },
+        {
+          "content": "Rendre la méthode asynchrone",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre verrouillage optimiste et pessimiste ?",
+      "explanation": "L'optimiste suppose peu de conflits et vérifie une version au commit ; le pessimiste verrouille la ligne dès la lecture.",
+      "hint": "Vérifier au commit vs verrouiller d'emblée.",
+      "difficulty": "HARD",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Optimiste vérifie une version au commit, pessimiste verrouille dès la lecture",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "L'optimiste verrouille toujours",
+          "isCorrect": false
+        },
+        {
+          "content": "Le pessimiste ignore les conflits",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert une colonne de version (@Version) en JPA ?",
+      "explanation": "Elle implémente le verrouillage optimiste : le commit échoue si la version a changé entre lecture et écriture.",
+      "hint": "Support du verrouillage optimiste.",
+      "difficulty": "HARD",
+      "tags": [
+        "ORM"
+      ],
+      "answers": [
+        {
+          "content": "Détecter les mises à jour concurrentes via un numéro de version",
+          "isCorrect": true
+        },
+        {
+          "content": "Horodater la création",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer la ligne",
+          "isCorrect": false
+        },
+        {
+          "content": "Indexer la table",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le sharding d'une base de données ?",
+      "explanation": "Partitionner horizontalement les données sur plusieurs serveurs selon une clé, pour répartir charge et volume.",
+      "hint": "Répartir les lignes sur plusieurs serveurs.",
+      "difficulty": "HARD",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Répartir horizontalement les données sur plusieurs serveurs selon une clé",
+          "isCorrect": true
+        },
+        {
+          "content": "Répliquer la base entière",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les partitions",
+          "isCorrect": false
+        },
+        {
+          "content": "Ajouter des index",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi servent des réplicas en lecture (read replicas) ?",
+      "explanation": "Décharger les lectures sur des copies de la base primaire, améliorant la scalabilité en lecture.",
+      "hint": "Lire ailleurs que sur le primaire.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Répartir les lectures sur des copies pour soulager le primaire",
+          "isCorrect": true
+        },
+        {
+          "content": "Accélérer les écritures",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les données",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer les index",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern 'outbox' résout ?",
+      "explanation": "Il garantit qu'un message n'est publié que si la transaction locale a réussi, en écrivant l'événement dans une table 'outbox' dans la même transaction.",
+      "hint": "Cohérence entre base et message.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "La publication fiable d'événements liée à une transaction base",
+          "isCorrect": true
+        },
+        {
+          "content": "Le chiffrement des messages",
+          "isCorrect": false
+        },
+        {
+          "content": "L'équilibrage de charge",
+          "isCorrect": false
+        },
+        {
+          "content": "La compression",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le Change Data Capture (CDC) ?",
+      "explanation": "Capturer les changements d'une base (via le log de transactions) pour les propager à d'autres systèmes en quasi temps réel.",
+      "hint": "Suivre les changements via le journal.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Capturer et propager les changements d'une base en continu",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les changements",
+          "isCorrect": false
+        },
+        {
+          "content": "Sauvegarder la base",
+          "isCorrect": false
+        },
+        {
+          "content": "Indexer les colonnes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi utiliser des retries avec backoff exponentiel ?",
+      "explanation": "Espacer les tentatives de façon croissante évite de marteler un service en difficulté et laisse le temps de récupérer.",
+      "hint": "Attendre de plus en plus longtemps.",
+      "difficulty": "HARD",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Pour ne pas surcharger un service défaillant en réessayant trop vite",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour chiffrer les requêtes",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour paralléliser les appels",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour ignorer les erreurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert le 'jitter' ajouté au backoff ?",
+      "explanation": "Il randomise les délais de retry pour éviter que tous les clients réessaient en même temps (thundering herd).",
+      "hint": "Éviter que tous réessaient en même temps.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Désynchroniser les retries pour éviter les pics simultanés",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le délai",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer les retries",
+          "isCorrect": false
+        },
+        {
+          "content": "Fixer un délai constant",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre timeout de connexion et timeout de lecture ?",
+      "explanation": "Le connect timeout limite l'établissement de la connexion ; le read timeout limite l'attente d'une réponse une fois connecté.",
+      "hint": "Établir vs attendre la réponse.",
+      "difficulty": "HARD",
+      "tags": [
+        "Réseau"
+      ],
+      "answers": [
+        {
+          "content": "Connect = établissement, read = attente de la réponse",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "Le read timeout établit la connexion",
+          "isCorrect": false
+        },
+        {
+          "content": "Le connect timeout attend la réponse",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le pattern 'bulkhead' ?",
+      "explanation": "Isoler les ressources (pools) par fonctionnalité pour qu'une défaillance n'épuise pas tout le système, comme les cloisons d'un navire.",
+      "hint": "Cloisonner les ressources.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Isoler les ressources par compartiment pour contenir les pannes",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les ressources",
+          "isCorrect": false
+        },
+        {
+          "content": "Fusionner les pools",
+          "isCorrect": false
+        },
+        {
+          "content": "Dupliquer les services",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "En IO non bloquant, que permet le modèle 'event-driven' (Netty, Node) ?",
+      "explanation": "Gérer de nombreuses connexions avec peu de threads en réagissant aux événements, au lieu d'un thread bloqué par connexion.",
+      "hint": "Peu de threads, beaucoup de connexions.",
+      "difficulty": "HARD",
+      "tags": [
+        "Concurrence"
+      ],
+      "answers": [
+        {
+          "content": "Gérer beaucoup de connexions avec peu de threads via des événements",
+          "isCorrect": true
+        },
+        {
+          "content": "Un thread par connexion",
+          "isCorrect": false
+        },
+        {
+          "content": "Bloquer sur chaque IO",
+          "isCorrect": false
+        },
+        {
+          "content": "Désactiver le réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que dit la loi de Little (files d'attente) ?",
+      "explanation": "L = λ × W : le nombre moyen d'éléments dans le système égale le taux d'arrivée multiplié par le temps moyen passé.",
+      "hint": "L = débit × temps de séjour.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Le nombre moyen en cours = débit × temps de séjour moyen",
+          "isCorrect": true
+        },
+        {
+          "content": "Débit = latence × 2",
+          "isCorrect": false
+        },
+        {
+          "content": "La latence est constante",
+          "isCorrect": false
+        },
+        {
+          "content": "Le débit est illimité",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre débit (throughput) et latence ?",
+      "explanation": "Le débit est le nombre d'opérations par unité de temps ; la latence est le temps d'une opération individuelle.",
+      "hint": "Volume/temps vs temps d'une requête.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Débit = opérations par seconde, latence = durée d'une opération",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "La latence se mesure en req/s",
+          "isCorrect": false
+        },
+        {
+          "content": "Le débit se mesure en ms",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi surcharger equals() implique de surcharger hashCode() en Java ?",
+      "explanation": "Le contrat impose que deux objets égaux aient le même hashCode ; sinon les HashMap/HashSet se comportent mal.",
+      "hint": "Contrat equals/hashCode.",
+      "difficulty": "HARD",
+      "tags": [
+        "Java"
+      ],
+      "answers": [
+        {
+          "content": "Parce que deux objets égaux doivent avoir le même hashCode",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour accélérer la compilation",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour chiffrer l'objet",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que c'est optionnel",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un objet immuable et son avantage en concurrence ?",
+      "explanation": "Un objet dont l'état ne change pas après construction ; il est intrinsèquement thread-safe (pas de mutation concurrente).",
+      "hint": "État figé = thread-safe.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Java"
+      ],
+      "answers": [
+        {
+          "content": "Un objet non modifiable, donc sûr en accès concurrent",
+          "isCorrect": true
+        },
+        {
+          "content": "Un objet chiffré",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet en cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Un singleton",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre pile (stack) et tas (heap) en JVM ?",
+      "explanation": "La pile stocke les variables locales/appels par thread ; le tas stocke les objets partagés et est géré par le GC.",
+      "hint": "Locales par thread vs objets partagés.",
+      "difficulty": "HARD",
+      "tags": [
+        "Java"
+      ],
+      "answers": [
+        {
+          "content": "La pile stocke les locales par thread, le tas les objets gérés par le GC",
+          "isCorrect": true
+        },
+        {
+          "content": "Le tas stocke les appels de méthode",
+          "isCorrect": false
+        },
+        {
+          "content": "La pile est partagée entre threads",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une fuite mémoire en environnement à GC ?",
+      "explanation": "Des objets restent référencés (donc non collectés) alors qu'ils ne sont plus utiles, faisant croître la mémoire.",
+      "hint": "Références inutiles jamais libérées.",
+      "difficulty": "HARD",
+      "tags": [
+        "Java"
+      ],
+      "answers": [
+        {
+          "content": "Des objets inutiles mais toujours référencés, empêchant leur libération",
+          "isCorrect": true
+        },
+        {
+          "content": "Un dépassement de pile",
+          "isCorrect": false
+        },
+        {
+          "content": "Un objet chiffré",
+          "isCorrect": false
+        },
+        {
+          "content": "Un thread bloqué",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un pool de threads borné face à une surcharge ?",
+      "explanation": "Il limite le parallélisme et met en file (ou rejette) les tâches en excès, protégeant les ressources contre l'épuisement.",
+      "hint": "Limiter et mettre en file.",
+      "difficulty": "HARD",
+      "tags": [
+        "Concurrence"
+      ],
+      "answers": [
+        {
+          "content": "Limiter le parallélisme et mettre en file/rejeter le surplus",
+          "isCorrect": true
+        },
+        {
+          "content": "Créer un thread par tâche à l'infini",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les tâches",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer la file",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la négociation de contenu (content negotiation) HTTP ?",
+      "explanation": "Le client indique via Accept le format souhaité (JSON, XML…) et le serveur répond dans le meilleur format disponible.",
+      "hint": "En-tête Accept.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Le serveur choisit le format de réponse selon l'en-tête Accept du client",
+          "isCorrect": true
+        },
+        {
+          "content": "Le chiffrement du corps",
+          "isCorrect": false
+        },
+        {
+          "content": "La compression obligatoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Le choix du verbe HTTP",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait l'en-tête 'Content-Encoding: gzip' ?",
+      "explanation": "Il indique que le corps de la réponse est compressé en gzip, réduisant la bande passante.",
+      "hint": "Corps compressé.",
+      "difficulty": "EASY",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Signaler que le corps est compressé (gzip)",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le corps",
+          "isCorrect": false
+        },
+        {
+          "content": "Indiquer la langue",
+          "isCorrect": false
+        },
+        {
+          "content": "Fixer le cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'chunked transfer encoding' ?",
+      "explanation": "Envoyer la réponse en morceaux successifs sans connaître sa taille totale à l'avance (streaming).",
+      "hint": "Réponse par morceaux, taille inconnue.",
+      "difficulty": "HARD",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Envoyer la réponse en morceaux sans taille totale préalable",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer par blocs",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser en gzip",
+          "isCorrect": false
+        },
+        {
+          "content": "Limiter le débit",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Avantage d'un identifiant UUID comme clé primaire ?",
+      "explanation": "Générable côté client sans coordination et non devinable/séquentiel, utile en systèmes distribués.",
+      "hint": "Généré sans coordination centrale.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Génération décentralisée sans coordination, non séquentielle",
+          "isCorrect": true
+        },
+        {
+          "content": "Plus petit qu'un entier",
+          "isCorrect": false
+        },
+        {
+          "content": "Toujours plus rapide en index",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffré par défaut",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Inconvénient d'un UUID v4 aléatoire comme clé primaire indexée ?",
+      "explanation": "Son caractère aléatoire fragmente l'index B-tree (insertions dispersées), dégradant les performances vs une clé séquentielle.",
+      "hint": "Aléatoire = index fragmenté.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Il fragmente l'index à cause d'insertions dispersées",
+          "isCorrect": true
+        },
+        {
+          "content": "Il est trop court",
+          "isCorrect": false
+        },
+        {
+          "content": "Il est toujours en doublon",
+          "isCorrect": false
+        },
+        {
+          "content": "Il ne peut pas être indexé",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'soft delete' ?",
+      "explanation": "Marquer une ligne comme supprimée (ex. deleted_at) sans l'effacer physiquement, conservant l'historique.",
+      "hint": "Marquer supprimé sans effacer.",
+      "difficulty": "EASY",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Marquer une ligne comme supprimée sans la retirer physiquement",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer la ligne",
+          "isCorrect": false
+        },
+        {
+          "content": "Archiver le fichier",
+          "isCorrect": false
+        },
+        {
+          "content": "Vider le cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que garantit la 3e forme normale (3NF) ?",
+      "explanation": "Aucun attribut non-clé ne dépend d'un autre attribut non-clé (pas de dépendance transitive), réduisant la redondance.",
+      "hint": "Pas de dépendance transitive.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "L'absence de dépendance transitive entre attributs non-clés",
+          "isCorrect": true
+        },
+        {
+          "content": "Une seule table par base",
+          "isCorrect": false
+        },
+        {
+          "content": "L'absence de clés étrangères",
+          "isCorrect": false
+        },
+        {
+          "content": "Le chiffrement des colonnes",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'oppose-t-on à ACID avec l'acronyme BASE ?",
+      "explanation": "BASE (Basically Available, Soft state, Eventually consistent) privilégie disponibilité et cohérence à terme, typique du NoSQL distribué.",
+      "hint": "Disponibilité + cohérence à terme.",
+      "difficulty": "HARD",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Un modèle privilégiant disponibilité et cohérence à terme",
+          "isCorrect": true
+        },
+        {
+          "content": "Un chiffrement de base",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index composite",
+          "isCorrect": false
+        },
+        {
+          "content": "Un protocole réseau",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert une politique d'éviction LRU dans un cache ?",
+      "explanation": "Least Recently Used évince l'entrée la moins récemment utilisée quand le cache est plein.",
+      "hint": "La moins récemment utilisée dégage.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Évincer l'entrée la moins récemment utilisée quand le cache est plein",
+          "isCorrect": true
+        },
+        {
+          "content": "Évincer la plus récente",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer le cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Doubler la taille du cache",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Différence entre LRU et LFU comme politique d'éviction ?",
+      "explanation": "LRU se base sur la récence d'accès, LFU sur la fréquence d'accès des entrées.",
+      "hint": "Récence vs fréquence.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "LRU regarde la récence, LFU la fréquence d'accès",
+          "isCorrect": true
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        },
+        {
+          "content": "LFU évince le plus récent",
+          "isCorrect": false
+        },
+        {
+          "content": "LRU compte les accès totaux",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'un TTL sur une entrée de cache ?",
+      "explanation": "Time To Live : la durée après laquelle l'entrée expire et doit être recalculée.",
+      "hint": "Durée de vie de l'entrée.",
+      "difficulty": "EASY",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "La durée de validité avant expiration de l'entrée",
+          "isCorrect": true
+        },
+        {
+          "content": "Le temps de latence",
+          "isCorrect": false
+        },
+        {
+          "content": "La taille de l'entrée",
+          "isCorrect": false
+        },
+        {
+          "content": "Le nombre d'accès",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un CDN ?",
+      "explanation": "Distribuer du contenu depuis des serveurs proches des utilisateurs pour réduire la latence et la charge d'origine.",
+      "hint": "Contenu servi près de l'utilisateur.",
+      "difficulty": "EASY",
+      "tags": [
+        "Réseau"
+      ],
+      "answers": [
+        {
+          "content": "Servir du contenu depuis des serveurs géographiquement proches",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer la base",
+          "isCorrect": false
+        },
+        {
+          "content": "Compiler le frontend",
+          "isCorrect": false
+        },
+        {
+          "content": "Router les transactions SQL",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce qu'une 'sticky session' derrière un load balancer ?",
+      "explanation": "Router systématiquement un client vers le même serveur (affinité), utile si l'état de session y est stocké, mais nuit à l'élasticité.",
+      "hint": "Toujours le même serveur pour un client.",
+      "difficulty": "HARD",
+      "tags": [
+        "Réseau"
+      ],
+      "answers": [
+        {
+          "content": "Router un client toujours vers le même serveur backend",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer la session",
+          "isCorrect": false
+        },
+        {
+          "content": "Distribuer aléatoirement",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer les cookies",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi préférer des services 'stateless' pour la scalabilité horizontale ?",
+      "explanation": "Sans état local, n'importe quelle instance peut traiter n'importe quelle requête, facilitant l'ajout/retrait d'instances.",
+      "hint": "N'importe quelle instance sert n'importe quelle requête.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Parce que toute instance peut traiter toute requête, facilitant le scaling",
+          "isCorrect": true
+        },
+        {
+          "content": "Parce qu'ils chiffrent mieux",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce qu'ils sont plus rapides en CPU",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce qu'ils évitent les bases",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que HATEOAS dans une API REST mature ?",
+      "explanation": "Les réponses incluent des liens hypermédia guidant le client vers les actions possibles, réduisant le couplage aux URLs.",
+      "hint": "Des liens dans les réponses.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Inclure des liens hypermédia guidant les actions suivantes",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer les réponses",
+          "isCorrect": false
+        },
+        {
+          "content": "Versionner par l'URL",
+          "isCorrect": false
+        },
+        {
+          "content": "Compresser le JSON",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que valide un test unitaire par rapport à un test d'intégration ?",
+      "explanation": "Le test unitaire isole une petite unité (fonction/classe) ; l'intégration vérifie l'interaction entre plusieurs composants.",
+      "hint": "Isolé vs interactions.",
+      "difficulty": "EASY",
+      "tags": [
+        "Tests"
+      ],
+      "answers": [
+        {
+          "content": "Le unitaire teste une unité isolée, l'intégration l'interaction entre composants",
+          "isCorrect": true
+        },
+        {
+          "content": "Le unitaire teste toute l'app",
+          "isCorrect": false
+        },
+        {
+          "content": "L'intégration teste une seule fonction",
+          "isCorrect": false
+        },
+        {
+          "content": "Ils sont identiques",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "À quoi sert un 'mock' dans un test ?",
+      "explanation": "Remplacer une dépendance par un double contrôlé pour isoler l'unité testée et simuler des comportements.",
+      "hint": "Un double contrôlé d'une dépendance.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Tests"
+      ],
+      "answers": [
+        {
+          "content": "Simuler une dépendance pour isoler l'unité testée",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer le test",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer la compilation",
+          "isCorrect": false
+        },
+        {
+          "content": "Déployer l'app",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que l'idempotence apporte à un endpoint de retry client ?",
+      "explanation": "Le client peut réessayer sans risque de créer des effets multiples, car l'opération répétée laisse le même état.",
+      "hint": "Réessayer sans doublon.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "REST API"
+      ],
+      "answers": [
+        {
+          "content": "Le client peut réessayer sans provoquer d'effets multiples",
+          "isCorrect": true
+        },
+        {
+          "content": "La réponse est chiffrée",
+          "isCorrect": false
+        },
+        {
+          "content": "La requête est plus rapide",
+          "isCorrect": false
+        },
+        {
+          "content": "Le serveur garde la session",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait le pattern 'API Gateway' devant des microservices ?",
+      "explanation": "Un point d'entrée unique qui route, authentifie, agrège et applique des politiques transversales (rate limit, TLS).",
+      "hint": "Point d'entrée unique et transversal.",
+      "difficulty": "HARD",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Centraliser routage, authentification et politiques devant les services",
+          "isCorrect": true
+        },
+        {
+          "content": "Stocker la base",
+          "isCorrect": false
+        },
+        {
+          "content": "Compiler les services",
+          "isCorrect": false
+        },
+        {
+          "content": "Remplacer le load balancer réseau uniquement",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'connection storm' au démarrage d'un service ?",
+      "explanation": "Un afflux soudain d'ouvertures de connexions (ex. après un redémarrage massif) qui sature la base ; d'où pools et backoff.",
+      "hint": "Trop d'ouvertures d'un coup.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Un afflux soudain de connexions saturant la base",
+          "isCorrect": true
+        },
+        {
+          "content": "Une fuite mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index manquant",
+          "isCorrect": false
+        },
+        {
+          "content": "Un chiffrement lent",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi séparer DTO et entité de persistance ?",
+      "explanation": "Découpler le contrat API de la structure de stockage, éviter d'exposer des champs internes et prévenir des dépendances fragiles.",
+      "hint": "Découpler API et stockage.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Pour découpler le contrat API de la structure de la base",
+          "isCorrect": true
+        },
+        {
+          "content": "Pour chiffrer les entités",
+          "isCorrect": false
+        },
+        {
+          "content": "Pour accélérer le GC",
+          "isCorrect": false
+        },
+        {
+          "content": "Parce que JPA l'exige",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la validation 'fail-fast' des entrées ?",
+      "explanation": "Rejeter au plus tôt une entrée invalide plutôt que de propager l'erreur, simplifiant le diagnostic.",
+      "hint": "Échouer tôt et clairement.",
+      "difficulty": "EASY",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Rejeter immédiatement une entrée invalide",
+          "isCorrect": true
+        },
+        {
+          "content": "Réessayer en silence",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer l'entrée",
+          "isCorrect": false
+        },
+        {
+          "content": "Ignorer les erreurs",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Que fait un 'read-through cache' ?",
+      "explanation": "Le cache lui-même charge la donnée depuis la base en cas de miss, de façon transparente pour l'appelant.",
+      "hint": "Le cache va chercher en base si absent.",
+      "difficulty": "HARD",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Le cache charge la donnée depuis la base lors d'un miss, de façon transparente",
+          "isCorrect": true
+        },
+        {
+          "content": "Écrire d'abord en base",
+          "isCorrect": false
+        },
+        {
+          "content": "Ne jamais expirer",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les lectures",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que la cohérence 'read-your-writes' ?",
+      "explanation": "Garantie qu'un utilisateur relit toujours ses propres écritures récentes, même en système répliqué.",
+      "hint": "On relit ce qu'on vient d'écrire.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Un utilisateur voit toujours ses propres écritures récentes",
+          "isCorrect": true
+        },
+        {
+          "content": "Tout le monde voit tout instantanément",
+          "isCorrect": false
+        },
+        {
+          "content": "Aucune cohérence",
+          "isCorrect": false
+        },
+        {
+          "content": "Les écritures sont perdues",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Pourquoi utiliser des migrations versionnées (Flyway/Liquibase) ?",
+      "explanation": "Appliquer les changements de schéma de façon ordonnée, traçable et reproductible entre environnements.",
+      "hint": "Schéma versionné et reproductible.",
+      "difficulty": "MEDIUM",
+      "tags": [
+        "Base de données"
+      ],
+      "answers": [
+        {
+          "content": "Appliquer les changements de schéma de façon ordonnée et reproductible",
+          "isCorrect": true
+        },
+        {
+          "content": "Chiffrer la base",
+          "isCorrect": false
+        },
+        {
+          "content": "Accélérer les requêtes",
+          "isCorrect": false
+        },
+        {
+          "content": "Supprimer les index",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Qu'est-ce que le 'thundering herd' sur un cache expiré ?",
+      "explanation": "À l'expiration d'une clé très demandée, de nombreuses requêtes recalculent simultanément la valeur, surchargeant la source.",
+      "hint": "Tout le monde recalcule en même temps.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Un afflux simultané de recalculs à l'expiration d'une clé populaire",
+          "isCorrect": true
+        },
+        {
+          "content": "Une fuite mémoire",
+          "isCorrect": false
+        },
+        {
+          "content": "Un déni de service réseau",
+          "isCorrect": false
+        },
+        {
+          "content": "Un index corrompu",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "content": "Comment atténuer le thundering herd sur un cache ?",
+      "explanation": "Par un verrou de recalcul (single-flight), un rafraîchissement anticipé ou un TTL avec jitter.",
+      "hint": "Un seul recalcule, ou TTL désynchronisé.",
+      "difficulty": "EXPERT",
+      "tags": [
+        "Architecture"
+      ],
+      "answers": [
+        {
+          "content": "Verrou single-flight, refresh anticipé ou TTL avec jitter",
+          "isCorrect": true
+        },
+        {
+          "content": "Supprimer le cache",
+          "isCorrect": false
+        },
+        {
+          "content": "Doubler le TTL uniquement",
+          "isCorrect": false
+        },
+        {
+          "content": "Chiffrer les clés",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
